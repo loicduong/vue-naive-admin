@@ -1,0 +1,9 @@
+{
+  "name": "@su/hooks",
+  "version": "0.0.0",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "@su/axios": "*",
+    "@su/utils": "*"
+  }
+}

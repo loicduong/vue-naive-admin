@@ -1,0 +1,113 @@
+{
+  "name": "vue-boilerplate",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A fresh and elegant admin template, based on Vue3, Vite5, TypeScript, NaiveUI and UnoCSS.",
+  "author": "SugaTech",
+  "license": "MIT",
+  "homepage": "https://git.suga.vn/web/w3s-assets/vue3-boilerplate",
+  "repository": {
+    "url": "https://git.suga.vn/web/w3s-assets/vue3-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://git.suga.vn/web/w3s-assets/vue3-boilerplate/-/boards"
+  },
+  "keywords": [
+    "Vue3 admin ",
+    "vue-admin-template",
+    "Vite5",
+    "TypeScript",
+    "naive-ui",
+    "naive-ui-admin",
+    "ant-design-vue v4",
+    "UnoCSS"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "build:dev": "vite build --mode development",
+    "build:tst": "vite build --mode testing",
+    "build:stg": "vite build --mode staging",
+    "commit": "commitlint --edit",
+    "dev": "vite",
+    "dev:tst": "vite --mode testing",
+    "dev:stg": "vite --mode staging",
+    "gen-route": "su gen-route",
+    "lint": "eslint . --fix",
+    "prepare": "simple-git-hooks",
+    "preview": "vite preview",
+    "release": "su release",
+    "typecheck": "vue-tsc --noEmit --skipLibCheck"
+  },
+  "dependencies": {
+    "@better-scroll/core": "2.5.1",
+    "@iconify/vue": "4.1.2",
+    "@su/axios": "*",
+    "@su/color": "*",
+    "@su/hooks": "*",
+    "@su/materials": "*",
+    "@su/utils": "*",
+    "@vueuse/core": "10.11.1",
+    "clipboard": "2.0.11",
+    "dayjs": "1.11.12",
+    "echarts": "5.5.1",
+    "naive-ui": "2.39.0",
+    "nprogress": "0.2.0",
+    "pinia": "2.2.1",
+    "tailwind-merge": "2.5.2",
+    "vue": "3.4.37",
+    "vue-draggable-plus": "0.5.3",
+    "vue-i18n": "9.13.1",
+    "vue-router": "4.4.3"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "2.25.1",
+    "@commitlint/cli": "19.4.0",
+    "@commitlint/config-conventional": "19.2.2",
+    "@elegant-router/vue": "0.3.8",
+    "@iconify/json": "2.2.237",
+    "@su/scripts": "*",
+    "@types/html-minifier-terser": "^7.0.2",
+    "@types/node": "22.2.0",
+    "@types/nprogress": "0.2.3",
+    "@unocss/eslint-config": "0.62.1",
+    "@unocss/preset-icons": "0.62.1",
+    "@unocss/preset-uno": "0.62.1",
+    "@unocss/transformer-directives": "0.62.1",
+    "@unocss/transformer-variant-group": "0.62.1",
+    "@unocss/vite": "0.62.1",
+    "@vitejs/plugin-vue": "5.1.2",
+    "@vitejs/plugin-vue-jsx": "4.0.0",
+    "eslint": "8.57.0",
+    "eslint-plugin-format": "0.1.2",
+    "html-minifier-terser": "^7.2.0",
+    "json5": "2.2.3",
+    "lint-staged": "15.2.9",
+    "sass": "1.77.8",
+    "simple-git-hooks": "2.11.1",
+    "tsx": "4.16.5",
+    "typescript": "5.5.4",
+    "unplugin-auto-import": "0.18.2",
+    "unplugin-icons": "0.19.2",
+    "unplugin-vue-components": "0.27.4",
+    "vite": "5.4.0",
+    "vite-plugin-progress": "0.0.7",
+    "vite-plugin-svg-icons": "2.0.1",
+    "vite-plugin-vue-devtools": "7.3.8",
+    "vue-tsc": "2.0.29"
+  },
+  "simple-git-hooks": {
+    "commit-msg": "npm run commit",
+    "pre-commit": "npm run typecheck && npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  },
+  "website": ""
+}
