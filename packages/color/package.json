@@ -1,0 +1,8 @@
+{
+  "name": "@su/color",
+  "version": "0.0.0",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "colord": "2.9.3"
+  }
+}

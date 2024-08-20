@@ -1,0 +1,11 @@
+{
+  "name": "@su/utils",
+  "version": "0.0.0",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "colord": "2.9.3",
+    "klona": "2.0.6",
+    "localforage": "1.10.0",
+    "nanoid": "4.0.2"
+  }
+}

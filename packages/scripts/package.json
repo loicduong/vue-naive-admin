@@ -1,0 +1,15 @@
+{
+  "name": "@su/scripts",
+  "version": "0.0.0",
+  "main": "./src/index.ts",
+  "bin": {
+    "su": "./bin.ts"
+  },
+  "devDependencies": {
+    "bumpp": "9.5.1",
+    "c12": "1.11.1",
+    "cac": "6.7.14",
+    "enquirer": "2.4.1",
+    "kolorist": "1.8.0"
+  }
+}
