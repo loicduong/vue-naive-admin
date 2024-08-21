@@ -3,8 +3,6 @@
  <h1>VueNaiveAdmin</h1>
 </div>
 
----
-
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
 ## Introduction
