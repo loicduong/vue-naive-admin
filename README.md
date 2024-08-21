@@ -7,12 +7,6 @@
 
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
-<a href="https://hellogithub.com/repository/1298f27d5fe54959a16cf9686516ddb3" target="_blank">
-<img src="https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=1298f27d5fe54959a16cf9686516ddb3&claim_uid=IiDXWmP4TEntjbV" alt="Featured｜HelloGitHub" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-
-> [!NOTE]
-> If you think `VueNaiveAdmin` is helpful to you, or you like our project, please give us a ⭐️ on GitHub. Your support is the driving force for us to continue to improve and add new features! Thank you for your support!
-
 ## Introduction
 
 [`VueNaiveAdmin`](https://github.com/dploc96/vue-naive-admin) is a clean, elegant, beautiful and powerful admin template, based on the latest front-end technology stack, including Vue3, Vite5, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on ApiFox. `VueNaiveAdmin` provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly.
