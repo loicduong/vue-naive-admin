@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { useLoading } from '@su/hooks'
+import { useLoading } from '@sa/hooks'
 import { useRouteStore } from '../route'
 import { useTabStore } from '../tab'
 import { clearAuthStorage, getToken } from './shared'

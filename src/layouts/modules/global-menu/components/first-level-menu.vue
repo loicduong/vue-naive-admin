@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { SimpleScrollbar } from '@su/materials'
-import { transformColorWithOpacity } from '@su/color'
+import { SimpleScrollbar } from '@sa/materials'
+import { transformColorWithOpacity } from '@sa/color'
 
 defineOptions({
   name: 'FirstLevelMenu',

@@ -1,5 +1,5 @@
 import type { GlobalThemeOverrides } from 'naive-ui'
-import { addColorAlpha, getColorPalette, getPaletteColorByNumber, getRgb } from '@su/color'
+import { addColorAlpha, getColorPalette, getPaletteColorByNumber, getRgb } from '@sa/color'
 import { overrideThemeSettings, themeSettings } from '@/theme/settings'
 import { themeVars } from '@/theme/vars'
 import { toggleHtmlClass } from '@/utils/common'

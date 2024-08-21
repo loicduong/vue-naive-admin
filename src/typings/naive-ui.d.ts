@@ -7,9 +7,9 @@ declare namespace NaiveUI {
   type DataTableSelectionColumn<T> = import('naive-ui').DataTableSelectionColumn<T>
   type TableColumnGroup<T> = import('naive-ui/es/data-table/src/interface').TableColumnGroup<T>
   type PaginationProps = import('naive-ui').PaginationProps
-  type TableColumnCheck = import('@su/hooks').TableColumnCheck
-  type TableDataWithIndex<T> = import('@su/hooks').TableDataWithIndex<T>
-  type FlatResponseData<T> = import('@su/axios').FlatResponseData<T>
+  type TableColumnCheck = import('@sa/hooks').TableColumnCheck
+  type TableDataWithIndex<T> = import('@sa/hooks').TableDataWithIndex<T>
+  type FlatResponseData<T> = import('@sa/axios').FlatResponseData<T>
 
   /**
    * the custom column key
@@ -26,7 +26,7 @@ declare namespace NaiveUI {
 
   type TableColumn<T> = TableColumnWithKey<T> | DataTableSelectionColumn<T> | DataTableExpandColumn<T>
 
-  type TableApiFn<T = any, R = Api.SystemManage.CommonSearchParams> = (
+  type TableApiFn<T = any, R = Api.Common.CommonSearchParams> = (
     params: R
   ) => Promise<FlatResponseData<Api.Common.PaginatingQueryRecord<T>>>
 
@@ -41,7 +41,7 @@ declare namespace NaiveUI {
   type GetTableData<A extends TableApiFn> = A extends TableApiFn<infer T> ? T : never
 
   type NaiveTableConfig<A extends TableApiFn> = Pick<
-    import('@su/hooks').TableConfig<A, GetTableData<A>, TableColumn<TableDataWithIndex<GetTableData<A>>>>,
+    import('@sa/hooks').TableConfig<A, GetTableData<A>, TableColumn<TableDataWithIndex<GetTableData<A>>>>,
     'apiFn' | 'apiParams' | 'columns' | 'immediate'
   > & {
     /**

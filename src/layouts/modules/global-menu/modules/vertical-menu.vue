@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SimpleScrollbar } from '@su/materials'
+import { SimpleScrollbar } from '@sa/materials'
 import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
 import { useRouteStore } from '@/store/modules/route'

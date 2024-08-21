@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { getPaletteColorByNumber, mixColor } from '@su/color'
+import { getPaletteColorByNumber, mixColor } from '@sa/color'
 import PwdLogin from './modules/pwd-login.vue'
 import CodeLogin from './modules/code-login.vue'
 import Register from './modules/register.vue'
 import ResetPwd from './modules/reset-pwd.vue'
-import { $t } from '@/locales'
-import { useAppStore } from '@/store/modules/app'
-import { useThemeStore } from '@/store/modules/theme'
 import { loginModuleRecord } from '@/constants/app'
+import { useThemeStore } from '@/store/modules/theme'
+import { useAppStore } from '@/store/modules/app'
+import { $t } from '@/locales'
 
 interface Props {
   /** The login module */

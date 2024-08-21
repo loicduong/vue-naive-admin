@@ -1,5 +1,5 @@
 import type { AxiosResponse } from 'axios'
-import { BACKEND_ERROR_CODE, createFlatRequest, createRequest } from '@su/axios'
+import { BACKEND_ERROR_CODE, createFlatRequest, createRequest } from '@sa/axios'
 import { handleRefreshToken, showErrorMsg } from './shared'
 import type { RequestInstanceState } from './type'
 import { useAuthStore } from '@/store/modules/auth'

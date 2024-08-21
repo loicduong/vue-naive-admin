@@ -1,6 +1,6 @@
 import { computed, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { useContext } from '@su/hooks'
+import { useContext } from '@sa/hooks'
 import { useRouteStore } from '@/store/modules/route'
 
 export const { setupStore: setupMixMenuContext, useStore: useMixMenuContext } = useContext('mix-menu', useMixMenu)

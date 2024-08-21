@@ -1,6 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router'
 import { defineStore } from 'pinia'
-import { useBoolean } from '@su/hooks'
+import { useBoolean } from '@sa/hooks'
 import type { CustomRoute, ElegantConstRoute, LastLevelRouteKey, RouteKey, RouteMap } from '@elegant-router/types'
 import { useAppStore } from '../app'
 import { useAuthStore } from '../auth'

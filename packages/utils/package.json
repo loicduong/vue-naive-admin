@@ -1,11 +1,22 @@
 {
-  "name": "@su/utils",
+  "name": "@sa/utils",
   "version": "0.0.0",
-  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": ["./src/*"]
+    }
+  },
   "dependencies": {
     "colord": "2.9.3",
+    "crypto-js": "4.2.0",
     "klona": "2.0.6",
     "localforage": "1.10.0",
-    "nanoid": "4.0.2"
+    "nanoid": "5.0.7"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "4.2.2"
   }
 }

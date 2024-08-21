@@ -6,8 +6,8 @@ defineOptions({
 
 <template>
   <DarkModeContainer class="h-full flex-center">
-    <a href="https://git.suga.vn/web/w3s-assets/vue3-boilerplate/-/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">
-      Copyright MIT © 2024 SugaTech
+    <a href="https://github.com/dploc96/vue-naive-admin/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">
+      Copyright MIT © 2024 Loic Duong
     </a>
   </DarkModeContainer>
 </template>

@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { breakpointsTailwind } from '@vueuse/core'
-import { useBoolean } from '@su/hooks'
+import { useBoolean } from '@sa/hooks'
 import { useRouteStore } from '../route'
 import { useTabStore } from '../tab'
 import { useThemeStore } from '../theme'
@@ -53,6 +53,10 @@ export const useAppStore = defineStore(SetupStoreId.App, () => {
     {
       label: 'English',
       key: 'en-US',
+    },
+    {
+      label: 'Tiếng Việt',
+      key: 'vi-VN',
     },
   ]
 

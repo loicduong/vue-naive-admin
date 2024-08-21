@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { getPaletteColorByNumber } from '@su/color'
+import { getPaletteColorByNumber } from '@sa/color'
 import {
   addThemeVarsToGlobal,
   createThemeToken,

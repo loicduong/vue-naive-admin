@@ -39,7 +39,7 @@ declare module 'vue-router' {
     /**
      * Local icon
      *
-     * In "src/assets/icons", if it is set, the icon will be ignored
+     * In "src/assets/svg-icon", if it is set, the icon will be ignored
      */
     localIcon?: string
     /** Icon size. width and height are the same. */

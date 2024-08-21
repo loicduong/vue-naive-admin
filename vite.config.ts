@@ -1,8 +1,8 @@
-import { URL, fileURLToPath } from 'node:url'
 import process from 'node:process'
+import { URL, fileURLToPath } from 'node:url'
 import { defineConfig, loadEnv } from 'vite'
-import { createViteProxy, getBuildInfo } from './build/config'
 import { setupVitePlugins } from './build/plugins'
+import { createViteProxy, getBuildInfo } from './build/config'
 
 export default defineConfig((configEnv) => {
   const viteEnv = loadEnv(configEnv.mode, process.cwd()) as unknown as Env.ImportMeta
@@ -33,12 +33,15 @@ export default defineConfig((configEnv) => {
     },
     server: {
       host: '0.0.0.0',
-      port: 9176,
+      port: 9527,
       open: true,
       proxy: createViteProxy(viteEnv, enableProxy),
+      fs: {
+        cachedChecks: false,
+      },
     },
     preview: {
-      port: 9671,
+      port: 9725,
     },
     build: {
       reportCompressedSize: false,

@@ -1,4 +1,4 @@
-import { useCountDown, useLoading } from '@su/hooks'
+import { useCountDown, useLoading } from '@sa/hooks'
 import { $t } from '@/locales'
 import { REG_PHONE } from '@/constants/reg'
 

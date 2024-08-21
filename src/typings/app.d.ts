@@ -2,7 +2,7 @@
 declare namespace App {
   /** Theme namespace */
   namespace Theme {
-    type ColorPaletteNumber = import('@su/color').ColorPaletteNumber
+    type ColorPaletteNumber = import('@sa/color').ColorPaletteNumber
 
     /** Theme setting */
     interface ThemeSetting {
@@ -265,7 +265,7 @@ declare namespace App {
   namespace I18n {
     type RouteKey = import('@elegant-router/types').RouteKey
 
-    type LangType = 'en-US'
+    type LangType = 'en-US' | 'vi-VN'
 
     type LangOption = {
       label: string
@@ -546,7 +546,7 @@ declare namespace App {
     }
 
     /** The backend service response data */
-    interface Response<T = unknown> {
+    type Response<T = unknown> = {
       /** The backend service response code */
       code: string
       /** The backend service response message */
@@ -556,7 +556,7 @@ declare namespace App {
     }
 
     /** The demo backend service response data */
-    interface DemoResponse<T = unknown> {
+    type DemoResponse<T = unknown> = {
       /** The backend service response code */
       status: string
       /** The backend service response message */

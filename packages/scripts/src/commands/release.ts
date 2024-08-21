@@ -1,12 +1,12 @@
 import { versionBump } from 'bumpp'
 
-export async function release(execute = 'w3s changelogs', push = false) {
+export async function release(execute = 'pnpm sa changelog', push = true) {
   await versionBump({
     files: ['**/package.json', '!**/node_modules'],
     execute,
     all: true,
-    tag: false,
-    commit: false,
+    tag: true,
+    commit: 'chore(projects): release v%s',
     push,
   })
 }

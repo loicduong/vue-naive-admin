@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PageTab } from '@su/materials'
+import { PageTab } from '@sa/materials'
 import ContextMenu from './context-menu.vue'
 import BetterScroll from '@/components/custom/better-scroll.vue'
 import { useAppStore } from '@/store/modules/app'

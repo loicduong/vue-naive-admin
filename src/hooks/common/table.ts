@@ -1,6 +1,6 @@
 import type { PaginationProps } from 'naive-ui'
-import { jsonClone } from '@su/utils'
-import { useBoolean, useHookTable } from '@su/hooks'
+import { jsonClone } from '@sa/utils'
+import { useBoolean, useHookTable } from '@sa/hooks'
 import { useAppStore } from '@/store/modules/app'
 import { $t } from '@/locales'
 

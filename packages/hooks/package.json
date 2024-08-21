@@ -1,9 +1,16 @@
 {
-  "name": "@su/hooks",
+  "name": "@sa/hooks",
   "version": "0.0.0",
-  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": ["./src/*"]
+    }
+  },
   "dependencies": {
-    "@su/axios": "*",
-    "@su/utils": "*"
+    "@sa/axios": "workspace:*",
+    "@sa/utils": "workspace:*"
   }
 }

@@ -1,6 +1,6 @@
 const local: App.I18n.Schema = {
   system: {
-    title: 'VueBoilerplate',
+    title: 'VueNaiveAdmin',
     updateTitle: 'System Version Update Notification',
     updateContent: 'A new version of the system has been detected. Do you want to refresh the page immediately?',
     updateConfirm: 'Refresh immediately',
@@ -221,11 +221,11 @@ const local: App.I18n.Schema = {
       projectNews: {
         title: 'Project News',
         moreNews: 'More News',
-        desc1: 'SugaTech created the open source project vue-navie-admin on May 28, 2024!',
-        desc2: 'SugaTech submitted a bug to vue-navie-admin, the multi-tab bar will not adapt.',
-        desc3: 'SugaTech is ready to do sufficient preparation for the release of vue-navie-admin!',
-        desc4: 'SugaTech is busy writing project documentation for vue-navie-admin!',
-        desc5: 'SugaTech just wrote some of the workbench pages casually, and it was enough to see!',
+        desc1: 'Loic Duong created the open source project vue-naive-admin on May 28, 2021!',
+        desc2: 'Loic Duong submitted a bug to vue-naive-admin, the multi-tab bar will not adapt.',
+        desc3: 'Loic Duong is ready to do sufficient preparation for the release of vue-naive-admin!',
+        desc4: 'Loic Duong is busy writing project documentation for vue-naive-admin!',
+        desc5: 'Loic Duong just wrote some of the workbench pages casually, and it was enough to see!',
       },
       creativity: 'Creativity',
     },

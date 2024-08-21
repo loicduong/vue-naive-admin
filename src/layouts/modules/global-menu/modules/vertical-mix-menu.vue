@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { SimpleScrollbar } from '@su/materials'
-import { useBoolean } from '@su/hooks'
+import { SimpleScrollbar } from '@sa/materials'
+import { useBoolean } from '@sa/hooks'
 import { useMixMenuContext } from '../../../context'
 import FirstLevelMenu from '../components/first-level-menu.vue'
 import GlobalLogo from '../../global-logo/index.vue'

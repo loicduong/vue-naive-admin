@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { RouteKey } from '@elegant-router/types'
-import { SimpleScrollbar } from '@su/materials'
+import { SimpleScrollbar } from '@sa/materials'
 import { useMixMenuContext } from '../../../context'
 import { GLOBAL_HEADER_MENU_ID, GLOBAL_SIDER_MENU_ID } from '@/constants/app'
 import { useAppStore } from '@/store/modules/app'

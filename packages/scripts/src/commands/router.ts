@@ -39,7 +39,7 @@ export async function generateRoute() {
     Object.assign(result, answers)
   }
 
-  const PAGE_DIR_NAME_PATTERN = /^[\w-]+[0-9a-z]$/i
+  const PAGE_DIR_NAME_PATTERN = /^[\w-]+[0-9a-zA-Z]+$/
 
   if (!PAGE_DIR_NAME_PATTERN.test(result.routeName)) {
     throw new Error(`${red('route name is invalid, it only allow letters, numbers, "-" or "_"')}.

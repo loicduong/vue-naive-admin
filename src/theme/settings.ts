@@ -4,7 +4,7 @@ export const themeSettings: App.Theme.ThemeSetting = {
   grayscale: false,
   colourWeakness: false,
   recommendColor: false,
-  themeColor: '#00DDCC',
+  themeColor: '#646cff',
   otherColor: {
     info: '#2080f0',
     success: '#52c41a',
@@ -51,7 +51,7 @@ export const themeSettings: App.Theme.ThemeSetting = {
   },
   watermark: {
     visible: false,
-    text: 'VueBoilerplate',
+    text: 'VueNaiveAdmin',
   },
   tokens: {
     light: {

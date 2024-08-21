@@ -179,7 +179,7 @@ export interface AdminLayoutProps
    * @example
    *   use the default id by import
    *   ```ts
-   *   import { adminLayoutScrollElId } from '@su/vue-materials';
+   *   import { adminLayoutScrollElId } from '@sa/vue-materials';
    *   ```
    *
    * @default
@@ -280,7 +280,7 @@ export interface PageTabProps {
   closable?: boolean
 }
 
-export interface PageTabCssVarsProps {
+export type PageTabCssVarsProps = {
   primaryColor: string
   primaryColor1: string
   primaryColor2: string

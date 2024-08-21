@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { AdminLayout, LAYOUT_SCROLL_EL_ID } from '@su/materials'
-import type { LayoutMode } from '@su/materials'
+import { AdminLayout, LAYOUT_SCROLL_EL_ID } from '@sa/materials'
+import type { LayoutMode } from '@sa/materials'
 import GlobalHeader from '../modules/global-header/index.vue'
 import GlobalSider from '../modules/global-sider/index.vue'
 import GlobalTab from '../modules/global-tab/index.vue'

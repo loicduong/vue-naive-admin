@@ -35,6 +35,5 @@ declare namespace StorageType {
       layout: UnionKey.ThemeLayoutMode
       siderCollapse: boolean
     }
-    hasLogo: boolean
   }
 }
