@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.0.2](https://github.com/dploc96/vue-naive-admin/compare/v0.0.1...v0.0.2) (2024-08-22)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
 ## [v0.0.1](https://github.com/dploc96/vue-naive-admin/compare/undefined...v0.0.1) (2024-08-22)
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
