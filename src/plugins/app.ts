@@ -53,13 +53,11 @@ export function setupAppVersionNotification() {
 }
 
 async function getHtmlBuildTime() {
-  const baseURL = import.meta.env.VITE_BASE_URL
-
-  const res = await fetch(`${baseURL}index.html`)
+  const res = await fetch(`/index.html?time=${Date.now()}`)
 
   const html = await res.text()
 
-  const match = html.match(/<meta name="buildTime" content="(.*)">/)
+  const match = html.match(/<meta name="build-time" content="([^"]*)">/)
 
   const buildTime = match?.[1] || ''
 
