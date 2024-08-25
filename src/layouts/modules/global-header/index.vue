@@ -26,6 +26,7 @@ defineProps<Props>()
 const appStore = useAppStore()
 const themeStore = useThemeStore()
 const { isFullscreen, toggle } = useFullscreen()
+const isAuthRouteVisible = computed(() => import.meta.env.VITE_AUTH_ROUTE_VISIBLE !== 'N')
 </script>
 
 <template>
@@ -46,7 +47,7 @@ const { isFullscreen, toggle } = useFullscreen()
         @switch="themeStore.toggleThemeScheme"
       />
       <ThemeButton />
-      <UserAvatar />
+      <UserAvatar v-if="isAuthRouteVisible" />
     </div>
   </DarkModeContainer>
 </template>

@@ -31,7 +31,7 @@ export function createRouteGuard(router: Router) {
     const loginRoute: RouteKey = 'login'
     const noAuthorizationRoute: RouteKey = '403'
 
-    const isLogin = Boolean(localStg.get('token'))
+    const isLogin = import.meta.env.VITE_AUTH_ROUTE_VISIBLE === 'N' || Boolean(localStg.get('token'))
     const needLogin = !to.meta.constant
     const routeRoles = to.meta.roles || []
 
@@ -146,7 +146,7 @@ async function initRoute(to: RouteLocationNormalized): Promise<RouteLocationRaw 
   }
 
   // if the auth route is not initialized, then initialize the auth route
-  const isLogin = Boolean(localStg.get('token'))
+  const isLogin = import.meta.env.VITE_AUTH_ROUTE_VISIBLE === 'N' || Boolean(localStg.get('token'))
   // initialize the auth route requires the user to be logged in, if not, redirect to the login page
   if (!isLogin) {
     const loginRoute: RouteKey = 'login'

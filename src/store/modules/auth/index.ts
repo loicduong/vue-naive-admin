@@ -33,7 +33,9 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
   })
 
   /** Is login */
-  const isLogin = computed(() => Boolean(token.value))
+  const isLogin = computed(() => {
+    return import.meta.env.VITE_AUTH_ROUTE_VISIBLE === 'N' || Boolean(token.value)
+  })
 
   /** Reset auth store */
   async function resetStore() {
