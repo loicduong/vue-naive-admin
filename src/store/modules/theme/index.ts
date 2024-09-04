@@ -8,7 +8,7 @@ import {
   toggleAuxiliaryColorModes,
   toggleCssDarkMode,
 } from './shared'
-import { SetupStoreId } from '@/enum'
+import { SetupStoreId } from '@/constants/enum'
 import { localStg } from '@/utils/storage'
 
 /** Theme store */

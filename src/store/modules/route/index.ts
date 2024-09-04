@@ -16,7 +16,7 @@ import {
   transformMenuToSearchMenus,
   updateLocaleOfGlobalMenus,
 } from './shared'
-import { SetupStoreId } from '@/enum'
+import { SetupStoreId } from '@/constants/enum'
 import { router } from '@/router'
 import { createStaticRoutes, getAuthVueRoutes } from '@/router/routes'
 import { ROOT_ROUTE } from '@/router/routes/builtin'

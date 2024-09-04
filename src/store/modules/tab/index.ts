@@ -16,7 +16,7 @@ import {
   updateTabsByI18nKey,
 } from './shared'
 import { router } from '@/router'
-import { SetupStoreId } from '@/enum'
+import { SetupStoreId } from '@/constants/enum'
 import { useRouterPush } from '@/hooks/common/router'
 import { localStg } from '@/utils/storage'
 import { useRouteStore } from '@/store/modules/route'
