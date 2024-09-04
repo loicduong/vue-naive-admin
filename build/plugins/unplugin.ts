@@ -28,7 +28,7 @@ export function setupUnplugin(viteEnv: Env.ImportMeta) {
       defaultClass: 'inline-block',
     }),
     AutoImport({
-      dts: 'src/typings/auto-imports.d.ts',
+      dts: 'src/types/auto-imports.d.ts',
       imports: [
         '@vueuse/core',
         'vue-router',
@@ -40,7 +40,7 @@ export function setupUnplugin(viteEnv: Env.ImportMeta) {
       ],
     }),
     Components({
-      dts: 'src/typings/components.d.ts',
+      dts: 'src/types/components.d.ts',
       types: [{ from: 'vue-router', names: ['RouterLink', 'RouterView'] }],
       resolvers: [
         AntDesignVueResolver({
