@@ -30,13 +30,11 @@
   "scripts": {
     "build": "vite build --mode production",
     "build:dev": "vite build --mode development",
-    "build:stg": "vite build --mode staging",
     "build:tst": "vite build --mode testing",
     "cleanup": "sa cleanup",
     "commit": "sa git-commit",
     "dev": "vite",
     "dev:prd": "vite --mode production",
-    "dev:stg": "vite --mode staging",
     "dev:tst": "vite --mode testing",
     "gen-route": "sa gen-route",
     "lint": "eslint .",
