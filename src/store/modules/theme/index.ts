@@ -1,5 +1,7 @@
-import { defineStore } from 'pinia'
+import { SetupStoreId } from '@/constants/enum'
+import { localStg } from '@/utils/storage'
 import { getPaletteColorByNumber } from '@sa/color'
+import { defineStore } from 'pinia'
 import {
   addThemeVarsToGlobal,
   createThemeToken,
@@ -8,8 +10,6 @@ import {
   toggleAuxiliaryColorModes,
   toggleCssDarkMode,
 } from './shared'
-import { SetupStoreId } from '@/constants/enum'
-import { localStg } from '@/utils/storage'
 
 /** Theme store */
 export const useThemeStore = defineStore(SetupStoreId.Theme, () => {

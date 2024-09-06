@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { AdminLayoutProps } from '../../types'
-import { LAYOUT_MAX_Z_INDEX, LAYOUT_SCROLL_EL_ID, createLayoutCssVars } from './shared'
 import style from './index.module.css'
+import { createLayoutCssVars, LAYOUT_MAX_Z_INDEX, LAYOUT_SCROLL_EL_ID } from './shared'
+import type { AdminLayoutProps } from '../../types'
 
 defineOptions({
   name: 'AdminLayout',

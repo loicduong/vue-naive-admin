@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import SettingItem from '../components/setting-item.vue'
 import { themeSchemaRecord } from '@/constants/app'
-import { useThemeStore } from '@/store/modules/theme'
 import { $t } from '@/locales'
+import { useThemeStore } from '@/store/modules/theme'
+import SettingItem from '../components/setting-item.vue'
 
 defineOptions({
   name: 'DarkMode',

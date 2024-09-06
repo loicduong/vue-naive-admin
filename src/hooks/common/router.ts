@@ -1,6 +1,6 @@
-import type { RouteLocationRaw } from 'vue-router'
-import type { RouteKey } from '@elegant-router/types'
 import { router as globalRouter } from '@/router'
+import type { RouteKey } from '@elegant-router/types'
+import type { RouteLocationRaw } from 'vue-router'
 
 /**
  * Router push

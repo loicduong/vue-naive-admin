@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import LayoutModeCard from '../components/layout-mode-card.vue'
-import SettingItem from '../components/setting-item.vue'
+import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
-import { $t } from '@/locales'
+import LayoutModeCard from '../components/layout-mode-card.vue'
+import SettingItem from '../components/setting-item.vue'
 
 defineOptions({
   name: 'LayoutMode',

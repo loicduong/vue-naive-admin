@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useAuthStore } from '@/store/modules/auth'
-import { useRouterPush } from '@/hooks/common/router'
 import { useSvgIcon } from '@/hooks/common/icon'
+import { useRouterPush } from '@/hooks/common/router'
 import { $t } from '@/locales'
+import { useAuthStore } from '@/store/modules/auth'
 
 defineOptions({
   name: 'UserAvatar',

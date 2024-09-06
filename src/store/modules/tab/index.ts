@@ -1,3 +1,8 @@
+import { SetupStoreId } from '@/constants/enum'
+import { useRouterPush } from '@/hooks/common/router'
+import { router } from '@/router'
+import { useRouteStore } from '@/store/modules/route'
+import { localStg } from '@/utils/storage'
 import { defineStore } from 'pinia'
 import type { RouteKey } from '@elegant-router/types'
 import { useThemeStore } from '../theme'
@@ -15,11 +20,6 @@ import {
   updateTabByI18nKey,
   updateTabsByI18nKey,
 } from './shared'
-import { router } from '@/router'
-import { SetupStoreId } from '@/constants/enum'
-import { useRouterPush } from '@/hooks/common/router'
-import { localStg } from '@/utils/storage'
-import { useRouteStore } from '@/store/modules/route'
 
 export const useTabStore = defineStore(SetupStoreId.Tab, () => {
   const routeStore = useRouteStore()

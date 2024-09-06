@@ -1,8 +1,8 @@
-import path from 'node:path'
 import { readFileSync } from 'node:fs'
+import path from 'node:path'
 import { prompt } from 'enquirer'
-import { execCommand } from '../shared'
 import { locales } from '../locales'
+import { execCommand } from '../shared'
 import type { Lang } from '../locales'
 
 interface PromptObject {

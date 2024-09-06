@@ -1,14 +1,5 @@
-import * as echarts from 'echarts/core'
+import { useThemeStore } from '@/store/modules/theme'
 import { BarChart, GaugeChart, LineChart, PictorialBarChart, PieChart, RadarChart, ScatterChart } from 'echarts/charts'
-import type {
-  BarSeriesOption,
-  GaugeSeriesOption,
-  LineSeriesOption,
-  PictorialBarSeriesOption,
-  PieSeriesOption,
-  RadarSeriesOption,
-  ScatterSeriesOption,
-} from 'echarts/charts'
 import {
   DatasetComponent,
   GridComponent,
@@ -18,6 +9,18 @@ import {
   TooltipComponent,
   TransformComponent,
 } from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { LabelLayout, UniversalTransition } from 'echarts/features'
+import { CanvasRenderer } from 'echarts/renderers'
+import type {
+  BarSeriesOption,
+  GaugeSeriesOption,
+  LineSeriesOption,
+  PictorialBarSeriesOption,
+  PieSeriesOption,
+  RadarSeriesOption,
+  ScatterSeriesOption,
+} from 'echarts/charts'
 import type {
   DatasetComponentOption,
   GridComponentOption,
@@ -26,9 +29,6 @@ import type {
   ToolboxComponentOption,
   TooltipComponentOption,
 } from 'echarts/components'
-import { LabelLayout, UniversalTransition } from 'echarts/features'
-import { CanvasRenderer } from 'echarts/renderers'
-import { useThemeStore } from '@/store/modules/theme'
 
 export type ECOption = echarts.ComposeOption<
   | BarSeriesOption

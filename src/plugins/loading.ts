@@ -1,8 +1,8 @@
 // @unocss-include
-import { getRgb } from '@sa/color'
+import systemLogo from '@/assets/svg-icon/logo.svg?raw'
 import { $t } from '@/locales'
 import { localStg } from '@/utils/storage'
-import systemLogo from '@/assets/svg-icon/logo.svg?raw'
+import { getRgb } from '@sa/color'
 
 export function setupLoading() {
   const themeColor = localStg.get('themeColor') || '#646cff'

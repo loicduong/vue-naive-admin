@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { Component } from 'vue'
-import type { PageTabMode, PageTabProps } from '../../types'
-import { ACTIVE_COLOR, createTabCssVars } from './shared'
-import ChromeTab from './chrome-tab.vue'
 import ButtonTab from './button-tab.vue'
-import SvgClose from './svg-close.vue'
+import ChromeTab from './chrome-tab.vue'
 import style from './index.module.css'
+import { ACTIVE_COLOR, createTabCssVars } from './shared'
+import SvgClose from './svg-close.vue'
+import type { PageTabMode, PageTabProps } from '../../types'
 
 defineOptions({
   name: 'PageTab',

@@ -1,9 +1,9 @@
-import axios, { AxiosError } from 'axios'
-import type { AxiosResponse, CreateAxiosDefaults, InternalAxiosRequestConfig } from 'axios'
-import axiosRetry from 'axios-retry'
 import { nanoid } from '@sa/utils'
-import { createAxiosConfig, createDefaultOptions, createRetryOptions } from './options'
+import axios, { AxiosError } from 'axios'
+import axiosRetry from 'axios-retry'
+import type { AxiosResponse, CreateAxiosDefaults, InternalAxiosRequestConfig } from 'axios'
 import { BACKEND_ERROR_CODE, REQUEST_ID_KEY } from './constant'
+import { createAxiosConfig, createDefaultOptions, createRetryOptions } from './options'
 import type {
   CustomAxiosRequestConfig,
   FlatRequestInstance,
@@ -181,4 +181,4 @@ export function createFlatRequest<ResponseData = any, State = Record<string, unk
 
 export { BACKEND_ERROR_CODE, REQUEST_ID_KEY }
 export type * from './type'
-export type { CreateAxiosDefaults, AxiosError }
+export type { AxiosError, CreateAxiosDefaults }

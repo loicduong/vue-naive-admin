@@ -1,11 +1,11 @@
-import type { AxiosResponse } from 'axios'
+import { $t } from '@/locales'
+import { useAuthStore } from '@/store/modules/auth'
+import { getServiceBaseURL } from '@/utils/service'
+import { localStg } from '@/utils/storage'
 import { BACKEND_ERROR_CODE, createFlatRequest, createRequest } from '@sa/axios'
+import type { AxiosResponse } from 'axios'
 import { handleRefreshToken, showErrorMsg } from './shared'
 import type { RequestInstanceState } from './type'
-import { useAuthStore } from '@/store/modules/auth'
-import { $t } from '@/locales'
-import { localStg } from '@/utils/storage'
-import { getServiceBaseURL } from '@/utils/service'
 
 const isHttpProxy = import.meta.env.DEV && import.meta.env.VITE_HTTP_PROXY === 'Y'
 const { baseURL, otherBaseURL } = getServiceBaseURL(import.meta.env, isHttpProxy)

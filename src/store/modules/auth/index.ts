@@ -1,13 +1,13 @@
-import { defineStore } from 'pinia'
+import { SetupStoreId } from '@/constants/enum'
+import { useRouterPush } from '@/hooks/common/router'
+import { $t } from '@/locales'
+import { fetchGetUserInfo, fetchLogin } from '@/service/api'
+import { localStg } from '@/utils/storage'
 import { useLoading } from '@sa/hooks'
+import { defineStore } from 'pinia'
 import { useRouteStore } from '../route'
 import { useTabStore } from '../tab'
 import { clearAuthStorage, getToken } from './shared'
-import { SetupStoreId } from '@/constants/enum'
-import { useRouterPush } from '@/hooks/common/router'
-import { fetchGetUserInfo, fetchLogin } from '@/service/api'
-import { localStg } from '@/utils/storage'
-import { $t } from '@/locales'
 
 export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
   const route = useRoute()

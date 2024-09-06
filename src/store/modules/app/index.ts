@@ -1,14 +1,14 @@
-import { defineStore } from 'pinia'
-import { breakpointsTailwind } from '@vueuse/core'
+import { SetupStoreId } from '@/constants/enum'
+import { $t, setLocale } from '@/locales'
+import { setDayjsLocale } from '@/locales/dayjs'
+import { router } from '@/router'
+import { localStg } from '@/utils/storage'
 import { useBoolean } from '@sa/hooks'
+import { breakpointsTailwind } from '@vueuse/core'
+import { defineStore } from 'pinia'
 import { useRouteStore } from '../route'
 import { useTabStore } from '../tab'
 import { useThemeStore } from '../theme'
-import { SetupStoreId } from '@/constants/enum'
-import { router } from '@/router'
-import { $t, setLocale } from '@/locales'
-import { setDayjsLocale } from '@/locales/dayjs'
-import { localStg } from '@/utils/storage'
 
 export const useAppStore = defineStore(SetupStoreId.App, () => {
   const themeStore = useThemeStore()

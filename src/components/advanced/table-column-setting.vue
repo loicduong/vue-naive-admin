@@ -1,6 +1,6 @@
 <script setup lang="ts" generic="T extends Record<string, unknown>, K = never">
-import { VueDraggable } from 'vue-draggable-plus'
 import { $t } from '@/locales'
+import { VueDraggable } from 'vue-draggable-plus'
 
 defineOptions({
   name: 'TableColumnSetting',

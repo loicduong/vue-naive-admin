@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { $t } from '@/locales'
 import { loginModuleRecord } from '@/constants/app'
-import { useRouterPush } from '@/hooks/common/router'
 import { useFormRules, useNaiveForm } from '@/hooks/common/form'
+import { useRouterPush } from '@/hooks/common/router'
+import { $t } from '@/locales'
 import { useAuthStore } from '@/store/modules/auth'
 
 defineOptions({

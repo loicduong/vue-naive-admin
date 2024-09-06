@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { PageTab } from '@sa/materials'
-import ContextMenu from './context-menu.vue'
 import BetterScroll from '@/components/custom/better-scroll.vue'
 import { useAppStore } from '@/store/modules/app'
-import { useThemeStore } from '@/store/modules/theme'
 import { useRouteStore } from '@/store/modules/route'
 import { useTabStore } from '@/store/modules/tab'
+import { useThemeStore } from '@/store/modules/theme'
+import { PageTab } from '@sa/materials'
+import ContextMenu from './context-menu.vue'
 
 defineOptions({
   name: 'GlobalTab',

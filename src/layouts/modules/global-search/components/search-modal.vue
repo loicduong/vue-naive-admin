@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import SearchResult from './search-result.vue'
-import SearchFooter from './search-footer.vue'
-import { useRouteStore } from '@/store/modules/route'
-import { useAppStore } from '@/store/modules/app'
 import { $t } from '@/locales'
+import { useAppStore } from '@/store/modules/app'
+import { useRouteStore } from '@/store/modules/route'
+import SearchFooter from './search-footer.vue'
+import SearchResult from './search-result.vue'
 
 defineOptions({ name: 'SearchModal' })
 

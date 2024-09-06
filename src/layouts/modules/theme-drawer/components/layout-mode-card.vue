@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { PopoverPlacement } from 'naive-ui'
 import { themeLayoutModeRecord } from '@/constants/app'
 import { $t } from '@/locales'
+import type { PopoverPlacement } from 'naive-ui'
 
 defineOptions({
   name: 'LayoutModeCard',

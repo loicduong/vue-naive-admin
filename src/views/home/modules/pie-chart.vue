@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { useEcharts } from '@/hooks/common/echarts'
 import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
-import { useEcharts } from '@/hooks/common/echarts'
 
 defineOptions({
   name: 'PieChart',

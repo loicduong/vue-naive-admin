@@ -1,7 +1,7 @@
-import type { RouteLocationNormalizedLoaded, RouteRecordRaw } from 'vue-router'
-import type { ElegantConstRoute, LastLevelRouteKey, RouteKey, RouteMap } from '@elegant-router/types'
-import { $t } from '@/locales'
 import { useSvgIcon } from '@/hooks/common/icon'
+import { $t } from '@/locales'
+import type { ElegantConstRoute, LastLevelRouteKey, RouteKey, RouteMap } from '@elegant-router/types'
+import type { RouteLocationNormalizedLoaded, RouteRecordRaw } from 'vue-router'
 
 /**
  * Filter auth routes by roles

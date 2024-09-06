@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import VerticalMenu from './modules/vertical-menu.vue'
-import VerticalMixMenu from './modules/vertical-mix-menu.vue'
+import { useAppStore } from '@/store/modules/app'
+import { useThemeStore } from '@/store/modules/theme'
 import HorizontalMenu from './modules/horizontal-menu.vue'
 import HorizontalMixMenu from './modules/horizontal-mix-menu.vue'
 import ReversedHorizontalMixMenu from './modules/reversed-horizontal-mix-menu.vue'
-import { useThemeStore } from '@/store/modules/theme'
-import { useAppStore } from '@/store/modules/app'
+import VerticalMenu from './modules/vertical-menu.vue'
+import VerticalMixMenu from './modules/vertical-mix-menu.vue'
 
 defineOptions({
   name: 'GlobalMenu',

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { PageTabProps } from '../../types'
 import style from './index.module.css'
+import type { PageTabProps } from '../../types'
 
 defineOptions({
   name: 'ButtonTab',

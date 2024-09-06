@@ -1,7 +1,7 @@
+import { localStg } from '@/utils/storage'
 import { locale } from 'dayjs'
 import 'dayjs/locale/en'
 import 'dayjs/locale/vi'
-import { localStg } from '@/utils/storage'
 
 /**
  * Set dayjs locale

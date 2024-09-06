@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { NConfigProvider, darkTheme } from 'naive-ui'
+import GlobalBuildDesc from '@/layouts/modules/global-build-desc/index.vue'
+import { getEnvVariable } from '@/utils/env'
+import { darkTheme, NConfigProvider } from 'naive-ui'
 import type { WatermarkProps } from 'naive-ui'
+import { naiveDateLocales, naiveLocales } from './locales/naive'
 import { useAppStore } from './store/modules/app'
 import { useThemeStore } from './store/modules/theme'
-import { naiveDateLocales, naiveLocales } from './locales/naive'
-import { getEnvVariable } from '@/utils/env'
-import GlobalBuildDesc from '@/layouts/modules/global-build-desc/index.vue'
 
 defineOptions({
   name: 'App',

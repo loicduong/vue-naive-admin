@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { SimpleScrollbar } from '@sa/materials'
-import { useBoolean } from '@sa/hooks'
-import { useMixMenuContext } from '../../../context'
-import FirstLevelMenu from '../components/first-level-menu.vue'
-import GlobalLogo from '../../global-logo/index.vue'
-import { useAppStore } from '@/store/modules/app'
-import { useThemeStore } from '@/store/modules/theme'
-import { useRouteStore } from '@/store/modules/route'
+import { GLOBAL_SIDER_MENU_ID } from '@/constants/app'
 import { useRouterPush } from '@/hooks/common/router'
 import { $t } from '@/locales'
-import { GLOBAL_SIDER_MENU_ID } from '@/constants/app'
+import { useAppStore } from '@/store/modules/app'
+import { useRouteStore } from '@/store/modules/route'
+import { useThemeStore } from '@/store/modules/theme'
+import { useBoolean } from '@sa/hooks'
+import { SimpleScrollbar } from '@sa/materials'
+import { useMixMenuContext } from '../../../context'
+import GlobalLogo from '../../global-logo/index.vue'
+import FirstLevelMenu from '../components/first-level-menu.vue'
 
 defineOptions({
   name: 'VerticalMenuMix',

@@ -1,9 +1,9 @@
-import type { GlobalThemeOverrides } from 'naive-ui'
-import { addColorAlpha, getColorPalette, getPaletteColorByNumber, getRgb } from '@sa/color'
 import { overrideThemeSettings, themeSettings } from '@/theme/settings'
 import { themeVars } from '@/theme/vars'
 import { toggleHtmlClass } from '@/utils/common'
 import { localStg } from '@/utils/storage'
+import { addColorAlpha, getColorPalette, getPaletteColorByNumber, getRgb } from '@sa/color'
+import type { GlobalThemeOverrides } from 'naive-ui'
 
 const DARK_CLASS = 'dark'
 

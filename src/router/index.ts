@@ -1,13 +1,13 @@
-import type { App } from 'vue'
 import {
-  type RouterHistory,
   createMemoryHistory,
   createRouter,
   createWebHashHistory,
   createWebHistory,
+  type RouterHistory,
 } from 'vue-router'
-import { createBuiltinVueRoutes } from './routes/builtin'
+import type { App } from 'vue'
 import { createRouterGuard } from './guard'
+import { createBuiltinVueRoutes } from './routes/builtin'
 
 const { VITE_ROUTER_HISTORY_MODE = 'history', VITE_BASE_URL } = import.meta.env
 

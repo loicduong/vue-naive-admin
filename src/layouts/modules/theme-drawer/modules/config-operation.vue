@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Clipboard from 'clipboard'
 import { $t } from '@/locales'
 import { useThemeStore } from '@/store/modules/theme'
+import Clipboard from 'clipboard'
 
 defineOptions({
   name: 'ConfigOperation',

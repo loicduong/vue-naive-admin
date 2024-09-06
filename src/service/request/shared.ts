@@ -1,8 +1,8 @@
+import { useAuthStore } from '@/store/modules/auth'
+import { localStg } from '@/utils/storage'
 import type { AxiosRequestConfig } from 'axios'
 import { fetchRefreshToken } from '../api'
 import type { RequestInstanceState } from './type'
-import { useAuthStore } from '@/store/modules/auth'
-import { localStg } from '@/utils/storage'
 
 /**
  * refresh token

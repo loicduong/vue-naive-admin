@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { useSvgIcon } from '@/hooks/common/icon'
 import { $t } from '@/locales'
 import { useTabStore } from '@/store/modules/tab'
-import { useSvgIcon } from '@/hooks/common/icon'
 
 defineOptions({
   name: 'ContextMenu',

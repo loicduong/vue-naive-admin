@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { PageTabProps } from '../../types'
 import ChromeTabBg from './chrome-tab-bg.vue'
 import style from './index.module.css'
+import type { PageTabProps } from '../../types'
 
 defineOptions({
   name: 'ChromeTab',

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { $t } from '@/locales'
-import { useRouterPush } from '@/hooks/common/router'
-import { useFormRules, useNaiveForm } from '@/hooks/common/form'
 import { useCaptcha } from '@/hooks/business/captcha'
+import { useFormRules, useNaiveForm } from '@/hooks/common/form'
+import { useRouterPush } from '@/hooks/common/router'
+import { $t } from '@/locales'
 
 defineOptions({
   name: 'CodeLogin',

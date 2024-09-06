@@ -1,6 +1,6 @@
-import { h } from 'vue'
-import { NButton } from 'naive-ui'
 import { $t } from '@/locales'
+import { NButton } from 'naive-ui'
+import { h } from 'vue'
 
 export function setupAppVersionNotification() {
   const canAutoUpdateApp = import.meta.env.VITE_AUTOMATICALLY_DETECT_UPDATE === 'Y'

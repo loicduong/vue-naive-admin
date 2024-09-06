@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import SettingItem from '../components/setting-item.vue'
+import { themePageAnimationModeOptions, themeScrollModeOptions, themeTabModeOptions } from '@/constants/app'
 import { $t } from '@/locales'
 import { useThemeStore } from '@/store/modules/theme'
-import { themePageAnimationModeOptions, themeScrollModeOptions, themeTabModeOptions } from '@/constants/app'
 import { translateOptions } from '@/utils/common'
+import SettingItem from '../components/setting-item.vue'
 
 defineOptions({
   name: 'PageFun',

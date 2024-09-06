@@ -1,7 +1,7 @@
-import type { App } from 'vue'
-import { createI18n } from 'vue-i18n'
-import messages from './locale'
 import { localStg } from '@/utils/storage'
+import { createI18n } from 'vue-i18n'
+import type { App } from 'vue'
+import messages from './locale'
 
 const i18n = createI18n({
   locale: localStg.get('lang') || 'en-US',

@@ -1,15 +1,15 @@
 <script setup lang="ts">
+import { useAppStore } from '@/store/modules/app'
+import { useThemeStore } from '@/store/modules/theme'
 import { AdminLayout, LAYOUT_SCROLL_EL_ID } from '@sa/materials'
 import type { LayoutMode } from '@sa/materials'
+import { setupMixMenuContext } from '../context'
+import GlobalContent from '../modules/global-content/index.vue'
+import GlobalFooter from '../modules/global-footer/index.vue'
 import GlobalHeader from '../modules/global-header/index.vue'
 import GlobalSider from '../modules/global-sider/index.vue'
 import GlobalTab from '../modules/global-tab/index.vue'
-import GlobalContent from '../modules/global-content/index.vue'
-import GlobalFooter from '../modules/global-footer/index.vue'
 import ThemeDrawer from '../modules/theme-drawer/index.vue'
-import { setupMixMenuContext } from '../context'
-import { useThemeStore } from '@/store/modules/theme'
-import { useAppStore } from '@/store/modules/app'
 
 defineOptions({
   name: 'BaseLayout',

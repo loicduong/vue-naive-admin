@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { GLOBAL_HEADER_MENU_ID } from '@/constants/app'
-import { useRouteStore } from '@/store/modules/route'
 import { useRouterPush } from '@/hooks/common/router'
+import { useRouteStore } from '@/store/modules/route'
 
 defineOptions({
   name: 'HorizontalMenu',
