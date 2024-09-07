@@ -7,7 +7,7 @@ import { useRouteStore } from '@/store/modules/route'
 import { useThemeStore } from '@/store/modules/theme'
 import { useBoolean } from '@sa/hooks'
 import { SimpleScrollbar } from '@sa/materials'
-import { useMixMenuContext } from '../../../context'
+import { useMenu, useMixMenuContext } from '../../../context'
 import GlobalLogo from '../../global-logo/index.vue'
 import FirstLevelMenu from '../components/first-level-menu.vue'
 
@@ -29,6 +29,7 @@ const {
   getActiveFirstLevelMenuKey,
   //
 } = useMixMenuContext()
+const { selectedKey } = useMenu()
 
 const inverted = computed(() => !themeStore.darkMode && themeStore.sider.inverted)
 
@@ -54,15 +55,6 @@ function handleResetActiveMenu() {
     getActiveFirstLevelMenuKey()
   }
 }
-
-const selectedKey = computed(() => {
-  const { hideInMenu, activeMenu } = route.meta
-  const name = route.name as string
-
-  const routeName = (hideInMenu ? activeMenu : name) || name
-
-  return routeName
-})
 
 const expandedKeys = ref<string[]>([])
 

@@ -5,6 +5,7 @@ import { useAppStore } from '@/store/modules/app'
 import { useRouteStore } from '@/store/modules/route'
 import { useThemeStore } from '@/store/modules/theme'
 import { SimpleScrollbar } from '@sa/materials'
+import { useMenu } from '../../../context'
 
 defineOptions({
   name: 'VerticalMenu',
@@ -15,17 +16,9 @@ const appStore = useAppStore()
 const themeStore = useThemeStore()
 const routeStore = useRouteStore()
 const { routerPushByKeyWithMetaQuery } = useRouterPush()
+const { selectedKey } = useMenu()
 
 const inverted = computed(() => !themeStore.darkMode && themeStore.sider.inverted)
-
-const selectedKey = computed(() => {
-  const { hideInMenu, activeMenu } = route.meta
-  const name = route.name as string
-
-  const routeName = (hideInMenu ? activeMenu : name) || name
-
-  return routeName
-})
 
 const expandedKeys = ref<string[]>([])
 
