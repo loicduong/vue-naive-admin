@@ -3,27 +3,19 @@ import { GLOBAL_HEADER_MENU_ID, GLOBAL_SIDER_MENU_ID } from '@/constants/app'
 import { useRouterPush } from '@/hooks/common/router'
 import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
-import { useMixMenuContext } from '../../../context'
+import { useMenu, useMixMenuContext } from '../../../context'
 import FirstLevelMenu from '../components/first-level-menu.vue'
 
 defineOptions({
   name: 'HorizontalMixMenu',
 })
 
-const route = useRoute()
 const appStore = useAppStore()
 const themeStore = useThemeStore()
-const { allMenus, childLevelMenus, activeFirstLevelMenuKey, setActiveFirstLevelMenuKey } = useMixMenuContext()
 const { routerPushByKeyWithMetaQuery } = useRouterPush()
 
-const selectedKey = computed(() => {
-  const { hideInMenu, activeMenu } = route.meta
-  const name = route.name as string
-
-  const routeName = (hideInMenu ? activeMenu : name) || name
-
-  return routeName
-})
+const { allMenus, childLevelMenus, activeFirstLevelMenuKey, setActiveFirstLevelMenuKey } = useMixMenuContext()
+const { selectedKey } = useMenu()
 
 function handleSelectMixMenu(menu: App.Global.Menu) {
   setActiveFirstLevelMenuKey(menu.key)
