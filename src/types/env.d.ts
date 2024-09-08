@@ -78,7 +78,7 @@ declare namespace Env {
      * - Dynamic: the auth routes is generated in back-end
      */
     readonly VITE_AUTH_ROUTE_MODE: 'static' | 'dynamic'
-    /** Whether to enable authentication */
+    /** Whether to enable authentication, commonly used for demo projects */
     readonly VITE_AUTH_ROUTE_VISIBLE?: CommonType.YesOrNo
     /**
      * The home route key
