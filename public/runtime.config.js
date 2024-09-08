@@ -1,3 +1,5 @@
 window.config = {
   VITE_BUILD_PREFIX: '',
+  VITE_SERVICE_BASE_URL: '',
+  VITE_OTHER_SERVICE_BASE_URL: '',
 }

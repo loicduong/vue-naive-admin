@@ -221,7 +221,7 @@ const local: App.I18n.Schema = {
       projectNews: {
         title: 'Project News',
         moreNews: 'More News',
-        desc1: 'Loic Duong created the open source project vue-naive-admin on May 28, 2021!',
+        desc1: 'Loic Duong created the open source project vue-naive-admin on May 28, 2024!',
         desc2: 'Loic Duong submitted a bug to vue-naive-admin, the multi-tab bar will not adapt.',
         desc3: 'Loic Duong is ready to do sufficient preparation for the release of vue-naive-admin!',
         desc4: 'Loic Duong is busy writing project documentation for vue-naive-admin!',
