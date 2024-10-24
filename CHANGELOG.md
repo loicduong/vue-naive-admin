@@ -1,6 +1,53 @@
 # Changelog
 
 
+## [v0.0.2](https://github.com/dploc96/vue-naive-admin/compare/v0.0.1...v0.0.2) (2024-10-24)
+
+### &nbsp;&nbsp;&nbsp;🚨 Breaking Changes
+
+- **projects**: update scss config &nbsp;-&nbsp; by @loicduong [<samp>(7dbc7)</samp>](https://github.com/dploc96/vue-naive-admin/commit/7dbc786)
+
+### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
+
+- move json5 from devDependencies to dependencies to support production usage &nbsp;-&nbsp; by **loicduong** [<samp>(7e412)</samp>](https://github.com/dploc96/vue-naive-admin/commit/7e41204)
+- **components**:
+  - fix VerticalMixMenu name &nbsp;-&nbsp; by @loicduong [<samp>(825e6)</samp>](https://github.com/dploc96/vue-naive-admin/commit/825e668)
+- **projects**:
+  - fix click global-tab in iPad &nbsp;-&nbsp; by @loicduong [<samp>(3fbf6)</samp>](https://github.com/dploc96/vue-naive-admin/commit/3fbf605)
+  - when the roles filter submenu is empty, the parent menu is not excluded &nbsp;-&nbsp; by @loicduong [<samp>(d39af)</samp>](https://github.com/dploc96/vue-naive-admin/commit/d39afca)
+  - fix global-tab click conflict with contextmenu &nbsp;-&nbsp; by @loicduong [<samp>(b0be6)</samp>](https://github.com/dploc96/vue-naive-admin/commit/b0be6e1)
+
+### &nbsp;&nbsp;&nbsp;🛠 Optimizations
+
+- **projects**:
+  - optimize code &nbsp;-&nbsp; by @loicduong [<samp>(967d4)</samp>](https://github.com/dploc96/vue-naive-admin/commit/967d46c)
+  - remove defineModel setting，enabled by default &nbsp;-&nbsp; by @loicduong [<samp>(267ab)</samp>](https://github.com/dploc96/vue-naive-admin/commit/267abf2)
+
+### &nbsp;&nbsp;&nbsp;💅 Refactors
+
+- **packages**: @sa/materials: remove tab close shortcut by mouse &nbsp;-&nbsp; by @loicduong [<samp>(62a23)</samp>](https://github.com/dploc96/vue-naive-admin/commit/62a2359)
+
+### &nbsp;&nbsp;&nbsp;🏡 Chore
+
+- update env comment &nbsp;-&nbsp; by **loicduong** [<samp>(1150c)</samp>](https://github.com/dploc96/vue-naive-admin/commit/1150c73)
+- **deps**:
+  - update deps &nbsp;-&nbsp; by @loicduong [<samp>(02ac3)</samp>](https://github.com/dploc96/vue-naive-admin/commit/02ac37b)
+  - update deps &nbsp;-&nbsp; by **loicduong** [<samp>(48883)</samp>](https://github.com/dploc96/vue-naive-admin/commit/48883dc)
+- **project**:
+  - update commitlint rules &nbsp;-&nbsp; by **loicduong** [<samp>(b3449)</samp>](https://github.com/dploc96/vue-naive-admin/commit/b34490d)
+- **projects**:
+  - rename github account &nbsp;-&nbsp; by **loicduong** [<samp>(7dfc6)</samp>](https://github.com/dploc96/vue-naive-admin/commit/7dfc611)
+  - use commitlint to check commit &nbsp;-&nbsp; by **loicduong** [<samp>(87c10)</samp>](https://github.com/dploc96/vue-naive-admin/commit/87c1056)
+
+### &nbsp;&nbsp;&nbsp;🎨 Styles
+
+- **projects**: format code &nbsp;-&nbsp; by **loicduong** [<samp>(9408e)</samp>](https://github.com/dploc96/vue-naive-admin/commit/9408e53)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![loicduong](https://github.com/loicduong.png?size=48)](https://github.com/loicduong)&nbsp;&nbsp;
+[loicduong](mailto:mikhailcolt@gmail.com),&nbsp;
+
 ## [v0.0.1](https://github.com/loicduong/vue-naive-admin/compare/undefined...v0.0.1) (2024-09-08)
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
