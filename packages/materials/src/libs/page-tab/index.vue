@@ -53,22 +53,14 @@ const bindProps = computed(() => {
 function handleClose() {
   emit('close')
 }
-
-function handleMouseup(e: MouseEvent) {
-  // close tab by mouse wheel button click
-  if (e.button === 1) {
-    handleClose()
-  }
-}
 </script>
 
 <template>
-  <component
-    :is="activeTabComponent.component"
-    :class="activeTabComponent.class"
-    :style="cssVars"
+  <component 
+    :is="activeTabComponent.component" 
+    :class="activeTabComponent.class" 
+    :style="cssVars" 
     v-bind="bindProps"
-    @mouseup="handleMouseup"
   >
     <template #prefix>
       <slot name="prefix" />
