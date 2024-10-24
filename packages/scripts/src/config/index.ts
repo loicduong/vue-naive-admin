@@ -14,16 +14,6 @@ const defaultOptions: CliOption = {
   ],
   ncuCommandArgs: ['--deep', '-u'],
   changelogOptions: {},
-  gitCommitVerifyIgnores: [
-    /^((Merge pull request)|(Merge (.*?) into (.*?)|(Merge branch (.*?)))(?:\r?\n)*$)/m,
-    /^(Merge tag (.*?))(?:\r?\n)*$/m,
-    /^(R|r)evert (.*)/,
-    /^(amend|fixup|squash)!/,
-    /^(Merged (.*?)(in|into) (.*)|Merged PR (.*): (.*))/,
-    /^Merge remote-tracking branch(\s*)(.*)/,
-    /^Automatic merge(.*)/,
-    /^Auto-merged (.*?) into (.*)/,
-  ],
 }
 
 export async function loadCliOptions(overrides?: Partial<CliOption>, cwd = process.cwd()) {

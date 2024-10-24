@@ -26,6 +26,4 @@ export interface CliOption {
    * @link https://github.com/soybeanjs/changelog
    */
   changelogOptions: Partial<ChangelogOption>
-  /** The ignore pattern list of git commit verify */
-  gitCommitVerifyIgnores: RegExp[]
 }

@@ -32,7 +32,7 @@
     "build:dev": "vite build --mode development",
     "build:tst": "vite build --mode testing",
     "cleanup": "sa cleanup",
-    "commit": "sa git-commit",
+    "commit": "commitlint --edit",
     "dev": "vite",
     "dev:prd": "vite --mode production",
     "dev:tst": "vite --mode testing",
@@ -103,7 +103,7 @@
     "vue-tsc": "2.1.6"
   },
   "simple-git-hooks": {
-    "commit-msg": "pnpm sa git-commit-verify",
+    "commit-msg": "pnpm commit",
     "pre-commit": "pnpm typecheck && pnpm lint-staged"
   },
   "lint-staged": {
