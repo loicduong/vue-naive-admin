@@ -1,6 +1,6 @@
+import type { CliOption } from '../types'
 import process from 'node:process'
 import { loadConfig } from 'c12'
-import type { CliOption } from '../types'
 
 const defaultOptions: CliOption = {
   cwd: process.cwd(),

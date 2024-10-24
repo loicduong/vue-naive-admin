@@ -1,9 +1,9 @@
+import type { Lang } from './locales'
 import cac from 'cac'
 import { blue, lightGreen } from 'kolorist'
 import { version } from '../package.json'
 import { cleanup, genChangelog, generateRoute, gitCommit, gitCommitVerify, release, updatePkg } from './commands'
 import { loadCliOptions } from './config'
-import type { Lang } from './locales'
 
 type Command = 'cleanup' | 'update-pkg' | 'git-commit' | 'git-commit-verify' | 'changelog' | 'release' | 'gen-route'
 

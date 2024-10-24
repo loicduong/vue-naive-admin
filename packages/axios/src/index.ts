@@ -1,9 +1,4 @@
-import { nanoid } from '@sa/utils'
-import axios, { AxiosError } from 'axios'
-import axiosRetry from 'axios-retry'
 import type { AxiosResponse, CreateAxiosDefaults, InternalAxiosRequestConfig } from 'axios'
-import { BACKEND_ERROR_CODE, REQUEST_ID_KEY } from './constant'
-import { createAxiosConfig, createDefaultOptions, createRetryOptions } from './options'
 import type {
   CustomAxiosRequestConfig,
   FlatRequestInstance,
@@ -12,6 +7,11 @@ import type {
   RequestOption,
   ResponseType,
 } from './type'
+import { nanoid } from '@sa/utils'
+import axios, { AxiosError } from 'axios'
+import axiosRetry from 'axios-retry'
+import { BACKEND_ERROR_CODE, REQUEST_ID_KEY } from './constant'
+import { createAxiosConfig, createDefaultOptions, createRetryOptions } from './options'
 
 function createCommonRequest<ResponseData = any>(
   axiosConfig?: CreateAxiosDefaults,

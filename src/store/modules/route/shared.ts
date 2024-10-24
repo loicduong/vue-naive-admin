@@ -1,7 +1,7 @@
-import { useSvgIcon } from '@/hooks/common/icon'
-import { $t } from '@/locales'
 import type { ElegantConstRoute, LastLevelRouteKey, RouteKey, RouteMap } from '@elegant-router/types'
 import type { RouteLocationNormalizedLoaded, RouteRecordRaw } from 'vue-router'
+import { useSvgIcon } from '@/hooks/common/icon'
+import { $t } from '@/locales'
 
 /**
  * Filter auth routes by roles
@@ -36,7 +36,7 @@ function filterAuthRouteByRoles(route: ElegantConstRoute, roles: string[]): Eleg
 
   // Exclude the route if it has no children after filtering
   if (filterRoute.children?.length === 0) {
-    return [];
+    return []
   }
 
   return hasPermission || isEmptyRoles ? [filterRoute] : []
@@ -288,7 +288,7 @@ export function getBreadcrumbsByRoute(
 
   for (const menu of menus) {
     if (menu.key === key) {
-      return [transformMenuToBreadcrumb(menu)];
+      return [transformMenuToBreadcrumb(menu)]
     }
 
     if (menu.children?.length) {

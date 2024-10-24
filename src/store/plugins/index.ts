@@ -1,6 +1,6 @@
+import type { PiniaPluginContext } from 'pinia'
 import { SetupStoreId } from '@/constants/enum'
 import { jsonClone } from '@sa/utils'
-import type { PiniaPluginContext } from 'pinia'
 
 /**
  * The plugin reset the state of the store which is written by setup syntax

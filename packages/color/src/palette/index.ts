@@ -1,8 +1,8 @@
 import type { AnyColor } from 'colord'
+import type { ColorPaletteNumber } from '../types'
 import { getHex } from '../shared'
 import { getAntDColorPalette } from './antd'
 import { getRecommendedColorPalette } from './recommend'
-import type { ColorPaletteNumber } from '../types'
 
 /**
  * get color palette by provided color

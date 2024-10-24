@@ -1,4 +1,3 @@
-import { computed, ref, shallowRef, triggerRef } from 'vue'
 import type {
   ComputedGetter,
   DebuggerOptions,
@@ -7,6 +6,7 @@ import type {
   WritableComputedOptions,
   WritableComputedRef,
 } from 'vue'
+import { computed, ref, shallowRef, triggerRef } from 'vue'
 
 type Updater<T> = (value: T) => T
 type Mutator<T> = (value: T) => void

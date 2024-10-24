@@ -1,5 +1,3 @@
-import { createFlatRequest } from '@sa/axios'
-import { ref } from 'vue'
 import type {
   AxiosError,
   CreateAxiosDefaults,
@@ -9,6 +7,8 @@ import type {
   ResponseType,
 } from '@sa/axios'
 import type { Ref } from 'vue'
+import { createFlatRequest } from '@sa/axios'
+import { ref } from 'vue'
 import useLoading from './use-loading'
 
 export interface HookRequestInstanceResponseSuccessData<T = any> {

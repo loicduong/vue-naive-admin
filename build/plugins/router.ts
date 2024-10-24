@@ -1,6 +1,6 @@
-import ElegantVueRouter from '@elegant-router/vue/vite'
 import type { RouteKey } from '@elegant-router/types'
 import type { RouteMeta } from 'vue-router'
+import ElegantVueRouter from '@elegant-router/vue/vite'
 
 export function setupElegantRouter() {
   return ElegantVueRouter({

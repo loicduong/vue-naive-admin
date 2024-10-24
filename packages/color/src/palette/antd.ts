@@ -1,6 +1,6 @@
 import type { AnyColor, HsvColor } from 'colord'
-import { getHex, getHsv, isValidColor, mixColor } from '../shared'
 import type { ColorIndex } from '../types'
+import { getHex, getHsv, isValidColor, mixColor } from '../shared'
 
 /** Hue step */
 const hueStep = 2

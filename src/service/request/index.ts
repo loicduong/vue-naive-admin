@@ -1,11 +1,11 @@
+import type { AxiosResponse } from 'axios'
+import type { RequestInstanceState } from './type'
 import { $t } from '@/locales'
 import { useAuthStore } from '@/store/modules/auth'
 import { getServiceBaseURL } from '@/utils/service'
 import { localStg } from '@/utils/storage'
 import { BACKEND_ERROR_CODE, createFlatRequest, createRequest } from '@sa/axios'
-import type { AxiosResponse } from 'axios'
 import { getAuthorization, handleExpiredRequest, showErrorMsg } from './shared'
-import type { RequestInstanceState } from './type'
 
 const isHttpProxy = import.meta.env.DEV && import.meta.env.VITE_HTTP_PROXY === 'Y'
 const { baseURL, otherBaseURL } = getServiceBaseURL(import.meta.env, isHttpProxy)

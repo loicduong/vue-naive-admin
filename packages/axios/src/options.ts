@@ -1,8 +1,8 @@
-import { stringify } from 'qs'
 import type { CreateAxiosDefaults } from 'axios'
 import type { IAxiosRetryConfig } from 'axios-retry'
-import { isHttpSuccess } from './shared'
 import type { RequestOption } from './type'
+import { stringify } from 'qs'
+import { isHttpSuccess } from './shared'
 
 export function createDefaultOptions<ResponseData = any>(options?: Partial<RequestOption<ResponseData>>) {
   const opts: RequestOption<ResponseData> = {

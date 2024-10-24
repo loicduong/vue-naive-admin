@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import BScroll from '@better-scroll/core'
 import type { Options } from '@better-scroll/core'
+import BScroll from '@better-scroll/core'
 
 defineOptions({ name: 'BetterScroll' })
 

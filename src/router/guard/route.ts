@@ -1,7 +1,3 @@
-import { getRouteName } from '@/router/elegant/transform'
-import { useAuthStore } from '@/store/modules/auth'
-import { useRouteStore } from '@/store/modules/route'
-import { localStg } from '@/utils/storage'
 import type { RouteKey, RoutePath } from '@elegant-router/types'
 import type {
   LocationQueryRaw,
@@ -10,6 +6,10 @@ import type {
   RouteLocationRaw,
   Router,
 } from 'vue-router'
+import { getRouteName } from '@/router/elegant/transform'
+import { useAuthStore } from '@/store/modules/auth'
+import { useRouteStore } from '@/store/modules/route'
+import { localStg } from '@/utils/storage'
 
 /**
  * create route guard

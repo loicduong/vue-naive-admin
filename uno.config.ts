@@ -1,8 +1,8 @@
+import type { Theme } from '@unocss/preset-uno'
 import presetUno from '@unocss/preset-uno'
 import transformerDirectives from '@unocss/transformer-directives'
 import transformerVariantGroup from '@unocss/transformer-variant-group'
 import { defineConfig } from '@unocss/vite'
-import type { Theme } from '@unocss/preset-uno'
 import { themeVars } from './src/theme/vars'
 
 export default defineConfig<Theme>({

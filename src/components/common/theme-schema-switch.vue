@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { $t } from '@/locales'
 import type { PopoverPlacement } from 'naive-ui'
+import { $t } from '@/locales'
 
 defineOptions({ name: 'ThemeSchemaSwitch' })
 

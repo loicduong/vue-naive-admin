@@ -1,10 +1,10 @@
+import type { RouteKey } from '@elegant-router/types'
 import { SetupStoreId } from '@/constants/enum'
 import { useRouterPush } from '@/hooks/common/router'
 import { router } from '@/router'
 import { useRouteStore } from '@/store/modules/route'
 import { localStg } from '@/utils/storage'
 import { defineStore } from 'pinia'
-import type { RouteKey } from '@elegant-router/types'
 import { useThemeStore } from '../theme'
 import {
   extractTabsByAllRoutes,
