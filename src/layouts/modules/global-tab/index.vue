@@ -166,7 +166,7 @@ init()
     <div ref="bsWrapper" class="h-full flex-1-hidden">
       <BetterScroll
         ref="bsScroll"
-        :options="{ scrollX: true, scrollY: false, click: appStore.isMobile }"
+        :options="{ scrollX: true, scrollY: false, click: true }"
         @click="removeFocus"
       >
         <div
