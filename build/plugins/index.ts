@@ -10,11 +10,7 @@ import { setupUnplugin } from './unplugin'
 
 export function setupVitePlugins(viteEnv: Env.ImportMeta, buildTime: string, buildVersion: string) {
   const plugins: PluginOption = [
-    vue({
-      script: {
-        defineModel: true,
-      },
-    }),
+    vue(),
     vueJsx(),
     VueDevtools(),
     setupElegantRouter(),
