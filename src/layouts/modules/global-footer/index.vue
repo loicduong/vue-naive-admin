@@ -6,7 +6,7 @@ defineOptions({
 
 <template>
   <DarkModeContainer class="h-full flex-center">
-    <a href="https://github.com/dploc96/vue-naive-admin/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/loicduong/vue-naive-admin/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">
       Copyright MIT © 2024 Loic Duong
     </a>
   </DarkModeContainer>

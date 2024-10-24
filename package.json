@@ -6,15 +6,15 @@
   "author": {
     "name": "Loic Duong",
     "email": "dploc96@gmail.com",
-    "url": "https://github.com/dploc96"
+    "url": "https://github.com/loicduong"
   },
   "license": "MIT",
-  "homepage": "https://github.com/dploc96/vue-naive-admin",
+  "homepage": "https://github.com/loicduong/vue-naive-admin",
   "repository": {
-    "url": "https://github.com/dploc96/vue-naive-admin.git"
+    "url": "https://github.com/loicduong/vue-naive-admin.git"
   },
   "bugs": {
-    "url": "https://github.com/dploc96/vue-naive-admin/issues"
+    "url": "https://github.com/loicduong/vue-naive-admin/issues"
   },
   "keywords": [
     "vue 3",

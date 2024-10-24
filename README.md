@@ -7,7 +7,7 @@
 
 ## Introduction
 
-[`VueNaiveAdmin`](https://github.com/dploc96/vue-naive-admin) is a clean, elegant, beautiful and powerful admin template, based on the latest front-end technology stack, including Vue3, Vite5, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on ApiFox. `VueNaiveAdmin` provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly.
+[`VueNaiveAdmin`](https://github.com/loicduong/vue-naive-admin) is a clean, elegant, beautiful and powerful admin template, based on the latest front-end technology stack, including Vue3, Vite5, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on ApiFox. `VueNaiveAdmin` provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly.
 
 ## Features
 
@@ -38,7 +38,7 @@ Make sure your environment meets the following requirements:
 ### Clone Project
 
 ```bash
-git clone https://github.com/dploc96/vue-naive-admin.git
+git clone https://github.com/loicduong/vue-naive-admin.git
 ```
 
 ### Install Dependencies
@@ -63,7 +63,7 @@ pnpm build
 
 ## How to Contribute
 
-We warmly welcome and appreciate all forms of contributions. If you have any ideas or suggestions, please feel free to share them by submitting [pull requests](https://github.com/dploc96/vue-naive-admin/pulls) or creating GitHub [issue](https://github.com/dploc96/vue-naive-admin/issues/new).
+We warmly welcome and appreciate all forms of contributions. If you have any ideas or suggestions, please feel free to share them by submitting [pull requests](https://github.com/loicduong/vue-naive-admin/pulls) or creating GitHub [issue](https://github.com/loicduong/vue-naive-admin/issues/new).
 
 ## Git Commit Guidelines
 
@@ -79,7 +79,7 @@ It is recommended to use the latest version of Chrome in development for a bette
 
 ## OpenSource Author
 
-[Loic Duong](https://github.com/dploc96)
+[Loic Duong](https://github.com/loicduong)
 
 ## License
 
