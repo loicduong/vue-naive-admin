@@ -16,14 +16,6 @@ declare global {
     config?: Record<Env.Runtime, unknown>
   }
 
-  interface ViewTransition {
-    ready: Promise<void>
-  }
-
-  export interface Document {
-    startViewTransition?: (callback: () => Promise<void> | void) => ViewTransition
-  }
-
   /** Build time of the project */
   export const BUILD_TIME: string
 
