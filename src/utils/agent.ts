@@ -1,4 +1,4 @@
-export function isPC() {
+export function isMobile() {
   const agents = [
     'Android',
     'iPhone',
@@ -9,5 +9,8 @@ export function isPC() {
     'iPad',
     'iPod',
   ]
-  return !agents.includes(window.navigator.userAgent)
+
+  return agents.some(agent => window.navigator.userAgent.includes(agent))
 }
+
+export const isPC = () => !isMobile()
