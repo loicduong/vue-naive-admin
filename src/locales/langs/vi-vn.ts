@@ -141,6 +141,11 @@ const local: App.I18n.Schema = {
     },
     themeDrawerTitle: 'Cấu hình chủ đề',
     pageFunTitle: 'Chức năng trang',
+    resetCacheStrategy: {
+      title: 'Chiến lược đặt lại cache',
+      close: 'Đóng trang',
+      refresh: 'Làm mới trang',
+    },
     configOperation: {
       copyConfig: 'Sao chép cấu hình',
       copySuccessMsg: 'Sao chép thành công, vui lòng thay thế biến themeSettings trong src/theme/settings.ts',

@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { themePageAnimationModeOptions, themeScrollModeOptions, themeTabModeOptions } from '@/constants/app'
+import {
+  resetCacheStrategyOptions,
+  themePageAnimationModeOptions,
+  themeScrollModeOptions,
+  themeTabModeOptions,
+} from '@/constants/app'
 import { $t } from '@/locales'
 import { useThemeStore } from '@/store/modules/theme'
 import { translateOptions } from '@/utils/common'
@@ -21,6 +26,14 @@ const isWrapperScrollMode = computed(() => themeStore.layout.scrollMode === 'wra
 <template>
   <NDivider>{{ $t('theme.pageFunTitle') }}</NDivider>
   <TransitionGroup tag="div" name="setting-list" class="flex-col-stretch gap-12px">
+    <SettingItem key="0" :label="$t('theme.resetCacheStrategy.title')">
+      <NSelect
+        v-model:value="themeStore.resetCacheStrategy"
+        :options="translateOptions(resetCacheStrategyOptions)"
+        size="small"
+        class="w-120px"
+      />
+    </SettingItem>
     <SettingItem key="1" :label="$t('theme.scrollMode.title')">
       <NSelect
         v-model:value="themeStore.layout.scrollMode"

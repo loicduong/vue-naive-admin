@@ -45,6 +45,10 @@ export const useAppStore = defineStore(SetupStoreId.App, () => {
     })
 
     setReloadFlag(true)
+
+    if (themeStore.resetCacheStrategy === 'refresh') {
+      routeStore.resetRouteCache()
+    }
   }
 
   const locale = ref<App.I18n.LangType>(localStg.get('lang') || 'en-US')
