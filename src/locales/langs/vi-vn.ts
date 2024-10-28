@@ -113,7 +113,7 @@ const local: App.I18n.Schema = {
     },
     tab: {
       visible: 'Hiển thị tab',
-      cache: 'Lưu trữ trang tab',
+      cache: 'Lưu trữ thông tin tab',
       height: 'Chiều cao tab',
       mode: {
         title: 'Kiểu tab',
