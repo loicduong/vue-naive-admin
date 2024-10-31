@@ -23,7 +23,7 @@ export default defineConfig((configEnv) => {
       preprocessorOptions: {
         scss: {
           api: 'modern-compiler',
-          additionalData: `@use "@/assets/scss/global.scss" as *;`,
+          additionalData: '@use "@/assets/scss/global.scss" as *;',
         },
       },
     },
