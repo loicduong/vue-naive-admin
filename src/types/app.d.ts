@@ -470,6 +470,19 @@ declare namespace App {
           }
           creativity: string
         }
+        about: {
+          title: string
+          introduction: string
+          projectInfo: {
+            title: string
+            version: string
+            latestBuildTime: string
+            githubLink: string
+            previewLink: string
+          }
+          prdDep: string
+          devDep: string
+        }
       }
       form: {
         required: string

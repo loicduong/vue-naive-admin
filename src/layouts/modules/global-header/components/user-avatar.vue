@@ -16,7 +16,7 @@ function loginOrRegister() {
   toLogin()
 }
 
-type DropdownKey = 'logout'
+type DropdownKey = '/user-center' | 'logout'
 
 type DropdownOption =
   | {
@@ -31,6 +31,15 @@ type DropdownOption =
 
 const options = computed(() => {
   const opts: DropdownOption[] = [
+    {
+      label: $t('common.userCenter'),
+      key: '/user-center',
+      icon: SvgIconVNode({ icon: 'ph:user-circle', fontSize: 18 }),
+    },
+    {
+      type: 'divider',
+      key: 'divider',
+    },
     {
       label: $t('common.logout'),
       key: 'logout',
@@ -59,7 +68,7 @@ function handleDropdown(key: DropdownKey) {
   }
   else {
     // If your other options are jumps from other routes, they will be directly supported here
-    routerPushByKey(key)
+    routerPushByKey(key as App.Global.RouteKey)
   }
 }
 </script>

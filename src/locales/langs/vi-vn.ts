@@ -160,6 +160,8 @@ const local: App.I18n.Schema = {
     '/500': 'Lỗi máy chủ',
     '/iframe-page.[url]': 'Trang ngoài',
     '/home': 'Trang chủ',
+    '/about': 'Giới thiệu',
+    '/user-center': 'Trung tâm người dùng',
   },
   page: {
     login: {
@@ -233,6 +235,19 @@ const local: App.I18n.Schema = {
         desc5: 'Loic Duong vừa viết một số nội dung tạm thời cho trang bàn làm việc của vue-naive-admin!',
       },
       creativity: 'Sáng tạo',
+    },
+    about: {
+      title: 'Giới thiệu',
+      introduction: `SoybeanAdmin là một mẫu quản trị thanh lịch và mạnh mẽ, dựa trên công nghệ front-end mới nhất, bao gồm Vue3, Vite5, TypeScript, Pinia và UnoCSS. Nó có cấu hình chủ đề phong phú và các thành phần tích hợp sẵn, các quy định mã nghiêm ngặt và một hệ thống định tuyến tệp tự động. Ngoài ra, nó cũng sử dụng giải pháp dữ liệu giả trực tuyến dựa trên ApiFox. SoybeanAdmin cung cấp cho bạn một giải pháp quản trị một điểm dừng, không cần cấu hình thêm, và sẵn sàng sử dụng. Nó cũng là một phương pháp tốt nhất để học các công nghệ tiên tiến nhanh chóng.`,
+      projectInfo: {
+        title: 'Thông tin dự án',
+        version: 'Phiên bản',
+        latestBuildTime: 'Thời gian xây dựng mới nhất',
+        githubLink: 'Liên kết Github',
+        previewLink: 'Liên kết xem trước',
+      },
+      prdDep: 'Phụ thuộc sản xuất',
+      devDep: 'Phụ thuộc phát triển',
     },
   },
   form: {
