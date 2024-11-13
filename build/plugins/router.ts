@@ -1,42 +1,79 @@
-import type { RouteKey } from '@elegant-router/types'
 import type { RouteMeta } from 'vue-router'
-import ElegantVueRouter from '@elegant-router/vue/vite'
+import vueRouter from 'unplugin-vue-router/vite'
+import layouts from 'vite-plugin-vue-layouts'
 
-export function setupElegantRouter() {
-  return ElegantVueRouter({
-    dtsDir: 'src/types/elegant-router.d.ts',
-    layouts: {
-      base: 'src/layouts/base-layout/index.vue',
-      blank: 'src/layouts/blank-layout/index.vue',
-    },
-    routePathTransformer(routeName, routePath) {
-      const key = routeName as RouteKey
+export function setupRouter() {
+  return [
+    vueRouter({
+      dts: 'src/types/typed-router.d.ts',
+      routesFolder: 'src/views',
+      exclude: ['**/components', '**/modules', '**/_builtin'],
+      extendRoute(route) {
+        const key = route.name
 
-      if (key === 'login') {
-        const modules: UnionKey.LoginModule[] = ['pwd-login', 'code-login', 'register', 'reset-pwd']
+        const constantRoutes = ['login', '403', '404', '500']
 
-        const moduleReg = modules.join('|')
+        const meta: Partial<RouteMeta> = {
+          title: key,
+          i18nKey: `route.${key}` as App.I18n.I18nKey,
+        }
 
-        return `/login/:module(${moduleReg})?`
-      }
+        if (constantRoutes.includes(key)) {
+          meta.constant = true
+        }
 
-      return routePath
-    },
-    onRouteMetaGen(routeName) {
-      const key = routeName as RouteKey
+        route.addToMeta(meta)
 
-      const constantRoutes: RouteKey[] = ['login', '403', '404', '500']
+        if (key === 'login') {
+          const modules: UnionKey.LoginModule[] = ['pwd-login', 'code-login', 'register', 'reset-pwd']
 
-      const meta: Partial<RouteMeta> = {
-        title: key,
-        i18nKey: `route.${key}` as App.I18n.I18nKey,
-      }
+          const moduleReg = modules.join('|')
 
-      if (constantRoutes.includes(key)) {
-        meta.constant = true
-      }
-
-      return meta
-    },
-  })
+          route.path = `/login/:module(${moduleReg})?`
+        }
+      },
+    }),
+    layouts({
+      pagesDirs: 'src/views',
+    }),
+  ]
 }
+
+// export function setupElegantRouter() {
+//   return ElegantVueRouter({
+//     dtsDir: 'src/types/elegant-router.d.ts',
+//     layouts: {
+//       base: 'src/layouts/base-layout/index.vue',
+//       blank: 'src/layouts/blank-layout/index.vue',
+//     },
+//     routePathTransformer(routeName, routePath) {
+//       const key = routeName as RouteKey
+
+//       if (key === 'login') {
+//         const modules: UnionKey.LoginModule[] = ['pwd-login', 'code-login', 'register', 'reset-pwd']
+
+//         const moduleReg = modules.join('|')
+
+//         return `/login/:module(${moduleReg})?`
+//       }
+
+//       return routePath
+//     },
+//     onRouteMetaGen(routeName) {
+//       const key = routeName as RouteKey
+
+//       const constantRoutes: RouteKey[] = ['login', '403', '404', '500']
+
+//       const meta: Partial<RouteMeta> = {
+//         title: key,
+//         i18nKey: `route.${key}` as App.I18n.I18nKey,
+//       }
+
+//       if (constantRoutes.includes(key)) {
+//         meta.constant = true
+//       }
+
+//       return meta
+//     },
+//   })
+// }

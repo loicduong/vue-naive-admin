@@ -71,13 +71,6 @@ declare namespace Env {
      * Only valid in the development environment
      */
     readonly VITE_HTTP_PROXY?: CommonType.YesOrNo
-    /**
-     * The auth route mode
-     *
-     * - Static: the auth routes is generated in front-end
-     * - Dynamic: the auth routes is generated in back-end
-     */
-    readonly VITE_AUTH_ROUTE_MODE: 'static' | 'dynamic'
     /** Whether to enable authentication, commonly used for demo projects */
     readonly VITE_AUTH_ROUTE_VISIBLE?: CommonType.YesOrNo
     /**

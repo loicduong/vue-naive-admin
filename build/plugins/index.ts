@@ -4,16 +4,16 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import progress from 'vite-plugin-progress'
 import VueDevtools from 'vite-plugin-vue-devtools'
 import { setupHtmlPlugin } from './html'
-import { setupElegantRouter } from './router'
+import { setupRouter } from './router'
 import { setupUnocss } from './unocss'
 import { setupUnplugin } from './unplugin'
 
 export function setupVitePlugins(viteEnv: Env.ImportMeta, buildTime: string, buildVersion: string) {
   const plugins: PluginOption = [
+    ...setupRouter(),
     vue(),
     vueJsx(),
     VueDevtools(),
-    setupElegantRouter(),
     setupUnocss(viteEnv),
     ...setupUnplugin(viteEnv),
     progress(),

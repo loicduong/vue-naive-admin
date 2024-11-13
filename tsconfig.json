@@ -12,7 +12,14 @@
       "~/*": ["./*"]
     },
     "resolveJsonModule": true,
-    "types": ["vite/client", "node", "unplugin-icons/types/vue", "naive-ui/volar"],
+    "types": [
+      "vite/client",
+      "node",
+      "unplugin-icons/types/vue",
+      "naive-ui/volar",
+      "unplugin-vue-router/client",
+      "vite-plugin-vue-layouts/client"
+    ],
     "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": false,

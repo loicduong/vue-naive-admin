@@ -15,10 +15,10 @@ export const layouts: Record<RouteLayout, RouteComponent | (() => Promise<RouteC
 };
 
 export const views: Record<LastLevelRouteKey, RouteComponent | (() => Promise<RouteComponent>)> = {
-  403: () => import("@/views/_builtin/403/index.vue"),
-  404: () => import("@/views/_builtin/404/index.vue"),
-  500: () => import("@/views/_builtin/500/index.vue"),
-  "iframe-page": () => import("@/views/_builtin/iframe-page/[url].vue"),
-  login: () => import("@/views/_builtin/login/index.vue"),
-  home: () => import("@/views/home/index.vue"),
+  403: () => import('@/views/403.vue'),
+  404: () => import('@/views/404.vue'),
+  500: () => import('@/views/500.vue'),
+  'iframe-page': () => import('@/views/iframe-page.[url].vue'),
+  login: () => import('@/views/login.vue'),
+  home: () => import('@/views/home.vue'),
 };

@@ -165,9 +165,9 @@ declare namespace App {
   namespace Global {
     type VNode = import('vue').VNode
     type RouteLocationNormalizedLoaded = import('vue-router').RouteLocationNormalizedLoaded
-    type RouteKey = import('@elegant-router/types').RouteKey
-    type RouteMap = import('@elegant-router/types').RouteMap
-    type RoutePath = import('@elegant-router/types').RoutePath
+    type RouteKey = keyof RouteMap
+    type RouteMap = import('vue-router/auto-routes').RouteNamedMap
+    type RoutePath = RouteMap[RouteKey]
     type LastLevelRouteKey = import('@elegant-router/types').LastLevelRouteKey
 
     /** The global header props */

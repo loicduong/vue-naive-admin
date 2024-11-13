@@ -1,18 +1,28 @@
 <script setup lang="ts">
+import CodeLogin from '@/components/modules/login/code-login.vue'
+import PwdLogin from '@/components/modules/login/pwd-login.vue'
+import Register from '@/components/modules/login/register.vue'
+import ResetPwd from '@/components/modules/login/reset-pwd.vue'
 import { loginModuleRecord } from '@/constants/app'
 import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
 import { getPaletteColorByNumber, mixColor } from '@sa/color'
-import CodeLogin from './modules/code-login.vue'
-import PwdLogin from './modules/pwd-login.vue'
-import Register from './modules/register.vue'
-import ResetPwd from './modules/reset-pwd.vue'
 
 interface Props {
   /** The login module */
   module?: UnionKey.LoginModule
 }
+
+definePage({
+  name: 'login',
+  meta: {
+    title: 'login',
+    hideInMenu: true,
+    layout: 'blank',
+  },
+  props: true,
+})
 
 const props = defineProps<Props>()
 
