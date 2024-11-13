@@ -35,7 +35,7 @@ const icon = computed(() => iconMap[props.type])
     <div class="flex text-400px text-primary">
       <SvgIcon :local-icon="icon" />
     </div>
-    <NButton type="primary" @click="routerPushByKey('root')">
+    <NButton type="primary" @click="routerPushByKey('/')">
       {{ $t('common.backToHome') }}
     </NButton>
   </div>

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { RouteKey } from '@elegant-router/types'
 import { useRouterPush } from '@/hooks/common/router'
 import { useRouteStore } from '@/store/modules/route'
 import { useThemeStore } from '@/store/modules/theme'
@@ -18,7 +17,7 @@ interface BreadcrumbContentProps {
 
 const [DefineBreadcrumbContent, BreadcrumbContent] = createReusableTemplate<BreadcrumbContentProps>()
 
-function handleClickMenu(key: RouteKey) {
+function handleClickMenu(key: App.Global.RouteKey) {
   routerPushByKey(key)
 }
 </script>

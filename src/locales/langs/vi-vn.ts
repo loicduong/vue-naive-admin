@@ -154,12 +154,12 @@ const local: App.I18n.Schema = {
     },
   },
   route: {
-    'login': 'Đăng nhập',
-    '403': 'Không có quyền',
-    '404': 'Trang không tồn tại',
-    '500': 'Lỗi máy chủ',
-    'iframe-page': 'Trang ngoài',
-    'home': 'Trang chủ',
+    '/login': 'Đăng nhập',
+    '/403': 'Không có quyền',
+    '/404': 'Trang không tồn tại',
+    '/500': 'Lỗi máy chủ',
+    '/iframe-page.[url]': 'Trang ngoài',
+    '/home': 'Trang chủ',
   },
   page: {
     login: {

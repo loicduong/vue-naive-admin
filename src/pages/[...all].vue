@@ -1,8 +1,7 @@
 <script setup lang="ts">
 definePage({
-  name: '500',
   meta: {
-    title: '500',
+    constant: true,
     hideInMenu: true,
     layout: 'blank',
   },
@@ -10,7 +9,7 @@ definePage({
 </script>
 
 <template>
-  <ExceptionBase type="500" />
+  <ExceptionBase type="404" />
 </template>
 
 <style scoped></style>

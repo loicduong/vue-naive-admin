@@ -1,4 +1,3 @@
-import type { RouteKey } from '@elegant-router/types'
 import type { RouteLocationRaw } from 'vue-router'
 import { router as globalRouter } from '@/router'
 
@@ -22,10 +21,10 @@ export function useRouterPush(inSetup = true) {
     params?: Record<string, string>
   }
 
-  async function routerPushByKey(key: RouteKey, options?: RouterPushOptions) {
+  async function routerPushByKey(key: App.Global.RouteKey, options?: RouterPushOptions) {
     const { query, params } = options || {}
 
-    const routeLocation: RouteLocationRaw = {
+    const routeLocation: RouteLocationRaw & RouterPushOptions = {
       name: key,
     }
 
@@ -40,7 +39,7 @@ export function useRouterPush(inSetup = true) {
     return routerPush(routeLocation)
   }
 
-  function routerPushByKeyWithMetaQuery(key: RouteKey) {
+  function routerPushByKeyWithMetaQuery(key: App.Global.RouteKey) {
     const allRoutes = router.getRoutes()
     const meta = allRoutes.find(item => item.name === key)?.meta || null
 
@@ -54,7 +53,7 @@ export function useRouterPush(inSetup = true) {
   }
 
   async function toHome() {
-    return routerPushByKey('root')
+    return routerPushByKey('/')
   }
 
   /**
@@ -78,7 +77,7 @@ export function useRouterPush(inSetup = true) {
       redirect,
     }
 
-    return routerPushByKey('login', options)
+    return routerPushByKey('/login', options)
   }
 
   /**
@@ -89,7 +88,7 @@ export function useRouterPush(inSetup = true) {
   async function toggleLoginModule(module: UnionKey.LoginModule) {
     const query = route.value.query as Record<string, string>
 
-    return routerPushByKey('login', { query, params: { module } })
+    return routerPushByKey('/login', { query, params: { module } })
   }
 
   /**

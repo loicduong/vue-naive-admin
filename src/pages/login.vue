@@ -15,12 +15,6 @@ interface Props {
 }
 
 definePage({
-  name: 'login',
-  meta: {
-    title: 'login',
-    hideInMenu: true,
-    layout: 'blank',
-  },
   props: true,
 })
 

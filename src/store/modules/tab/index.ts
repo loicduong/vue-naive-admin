@@ -1,4 +1,3 @@
-import type { RouteKey } from '@elegant-router/types'
 import { SetupStoreId } from '@/constants/enum'
 import { useRouterPush } from '@/hooks/common/router'
 import { router } from '@/router'
@@ -124,7 +123,7 @@ export const useTabStore = defineStore(SetupStoreId.Tab, () => {
    *
    * @param routeName route name
    */
-  async function removeTabByRouteName(routeName: RouteKey) {
+  async function removeTabByRouteName(routeName: App.Global.RouteKey) {
     const tab = findTabByRouteName(routeName, tabs.value)
     if (!tab)
       return

@@ -167,8 +167,7 @@ declare namespace App {
     type RouteLocationNormalizedLoaded = import('vue-router').RouteLocationNormalizedLoaded
     type RouteKey = keyof RouteMap
     type RouteMap = import('vue-router/auto-routes').RouteNamedMap
-    type RoutePath = RouteMap[RouteKey]
-    type LastLevelRouteKey = import('@elegant-router/types').LastLevelRouteKey
+    type RoutePath = RouteMap[RouteKey]['path']
 
     /** The global header props */
     interface HeaderProps {
@@ -229,9 +228,9 @@ declare namespace App {
        */
       oldLabel?: string
       /** The tab route key */
-      routeKey: LastLevelRouteKey
+      routeKey: Global.RouteKey
       /** The tab route path */
-      routePath: RouteMap[LastLevelRouteKey]
+      routePath: Global.RoutePath
       /** The tab route full path */
       fullPath: string
       /** The tab fixed index */
@@ -265,7 +264,7 @@ declare namespace App {
    * Locales type
    */
   namespace I18n {
-    type RouteKey = import('@elegant-router/types').RouteKey
+    type RouteKey = App.Global.RouteKey
 
     type LangType = 'en-US' | 'vi-VN'
 
@@ -274,7 +273,7 @@ declare namespace App {
       key: LangType
     }
 
-    type I18nRouteKey = Exclude<RouteKey, 'root' | 'not-found'>
+    type I18nRouteKey = Exclude<RouteKey, '/' | '/[...all]'>
 
     type FormMsg = {
       required: string

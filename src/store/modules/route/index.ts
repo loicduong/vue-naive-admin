@@ -1,11 +1,8 @@
-import type { CustomRoute, ElegantConstRoute, LastLevelRouteKey, RouteKey, RouteMap } from '@elegant-router/types'
 import type { RouteRecordRaw } from 'vue-router'
 import { SetupStoreId } from '@/constants/enum'
 import { router } from '@/router'
-import { getRouteName, getRoutePath } from '@/router/elegant/transform'
 import { createStaticRoutes } from '@/router/routes'
-import { ROOT_ROUTE } from '@/router/routes/builtin'
-import { fetchGetConstantRoutes, fetchGetUserRoutes, fetchIsRouteExist } from '@/service/api'
+import { getRouteName } from '@/router/routes/builtin'
 import { useBoolean } from '@sa/hooks'
 import { defineStore } from 'pinia'
 import { useAuthStore } from '../auth'
@@ -72,14 +69,14 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
   }
 
   /** Cache routes */
-  const cacheRoutes = ref<RouteKey[]>([])
+  const cacheRoutes = ref<App.Global.RouteKey[]>([])
 
   /**
    * Exclude cache routes
    *
    * for reset route cache
    */
-  const excludeCacheRoutes = ref<RouteKey[]>([])
+  const excludeCacheRoutes = ref<App.Global.RouteKey[]>([])
 
   /**
    * Get cache routes
@@ -96,8 +93,8 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
    * @default
    * @param routeKey
    */
-  async function resetRouteCache(routeKey?: RouteKey) {
-    const routeName = routeKey || (router.currentRoute.value.name as RouteKey)
+  async function resetRouteCache(routeKey?: App.Global.RouteKey) {
+    const routeName = routeKey || (router.currentRoute.value.name as App.Global.RouteKey)
 
     excludeCacheRoutes.value.push(routeName)
 
@@ -174,7 +171,7 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
    *
    * @param routePath Route path
    */
-  async function getIsAuthRouteExist(routePath: RouteMap[RouteKey]) {
+  async function getIsAuthRouteExist(routePath: App.Global.RoutePath) {
     const routeName = getRouteName(routePath)
 
     if (!routeName) {
@@ -182,7 +179,7 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
     }
 
     const { authRoutes: staticAuthRoutes } = createStaticRoutes()
-    return isRouteExistByRouteName(routeName, staticAuthRoutes)
+    return isRouteExistByRouteName(routeName as App.Global.RouteKey, staticAuthRoutes)
   }
 
   /**

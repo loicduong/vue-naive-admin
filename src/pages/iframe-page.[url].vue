@@ -4,9 +4,7 @@ interface Props {
 }
 
 definePage({
-  name: 'iframe-page',
   meta: {
-    title: 'iframe-page',
     constant: true,
     hideInMenu: true,
     keepAlive: true,

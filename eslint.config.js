@@ -44,12 +44,7 @@ export default antfu(
           },
         },
       ],
-      'vue/multi-word-component-names': [
-        'warn',
-        {
-          ignores: ['index', 'App', 'Register', '[id]', '[url]'],
-        },
-      ],
+      'vue/multi-word-component-names': 'off',
       'vue/next-tick-style': ['warn', 'promise'],
       'vue/no-duplicate-attr-inheritance': 'warn',
       'vue/no-required-prop-with-default': 'warn',

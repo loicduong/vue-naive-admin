@@ -7,9 +7,11 @@ export function createStaticRoutes() {
 
   const authRoutes: RouteRecordRaw[] = []
 
-  const builtinRoutes: App.Global.RouteKey[] = ['root', 'not-found']
+  const builtinRoutes: App.Global.RouteKey[] = ['/', '/[...all]']
 
-  const generatedRoutes = routes.filter(item => !builtinRoutes.includes(item.name as App.Global.RouteKey))
+  const generatedRoutes = routes.filter((item) => {
+    return !builtinRoutes.includes(item.name as App.Global.RouteKey)
+  })
 
   generatedRoutes.forEach((item) => {
     if (item.meta?.constant) {
