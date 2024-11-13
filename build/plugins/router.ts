@@ -6,26 +6,36 @@ export function setupRouter() {
   return [
     vueRouter({
       dts: 'src/types/typed-router.d.ts',
-      routesFolder: 'src/views',
-      exclude: ['**/components', '**/modules', '**/_builtin'],
       extendRoute(route) {
-        const key = route.name
+        const key = route.name as App.Global.RouteKey
 
-        const constantRoutes = ['login', '403', '404', '500']
+        const constantRoutes: App.Global.RouteKey[] = ['/login', '/403', '/404', '/500']
+
+        const builtinRoutes: App.Global.RouteKey[] = ['/', '/[...all]']
 
         const meta: Partial<RouteMeta> = {
           title: key,
-          i18nKey: `route.${key}` as App.I18n.I18nKey,
+        }
+
+        if (!builtinRoutes.includes(key)) {
+          meta.i18nKey = `route.${key}` as App.I18n.I18nKey
         }
 
         if (constantRoutes.includes(key)) {
           meta.constant = true
+          meta.hideInMenu = true
+          meta.layout = 'blank'
         }
 
         route.addToMeta(meta)
 
-        if (key === 'login') {
-          const modules: UnionKey.LoginModule[] = ['pwd-login', 'code-login', 'register', 'reset-pwd']
+        if (key === '/login') {
+          const modules: UnionKey.LoginModule[] = [
+            'pwd-login',
+            'code-login',
+            'register',
+            'reset-pwd',
+          ]
 
           const moduleReg = modules.join('|')
 
@@ -33,47 +43,6 @@ export function setupRouter() {
         }
       },
     }),
-    layouts({
-      pagesDirs: 'src/views',
-    }),
+    layouts(),
   ]
 }
-
-// export function setupElegantRouter() {
-//   return ElegantVueRouter({
-//     dtsDir: 'src/types/elegant-router.d.ts',
-//     layouts: {
-//       base: 'src/layouts/base-layout/index.vue',
-//       blank: 'src/layouts/blank-layout/index.vue',
-//     },
-//     routePathTransformer(routeName, routePath) {
-//       const key = routeName as RouteKey
-
-//       if (key === 'login') {
-//         const modules: UnionKey.LoginModule[] = ['pwd-login', 'code-login', 'register', 'reset-pwd']
-
-//         const moduleReg = modules.join('|')
-
-//         return `/login/:module(${moduleReg})?`
-//       }
-
-//       return routePath
-//     },
-//     onRouteMetaGen(routeName) {
-//       const key = routeName as RouteKey
-
-//       const constantRoutes: RouteKey[] = ['login', '403', '404', '500']
-
-//       const meta: Partial<RouteMeta> = {
-//         title: key,
-//         i18nKey: `route.${key}` as App.I18n.I18nKey,
-//       }
-
-//       if (constantRoutes.includes(key)) {
-//         meta.constant = true
-//       }
-
-//       return meta
-//     },
-//   })
-// }

@@ -1,4 +1,3 @@
-import type { RouteKey, RoutePath } from '@elegant-router/types'
 import type {
   LocationQueryRaw,
   NavigationGuardNext,
@@ -6,7 +5,7 @@ import type {
   RouteLocationRaw,
   Router,
 } from 'vue-router'
-import { getRouteName } from '@/router/elegant/transform'
+import { getRouteName } from '@/router/routes/builtin'
 import { useAuthStore } from '@/store/modules/auth'
 import { useRouteStore } from '@/store/modules/route'
 import { localStg } from '@/utils/storage'
@@ -27,11 +26,12 @@ export function createRouteGuard(router: Router) {
 
     const authStore = useAuthStore()
 
-    const rootRoute: RouteKey = 'root'
-    const loginRoute: RouteKey = 'login'
-    const noAuthorizationRoute: RouteKey = '403'
+    const rootRoute: App.Global.RouteKey = '/'
+    const loginRoute: App.Global.RouteKey = '/login'
+    const noAuthorizationRoute: App.Global.RouteKey = '/403'
 
-    const isLogin = import.meta.env.VITE_AUTH_ROUTE_VISIBLE === 'N' || Boolean(localStg.get('token'))
+    const isLogin
+      = import.meta.env.VITE_AUTH_ROUTE_VISIBLE === 'N' || Boolean(localStg.get('token'))
     const needLogin = !to.meta.constant
     const routeRoles = to.meta.roles || []
 
@@ -96,7 +96,7 @@ async function initRoute(to: RouteLocationNormalized): Promise<RouteLocationRaw 
   const authStore = useAuthStore()
   const routeStore = useRouteStore()
 
-  const notFoundRoute: RouteKey = 'not-found'
+  const notFoundRoute: App.Global.RouteKey = '/[...all]'
   const isNotFoundRoute = to.name === notFoundRoute
 
   // if the constant route is not initialized, then initialize the constant route
@@ -131,8 +131,8 @@ async function initRoute(to: RouteLocationNormalized): Promise<RouteLocationRaw 
   }
   // it is captured by the "not-found" route, then check whether the route exists
   if (routeStore.isInitAuthRoute && isNotFoundRoute) {
-    const exist = await routeStore.getIsAuthRouteExist(to.path as RoutePath)
-    const noPermissionRoute: RouteKey = '403'
+    const exist = await routeStore.getIsAuthRouteExist(to.path as App.Global.RoutePath)
+    const noPermissionRoute: App.Global.RouteKey = '/403'
 
     if (exist) {
       const location: RouteLocationRaw = {
@@ -149,7 +149,7 @@ async function initRoute(to: RouteLocationNormalized): Promise<RouteLocationRaw 
   const isLogin = import.meta.env.VITE_AUTH_ROUTE_VISIBLE === 'N' || Boolean(localStg.get('token'))
   // initialize the auth route requires the user to be logged in, if not, redirect to the login page
   if (!isLogin) {
-    const loginRoute: RouteKey = 'login'
+    const loginRoute: App.Global.RouteKey = '/login'
     const query = getRouteQueryOfLoginRoute(to, routeStore.routeHome)
 
     const location: RouteLocationRaw = {
@@ -168,7 +168,7 @@ async function initRoute(to: RouteLocationNormalized): Promise<RouteLocationRaw 
   // the route is captured by the "not-found" route because the auth route is not initialized
   // after the auth route is initialized, redirect to the original route
   if (isNotFoundRoute) {
-    const rootRoute: RouteKey = 'root'
+    const rootRoute: App.Global.RouteKey = '/'
     const path = to.redirectedFrom?.name === rootRoute ? '/' : to.fullPath
 
     const location: RouteLocationRaw = {
@@ -184,7 +184,11 @@ async function initRoute(to: RouteLocationNormalized): Promise<RouteLocationRaw 
   return null
 }
 
-function handleRouteSwitch(to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) {
+function handleRouteSwitch(
+  to: RouteLocationNormalized,
+  from: RouteLocationNormalized,
+  next: NavigationGuardNext,
+) {
   // route with href
   if (to.meta.href) {
     window.open(to.meta.href, '_blank')
@@ -197,11 +201,12 @@ function handleRouteSwitch(to: RouteLocationNormalized, from: RouteLocationNorma
   next()
 }
 
-function getRouteQueryOfLoginRoute(to: RouteLocationNormalized, routeHome: RouteKey) {
-  const loginRoute: RouteKey = 'login'
-  const redirect = to.fullPath
+function getRouteQueryOfLoginRoute(to: RouteLocationNormalized, routeHome: App.Global.RouteKey) {
+  const loginRoute: App.Global.RouteKey = '/login'
+  const redirect = to.path
   const [redirectPath, redirectQuery] = redirect.split('?')
-  const redirectName = getRouteName(redirectPath as RoutePath)
+
+  const redirectName = getRouteName(redirectPath as App.Global.RoutePath)
 
   const isRedirectHome = routeHome === redirectName
 

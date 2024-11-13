@@ -8,9 +8,7 @@ import ProjectNews from '@/components/modules/home/project-news.vue'
 import { useAppStore } from '@/store/modules/app'
 
 definePage({
-  name: 'home',
   meta: {
-    title: 'home',
     icon: 'mdi:monitor-dashboard',
     order: 1,
   },

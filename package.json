@@ -71,7 +71,6 @@
     "@antfu/eslint-config": "3.8.0",
     "@commitlint/cli": "19.5.0",
     "@commitlint/config-conventional": "19.5.0",
-    "@elegant-router/vue": "0.3.8",
     "@iconify/json": "2.2.264",
     "@sa/scripts": "workspace:*",
     "@types/html-minifier-terser": "7.0.2",

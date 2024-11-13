@@ -1,7 +1,6 @@
-import type { LastLevelRouteKey, RouteKey, RouteMap } from '@elegant-router/types'
 import type { Router } from 'vue-router'
 import { $t } from '@/locales'
-import { getRoutePath } from '@/router/elegant/transform'
+import { getRoutePath } from '@/router/routes/builtin'
 
 /**
  * Get all tabs
@@ -67,13 +66,13 @@ export function getTabByRoute(route: App.Global.TabRoute) {
   // Get icon and localIcon from getRouteIcons function
   const { icon, localIcon } = getRouteIcons(route)
 
-  const label = i18nKey ? $t(i18nKey) : title
+  const label = (i18nKey ? $t(i18nKey) : title) || ''
 
   const tab: App.Global.Tab = {
     id: getTabIdByRoute(route),
     label,
-    routeKey: name as LastLevelRouteKey,
-    routePath: path as RouteMap[LastLevelRouteKey],
+    routeKey: name as App.Global.RouteKey,
+    routePath: path as App.Global.RoutePath,
     fullPath,
     fixedIndex: fixedIndexInTab,
     icon,
@@ -113,22 +112,23 @@ export function getRouteIcons(route: App.Global.TabRoute) {
  * @param router
  * @param homeRouteName routeHome in useRouteStore
  */
-export function getDefaultHomeTab(router: Router, homeRouteName: LastLevelRouteKey) {
+export function getDefaultHomeTab(router: Router, homeRouteName: App.Global.RouteKey) {
+  const routes = router.getRoutes()
+
   const homeRoutePath = getRoutePath(homeRouteName)
-  const i18nLabel = $t(`route.${homeRouteName}`)
+  const i18nLabel = $t(`route.${homeRouteName}` as App.I18n.I18nKey)
 
   let homeTab: App.Global.Tab = {
-    id: getRoutePath(homeRouteName),
+    id: homeRoutePath,
     label: i18nLabel || homeRouteName,
     routeKey: homeRouteName,
     routePath: homeRoutePath,
     fullPath: homeRoutePath,
   }
 
-  const routes = router.getRoutes()
   const homeRoute = routes.find(route => route.name === homeRouteName)
   if (homeRoute) {
-    homeTab = getTabByRoute(homeRoute)
+    homeTab = getTabByRoute(homeRoute as App.Global.TabRoute)
   }
 
   return homeTab
@@ -241,7 +241,7 @@ export function updateTabsByI18nKey(tabs: App.Global.Tab[]) {
  * @param name
  * @param tabs
  */
-export function findTabByRouteName(name: RouteKey, tabs: App.Global.Tab[]) {
+export function findTabByRouteName(name: App.Global.RouteKey, tabs: App.Global.Tab[]) {
   const routePath = getRoutePath(name)
 
   const tabId = routePath

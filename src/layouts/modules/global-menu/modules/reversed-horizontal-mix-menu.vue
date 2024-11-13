@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { RouteKey } from '@elegant-router/types'
 import { GLOBAL_HEADER_MENU_ID, GLOBAL_SIDER_MENU_ID } from '@/constants/app'
 import { useRouterPush } from '@/hooks/common/router'
 import { useAppStore } from '@/store/modules/app'
@@ -26,7 +25,7 @@ const {
 } = useMixMenuContext()
 const { selectedKey } = useMenu()
 
-function handleSelectMixMenu(key: RouteKey) {
+function handleSelectMixMenu(key: App.Global.RouteKey) {
   setActiveFirstLevelMenuKey(key)
 
   if (!isActiveFirstLevelMenuHasChildren.value) {
