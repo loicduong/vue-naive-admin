@@ -1,11 +1,20 @@
 <script setup lang="ts">
+import CardData from '@/components/modules/home/card-data.vue'
+import CreativityBanner from '@/components/modules/home/creativity-banner.vue'
+import HeaderBanner from '@/components/modules/home/header-banner.vue'
+import LineChart from '@/components/modules/home/line-chart.vue'
+import PieChart from '@/components/modules/home/pie-chart.vue'
+import ProjectNews from '@/components/modules/home/project-news.vue'
 import { useAppStore } from '@/store/modules/app'
-import CardData from './modules/card-data.vue'
-import CreativityBanner from './modules/creativity-banner.vue'
-import HeaderBanner from './modules/header-banner.vue'
-import LineChart from './modules/line-chart.vue'
-import PieChart from './modules/pie-chart.vue'
-import ProjectNews from './modules/project-news.vue'
+
+definePage({
+  name: 'home',
+  meta: {
+    title: 'home',
+    icon: 'mdi:monitor-dashboard',
+    order: 1,
+  },
+})
 
 const appStore = useAppStore()
 

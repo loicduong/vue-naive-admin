@@ -1,4 +1,5 @@
 import type { App } from 'vue'
+import { setupLayouts } from 'virtual:generated-layouts'
 import {
   createMemoryHistory,
   createRouter,
@@ -6,8 +7,8 @@ import {
   createWebHistory,
   type RouterHistory,
 } from 'vue-router'
+import { routes } from 'vue-router/auto-routes'
 import { createRouterGuard } from './guard'
-import { createBuiltinVueRoutes } from './routes/builtin'
 
 const { VITE_ROUTER_HISTORY_MODE = 'history', VITE_BASE_URL } = import.meta.env
 
@@ -19,7 +20,7 @@ const historyCreatorMap: Record<Env.RouterHistoryMode, (base?: string) => Router
 
 export const router = createRouter({
   history: historyCreatorMap[VITE_ROUTER_HISTORY_MODE](VITE_BASE_URL),
-  routes: createBuiltinVueRoutes(),
+  routes: setupLayouts(routes),
 })
 
 /** Setup Vue Router */

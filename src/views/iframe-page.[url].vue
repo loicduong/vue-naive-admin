@@ -3,6 +3,16 @@ interface Props {
   url: string
 }
 
+definePage({
+  name: 'iframe-page',
+  meta: {
+    title: 'iframe-page',
+    constant: true,
+    hideInMenu: true,
+    keepAlive: true,
+  },
+})
+
 defineProps<Props>()
 
 onMounted(() => {

@@ -9,7 +9,7 @@ import { $t } from '@/locales'
  * @param routes Auth routes
  * @param roles Roles
  */
-export function filterAuthRoutesByRoles(routes: ElegantConstRoute[], roles: string[]) {
+export function filterAuthRoutesByRoles(routes: RouteRecordRaw[], roles: string[]) {
   return routes.flatMap(route => filterAuthRouteByRoles(route, roles))
 }
 
@@ -19,7 +19,7 @@ export function filterAuthRoutesByRoles(routes: ElegantConstRoute[], roles: stri
  * @param route Auth route
  * @param roles Roles
  */
-function filterAuthRouteByRoles(route: ElegantConstRoute, roles: string[]): ElegantConstRoute[] {
+function filterAuthRouteByRoles(route: RouteRecordRaw, roles: string[]): RouteRecordRaw[] {
   const routeRoles = (route.meta && route.meta.roles) || []
 
   // if the route's "roles" is empty, then it is allowed to access
@@ -47,7 +47,7 @@ function filterAuthRouteByRoles(route: ElegantConstRoute, roles: string[]): Eleg
  *
  * @param route route
  */
-function sortRouteByOrder(route: ElegantConstRoute) {
+function sortRouteByOrder(route: RouteRecordRaw) {
   if (route.children?.length) {
     route.children.sort((next, prev) => (Number(next.meta?.order) || 0) - (Number(prev.meta?.order) || 0))
     route.children.forEach(sortRouteByOrder)
@@ -61,7 +61,7 @@ function sortRouteByOrder(route: ElegantConstRoute) {
  *
  * @param routes routes
  */
-export function sortRoutesByOrder(routes: ElegantConstRoute[]) {
+export function sortRoutesByOrder(routes: RouteRecordRaw[]) {
   routes.sort((next, prev) => (Number(next.meta?.order) || 0) - (Number(prev.meta?.order) || 0))
   routes.forEach(sortRouteByOrder)
 
@@ -73,7 +73,7 @@ export function sortRoutesByOrder(routes: ElegantConstRoute[]) {
  *
  * @param routes Auth routes
  */
-export function getGlobalMenusByAuthRoutes(routes: ElegantConstRoute[]) {
+export function getGlobalMenusByAuthRoutes(routes: RouteRecordRaw[]) {
   const menus: App.Global.Menu[] = []
 
   routes.forEach((route) => {
@@ -124,7 +124,7 @@ export function updateLocaleOfGlobalMenus(menus: App.Global.Menu[]) {
  *
  * @param route
  */
-function getGlobalMenuByBaseRoute(route: RouteLocationNormalizedLoaded | ElegantConstRoute) {
+function getGlobalMenuByBaseRoute(route: RouteLocationNormalizedLoaded | RouteRecordRaw) {
   const { SvgIconVNode } = useSvgIcon()
 
   const { name, path } = route
@@ -170,7 +170,7 @@ export function getCacheRouteNames(routes: RouteRecordRaw[]) {
  * @param routeName
  * @param routes
  */
-export function isRouteExistByRouteName(routeName: RouteKey, routes: ElegantConstRoute[]) {
+export function isRouteExistByRouteName(routeName: RouteKey, routes: RouteRecordRaw[]) {
   return routes.some(route => recursiveGetIsRouteExistByRouteName(route, routeName))
 }
 
@@ -180,7 +180,7 @@ export function isRouteExistByRouteName(routeName: RouteKey, routes: ElegantCons
  * @param route
  * @param routeName
  */
-function recursiveGetIsRouteExistByRouteName(route: ElegantConstRoute, routeName: RouteKey) {
+function recursiveGetIsRouteExistByRouteName(route: RouteRecordRaw, routeName: RouteKey) {
   let isExist = route.name === routeName
 
   if (isExist) {
