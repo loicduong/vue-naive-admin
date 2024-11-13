@@ -28,7 +28,7 @@
     "pnpm": ">=8.7.0"
   },
   "scripts": {
-    "build": "vite build --mode production",
+    "build": "vite build",
     "build:dev": "vite build --mode development",
     "build:tst": "vite build --mode testing",
     "cleanup": "sa cleanup",
