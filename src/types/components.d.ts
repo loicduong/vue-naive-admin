@@ -29,6 +29,7 @@ declare module 'vue' {
     IconMdiKeyboardEsc: typeof import('~icons/mdi/keyboard-esc')['default']
     IconMdiKeyboardReturn: typeof import('~icons/mdi/keyboard-return')['default']
     IconUilSearch: typeof import('~icons/uil/search')['default']
+    IframePage: typeof import('./../components/common/iframe-page.vue')['default']
     LangSwitch: typeof import('./../components/common/lang-switch.vue')['default']
     LineChart: typeof import('./../components/modules/home/line-chart.vue')['default']
     LookForward: typeof import('./../components/custom/look-forward.vue')['default']

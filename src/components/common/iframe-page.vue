@@ -3,23 +3,11 @@ interface Props {
   url: string
 }
 
-definePage({
-  meta: {
-    constant: true,
-    hideInMenu: true,
-    keepAlive: true,
-  },
+defineOptions({
+  name: 'IframePage',
 })
 
 defineProps<Props>()
-
-onMounted(() => {
-  console.error('mounted')
-})
-
-onActivated(() => {
-  console.error('activated')
-})
 </script>
 
 <template>

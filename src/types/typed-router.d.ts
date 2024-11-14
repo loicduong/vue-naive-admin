@@ -24,8 +24,12 @@ declare module 'vue-router/auto-routes' {
     '/404': RouteRecordInfo<'/404', '/404', Record<never, never>, Record<never, never>>,
     '/500': RouteRecordInfo<'/500', '/500', Record<never, never>, Record<never, never>>,
     '/about': RouteRecordInfo<'/about', '/about', Record<never, never>, Record<never, never>>,
+    '/document': RouteRecordInfo<'/document', '/document', Record<never, never>, Record<never, never>>,
+    '/document/naive': RouteRecordInfo<'/document/naive', '/document/naive', Record<never, never>, Record<never, never>>,
+    '/document/unocss': RouteRecordInfo<'/document/unocss', '/document/unocss', Record<never, never>, Record<never, never>>,
+    '/document/vite': RouteRecordInfo<'/document/vite', '/document/vite', Record<never, never>, Record<never, never>>,
+    '/document/vue': RouteRecordInfo<'/document/vue', '/document/vue', Record<never, never>, Record<never, never>>,
     '/home': RouteRecordInfo<'/home', '/home', Record<never, never>, Record<never, never>>,
-    '/iframe-page.[url]': RouteRecordInfo<'/iframe-page.[url]', '/iframe-page/:url', { url: ParamValue<true> }, { url: ParamValue<false> }>,
     '/login': RouteRecordInfo<'/login', '/login/:module(pwd-login|code-login|register|reset-pwd)?', Record<never, never>, Record<never, never>>,
     '/user-center': RouteRecordInfo<'/user-center', '/user-center', Record<never, never>, Record<never, never>>,
   }
