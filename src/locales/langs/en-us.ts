@@ -171,6 +171,8 @@ const local: App.I18n.Schema = {
     '/function/hide-child/one': 'Hide Child',
     '/function/hide-child/two': 'Two',
     '/function/hide-child/three': 'Three',
+    '/function/multi-tab': 'Multi Tab',
+    '/function/tab': 'Tab',
   },
   page: {
     login: {
@@ -244,6 +246,32 @@ const local: App.I18n.Schema = {
         desc5: 'Loic Duong just wrote some of the workbench pages casually, and it was enough to see!',
       },
       creativity: 'Creativity',
+    },
+    function: {
+      tab: {
+        tabOperate: {
+          title: 'Tab Operation',
+          addTab: 'Add Tab',
+          addTabDesc: 'To about page',
+          closeTab: 'Close Tab',
+          closeCurrentTab: 'Close Current Tab',
+          closeAboutTab: 'Close "About" Tab',
+          addMultiTab: 'Add Multi Tab',
+          addMultiTabDesc1: 'To MultiTab page',
+          addMultiTabDesc2: 'To MultiTab page(with query params)',
+        },
+        tabTitle: {
+          title: 'Tab Title',
+          changeTitle: 'Change Title',
+          change: 'Change',
+          resetTitle: 'Reset Title',
+          reset: 'Reset',
+        },
+      },
+      multiTab: {
+        routeParam: 'Route Param',
+        backTab: 'Back function_tab',
+      },
     },
     about: {
       title: 'About',

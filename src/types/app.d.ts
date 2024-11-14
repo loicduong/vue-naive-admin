@@ -470,6 +470,32 @@ declare namespace App {
           }
           creativity: string
         }
+        function: {
+          tab: {
+            tabOperate: {
+              title: string
+              addTab: string
+              addTabDesc: string
+              closeTab: string
+              closeCurrentTab: string
+              closeAboutTab: string
+              addMultiTab: string
+              addMultiTabDesc1: string
+              addMultiTabDesc2: string
+            }
+            tabTitle: {
+              title: string
+              changeTitle: string
+              change: string
+              resetTitle: string
+              reset: string
+            }
+          }
+          multiTab: {
+            routeParam: string
+            backTab: string
+          }
+        }
         about: {
           title: string
           introduction: string

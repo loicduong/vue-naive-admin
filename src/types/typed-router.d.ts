@@ -34,6 +34,8 @@ declare module 'vue-router/auto-routes' {
     '/function/hide-child/one': RouteRecordInfo<'/function/hide-child/one', '/function/hide-child/one', Record<never, never>, Record<never, never>>,
     '/function/hide-child/three': RouteRecordInfo<'/function/hide-child/three', '/function/hide-child/three', Record<never, never>, Record<never, never>>,
     '/function/hide-child/two': RouteRecordInfo<'/function/hide-child/two', '/function/hide-child/two', Record<never, never>, Record<never, never>>,
+    '/function/multi-tab': RouteRecordInfo<'/function/multi-tab', '/function/multi-tab', Record<never, never>, Record<never, never>>,
+    '/function/tab': RouteRecordInfo<'/function/tab', '/function/tab', Record<never, never>, Record<never, never>>,
     '/home': RouteRecordInfo<'/home', '/home', Record<never, never>, Record<never, never>>,
     '/login': RouteRecordInfo<'/login', '/login/:module(pwd-login|code-login|register|reset-pwd)?', Record<never, never>, Record<never, never>>,
     '/user-center': RouteRecordInfo<'/user-center', '/user-center', Record<never, never>, Record<never, never>>,
