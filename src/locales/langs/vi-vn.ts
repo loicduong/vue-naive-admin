@@ -173,6 +173,7 @@ const local: App.I18n.Schema = {
     '/function/hide-child/three': 'Ba',
     '/function/multi-tab': 'Nhiều tab',
     '/function/tab': 'Tab',
+    '/function/request': 'Yêu cầu',
   },
   page: {
     login: {
@@ -271,6 +272,12 @@ const local: App.I18n.Schema = {
       multiTab: {
         routeParam: 'Route Param',
         backTab: 'Back function_tab',
+      },
+      request: {
+        repeatedErrorOccurOnce: 'Lỗi yêu cầu lặp lại xảy ra một lần',
+        repeatedError: 'Lỗi yêu cầu lặp lại',
+        repeatedErrorMsg1: 'Lỗi yêu cầu tùy chỉnh 1',
+        repeatedErrorMsg2: 'Lỗi yêu cầu tùy chỉnh 2',
       },
     },
     about: {

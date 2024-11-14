@@ -173,6 +173,7 @@ const local: App.I18n.Schema = {
     '/function/hide-child/three': 'Three',
     '/function/multi-tab': 'Multi Tab',
     '/function/tab': 'Tab',
+    '/function/request': 'Request',
   },
   page: {
     login: {
@@ -271,6 +272,12 @@ const local: App.I18n.Schema = {
       multiTab: {
         routeParam: 'Route Param',
         backTab: 'Back function_tab',
+      },
+      request: {
+        repeatedErrorOccurOnce: 'Repeated Request Error Occurs Once',
+        repeatedError: 'Repeated Request Error',
+        repeatedErrorMsg1: 'Custom Request Error 1',
+        repeatedErrorMsg2: 'Custom Request Error 2',
       },
     },
     about: {
