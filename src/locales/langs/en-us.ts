@@ -174,6 +174,8 @@ const local: App.I18n.Schema = {
     '/function/multi-tab': 'Multi Tab',
     '/function/tab': 'Tab',
     '/function/request': 'Request',
+    '/plugin': 'Plugin',
+    '/plugin/barcode': 'Barcode',
   },
   page: {
     login: {

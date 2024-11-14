@@ -39,6 +39,8 @@ declare module 'vue-router/auto-routes' {
     '/function/tab': RouteRecordInfo<'/function/tab', '/function/tab', Record<never, never>, Record<never, never>>,
     '/home': RouteRecordInfo<'/home', '/home', Record<never, never>, Record<never, never>>,
     '/login': RouteRecordInfo<'/login', '/login/:module(pwd-login|code-login|register|reset-pwd)?', Record<never, never>, Record<never, never>>,
+    '/plugin': RouteRecordInfo<'/plugin', '/plugin', Record<never, never>, Record<never, never>>,
+    '/plugin/barcode': RouteRecordInfo<'/plugin/barcode', '/plugin/barcode', Record<never, never>, Record<never, never>>,
     '/user-center': RouteRecordInfo<'/user-center', '/user-center', Record<never, never>, Record<never, never>>,
   }
 }

@@ -174,6 +174,8 @@ const local: App.I18n.Schema = {
     '/function/multi-tab': 'Nhiều tab',
     '/function/tab': 'Tab',
     '/function/request': 'Yêu cầu',
+    '/plugin': 'Tiện ích',
+    '/plugin/barcode': 'Thanh mã vạch',
   },
   page: {
     login: {
