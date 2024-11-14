@@ -17,7 +17,7 @@ function useMixMenu() {
   }
 
   function getActiveFirstLevelMenuKey() {
-    const [firstLevelRouteName] = selectedKey.value.split('_')
+    const [firstLevelRouteName] = selectedKey.value.split('/')
 
     setActiveFirstLevelMenuKey(firstLevelRouteName)
   }
