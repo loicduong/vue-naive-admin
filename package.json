@@ -36,7 +36,6 @@
     "dev": "vite",
     "dev:prd": "vite --mode production",
     "dev:tst": "vite --mode testing",
-    "gen-route": "sa gen-route",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "simple-git-hooks",
