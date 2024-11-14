@@ -166,6 +166,11 @@ const local: App.I18n.Schema = {
     '/document/vue': 'Vue Document',
     '/about': 'About',
     '/user-center': 'User Center',
+    '/function': 'System Function',
+    '/function/hide-child': 'Hide Child',
+    '/function/hide-child/one': 'Hide Child',
+    '/function/hide-child/two': 'Two',
+    '/function/hide-child/three': 'Three',
   },
   page: {
     login: {

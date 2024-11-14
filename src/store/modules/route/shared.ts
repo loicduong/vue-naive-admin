@@ -290,13 +290,6 @@ export function getBreadcrumbsByRoute(
       return [transformMenuToBreadcrumb(menu)]
     }
 
-    if (menu.children?.length) {
-      const result = getBreadcrumbsByRoute(route, menu.children)
-      if (result.length > 0) {
-        return [transformMenuToBreadcrumb(menu), ...result]
-      }
-    }
-
     if (menu.key === activeKey) {
       const ROUTE_DEGREE_SPLITTER = '/'
 
@@ -308,6 +301,13 @@ export function getBreadcrumbsByRoute(
       }
 
       return [transformMenuToBreadcrumb(menu), transformMenuToBreadcrumb(breadcrumbMenu)]
+    }
+
+    if (menu.children?.length) {
+      const result = getBreadcrumbsByRoute(route, menu.children)
+      if (result.length > 0) {
+        return [transformMenuToBreadcrumb(menu), ...result]
+      }
     }
   }
 

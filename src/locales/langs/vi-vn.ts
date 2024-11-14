@@ -166,6 +166,11 @@ const local: App.I18n.Schema = {
     '/document/vue': 'Tài liệu Vue',
     '/about': 'Giới thiệu',
     '/user-center': 'Trung tâm người dùng',
+    '/function': 'Chức năng hệ thống',
+    '/function/hide-child': 'Ẩn con',
+    '/function/hide-child/one': 'Ẩn con',
+    '/function/hide-child/two': 'Hai',
+    '/function/hide-child/three': 'Ba',
   },
   page: {
     login: {
