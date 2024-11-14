@@ -18,8 +18,6 @@ declare module 'vue-router' {
      * Roles of the route
      *
      * Route can be accessed if the current user has at least one of the roles
-     *
-     * It only works when the route mode is "static", if the route mode is "dynamic", it will be ignored
      */
     roles?: string[]
     /** Whether to cache the route */

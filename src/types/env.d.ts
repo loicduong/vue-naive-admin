@@ -57,7 +57,7 @@ declare namespace Env {
      * use "," to separate multiple codes
      */
     readonly VITE_SERVICE_EXPIRED_TOKEN_CODES: string
-    /** when the route mode is static, the defined super role */
+    /** the defined super role */
     readonly VITE_STATIC_SUPER_ROLE: string
     /**
      * other backend service base url
@@ -73,12 +73,7 @@ declare namespace Env {
     readonly VITE_HTTP_PROXY?: CommonType.YesOrNo
     /** Whether to enable authentication, commonly used for demo projects */
     readonly VITE_AUTH_ROUTE_VISIBLE?: CommonType.YesOrNo
-    /**
-     * The home route key
-     *
-     * It only has effect when the auth route mode is static, if the route mode is dynamic, the home route key is
-     * defined in the back-end
-     */
+    /** The home route key */
     readonly VITE_ROUTE_HOME: App.Global.RouteKey
     /**
      * Default menu icon if menu icon is not set

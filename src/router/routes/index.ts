@@ -1,7 +1,7 @@
 import type { RouteRecordRaw } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
 
-/** create routes when the auth route mode is static */
+/** create static routes */
 export function createStaticRoutes() {
   const constantRoutes: RouteRecordRaw[] = []
 

@@ -25,7 +25,7 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
     buttons: [],
   })
 
-  /** is super role in static route */
+  /** is super role */
   const isStaticSuper = computed(() => {
     const { VITE_STATIC_SUPER_ROLE } = import.meta.env
 
