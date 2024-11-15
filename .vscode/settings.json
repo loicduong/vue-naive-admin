@@ -3,9 +3,11 @@
   "cSpell.language": "en,vi",
   "cSpell.words": [
     "antfu",
+    "antv",
     "attributify",
     "axios",
     "bumpp",
+    "dagre",
     "echarts",
     "execa",
     "iconify",
@@ -16,6 +18,7 @@
     "loic",
     "pinia",
     "sider",
+    "swiper",
     "tada",
     "Thỏa",
     "typeit",
@@ -23,7 +26,8 @@
     "unplugin",
     "vite",
     "vitejs",
-    "vueuse"
+    "vueuse",
+    "xgplayer"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
