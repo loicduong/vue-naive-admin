@@ -24,7 +24,7 @@ export function useRouterPush(inSetup = true) {
   async function routerPushByKey(key: App.Global.RouteKey, options?: RouterPushOptions) {
     const { query, params } = options || {}
 
-    const routeLocation: RouteLocationRaw & RouterPushOptions = {
+    const routeLocation: RouterPushOptions & { name: App.Global.RouteKey } = {
       name: key,
     }
 
@@ -36,7 +36,7 @@ export function useRouterPush(inSetup = true) {
       routeLocation.params = params
     }
 
-    return routerPush(routeLocation)
+    return routerPush(routeLocation as RouteLocationRaw)
   }
 
   function routerPushByKeyWithMetaQuery(key: App.Global.RouteKey) {

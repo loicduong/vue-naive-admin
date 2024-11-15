@@ -176,6 +176,8 @@ const local: App.I18n.Schema = {
     '/function/request': 'Request',
     '/plugin': 'Plugin',
     '/plugin/barcode': 'Barcode',
+    '/plugin/copy': 'Copy',
+    '/plugin/icon': 'Icon',
   },
   page: {
     login: {

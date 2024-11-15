@@ -76,7 +76,7 @@ declare namespace Env {
     /** Whether to enable authentication, commonly used for demo projects */
     readonly VITE_AUTH_ROUTE_VISIBLE?: CommonType.YesOrNo
     /** The home route key */
-    readonly VITE_ROUTE_HOME: App.Global.RouteKey
+    readonly VITE_ROUTE_HOME: App.Global.RoutePath
     /**
      * Default menu icon if menu icon is not set
      *

@@ -17,5 +17,5 @@ export function getRoutePath(name: App.Global.RouteKey) {
 export function getRouteName(path: App.Global.RoutePath) {
   const routes = router.getRoutes()
 
-  return routes.filter(item => item.name).find(item => item.path === path)?.name
+  return routes.filter(item => item.name).find(item => item.path === path)?.name as App.Global.RouteKey
 }

@@ -14,6 +14,7 @@ declare module 'vue' {
     CodeLogin: typeof import('./../components/modules/login/code-login.vue')['default']
     CountTo: typeof import('./../components/custom/count-to.vue')['default']
     CreativityBanner: typeof import('./../components/modules/home/creativity-banner.vue')['default']
+    CustomIconSelect: typeof import('./../components/custom/custom-icon-select.vue')['default']
     DarkModeContainer: typeof import('./../components/common/dark-mode-container.vue')['default']
     ExceptionBase: typeof import('./../components/common/exception-base.vue')['default']
     FullScreen: typeof import('./../components/common/full-screen.vue')['default']
@@ -22,7 +23,9 @@ declare module 'vue' {
     IconAntDesignReloadOutlined: typeof import('~icons/ant-design/reload-outlined')['default']
     IconGridiconsFullscreen: typeof import('~icons/gridicons/fullscreen')['default']
     IconGridiconsFullscreenExit: typeof import('~icons/gridicons/fullscreen-exit')['default']
+    IconLocalActivity: typeof import('~icons/local/activity')['default']
     IconLocalBanner: typeof import('~icons/local/banner')['default']
+    IconLocalCast: typeof import('~icons/local/cast')['default']
     IconLocalLogo: typeof import('~icons/local/logo')['default']
     IconMdiArrowDownThin: typeof import('~icons/mdi/arrow-down-thin')['default']
     IconMdiArrowUpThin: typeof import('~icons/mdi/arrow-up-thin')['default']
@@ -63,6 +66,7 @@ declare module 'vue' {
     NMessageProvider: typeof import('naive-ui')['NMessageProvider']
     NModal: typeof import('naive-ui')['NModal']
     NNotificationProvider: typeof import('naive-ui')['NNotificationProvider']
+    NPopover: typeof import('naive-ui')['NPopover']
     NScrollbar: typeof import('naive-ui')['NScrollbar']
     NSelect: typeof import('naive-ui')['NSelect']
     NSpace: typeof import('naive-ui')['NSpace']
@@ -90,5 +94,6 @@ declare module 'vue' {
     ThemeSchemaSwitch: typeof import('./../components/common/theme-schema-switch.vue')['default']
     UserAvatar: typeof import('./../components/custom/user-avatar.vue')['default']
     WaveBg: typeof import('./../components/custom/wave-bg.vue')['default']
+    WebSiteLink: typeof import('./../components/custom/web-site-link.vue')['default']
   }
 }

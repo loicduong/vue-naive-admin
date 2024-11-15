@@ -26,7 +26,7 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
   const { bool: isInitAuthRoute, setBool: setIsInitAuthRoute } = useBoolean()
 
   /** Home route key */
-  const routeHome = ref(import.meta.env.VITE_ROUTE_HOME)
+  const routeHome = computed(() => getRouteName(import.meta.env.VITE_ROUTE_HOME))
 
   /** constant routes */
   const constantRoutes = shallowRef<RouteRecordRaw[]>([])
