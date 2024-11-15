@@ -198,6 +198,10 @@ const local: App.I18n.Schema = {
     '/multi-menu/second': 'Menu hai',
     '/multi-menu/second/child': 'Menu con hai',
     '/multi-menu/second/child/home': 'Menu con hai nhà',
+    '/manage': 'Quản lý hệ thống',
+    '/manage/role': 'Quản lý vai trò',
+    '/manage/user': 'Quản lý người dùng',
+    '/manage/user-detail.[id]': 'Chi tiết người dùng',
   },
   page: {
     login: {
@@ -316,6 +320,56 @@ const local: App.I18n.Schema = {
       },
       prdDep: 'Phụ thuộc sản xuất',
       devDep: 'Phụ thuộc phát triển',
+    },
+    manage: {
+      common: {
+        status: {
+          enable: 'Kích hoạt',
+          disable: 'Vô hiệu hóa',
+        },
+      },
+      role: {
+        title: 'Danh sách vai trò',
+        roleName: 'Tên vai trò',
+        roleCode: 'Mã vai trò',
+        roleStatus: 'Trạng thái vai trò',
+        roleDesc: 'Mô tả vai trò',
+        menuAuth: 'Quyền menu',
+        buttonAuth: 'Quyền nút',
+        form: {
+          roleName: 'Vui lòng nhập tên vai trò',
+          roleCode: 'Vui lòng nhập mã vai trò',
+          roleStatus: 'Vui lòng chọn trạng thái vai trò',
+          roleDesc: 'Vui lòng nhập mô tả vai trò',
+        },
+        addRole: 'Thêm vai trò',
+        editRole: 'Sửa vai trò',
+      },
+      user: {
+        title: 'Danh sách người dùng',
+        userName: 'Tên người dùng',
+        userGender: 'Giới tính',
+        nickName: 'Biệt danh',
+        userPhone: 'Số điện thoại',
+        userEmail: 'Email',
+        userStatus: 'Trạng thái',
+        userRole: 'Vai trò',
+        form: {
+          userName: 'Vui lòng nhập tên người dùng',
+          userGender: 'Vui lòng chọn giới tính',
+          nickName: 'Vui lòng nhập biệt danh',
+          userPhone: 'Vui lòng nhập số điện thoại',
+          userEmail: 'Vui lòng nhập email',
+          userStatus: 'Vui lòng chọn trạng thái',
+          userRole: 'Vui lòng chọn vai trò',
+        },
+        addUser: 'Thêm người dùng',
+        editUser: 'Sửa người dùng',
+        gender: {
+          male: 'Nam',
+          female: 'Nữ',
+        },
+      },
     },
   },
   form: {

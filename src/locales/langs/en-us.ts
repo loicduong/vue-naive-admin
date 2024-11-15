@@ -198,6 +198,10 @@ const local: App.I18n.Schema = {
     '/multi-menu/second': 'Menu Two',
     '/multi-menu/second/child': 'Menu Two Child',
     '/multi-menu/second/child/home': 'Menu Two Child Home',
+    '/manage': 'System Manage',
+    '/manage/role': 'Role Management',
+    '/manage/user': 'User Management',
+    '/manage/user-detail.[id]': 'User Detail',
   },
   page: {
     login: {
@@ -316,6 +320,56 @@ const local: App.I18n.Schema = {
       },
       prdDep: 'Production Dependency',
       devDep: 'Development Dependency',
+    },
+    manage: {
+      common: {
+        status: {
+          enable: 'Enable',
+          disable: 'Disable',
+        },
+      },
+      role: {
+        title: 'Role List',
+        roleName: 'Role Name',
+        roleCode: 'Role Code',
+        roleStatus: 'Role Status',
+        roleDesc: 'Role Description',
+        menuAuth: 'Menu Auth',
+        buttonAuth: 'Button Auth',
+        form: {
+          roleName: 'Please enter role name',
+          roleCode: 'Please enter role code',
+          roleStatus: 'Please select role status',
+          roleDesc: 'Please enter role description',
+        },
+        addRole: 'Add Role',
+        editRole: 'Edit Role',
+      },
+      user: {
+        title: 'User List',
+        userName: 'User Name',
+        userGender: 'Gender',
+        nickName: 'Nick Name',
+        userPhone: 'Phone Number',
+        userEmail: 'Email',
+        userStatus: 'User Status',
+        userRole: 'User Role',
+        form: {
+          userName: 'Please enter user name',
+          userGender: 'Please select gender',
+          nickName: 'Please enter nick name',
+          userPhone: 'Please enter phone number',
+          userEmail: 'Please enter email',
+          userStatus: 'Please select user status',
+          userRole: 'Please select user role',
+        },
+        addUser: 'Add User',
+        editUser: 'Edit User',
+        gender: {
+          male: 'Male',
+          female: 'Female',
+        },
+      },
     },
   },
   form: {

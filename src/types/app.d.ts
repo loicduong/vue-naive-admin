@@ -515,6 +515,56 @@ declare namespace App {
           prdDep: string
           devDep: string
         }
+        manage: {
+          common: {
+            status: {
+              enable: string
+              disable: string
+            }
+          }
+          role: {
+            title: string
+            roleName: string
+            roleCode: string
+            roleStatus: string
+            roleDesc: string
+            form: {
+              roleName: string
+              roleCode: string
+              roleStatus: string
+              roleDesc: string
+            }
+            addRole: string
+            editRole: string
+            menuAuth: string
+            buttonAuth: string
+          }
+          user: {
+            title: string
+            userName: string
+            userGender: string
+            nickName: string
+            userPhone: string
+            userEmail: string
+            userStatus: string
+            userRole: string
+            form: {
+              userName: string
+              userGender: string
+              nickName: string
+              userPhone: string
+              userEmail: string
+              userStatus: string
+              userRole: string
+            }
+            addUser: string
+            editUser: string
+            gender: {
+              male: string
+              female: string
+            }
+          }
+        }
       }
       form: {
         required: string
