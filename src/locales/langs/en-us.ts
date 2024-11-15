@@ -192,6 +192,12 @@ const local: App.I18n.Schema = {
     '/plugin/gantt/vtable': 'VTableGantt',
     '/plugin/tables': 'Tables',
     '/plugin/tables/vtable': 'VTable',
+    '/multi-menu': 'Multi Menu',
+    '/multi-menu/first': 'Menu One',
+    '/multi-menu/first/child': 'Menu One Child',
+    '/multi-menu/second': 'Menu Two',
+    '/multi-menu/second/child': 'Menu Two Child',
+    '/multi-menu/second/child/home': 'Menu Two Child Home',
   },
   page: {
     login: {
