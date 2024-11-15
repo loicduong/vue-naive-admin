@@ -178,6 +178,7 @@ const local: App.I18n.Schema = {
     '/plugin/barcode': 'Mã vạch',
     '/plugin/copy': 'Sao chép',
     '/plugin/icon': 'Icon',
+    '/plugin/pdf': 'Xem trước PDF',
   },
   page: {
     login: {
