@@ -181,6 +181,7 @@ const local: App.I18n.Schema = {
     '/plugin/pdf': 'Xem trước PDF',
     '/plugin/print': 'In',
     '/plugin/swiper': 'Swiper',
+    '/plugin/typeit': 'Typeit',
   },
   page: {
     login: {

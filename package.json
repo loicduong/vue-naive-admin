@@ -64,6 +64,7 @@
     "print-js": "1.6.0",
     "swiper": "^11.1.14",
     "tailwind-merge": "2.5.4",
+    "typeit": "^8.8.7",
     "vue": "3.5.12",
     "vue-draggable-plus": "0.5.4",
     "vue-i18n": "10.0.4",
