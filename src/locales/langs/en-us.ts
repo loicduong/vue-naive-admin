@@ -185,6 +185,7 @@ const local: App.I18n.Schema = {
     '/plugin/video': 'Video',
     '/plugin/charts': 'Charts',
     '/plugin/charts/antv': 'AntV',
+    '/plugin/charts/echarts': 'ECharts',
   },
   page: {
     login: {

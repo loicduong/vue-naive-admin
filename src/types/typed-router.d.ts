@@ -43,6 +43,7 @@ declare module 'vue-router/auto-routes' {
     '/plugin/barcode': RouteRecordInfo<'/plugin/barcode', '/plugin/barcode', Record<never, never>, Record<never, never>>,
     '/plugin/charts': RouteRecordInfo<'/plugin/charts', '/plugin/charts', Record<never, never>, Record<never, never>>,
     '/plugin/charts/antv': RouteRecordInfo<'/plugin/charts/antv', '/plugin/charts/antv', Record<never, never>, Record<never, never>>,
+    '/plugin/charts/echarts': RouteRecordInfo<'/plugin/charts/echarts', '/plugin/charts/echarts', Record<never, never>, Record<never, never>>,
     '/plugin/copy': RouteRecordInfo<'/plugin/copy', '/plugin/copy', Record<never, never>, Record<never, never>>,
     '/plugin/icon': RouteRecordInfo<'/plugin/icon', '/plugin/icon', Record<never, never>, Record<never, never>>,
     '/plugin/pdf': RouteRecordInfo<'/plugin/pdf', '/plugin/pdf', Record<never, never>, Record<never, never>>,
