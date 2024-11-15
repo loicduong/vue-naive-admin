@@ -10,6 +10,12 @@ import {
 } from '@/components/modules/plugin/charts/echarts/data'
 import { useEcharts } from '@/hooks/common/echarts'
 
+definePage({
+  meta: {
+    icon: 'simple-icons:apacheecharts',
+  },
+})
+
 const { domRef: pieRef } = useEcharts(() => pieOptions, { onRender() {} })
 const { domRef: lineRef } = useEcharts(() => lineOptions, { onRender() {} })
 const { domRef: barRef } = useEcharts(() => barOptions, { onRender() {} })

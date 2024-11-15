@@ -186,6 +186,7 @@ const local: App.I18n.Schema = {
     '/plugin/charts': 'Biểu đồ',
     '/plugin/charts/antv': 'AntV',
     '/plugin/charts/echarts': 'ECharts',
+    '/plugin/charts/vchart': 'VChart',
   },
   page: {
     login: {
