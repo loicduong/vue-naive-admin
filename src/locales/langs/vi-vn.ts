@@ -180,6 +180,7 @@ const local: App.I18n.Schema = {
     '/plugin/icon': 'Icon',
     '/plugin/pdf': 'Xem trước PDF',
     '/plugin/print': 'In',
+    '/plugin/swiper': 'Swiper',
   },
   page: {
     login: {

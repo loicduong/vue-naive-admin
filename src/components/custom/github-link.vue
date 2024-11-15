@@ -12,7 +12,7 @@ defineProps<Props>()
 </script>
 
 <template>
-  <WebSiteLink label="GitHub address:" :link="link" />
+  <WebSiteLink label="GitHub address: " :link="link" />
 </template>
 
 <style scoped></style>
