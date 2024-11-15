@@ -187,6 +187,11 @@ const local: App.I18n.Schema = {
     '/plugin/charts/vchart': 'VChart',
     '/plugin/editor': 'Editor',
     '/plugin/editor/markdown': 'Markdown',
+    '/plugin/gantt': 'Gantt Chart',
+    '/plugin/gantt/dhtmlx': 'dhtmlxGantt',
+    '/plugin/gantt/vtable': 'VTableGantt',
+    '/plugin/tables': 'Tables',
+    '/plugin/tables/vtable': 'VTable',
   },
   page: {
     login: {
