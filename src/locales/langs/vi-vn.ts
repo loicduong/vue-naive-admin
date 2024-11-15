@@ -175,11 +175,9 @@ const local: App.I18n.Schema = {
     '/function/tab': 'Tab',
     '/function/request': 'Yêu cầu',
     '/plugin': 'Tiện ích',
-    '/plugin/barcode': 'Mã vạch',
     '/plugin/copy': 'Sao chép',
     '/plugin/icon': 'Icon',
     '/plugin/pdf': 'Xem trước PDF',
-    '/plugin/print': 'In',
     '/plugin/swiper': 'Swiper',
     '/plugin/typeit': 'Typeit',
     '/plugin/video': 'Video',
@@ -187,6 +185,8 @@ const local: App.I18n.Schema = {
     '/plugin/charts/antv': 'AntV',
     '/plugin/charts/echarts': 'ECharts',
     '/plugin/charts/vchart': 'VChart',
+    '/plugin/editor': 'Editor',
+    '/plugin/editor/markdown': 'Markdown',
   },
   page: {
     login: {
