@@ -47,6 +47,7 @@ declare module 'vue-router/auto-routes' {
     '/plugin/print': RouteRecordInfo<'/plugin/print', '/plugin/print', Record<never, never>, Record<never, never>>,
     '/plugin/swiper': RouteRecordInfo<'/plugin/swiper', '/plugin/swiper', Record<never, never>, Record<never, never>>,
     '/plugin/typeit': RouteRecordInfo<'/plugin/typeit', '/plugin/typeit', Record<never, never>, Record<never, never>>,
+    '/plugin/video': RouteRecordInfo<'/plugin/video', '/plugin/video', Record<never, never>, Record<never, never>>,
     '/user-center': RouteRecordInfo<'/user-center', '/user-center', Record<never, never>, Record<never, never>>,
   }
 }

@@ -182,6 +182,7 @@ const local: App.I18n.Schema = {
     '/plugin/print': 'In',
     '/plugin/swiper': 'Swiper',
     '/plugin/typeit': 'Typeit',
+    '/plugin/video': 'Video',
   },
   page: {
     login: {
