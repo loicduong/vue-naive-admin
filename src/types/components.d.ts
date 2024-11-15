@@ -18,6 +18,7 @@ declare module 'vue' {
     DarkModeContainer: typeof import('./../components/common/dark-mode-container.vue')['default']
     ExceptionBase: typeof import('./../components/common/exception-base.vue')['default']
     FullScreen: typeof import('./../components/common/full-screen.vue')['default']
+    GithubLink: typeof import('./../components/custom/github-link.vue')['default']
     HeaderBanner: typeof import('./../components/modules/home/header-banner.vue')['default']
     IconAntDesignEnterOutlined: typeof import('~icons/ant-design/enter-outlined')['default']
     IconAntDesignReloadOutlined: typeof import('~icons/ant-design/reload-outlined')['default']

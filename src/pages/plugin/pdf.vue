@@ -2,6 +2,12 @@
 import { useLoading } from '@sa/hooks'
 import VuePdfEmbed from 'vue-pdf-embed'
 
+definePage({
+  meta: {
+    icon: 'uiw:file-pdf',
+  },
+})
+
 const { loading, endLoading } = useLoading(true)
 
 const pdfRef = shallowRef<InstanceType<typeof VuePdfEmbed> | null>(null)

@@ -61,6 +61,7 @@
     "naive-ui": "2.40.1",
     "nprogress": "0.2.0",
     "pinia": "2.2.4",
+    "print-js": "1.6.0",
     "tailwind-merge": "2.5.4",
     "vue": "3.5.12",
     "vue-draggable-plus": "0.5.4",

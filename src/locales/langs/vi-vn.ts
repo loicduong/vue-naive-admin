@@ -179,6 +179,7 @@ const local: App.I18n.Schema = {
     '/plugin/copy': 'Sao chép',
     '/plugin/icon': 'Icon',
     '/plugin/pdf': 'Xem trước PDF',
+    '/plugin/print': 'In',
   },
   page: {
     login: {
