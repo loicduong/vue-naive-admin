@@ -115,6 +115,7 @@ declare module 'vue' {
     NTooltip: typeof import('naive-ui')['NTooltip']
     NTree: typeof import('naive-ui')['NTree']
     NWatermark: typeof import('naive-ui')['NWatermark']
+    PdfHtmlRoot: typeof import('./../components/modules/plugin/pdf/html/pdf-html-root.vue')['default']
     PieChart: typeof import('./../components/modules/home/pie-chart.vue')['default']
     PinToggler: typeof import('./../components/common/pin-toggler.vue')['default']
     ProjectNews: typeof import('./../components/modules/home/project-news.vue')['default']

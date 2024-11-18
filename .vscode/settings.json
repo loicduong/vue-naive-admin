@@ -28,8 +28,10 @@
     "unplugin",
     "vchart",
     "vditor",
+    "visactor",
     "vite",
     "vitejs",
+    "vtable",
     "vueuse",
     "xgplayer"
   ],
