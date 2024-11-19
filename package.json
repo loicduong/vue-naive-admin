@@ -66,9 +66,12 @@
     "dayjs": "1.11.13",
     "dhtmlx-gantt": "9.0.2",
     "echarts": "5.5.1",
+    "html-to-image": "1.11.11",
     "json5": "2.2.3",
+    "jspdf": "2.5.2",
     "naive-ui": "2.40.1",
     "nprogress": "0.2.0",
+    "pagedjs": "0.4.3",
     "pinia": "2.2.4",
     "swiper": "^11.1.14",
     "tailwind-merge": "2.5.4",
@@ -124,8 +127,7 @@
       }
     }
   },
-  "simple-git-hooks": {
-  },
+  "simple-git-hooks": {},
   "lint-staged": {
     "*": "eslint --fix"
   },

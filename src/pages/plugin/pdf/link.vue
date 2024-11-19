@@ -48,7 +48,7 @@ async function handleDownload() {
 <template>
   <div class="overflow-hidden">
     <NCard
-      title="PDF Preview"
+      title="PDF Link Preview"
       :bordered="false"
       class="h-full card-wrapper"
       content-class="overflow-hidden"
