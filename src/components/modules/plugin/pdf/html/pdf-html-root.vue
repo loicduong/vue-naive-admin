@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { DataTableColumns } from 'naive-ui'
-import { NButton, useMessage } from 'naive-ui'
+import { NButton } from 'naive-ui'
 
 interface Song {
   no: number
@@ -14,11 +14,7 @@ const data: Song[] = [
   { no: 12, title: 'Champagne Supernova', length: '7:27' },
 ]
 
-function createColumns({
-  play,
-}: {
-  play: (row: Song) => void
-}): DataTableColumns<Song> {
+function createColumns(): DataTableColumns<Song> {
   return [
     {
       title: 'No',
@@ -35,14 +31,13 @@ function createColumns({
     {
       title: 'Action',
       key: 'actions',
-      render(row) {
+      render() {
         return h(
           NButton,
           {
             strong: true,
             tertiary: true,
             size: 'small',
-            onClick: () => play(row),
           },
           { default: () => 'Play' },
         )
@@ -51,11 +46,7 @@ function createColumns({
   ]
 }
 
-const columns = createColumns({
-  play(row: Song) {
-    message.info(`Play ${row.title}`)
-  },
-})
+const columns = createColumns()
 </script>
 
 <template>

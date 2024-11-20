@@ -51,5 +51,8 @@ export default defineConfig((configEnv) => {
         ignoreTryCatch: false,
       },
     },
+    worker: {
+      format: 'es',
+    },
   }
 })
