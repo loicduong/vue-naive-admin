@@ -7,3 +7,7 @@ definePage({
   },
 })
 </script>
+
+<template>
+  <RouterView />
+</template>
