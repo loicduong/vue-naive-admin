@@ -81,16 +81,9 @@ export function getNodeIcon(node: CustomNodeData) {
 export function getNodeStatusTag(state: NodeStatus, tagProperty?: TagProps) {
   const { textColor, color, type } = nodeStatus[state] || {}
 
-  return h(
-    NTag,
-    {
-      color: { textColor, color },
-      bordered: false,
-      size: 'small',
-      ...tagProperty,
-    },
-    {
-      default: () => type,
-    },
+  return (
+    <NTag color={{ textColor, color }} bordered={false} size="small" {...tagProperty}>
+      {type}
+    </NTag>
   )
 }

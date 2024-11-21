@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="tsx">
 import type { DataTableColumns } from 'naive-ui'
 import { NButton } from 'naive-ui'
 
@@ -31,17 +31,7 @@ function createColumns(): DataTableColumns<Song> {
     {
       title: 'Action',
       key: 'actions',
-      render() {
-        return h(
-          NButton,
-          {
-            strong: true,
-            tertiary: true,
-            size: 'small',
-          },
-          { default: () => 'Play' },
-        )
-      },
+      render: () => <NButton strong tertiary size="small">Play</NButton>,
     },
   ]
 }
