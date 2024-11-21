@@ -664,14 +664,4 @@ declare namespace App {
   }
 }
 
-declare module 'pagedjs' {
-  interface Previewer {
-    preview: (
-      content?: HTMLElement | string,
-      stylesheets?: { content: string }[],
-      renderTo?: HTMLElement | null
-    ) => Promise<void>
-  }
-
-  export const Previewer: new () => Previewer
-}
+declare module 'pagedjs'

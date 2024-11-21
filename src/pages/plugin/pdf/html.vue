@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import pagedCss from '@/assets/scss/paged.scss?inline'
+import PdfHtmlAction from '@/components/modules/plugin/pdf/html/pdf-html-action.vue'
 import PdfHtmlRoot from '@/components/modules/plugin/pdf/html/pdf-html-root.vue'
 import { useLoading } from '@sa/hooks'
 import { toPng } from 'html-to-image'
-import { Previewer } from 'pagedjs'
+import { Handler, Previewer, registerHandlers } from 'pagedjs'
 
 definePage({
   meta: {
@@ -21,10 +22,57 @@ const {
   startLoading: btnStartLoading,
 } = useLoading()
 
+const currentPage = ref(1)
+const pageTotal = ref(1)
+
 onMounted(async () => {
+  class MyHandler extends Handler {
+    afterPageLayout(pageElement: any) {
+      const splitTables = pageElement.querySelectorAll(
+        'table[data-split-from]',
+      )
+
+      splitTables.forEach((table: any) => {
+        const originalTableId = table.getAttribute('data-split-from')
+
+        const originalTable = document.querySelector(
+          `table[data-split-to="${originalTableId}"]`,
+        )
+        if (!originalTable)
+          return
+
+        if (!table.querySelector('colgroup')) {
+          const originalColgroup
+            = originalTable.querySelector('table colgroup')
+          if (originalColgroup) {
+            const newColgroup = originalColgroup.cloneNode(true)
+            table.insertBefore(newColgroup, table.firstChild)
+          }
+        }
+
+        if (!table.querySelector('thead')) {
+          const originalHeader = originalTable.querySelector('table thead')
+          if (originalHeader) {
+            const newHeader = originalHeader.cloneNode(true)
+            if (table.querySelector('colgroup')) {
+              table.querySelector('colgroup').after(newHeader)
+            }
+            else {
+              table.insertBefore(newHeader, table.firstChild)
+            }
+          }
+        }
+      })
+    }
+  }
+
+  registerHandlers(MyHandler)
+
   const paged = new Previewer()
 
-  await paged.preview(a.value?.$el?.innerHTML, [{ content: pagedCss }], preview.value)
+  const { total } = await paged.preview(a.value?.$el?.innerHTML, [{ content: pagedCss }], preview.value)
+
+  pageTotal.value = total
 
   endLoading()
 })
@@ -77,6 +125,24 @@ async function handleDownload() {
     btnEndLoading()
   }
 }
+
+function handleScroll(e: Event) {
+  const pages = document.querySelectorAll('.pagedjs_page')
+  const containerRect = (e.srcElement as HTMLElement).getBoundingClientRect()
+  const containerMiddle = (e.srcElement as HTMLElement).offsetHeight / 2
+
+  let current = 1
+
+  pages.forEach((page, index) => {
+    const rect = page.getBoundingClientRect()
+    const pageTop = rect.top - containerRect.top
+
+    if (pageTop <= containerMiddle) {
+      current = index + 1
+    }
+  })
+  currentPage.value = current
+}
 </script>
 
 <template>
@@ -94,8 +160,10 @@ async function handleDownload() {
             <icon-charm:download />
           </ButtonIcon>
         </div>
-        <NScrollbar class="flex-1-hidden">
+        <NScrollbar class="flex-1-hidden" @scroll="handleScroll">
           <NSkeleton v-if="loading" size="small" class="mt-12px" text :repeat="12" />
+
+          <PdfHtmlAction v-else v-model="currentPage" :total="pageTotal" />
 
           <PdfHtmlRoot ref="root" class="hidden" />
 

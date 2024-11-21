@@ -93,7 +93,13 @@ const columns = createColumns()
       What do they here?
     </p>
 
-    <NDataTable class="mt-12px" :columns="columns" :data="data" :pagination="false" :bordered="false" />
+    <NDataTable
+      class="mt-12px"
+      :columns="columns"
+      :data="data"
+      :pagination="false"
+      :bordered="false"
+    />
 
     <img src="https://picsum.photos/200/300" alt="Placeholder">
 

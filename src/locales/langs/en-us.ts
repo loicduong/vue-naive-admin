@@ -178,6 +178,8 @@ const local: App.I18n.Schema = {
     '/plugin/copy': 'Copy',
     '/plugin/icon': 'Icon',
     '/plugin/pdf': 'PDF Preview',
+    '/plugin/pdf/html': 'HTML',
+    '/plugin/pdf/link': 'Link',
     '/plugin/swiper': 'Swiper',
     '/plugin/typeit': 'Typeit',
     '/plugin/video': 'Video',
