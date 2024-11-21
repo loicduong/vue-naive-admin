@@ -1,7 +1,6 @@
 import type { App } from 'vue'
 import { $t } from '@/locales'
 import { NButton } from 'naive-ui'
-import { h } from 'vue'
 
 // Update check interval in milliseconds
 const UPDATE_CHECK_INTERVAL = 3 * 60 * 1000
@@ -47,29 +46,16 @@ export function setupAppVersionNotification() {
       title: $t('system.updateTitle'),
       content: $t('system.updateContent'),
       action() {
-        return h('div', {
-          style: { display: 'flex', justifyContent: 'end', gap: '12px', width: '325px' },
-        }, [
-          h(
-            NButton,
-            {
-              onClick() {
-                n?.destroy()
-              },
-            },
-            () => $t('system.updateCancel'),
-          ),
-          h(
-            NButton,
-            {
-              type: 'primary',
-              onClick() {
-                location.reload()
-              },
-            },
-            () => $t('system.updateConfirm'),
-          ),
-        ])
+        return (
+          <div style={{ display: 'flex', justifyContent: 'end', gap: '12px', width: '325px' }}>
+            <NButton onClick={() => n?.destroy()}>
+              {$t('system.updateCancel')}
+            </NButton>
+            <NButton type="primary" onClick={() => location.reload()}>
+              {$t('system.updateConfirm')}
+            </NButton>
+          </div>
+        )
       },
       onClose() {
         isShow = false
