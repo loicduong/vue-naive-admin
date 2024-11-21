@@ -127,7 +127,10 @@
       }
     }
   },
-  "simple-git-hooks": {},
+  "simple-git-hooks": {
+    "commit-msg": "pnpm commit",
+    "pre-commit": "pnpm typecheck && pnpm lint-staged"
+  },
   "lint-staged": {
     "*": "eslint --fix"
   },
