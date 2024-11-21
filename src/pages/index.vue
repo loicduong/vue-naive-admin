@@ -7,3 +7,7 @@ definePage({
   redirect: () => ({ name: import.meta.env.VITE_ROUTE_HOME || '/home' }),
 })
 </script>
+
+<template>
+  <RouterView />
+</template>
