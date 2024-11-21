@@ -178,6 +178,8 @@ const local: App.I18n.Schema = {
     '/plugin/copy': 'Sao chép',
     '/plugin/icon': 'Icon',
     '/plugin/pdf': 'Xem trước PDF',
+    '/plugin/pdf/html': 'HTML',
+    '/plugin/pdf/link': 'Link',
     '/plugin/swiper': 'Swiper',
     '/plugin/typeit': 'Typeit',
     '/plugin/video': 'Video',
