@@ -48,7 +48,7 @@ onUnmounted(() => {
     <NCard title="Markdown plugin" :bordered="false" class="card-wrapper">
       <div ref="domRef" />
       <template #footer>
-        <GithubLink link="https://github.com/Vanessa219/vditor" />
+        <GithubLink link="https://github.com/Vanessa219/vditor/blob/master/README_en_US.md" />
       </template>
     </NCard>
   </div>
