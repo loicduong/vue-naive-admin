@@ -150,9 +150,6 @@ importers:
       vite:
         specifier: 5.4.11
         version: 5.4.11(@types/node@22.9.1)(sass@1.81.0)(terser@5.31.6)
-      vite-plugin-progress:
-        specifier: 0.0.7
-        version: 0.0.7(vite@5.4.11(@types/node@22.9.1)(sass@1.81.0)(terser@5.31.6))
       vite-plugin-svg-icons:
         specifier: 2.0.1
         version: 2.0.1(vite@5.4.11(@types/node@22.9.1)(sass@1.81.0)(terser@5.31.6))
@@ -1445,9 +1442,6 @@ packages:
 
   '@types/ms@0.7.34':
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
-
-  '@types/node@10.17.60':
-    resolution: {integrity: sha512-F0KIgDJfy2nA3zMLmWGKxcH2ZVEtCZXHHdOQs2gSaQ27+lNeEfGxzkIw90aXswATX7AZ33tahPbzy6KAfUreVw==}
 
   '@types/node@22.9.1':
     resolution: {integrity: sha512-p8Yy/8sw1caA8CdRIQBG5tiLHmxtQKObCijiAa9Ez+d4+PRffM4054xbju0msf+cvhJpnFEeNjxmVT/0ipktrg==}
@@ -4343,10 +4337,6 @@ packages:
     resolution: {integrity: sha512-o1piW0n3tgKIKCwk2vpM/vOV13zjJzvP37Ioze54YlTHE06m4tjEbzg9WsKkvTuyYln2DHjo5pY4qrZGI0otpw==}
     engines: {node: '>=18'}
 
-  progress@2.0.3:
-    resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
-    engines: {node: '>=0.4.0'}
-
   prompts@2.4.2:
     resolution: {integrity: sha512-NxNv/kLguCA7p3jE8oL2aEBsrJWgAakBpgmgK6lpPWV+WuOmY6r2/zbAVnP+T8bQlA0nzHXSJSJW0Hq7ylaD2Q==}
     engines: {node: '>= 6'}
@@ -4371,9 +4361,6 @@ packages:
 
   rc9@2.1.2:
     resolution: {integrity: sha512-btXCnMmRIBINM2LDZoEmOogIZU7Qe7zn4BpomSKZ/ykbLObuBdvG+mFq11DL6fjH1DRwHhrlgtYWG96bJiC7Cg==}
-
-  rd@2.0.1:
-    resolution: {integrity: sha512-/XdKU4UazUZTXFmI0dpABt8jSXPWcEyaGdk340KdHnsEOdkTctlX23aAK7ChQDn39YGNlAJr1M5uvaKt4QnpNw==}
 
   read-pkg-up@7.0.1:
     resolution: {integrity: sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==}
@@ -5099,12 +5086,6 @@ packages:
     peerDependenciesMeta:
       '@nuxt/kit':
         optional: true
-
-  vite-plugin-progress@0.0.7:
-    resolution: {integrity: sha512-zyvKdcc/X+6hnw3J1HVV1TKrlFKC4Rh8GnDnWG/2qhRXjqytTcM++xZ+SAPnoDsSyWl8O93ymK0wZRgHAoglEQ==}
-    engines: {node: '>=14', pnpm: '>=7.0.0'}
-    peerDependencies:
-      vite: '>2.0.0-0'
 
   vite-plugin-svg-icons@2.0.1:
     resolution: {integrity: sha512-6ktD+DhV6Rz3VtedYvBKKVA2eXF+sAQVaKkKLDSqGUfnhqXl3bj5PPkVTl3VexfTuZy66PmINi8Q6eFnVfRUmA==}
@@ -6477,8 +6458,6 @@ snapshots:
       '@types/unist': 3.0.3
 
   '@types/ms@0.7.34': {}
-
-  '@types/node@10.17.60': {}
 
   '@types/node@22.9.1':
     dependencies:
@@ -9954,8 +9933,6 @@ snapshots:
     dependencies:
       parse-ms: 4.0.0
 
-  progress@2.0.3: {}
-
   prompts@2.4.2:
     dependencies:
       kleur: 3.0.3
@@ -9980,10 +9957,6 @@ snapshots:
     dependencies:
       defu: 6.1.4
       destr: 2.0.3
-
-  rd@2.0.1:
-    dependencies:
-      '@types/node': 10.17.60
 
   read-pkg-up@7.0.1:
     dependencies:
@@ -10822,13 +10795,6 @@ snapshots:
     transitivePeerDependencies:
       - rollup
       - supports-color
-
-  vite-plugin-progress@0.0.7(vite@5.4.11(@types/node@22.9.1)(sass@1.81.0)(terser@5.31.6)):
-    dependencies:
-      picocolors: 1.0.1
-      progress: 2.0.3
-      rd: 2.0.1
-      vite: 5.4.11(@types/node@22.9.1)(sass@1.81.0)(terser@5.31.6)
 
   vite-plugin-svg-icons@2.0.1(vite@5.4.11(@types/node@22.9.1)(sass@1.81.0)(terser@5.31.6)):
     dependencies:
