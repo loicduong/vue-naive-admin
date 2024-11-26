@@ -180,6 +180,7 @@ const local: App.I18n.Schema = {
     '/plugin/pdf': 'Xem trước PDF',
     '/plugin/pdf/html': 'HTML',
     '/plugin/pdf/link': 'Link',
+    '/plugin/signature': 'Chữ ký',
     '/plugin/swiper': 'Swiper',
     '/plugin/typeit': 'Typeit',
     '/plugin/video': 'Video',

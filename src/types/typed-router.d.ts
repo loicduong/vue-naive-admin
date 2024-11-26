@@ -64,6 +64,7 @@ declare module 'vue-router/auto-routes' {
     '/plugin/pdf': RouteRecordInfo<'/plugin/pdf', '/plugin/pdf', Record<never, never>, Record<never, never>>,
     '/plugin/pdf/html': RouteRecordInfo<'/plugin/pdf/html', '/plugin/pdf/html', Record<never, never>, Record<never, never>>,
     '/plugin/pdf/link': RouteRecordInfo<'/plugin/pdf/link', '/plugin/pdf/link', Record<never, never>, Record<never, never>>,
+    '/plugin/signature': RouteRecordInfo<'/plugin/signature', '/plugin/signature', Record<never, never>, Record<never, never>>,
     '/plugin/swiper': RouteRecordInfo<'/plugin/swiper', '/plugin/swiper', Record<never, never>, Record<never, never>>,
     '/plugin/tables': RouteRecordInfo<'/plugin/tables', '/plugin/tables', Record<never, never>, Record<never, never>>,
     '/plugin/tables/vtable': RouteRecordInfo<'/plugin/tables/vtable', '/plugin/tables/vtable', Record<never, never>, Record<never, never>>,

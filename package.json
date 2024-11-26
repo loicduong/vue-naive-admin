@@ -73,6 +73,7 @@
     "nprogress": "0.2.0",
     "pagedjs": "0.4.3",
     "pinia": "2.2.6",
+    "signature_pad": "5.0.4",
     "swiper": "11.1.15",
     "tailwind-merge": "2.5.4",
     "typeit": "8.8.7",
