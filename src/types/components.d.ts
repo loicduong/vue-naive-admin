@@ -7,6 +7,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AnimationEdge: typeof import('./../components/modules/plugin/flow/animation-edge.vue')['default']
     AntvFlow: typeof import('./../components/modules/plugin/charts/antv/antv-flow.vue')['default']
     AppProvider: typeof import('./../components/common/app-provider.vue')['default']
     BetterScroll: typeof import('./../components/custom/better-scroll.vue')['default']
@@ -22,6 +23,7 @@ declare module 'vue' {
     FullScreen: typeof import('./../components/common/full-screen.vue')['default']
     GithubLink: typeof import('./../components/custom/github-link.vue')['default']
     HeaderBanner: typeof import('./../components/modules/home/header-banner.vue')['default']
+    Icon: typeof import('./../components/modules/plugin/flow/icon.vue')['default']
     IconAntDesignEnterOutlined: typeof import('~icons/ant-design/enter-outlined')['default']
     IconAntDesignReloadOutlined: typeof import('~icons/ant-design/reload-outlined')['default']
     IconAntDesignSettingOutlined: typeof import('~icons/ant-design/setting-outlined')['default']
@@ -121,6 +123,7 @@ declare module 'vue' {
     PdfHtmlRoot: typeof import('./../components/modules/plugin/pdf/html/pdf-html-root.vue')['default']
     PieChart: typeof import('./../components/modules/home/pie-chart.vue')['default']
     PinToggler: typeof import('./../components/common/pin-toggler.vue')['default']
+    ProcessNode: typeof import('./../components/modules/plugin/flow/process-node.vue')['default']
     ProjectNews: typeof import('./../components/modules/home/project-news.vue')['default']
     PwdLogin: typeof import('./../components/modules/login/pwd-login.vue')['default']
     Register: typeof import('./../components/modules/login/register.vue')['default']

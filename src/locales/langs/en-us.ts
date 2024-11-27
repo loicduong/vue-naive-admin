@@ -194,6 +194,7 @@ const local: App.I18n.Schema = {
     '/plugin/gantt': 'Gantt Chart',
     '/plugin/gantt/dhtmlx': 'dhtmlxGantt',
     '/plugin/gantt/vtable': 'VTableGantt',
+    '/plugin/flow': 'Flow',
     '/plugin/tables': 'Tables',
     '/plugin/tables/vtable': 'VTable',
     '/multi-menu': 'Multi Menu',
