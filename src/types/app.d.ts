@@ -188,7 +188,7 @@ declare namespace App {
        */
       key: string
       /** The menu label */
-      label: string
+      label: string | (() => import('vue').VNodeChild)
       /** The menu i18n key */
       i18nKey?: I18n.I18nKey | null
       /** The route key */
@@ -199,6 +199,8 @@ declare namespace App {
       icon?: () => VNode
       /** The menu children */
       children?: Menu[]
+      /** The menu href */
+      href?: string | null
     }
 
     type Breadcrumb = Omit<Menu, 'children'> & {

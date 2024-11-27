@@ -1,6 +1,7 @@
 import type { RouteLocationNormalizedLoaded, RouteRecordRaw } from 'vue-router'
 import { useSvgIcon } from '@/hooks/common/icon'
 import { $t } from '@/locales'
+import { RouterLink } from 'vue-router'
 
 /**
  * Filter auth routes by roles
@@ -48,7 +49,9 @@ function filterAuthRouteByRoles(route: RouteRecordRaw, roles: string[]): RouteRe
  */
 function sortRouteByOrder(route: RouteRecordRaw) {
   if (route.children?.length) {
-    route.children.sort((next, prev) => (Number(next.meta?.order) || 0) - (Number(prev.meta?.order) || 0))
+    route.children.sort((next, prev) => {
+      return (Number(next.meta?.order) || 0) - (Number(prev.meta?.order) || 0)
+    })
     route.children.forEach(sortRouteByOrder)
   }
 
@@ -65,6 +68,27 @@ export function sortRoutesByOrder(routes: RouteRecordRaw[]) {
   routes.forEach(sortRouteByOrder)
 
   return routes
+}
+
+/**
+ * updates the label property of global menu items to render as links
+ *
+ * @param menus - Array of global menu items to process
+ */
+export function updateLabelOfGlobalMenus(menus: App.Global.Menu[]) {
+  return menus.map((menu) => {
+    if (menu?.children?.length) {
+      return { ...menu }
+    }
+
+    const label = () => {
+      return menu.href
+        ? <a href={menu.href}>{menu.label}</a>
+        : <RouterLink to={menu.routeKey}>{menu.label}</RouterLink>
+    }
+
+    return { ...menu, label }
+  })
 }
 
 /**
@@ -87,7 +111,7 @@ export function getGlobalMenusByAuthRoutes(routes: RouteRecordRaw[]) {
     }
   })
 
-  return menus
+  return updateLabelOfGlobalMenus(menus)
 }
 
 /**
@@ -115,7 +139,7 @@ export function updateLocaleOfGlobalMenus(menus: App.Global.Menu[]) {
     result.push(newMenu)
   })
 
-  return result
+  return updateLabelOfGlobalMenus(result)
 }
 
 /**
@@ -127,7 +151,14 @@ function getGlobalMenuByBaseRoute(route: RouteLocationNormalizedLoaded | RouteRe
   const { SvgIconVNode } = useSvgIcon()
 
   const { name, path } = route
-  const { title, i18nKey, icon = import.meta.env.VITE_MENU_ICON, localIcon, iconFontSize } = route.meta ?? {}
+  const {
+    title,
+    i18nKey,
+    icon = import.meta.env.VITE_MENU_ICON,
+    localIcon,
+    iconFontSize,
+    href,
+  } = route.meta ?? {}
 
   const label = i18nKey ? $t(i18nKey) : title!
 
@@ -138,6 +169,7 @@ function getGlobalMenuByBaseRoute(route: RouteLocationNormalizedLoaded | RouteRe
     routeKey: name as App.Global.RouteKey,
     routePath: path as App.Global.RoutePath,
     icon: SvgIconVNode({ icon, localIcon, fontSize: iconFontSize || 20 }),
+    href,
   }
 
   return menu
@@ -179,7 +211,10 @@ export function isRouteExistByRouteName(routeName: App.Global.RouteKey, routes: 
  * @param route
  * @param routeName
  */
-function recursiveGetIsRouteExistByRouteName(route: RouteRecordRaw, routeName: App.Global.RouteKey) {
+function recursiveGetIsRouteExistByRouteName(
+  route: RouteRecordRaw,
+  routeName: App.Global.RouteKey,
+) {
   let isExist = route.name === routeName
 
   if (isExist) {
@@ -320,7 +355,10 @@ export function getBreadcrumbsByRoute(
  * @param menus - menus
  * @param treeMap
  */
-export function transformMenuToSearchMenus(menus: App.Global.Menu[], treeMap: App.Global.Menu[] = []) {
+export function transformMenuToSearchMenus(
+  menus: App.Global.Menu[],
+  treeMap: App.Global.Menu[] = [],
+) {
   if (menus && menus.length === 0)
     return []
   return menus.reduce((acc, cur) => {

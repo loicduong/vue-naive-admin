@@ -24,7 +24,7 @@ const visible = defineModel<boolean>('show', { required: true })
 function search() {
   resultOptions.value = routeStore.searchMenus.filter((menu) => {
     const trimKeyword = keyword.value.toLocaleLowerCase().trim()
-    const title = (menu.i18nKey ? $t(menu.i18nKey) : menu.label).toLocaleLowerCase()
+    const title = (menu.i18nKey ? $t(menu.i18nKey) : menu.key).toLocaleLowerCase()
     return trimKeyword && title.includes(trimKeyword)
   })
   activePath.value = resultOptions.value[0]?.routePath ?? ''
@@ -104,7 +104,12 @@ registerShortcut()
     @after-leave="handleClose"
   >
     <NInputGroup>
-      <NInput v-model:value="keyword" clearable :placeholder="$t('common.keywordSearch')" @input="handleSearch">
+      <NInput
+        v-model:value="keyword"
+        clearable
+        :placeholder="$t('common.keywordSearch')"
+        @input="handleSearch"
+      >
         <template #prefix>
           <icon-uil-search class="text-15px text-#c2c2c2" />
         </template>
@@ -116,7 +121,12 @@ registerShortcut()
 
     <div class="mt-20px">
       <NEmpty v-if="resultOptions.length === 0" :description="$t('common.noData')" />
-      <SearchResult v-else v-model:path="activePath" :options="resultOptions" @enter="handleEnter" />
+      <SearchResult
+        v-else
+        v-model:path="activePath"
+        :options="resultOptions"
+        @enter="handleEnter"
+      />
     </div>
     <template #footer>
       <SearchFooter v-if="!isMobile" />
@@ -124,4 +134,4 @@ registerShortcut()
   </NModal>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
