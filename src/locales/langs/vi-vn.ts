@@ -190,6 +190,7 @@ const local: App.I18n.Schema = {
     '/plugin/charts/vchart': 'VChart',
     '/plugin/editor': 'Editor',
     '/plugin/editor/markdown': 'Markdown',
+    '/plugin/excel': 'Excel',
     '/plugin/gantt': 'Biểu đồ Gantt',
     '/plugin/gantt/dhtmlx': 'dhtmlxGantt',
     '/plugin/gantt/vtable': 'VTableGantt',

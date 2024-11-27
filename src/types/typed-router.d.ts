@@ -57,6 +57,7 @@ declare module 'vue-router/auto-routes' {
     '/plugin/copy': RouteRecordInfo<'/plugin/copy', '/plugin/copy', Record<never, never>, Record<never, never>>,
     '/plugin/editor': RouteRecordInfo<'/plugin/editor', '/plugin/editor', Record<never, never>, Record<never, never>>,
     '/plugin/editor/markdown': RouteRecordInfo<'/plugin/editor/markdown', '/plugin/editor/markdown', Record<never, never>, Record<never, never>>,
+    '/plugin/excel': RouteRecordInfo<'/plugin/excel', '/plugin/excel', Record<never, never>, Record<never, never>>,
     '/plugin/gantt': RouteRecordInfo<'/plugin/gantt', '/plugin/gantt', Record<never, never>, Record<never, never>>,
     '/plugin/gantt/dhtmlx': RouteRecordInfo<'/plugin/gantt/dhtmlx', '/plugin/gantt/dhtmlx', Record<never, never>, Record<never, never>>,
     '/plugin/gantt/vtable': RouteRecordInfo<'/plugin/gantt/vtable', '/plugin/gantt/vtable', Record<never, never>, Record<never, never>>,

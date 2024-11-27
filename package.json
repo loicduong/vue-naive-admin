@@ -83,7 +83,8 @@
     "vue-i18n": "10.0.4",
     "vue-pdf-embed": "2.1.1",
     "vue-router": "4.4.5",
-    "xgplayer": "3.0.20"
+    "xgplayer": "3.0.20",
+    "xlsx": "0.18.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "3.9.2",

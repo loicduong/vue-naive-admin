@@ -31,6 +31,7 @@ declare module 'vue' {
     'IconF7:circleFill': typeof import('~icons/f7/circle-fill')['default']
     'IconF7:flagCircleFill': typeof import('~icons/f7/flag-circle-fill')['default']
     'IconFe:question': typeof import('~icons/fe/question')['default']
+    'IconFileIcons:microsoftExcel': typeof import('~icons/file-icons/microsoft-excel')['default']
     'IconGg:ratio': typeof import('~icons/gg/ratio')['default']
     IconGridiconsFullscreen: typeof import('~icons/gridicons/fullscreen')['default']
     IconGridiconsFullscreenExit: typeof import('~icons/gridicons/fullscreen-exit')['default']
