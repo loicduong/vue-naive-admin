@@ -119,9 +119,6 @@ importers:
       typeit:
         specifier: 8.8.7
         version: 8.8.7
-      vditor:
-        specifier: 3.10.7
-        version: 3.10.7
       vue:
         specifier: 3.5.13
         version: 3.5.13(typescript@5.6.3)
@@ -3236,9 +3233,6 @@ packages:
 
   dhtmlx-gantt@9.0.3:
     resolution: {integrity: sha512-bc6ypBpp1XdE9s7iop5j+O41gLcfxg1nAerV1wHcmG11NxpYI5iOmSAAzdLfC8wqCnIOYQhRz7ca2t4KURFJhQ==}
-
-  diff-match-patch@1.0.5:
-    resolution: {integrity: sha512-IayShXAgj/QMXgB0IWmKx+rOPuGMhqm5w6jvFxmVenXKIzRqTAAsbBPT3kWQeGANj3jGgvcvv4yK6SxqYmikgw==}
 
   dir-glob@3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
@@ -6434,9 +6428,6 @@ packages:
     resolution: {integrity: sha512-H9V1zGRLQZg9b+GdMk8MXDN2Lva0zx72MPahDKc30v+DtwKjfyOSXWRIX4t2mhDubM1H09gPhWeth/BJWPHGUw==}
     peerDependencies:
       vue: ^3.0.11
-
-  vditor@3.10.7:
-    resolution: {integrity: sha512-n+ZM1IgLJzUGZeXzQT4xKbUwCplSFoRlsnmMvLv2kMPLnUTMk9O2qV8nMEOahYed0xExhQZtVb6TKeavgA6w3w==}
 
   vite-hot-client@0.2.3:
     resolution: {integrity: sha512-rOGAV7rUlUHX89fP2p2v0A2WWvV3QMX2UYq0fRqsWSvFvev4atHWqjwGoKaZT1VTKyLGk533ecu3eyd0o59CAg==}
@@ -10157,8 +10148,6 @@ snapshots:
       dequal: 2.0.3
 
   dhtmlx-gantt@9.0.3: {}
-
-  diff-match-patch@1.0.5: {}
 
   dir-glob@3.0.1:
     dependencies:
@@ -13911,10 +13900,6 @@ snapshots:
     dependencies:
       evtd: 0.2.4
       vue: 3.5.13(typescript@5.6.3)
-
-  vditor@3.10.7:
-    dependencies:
-      diff-match-patch: 1.0.5
 
   vite-hot-client@0.2.3(vite@5.4.11(@types/node@22.9.1)(sass@1.81.0)(terser@5.31.6)):
     dependencies:

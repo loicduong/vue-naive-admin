@@ -188,8 +188,6 @@ const local: App.I18n.Schema = {
     '/plugin/charts/antv': 'AntV',
     '/plugin/charts/echarts': 'ECharts',
     '/plugin/charts/vchart': 'VChart',
-    '/plugin/editor': 'Editor',
-    '/plugin/editor/markdown': 'Markdown',
     '/plugin/excel': 'Excel',
     '/plugin/gantt': 'Gantt Charts',
     '/plugin/gantt/dhtmlx': 'dhtmlxGantt',

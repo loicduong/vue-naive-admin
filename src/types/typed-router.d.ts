@@ -55,8 +55,6 @@ declare module 'vue-router/auto-routes' {
     '/plugin/charts/echarts': RouteRecordInfo<'/plugin/charts/echarts', '/plugin/charts/echarts', Record<never, never>, Record<never, never>>,
     '/plugin/charts/vchart': RouteRecordInfo<'/plugin/charts/vchart', '/plugin/charts/vchart', Record<never, never>, Record<never, never>>,
     '/plugin/copy': RouteRecordInfo<'/plugin/copy', '/plugin/copy', Record<never, never>, Record<never, never>>,
-    '/plugin/editor': RouteRecordInfo<'/plugin/editor', '/plugin/editor', Record<never, never>, Record<never, never>>,
-    '/plugin/editor/markdown': RouteRecordInfo<'/plugin/editor/markdown', '/plugin/editor/markdown', Record<never, never>, Record<never, never>>,
     '/plugin/excel': RouteRecordInfo<'/plugin/excel', '/plugin/excel', Record<never, never>, Record<never, never>>,
     '/plugin/flow': RouteRecordInfo<'/plugin/flow', '/plugin/flow', Record<never, never>, Record<never, never>>,
     '/plugin/flow/logic-flow': RouteRecordInfo<'/plugin/flow/logic-flow', '/plugin/flow/logic-flow', Record<never, never>, Record<never, never>>,
