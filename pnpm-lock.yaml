@@ -80,6 +80,9 @@ importers:
       html-to-image:
         specifier: 1.11.11
         version: 1.11.11
+      intro.js:
+        specifier: 7.2.0
+        version: 7.2.0
       json5:
         specifier: 2.2.3
         version: 2.2.3
@@ -156,6 +159,9 @@ importers:
       '@types/html-minifier-terser':
         specifier: 7.0.2
         version: 7.0.2
+      '@types/intro.js':
+        specifier: 5.1.5
+        version: 5.1.5
       '@types/node':
         specifier: 22.9.1
         version: 22.9.1
@@ -1713,6 +1719,9 @@ packages:
 
   '@types/html-minifier-terser@7.0.2':
     resolution: {integrity: sha512-mm2HqV22l8lFQh4r2oSsOEVea+m0qqxEmwpc9kC1p/XzmjLWrReR9D/GRs8Pex2NX/imyEH9c5IU/7tMBQCHOA==}
+
+  '@types/intro.js@5.1.5':
+    resolution: {integrity: sha512-TT1d8ayz07svlBcoqh26sNpQaU6bBpdFcCC+IMZHp46NNX2mYAHAVefM3wCmQSd4UWhhObeMjFByw2IaPKOXlw==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -4207,6 +4216,9 @@ packages:
   internmap@2.0.3:
     resolution: {integrity: sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg==}
     engines: {node: '>=12'}
+
+  intro.js@7.2.0:
+    resolution: {integrity: sha512-qbMfaB70rOXVBceIWNYnYTpVTiZsvQh/MIkfdQbpA9di9VBfj1GigUPfcCv3aOfsbrtPcri8vTLTA4FcEDcHSQ==}
 
   is-accessor-descriptor@1.0.1:
     resolution: {integrity: sha512-YBUanLI8Yoihw923YeFUS5fs0fF2f5TSFTNiYAAzhhDscDa3lEqYuz1pDOEP5KvX94I9ey3vsqjJcLVFVU+3QA==}
@@ -8159,6 +8171,8 @@ snapshots:
 
   '@types/html-minifier-terser@7.0.2': {}
 
+  '@types/intro.js@5.1.5': {}
+
   '@types/json-schema@7.0.15': {}
 
   '@types/katex@0.16.7': {}
@@ -11294,6 +11308,8 @@ snapshots:
   internmap@1.0.1: {}
 
   internmap@2.0.3: {}
+
+  intro.js@7.2.0: {}
 
   is-accessor-descriptor@1.0.1:
     dependencies:

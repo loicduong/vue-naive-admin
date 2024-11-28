@@ -167,7 +167,7 @@ init()
 </script>
 
 <template>
-  <DarkModeContainer class="size-full flex-y-center px-16px shadow-tab">
+  <DarkModeContainer id="global-tab" class="size-full flex-y-center px-16px shadow-tab">
     <div ref="bsWrapper" class="h-full flex-1-hidden">
       <BetterScroll
         ref="bsScroll"

@@ -39,14 +39,15 @@ const isAuthRouteVisible = computed(() => import.meta.env.VITE_AUTH_ROUTE_VISIBL
     </div>
     <div class="h-full flex-y-center justify-end">
       <GlobalSearch />
-      <FullScreen v-if="!appStore.isMobile" :full="isFullscreen" @click="toggle" />
+      <FullScreen v-if="!appStore.isMobile" id="global-full-screen" :full="isFullscreen" @click="toggle" />
       <LangSwitch :lang="appStore.locale" :lang-options="appStore.localeOptions" @change-lang="appStore.changeLocale" />
       <ThemeSchemaSwitch
+        id="global-theme-schema-switch"
         :theme-schema="themeStore.themeScheme"
         :is-dark="themeStore.darkMode"
         @switch="themeStore.toggleThemeScheme"
       />
-      <ThemeButton />
+      <ThemeButton id="global-theme-switch" />
       <UserAvatar v-if="isAuthRouteVisible" />
     </div>
   </DarkModeContainer>

@@ -194,6 +194,7 @@ const local: App.I18n.Schema = {
     '/plugin/gantt': 'Biểu đồ Gantt',
     '/plugin/gantt/dhtmlx': 'dhtmlxGantt',
     '/plugin/gantt/vtable': 'VTableGantt',
+    '/plugin/guide': 'Hướng dẫn',
     '/plugin/flow': 'Flow',
     '/plugin/tables': 'Bảng',
     '/plugin/tables/vtable': 'VTable',

@@ -13,7 +13,7 @@ import '@vue-flow/core/dist/theme-default.css'
 
 definePage({
   meta: {
-    icon: 'i-mdi-graph',
+    icon: 'mdi:graph',
   },
 })
 

@@ -4,6 +4,12 @@ import { ganttTasks } from '@/components/modules/plugin/gantt/dhtmlx/data'
 import { gantt } from 'dhtmlx-gantt'
 import 'dhtmlx-gantt/codebase/dhtmlxgantt.css'
 
+definePage({
+  meta: {
+    icon: 'ant-design:bar-chart-outlined',
+  },
+})
+
 const ganttRef = shallowRef<HTMLElement>()
 
 type TimeType = 'day' | 'week' | 'month' | 'quarter' | 'year'
