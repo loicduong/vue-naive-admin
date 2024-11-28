@@ -7,7 +7,6 @@ import {
   setupIconifyOffline,
   setupLoading,
   setupNProgress,
-  setupVueTippy,
 } from './plugins'
 import { setupRouter } from './router'
 import { setupStore } from './store'
@@ -31,8 +30,6 @@ async function setupApp() {
   setupI18n(app)
 
   setupAppVersionNotification()
-
-  setupVueTippy(app)
 
   app.mount('#app')
 }
