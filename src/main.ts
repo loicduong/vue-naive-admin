@@ -1,7 +1,14 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import { setupI18n } from './locales'
-import { setupAppVersionNotification, setupDayjs, setupIconifyOffline, setupLoading, setupNProgress } from './plugins'
+import {
+  setupAppVersionNotification,
+  setupDayjs,
+  setupIconifyOffline,
+  setupLoading,
+  setupNProgress,
+  setupVueTippy,
+} from './plugins'
 import { setupRouter } from './router'
 import { setupStore } from './store'
 import './plugins/assets'
@@ -24,6 +31,8 @@ async function setupApp() {
   setupI18n(app)
 
   setupAppVersionNotification()
+
+  setupVueTippy(app)
 
   app.mount('#app')
 }
