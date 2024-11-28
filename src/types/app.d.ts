@@ -508,6 +508,8 @@ declare namespace App {
           title: string
           introduction: string
           projectInfo: {
+            node: string
+            pnpm: string
             title: string
             version: string
             latestBuildTime: string

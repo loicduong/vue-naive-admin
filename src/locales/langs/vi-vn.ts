@@ -325,6 +325,8 @@ const local: App.I18n.Schema = {
         latestBuildTime: 'Thời gian xây dựng mới nhất',
         githubLink: 'Liên kết Github',
         previewLink: 'Liên kết xem trước',
+        node: 'Phiên bản Node khuyến nghị',
+        pnpm: 'Phiên bản pnpm khuyến nghị',
       },
       prdDep: 'Phụ thuộc sản xuất',
       devDep: 'Phụ thuộc phát triển',
