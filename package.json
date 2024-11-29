@@ -85,6 +85,7 @@
     "vue-i18n": "10.0.4",
     "vue-pdf-embed": "2.1.1",
     "vue-router": "4.4.5",
+    "wavesurfer.js": "7.8.9",
     "xgplayer": "3.0.20",
     "xlsx": "0.18.5"
   },

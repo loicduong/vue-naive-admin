@@ -50,6 +50,7 @@ declare module 'vue-router/auto-routes' {
     '/multi-menu/second/child': RouteRecordInfo<'/multi-menu/second/child', '/multi-menu/second/child', Record<never, never>, Record<never, never>>,
     '/multi-menu/second/child/home': RouteRecordInfo<'/multi-menu/second/child/home', '/multi-menu/second/child/home', Record<never, never>, Record<never, never>>,
     '/plugin': RouteRecordInfo<'/plugin', '/plugin', Record<never, never>, Record<never, never>>,
+    '/plugin/audio': RouteRecordInfo<'/plugin/audio', '/plugin/audio', Record<never, never>, Record<never, never>>,
     '/plugin/charts': RouteRecordInfo<'/plugin/charts', '/plugin/charts', Record<never, never>, Record<never, never>>,
     '/plugin/charts/antv': RouteRecordInfo<'/plugin/charts/antv', '/plugin/charts/antv', Record<never, never>, Record<never, never>>,
     '/plugin/charts/echarts': RouteRecordInfo<'/plugin/charts/echarts', '/plugin/charts/echarts', Record<never, never>, Record<never, never>>,

@@ -175,6 +175,7 @@ const local: App.I18n.Schema = {
     '/function/tab': 'Tab',
     '/function/request': 'Request',
     '/plugin': 'Plugin',
+    '/plugin/audio': 'Audio',
     '/plugin/copy': 'Copy',
     '/plugin/icon': 'Icon',
     '/plugin/pdf': 'PDF Preview',
