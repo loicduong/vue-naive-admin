@@ -1,6 +1,6 @@
 {
   "name": "@sa/axios",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "exports": {
     ".": "./src/index.ts"
   },
