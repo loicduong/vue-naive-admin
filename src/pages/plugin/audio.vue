@@ -98,7 +98,7 @@ onBeforeUnmount(() => {
               </div>
 
               <div v-show="totalTime" class="m-auto mt-2 w-[180px] flex justify-around">
-                <NTooltip>
+                <NTooltip placement="bottom">
                   <template #trigger>
                     <icon-material-symbols:fast-rewind
                       v-longpress:0:100="() => wavesurfer?.skip(-1)"
@@ -107,7 +107,7 @@ onBeforeUnmount(() => {
                   </template>
                   Fast rewind (long press available)
                 </NTooltip>
-                <NTooltip>
+                <NTooltip placement="bottom">
                   <template #trigger>
                     <div class="cursor-pointer" @click="wavesurfer?.playPause()">
                       <icon-material-symbols:pause-rounded v-if="isPlay" class="h-10 w-10" />
@@ -116,7 +116,7 @@ onBeforeUnmount(() => {
                   </template>
                   {{ isPlay ? 'Pause' : 'Play' }}
                 </NTooltip>
-                <NTooltip>
+                <NTooltip placement="bottom">
                   <template #trigger>
                     <icon-material-symbols:fast-forward
                       v-longpress:0:100="() => wavesurfer?.skip(1)"
