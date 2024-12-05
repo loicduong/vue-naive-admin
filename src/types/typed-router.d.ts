@@ -73,6 +73,7 @@ declare module 'vue-router/auto-routes' {
     '/plugin/signature': RouteRecordInfo<'/plugin/signature', '/plugin/signature', Record<never, never>, Record<never, never>>,
     '/plugin/swiper': RouteRecordInfo<'/plugin/swiper', '/plugin/swiper', Record<never, never>, Record<never, never>>,
     '/plugin/tables': RouteRecordInfo<'/plugin/tables', '/plugin/tables', Record<never, never>, Record<never, never>>,
+    '/plugin/tables/ag-grid': RouteRecordInfo<'/plugin/tables/ag-grid', '/plugin/tables/ag-grid', Record<never, never>, Record<never, never>>,
     '/plugin/tables/vtable': RouteRecordInfo<'/plugin/tables/vtable', '/plugin/tables/vtable', Record<never, never>, Record<never, never>>,
     '/plugin/typeit': RouteRecordInfo<'/plugin/typeit', '/plugin/typeit', Record<never, never>, Record<never, never>>,
     '/plugin/video': RouteRecordInfo<'/plugin/video', '/plugin/video', Record<never, never>, Record<never, never>>,

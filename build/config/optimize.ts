@@ -9,6 +9,7 @@ export const include = [
   '@vue-flow/background',
   '@vue-flow/core',
   '@vueuse/components',
+  'ag-grid-vue3',
   'clipboard',
   'dagre',
   'dhtmlx-gantt',

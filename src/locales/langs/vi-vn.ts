@@ -201,6 +201,7 @@ const local: App.I18n.Schema = {
     '/plugin/flow/vue-flow': 'Vue Flow',
     '/plugin/tables': 'Bảng',
     '/plugin/tables/vtable': 'VTable',
+    '/plugin/tables/ag-grid': 'AG Grid',
     '/multi-menu': 'Menu nhiều cấp',
     '/multi-menu/first': 'Menu một',
     '/multi-menu/first/child': 'Menu con một',
