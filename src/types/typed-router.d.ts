@@ -64,6 +64,7 @@ declare module 'vue-router/auto-routes' {
     '/plugin/gantt/vtable': RouteRecordInfo<'/plugin/gantt/vtable', '/plugin/gantt/vtable', Record<never, never>, Record<never, never>>,
     '/plugin/guide': RouteRecordInfo<'/plugin/guide', '/plugin/guide', Record<never, never>, Record<never, never>>,
     '/plugin/icon': RouteRecordInfo<'/plugin/icon', '/plugin/icon', Record<never, never>, Record<never, never>>,
+    '/plugin/map': RouteRecordInfo<'/plugin/map', '/plugin/map', Record<never, never>, Record<never, never>>,
     '/plugin/pdf': RouteRecordInfo<'/plugin/pdf', '/plugin/pdf', Record<never, never>, Record<never, never>>,
     '/plugin/pdf/html': RouteRecordInfo<'/plugin/pdf/html', '/plugin/pdf/html', Record<never, never>, Record<never, never>>,
     '/plugin/pdf/link': RouteRecordInfo<'/plugin/pdf/link', '/plugin/pdf/link', Record<never, never>, Record<never, never>>,

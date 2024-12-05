@@ -178,6 +178,7 @@ const local: App.I18n.Schema = {
     '/plugin/audio': 'Audio',
     '/plugin/copy': 'Sao chép',
     '/plugin/icon': 'Icon',
+    '/plugin/map': 'Bản đồ Google',
     '/plugin/pdf': 'Xem trước PDF',
     '/plugin/pdf/html': 'HTML',
     '/plugin/pdf/link': 'Link',

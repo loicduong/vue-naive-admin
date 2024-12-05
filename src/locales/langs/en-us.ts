@@ -178,6 +178,7 @@ const local: App.I18n.Schema = {
     '/plugin/audio': 'Audio',
     '/plugin/copy': 'Copy',
     '/plugin/icon': 'Icon',
+    '/plugin/map': 'Google Map',
     '/plugin/pdf': 'PDF Preview',
     '/plugin/pdf/html': 'HTML',
     '/plugin/pdf/link': 'Link',

@@ -22,6 +22,7 @@ export const include = [
   'swiper/vue',
   'typeit',
   'vue-pdf-embed',
+  'vue3-google-map',
   'wavesurfer.js',
   'xgplayer',
   'xlsx',
