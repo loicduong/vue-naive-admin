@@ -1,6 +1,7 @@
 export const include = [
   '@antv/g6',
   '@better-scroll/core',
+  '@mapxus/mapxus-map',
   '@visactor/vchart',
   '@visactor/vtable-editors',
   '@visactor/vtable-gantt',
@@ -14,6 +15,7 @@ export const include = [
   'echarts',
   'html-to-image',
   'intro.js',
+  'maplibre-gl',
   'pagedjs',
   'signature_pad',
   'simplebar-vue',
