@@ -1,7 +1,7 @@
 import process from 'node:process'
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath } from 'node:url'
 import { defineConfig, loadEnv } from 'vite'
-import { createViteProxy, getBuildInfo } from './build/config'
+import { createViteProxy, getBuildInfo, include } from './build/config'
 import { setupVitePlugins } from './build/plugins'
 
 export default defineConfig((configEnv) => {
@@ -13,6 +13,11 @@ export default defineConfig((configEnv) => {
 
   return {
     base: viteEnv.VITE_BASE_URL,
+    define: {
+      BUILD_TIME: JSON.stringify(time),
+      BUILD_DESC: JSON.stringify(desc),
+    },
+    plugins: setupVitePlugins(viteEnv, time, version),
     resolve: {
       alias: {
         '~': fileURLToPath(new URL('./', import.meta.url)),
@@ -27,32 +32,21 @@ export default defineConfig((configEnv) => {
         },
       },
     },
-    plugins: setupVitePlugins(viteEnv, time, version),
-    define: {
-      BUILD_TIME: JSON.stringify(time),
-      BUILD_DESC: JSON.stringify(desc),
-    },
     server: {
       host: '0.0.0.0',
       port: viteEnv.VITE_SERVER_PORT,
       open: true,
       proxy: createViteProxy(viteEnv, enableProxy),
-      fs: {
-        cachedChecks: false,
-      },
-    },
-    preview: {
-      port: viteEnv.VITE_PREVIEW_PORT,
+      warmup: { clientFiles: ['./index.html', './src/{pages,components}/*'] },
+      fs: { cachedChecks: false },
     },
     build: {
-      reportCompressedSize: false,
       sourcemap: viteEnv.VITE_SOURCE_MAP === 'Y',
-      commonjsOptions: {
-        ignoreTryCatch: false,
-      },
+      commonjsOptions: { ignoreTryCatch: false },
+      reportCompressedSize: false,
     },
-    worker: {
-      format: 'es',
-    },
+    preview: { port: viteEnv.VITE_PREVIEW_PORT },
+    optimizeDeps: { include },
+    worker: { format: 'es' },
   }
 })
