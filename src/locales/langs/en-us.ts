@@ -190,6 +190,7 @@ const local: App.I18n.Schema = {
     '/plugin/video': 'Video',
     '/plugin/charts': 'Charts',
     '/plugin/charts/antv': 'AntV',
+    '/plugin/charts/d3': 'D3',
     '/plugin/charts/echarts': 'ECharts',
     '/plugin/charts/vchart': 'VChart',
     '/plugin/excel': 'Excel',

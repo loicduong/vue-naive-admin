@@ -53,6 +53,7 @@ declare module 'vue-router/auto-routes' {
     '/plugin/audio': RouteRecordInfo<'/plugin/audio', '/plugin/audio', Record<never, never>, Record<never, never>>,
     '/plugin/charts': RouteRecordInfo<'/plugin/charts', '/plugin/charts', Record<never, never>, Record<never, never>>,
     '/plugin/charts/antv': RouteRecordInfo<'/plugin/charts/antv', '/plugin/charts/antv', Record<never, never>, Record<never, never>>,
+    '/plugin/charts/d3': RouteRecordInfo<'/plugin/charts/d3', '/plugin/charts/d3', Record<never, never>, Record<never, never>>,
     '/plugin/charts/echarts': RouteRecordInfo<'/plugin/charts/echarts', '/plugin/charts/echarts', Record<never, never>, Record<never, never>>,
     '/plugin/charts/vchart': RouteRecordInfo<'/plugin/charts/vchart', '/plugin/charts/vchart', Record<never, never>, Record<never, never>>,
     '/plugin/copy': RouteRecordInfo<'/plugin/copy', '/plugin/copy', Record<never, never>, Record<never, never>>,
