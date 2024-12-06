@@ -67,6 +67,7 @@ declare module 'vue-router/auto-routes' {
     '/plugin/icon': RouteRecordInfo<'/plugin/icon', '/plugin/icon', Record<never, never>, Record<never, never>>,
     '/plugin/json': RouteRecordInfo<'/plugin/json', '/plugin/json', Record<never, never>, Record<never, never>>,
     '/plugin/json/json-editor-vue': RouteRecordInfo<'/plugin/json/json-editor-vue', '/plugin/json/json-editor-vue', Record<never, never>, Record<never, never>>,
+    '/plugin/json/vue-json-pretty': RouteRecordInfo<'/plugin/json/vue-json-pretty', '/plugin/json/vue-json-pretty', Record<never, never>, Record<never, never>>,
     '/plugin/map': RouteRecordInfo<'/plugin/map', '/plugin/map', Record<never, never>, Record<never, never>>,
     '/plugin/map/google': RouteRecordInfo<'/plugin/map/google', '/plugin/map/google', Record<never, never>, Record<never, never>>,
     '/plugin/pdf': RouteRecordInfo<'/plugin/pdf', '/plugin/pdf', Record<never, never>, Record<never, never>>,

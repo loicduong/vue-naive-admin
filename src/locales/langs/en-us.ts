@@ -201,6 +201,7 @@ const local: App.I18n.Schema = {
     '/plugin/guide': 'Guide',
     '/plugin/json': 'JSON Editor',
     '/plugin/json/json-editor-vue': 'JSON Editor Vue',
+    '/plugin/json/vue-json-pretty': 'Vue JSON Pretty',
     '/plugin/tables': 'Tables',
     '/plugin/tables/vtable': 'VTable',
     '/plugin/tables/ag-grid': 'AG Grid',
