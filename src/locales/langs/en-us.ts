@@ -180,7 +180,6 @@ const local: App.I18n.Schema = {
     '/plugin/icon': 'Icon',
     '/plugin/map': 'Map',
     '/plugin/map/google': 'Google',
-    '/plugin/map/mapxus': 'Mapxus',
     '/plugin/pdf': 'PDF Preview',
     '/plugin/pdf/html': 'HTML',
     '/plugin/pdf/link': 'Link',

@@ -67,7 +67,6 @@ declare module 'vue-router/auto-routes' {
     '/plugin/icon': RouteRecordInfo<'/plugin/icon', '/plugin/icon', Record<never, never>, Record<never, never>>,
     '/plugin/map': RouteRecordInfo<'/plugin/map', '/plugin/map', Record<never, never>, Record<never, never>>,
     '/plugin/map/google': RouteRecordInfo<'/plugin/map/google', '/plugin/map/google', Record<never, never>, Record<never, never>>,
-    '/plugin/map/mapxus': RouteRecordInfo<'/plugin/map/mapxus', '/plugin/map/mapxus', Record<never, never>, Record<never, never>>,
     '/plugin/pdf': RouteRecordInfo<'/plugin/pdf', '/plugin/pdf', Record<never, never>, Record<never, never>>,
     '/plugin/pdf/html': RouteRecordInfo<'/plugin/pdf/html', '/plugin/pdf/html', Record<never, never>, Record<never, never>>,
     '/plugin/pdf/link': RouteRecordInfo<'/plugin/pdf/link', '/plugin/pdf/link', Record<never, never>, Record<never, never>>,
