@@ -114,8 +114,6 @@ async function initRoute(to: RouteLocationNormalized): Promise<RouteLocationRaw 
     return location
   }
 
-  await routeStore.onRouteSwitchWhenLoggedIn()
-
   if (!routeStore.isInitAuthRoute) {
     // initialize the auth route
     await routeStore.initAuthRoute()
@@ -136,6 +134,8 @@ async function initRoute(to: RouteLocationNormalized): Promise<RouteLocationRaw 
       return location
     }
   }
+
+  routeStore.onRouteSwitchWhenLoggedIn()
 
   // the auth route is initialized
   // it is not the "not-found" route, then it is allowed to access
