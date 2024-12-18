@@ -110,6 +110,9 @@ const local: App.I18n.Schema = {
         visible: 'Hiển thị breadcrumb',
         showIcon: 'Hiển thị biểu tượng breadcrumb',
       },
+      multilingual: {
+        visible: 'Hiển thị nút chuyển đổi ngôn ngữ',
+      },
     },
     tab: {
       visible: 'Hiển thị tab',

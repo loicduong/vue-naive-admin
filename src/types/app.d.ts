@@ -53,6 +53,9 @@ declare namespace App {
           /** Whether to show the breadcrumb icon */
           showIcon: boolean
         }
+        multilingual: {
+          visible: boolean
+        }
       }
       /** Tab */
       tab: {
@@ -363,6 +366,9 @@ declare namespace App {
           breadcrumb: {
             visible: string
             showIcon: string
+          }
+          multilingual: {
+            visible: string
           }
         }
         tab: {

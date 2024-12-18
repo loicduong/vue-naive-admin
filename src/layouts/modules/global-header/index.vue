@@ -32,15 +32,29 @@ const isAuthRouteVisible = computed(() => import.meta.env.VITE_AUTH_ROUTE_VISIBL
 <template>
   <DarkModeContainer class="h-full flex-y-center px-12px shadow-header">
     <GlobalLogo v-if="showLogo" class="h-full" :style="{ width: `${themeStore.sider.width}px` }" />
-    <MenuToggler v-if="showMenuToggler" :collapsed="appStore.siderCollapse" @click="appStore.toggleSiderCollapse" />
+    <MenuToggler
+      v-if="showMenuToggler"
+      :collapsed="appStore.siderCollapse"
+      @click="appStore.toggleSiderCollapse"
+    />
     <div v-if="showMenu" :id="GLOBAL_HEADER_MENU_ID" class="h-full flex-y-center flex-1-hidden" />
     <div v-else class="h-full flex-y-center flex-1-hidden">
       <GlobalBreadcrumb v-if="!appStore.isMobile" class="ml-12px" />
     </div>
     <div class="h-full flex-y-center justify-end">
       <GlobalSearch />
-      <FullScreen v-if="!appStore.isMobile" id="global-full-screen" :full="isFullscreen" @click="toggle" />
-      <LangSwitch :lang="appStore.locale" :lang-options="appStore.localeOptions" @change-lang="appStore.changeLocale" />
+      <FullScreen
+        v-if="!appStore.isMobile"
+        id="global-full-screen"
+        :full="isFullscreen"
+        @click="toggle"
+      />
+      <LangSwitch
+        v-if="themeStore.header.multilingual.visible"
+        :lang="appStore.locale"
+        :lang-options="appStore.localeOptions"
+        @change-lang="appStore.changeLocale"
+      />
       <ThemeSchemaSwitch
         id="global-theme-schema-switch"
         :theme-schema="themeStore.themeScheme"

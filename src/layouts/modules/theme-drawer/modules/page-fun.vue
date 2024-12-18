@@ -10,9 +10,7 @@ import { useThemeStore } from '@/store/modules/theme'
 import { translateOptions } from '@/utils/common'
 import SettingItem from '../components/setting-item.vue'
 
-defineOptions({
-  name: 'PageFun',
-})
+defineOptions({ name: 'PageFun' })
 
 const themeStore = useThemeStore()
 
@@ -176,6 +174,9 @@ const isWrapperScrollMode = computed(() => themeStore.layout.scrollMode === 'wra
         class="w-120px"
         placeholder="VueNaiveAdmin"
       />
+    </SettingItem>
+    <SettingItem key="9" :label="$t('theme.header.multilingual.visible')">
+      <NSwitch v-model:value="themeStore.header.multilingual.visible" />
     </SettingItem>
   </TransitionGroup>
 </template>

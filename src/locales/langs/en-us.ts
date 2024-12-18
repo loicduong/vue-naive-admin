@@ -110,6 +110,9 @@ const local: App.I18n.Schema = {
         visible: 'Breadcrumb Visible',
         showIcon: 'Breadcrumb Icon Visible',
       },
+      multilingual: {
+        visible: 'Display multilingual button',
+      },
     },
     tab: {
       visible: 'Tab Visible',
