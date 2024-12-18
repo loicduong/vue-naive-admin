@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community'
 import { AgGridVue } from 'ag-grid-vue3'
-import 'ag-grid-community/styles/ag-grid.css' // Mandatory CSS required by the Data Grid
-import 'ag-grid-community/styles/ag-theme-quartz.css' // Optional Theme applied to the Data Grid
 
 definePage({ meta: { icon: 'icon-park-outline:table' } })
+
+ModuleRegistry.registerModules([AllCommunityModule])
 
 const rowData = ref([
   { make: 'Tesla', model: 'Model Y', price: 64950, electric: true },
@@ -25,13 +26,15 @@ const colDefs = ref([
 <template>
   <div class="h-full">
     <NCard title="AG Grid Table" :bordered="false" class="h-full card-wrapper">
-      <GithubLink link="https://github.com/ag-grid/ag-grid" class="mb-4" />
-      <AgGridVue
-        class="ag-theme-quartz-dark h-full w-full"
-        :column-defs="colDefs"
-        :row-data="rowData"
-        :default-col-def="{ flex: 1 }"
-      />
+      <div class="h-full flex flex-col">
+        <GithubLink link="https://github.com/ag-grid/ag-grid" class="mb-4" />
+        <AgGridVue
+          class="h-full w-full"
+          :column-defs="colDefs"
+          :row-data="rowData"
+          :default-col-def="{ flex: 1 }"
+        />
+      </div>
     </NCard>
   </div>
 </template>
