@@ -264,8 +264,6 @@ const local: App.I18n.Schema = {
       },
     },
     home: {
-      branchDesc:
-        'Để thuận tiện cho việc phát triển và hợp nhất cập nhật, chúng tôi đã rút gọn mã nguồn của nhánh main, chỉ giữ lại menu trang chủ, nội dung khác đã được chuyển sang nhánh example để bảo trì. Nội dung hiển thị trên địa chỉ xem trước là nội dung của nhánh example.',
       greeting: 'Chào buổi sáng, {userName}, hôm nay lại là một ngày tràn đầy năng lượng!',
       weatherDesc: 'Hôm nay có mây chuyển nắng, 20℃ - 25℃!',
       projectCount: 'Số dự án',
