@@ -26,7 +26,7 @@ const naiveDateLocale = computed(() => {
 
 const watermarkProps = computed<WatermarkProps>(() => {
   return {
-    content: themeStore.watermark?.text || 'VueNaiveAdmin',
+    content: themeStore.watermark.text,
     cross: true,
     fullscreen: true,
     fontSize: 16,
@@ -53,7 +53,7 @@ const buildDesc = computed(() => `${getEnvVariable('VITE_BUILD_PREFIX')}${BUILD_
   >
     <AppProvider>
       <RouterView class="bg-layout" />
-      <NWatermark v-if="themeStore.watermark?.visible" v-bind="watermarkProps" />
+      <NWatermark v-if="themeStore.watermark.visible" v-bind="watermarkProps" />
       <GlobalBuildDesc v-if="Boolean(buildDesc)" :data="buildDesc" />
     </AppProvider>
   </NConfigProvider>

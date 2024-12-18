@@ -80,6 +80,9 @@ importers:
       dayjs:
         specifier: 1.11.13
         version: 1.11.13
+      defu:
+        specifier: 6.1.4
+        version: 6.1.4
       dhtmlx-gantt:
         specifier: 9.0.3
         version: 9.0.3
