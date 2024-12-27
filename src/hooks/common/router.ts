@@ -100,10 +100,10 @@ export function useRouterPush(inSetup = true) {
     const redirect = route.value.query?.redirect as string
 
     if (needRedirect && redirect) {
-      routerPush(redirect)
+      await routerPush(redirect)
     }
     else {
-      toHome()
+      await toHome()
     }
   }
 
