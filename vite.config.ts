@@ -38,7 +38,6 @@ export default defineConfig((configEnv) => {
       open: true,
       proxy: createViteProxy(viteEnv, enableProxy),
       warmup: { clientFiles: ['./index.html', './src/{pages,components}/*'] },
-      fs: { cachedChecks: false },
     },
     build: {
       sourcemap: viteEnv.VITE_SOURCE_MAP === 'Y',
