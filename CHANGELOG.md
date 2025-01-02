@@ -1,6 +1,55 @@
 # Changelog
 
 
+## [v0.0.4](https://github.com/dploc96/vue-naive-admin/compare/v0.0.3...v0.0.4) (2025-01-02)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **components**:
+  - add vue3-google-map &nbsp;-&nbsp; by **loicduong** [<samp>(36743)</samp>](https://github.com/dploc96/vue-naive-admin/commit/3674334)
+  - add mapxus map &nbsp;-&nbsp; by **loicduong** [<samp>(166fb)</samp>](https://github.com/dploc96/vue-naive-admin/commit/166fb26)
+  - add ag-grid &nbsp;-&nbsp; by **loicduong** [<samp>(d2fe4)</samp>](https://github.com/dploc96/vue-naive-admin/commit/d2fe432)
+  - add d3 &nbsp;-&nbsp; by **loicduong** [<samp>(61c62)</samp>](https://github.com/dploc96/vue-naive-admin/commit/61c62e0)
+  - remove mapxus &nbsp;-&nbsp; by **loicduong** [<samp>(f3806)</samp>](https://github.com/dploc96/vue-naive-admin/commit/f380688)
+  - add json editor vue &nbsp;-&nbsp; by **loicduong** [<samp>(f0327)</samp>](https://github.com/dploc96/vue-naive-admin/commit/f032714)
+  - add vue json pretty &nbsp;-&nbsp; by **loicduong** [<samp>(e29c7)</samp>](https://github.com/dploc96/vue-naive-admin/commit/e29c791)
+- **projects**:
+  - remove vite plugin progress &nbsp;-&nbsp; by **loicduong** [<samp>(bc8f6)</samp>](https://github.com/dploc96/vue-naive-admin/commit/bc8f6a5)
+  - support show tab when not loggedIn &nbsp;-&nbsp; by **loicduong** [<samp>(1e5c4)</samp>](https://github.com/dploc96/vue-naive-admin/commit/1e5c446)
+  - multi language buttons support hiding &nbsp;-&nbsp; by **loicduong** [<samp>(e2815)</samp>](https://github.com/dploc96/vue-naive-admin/commit/e28150b)
+  - update auth background &nbsp;-&nbsp; by **loicduong** [<samp>(36418)</samp>](https://github.com/dploc96/vue-naive-admin/commit/364184a)
+
+### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
+
+- **hooks**:
+  - the total number before assigning a value to the table is incorrect &nbsp;-&nbsp; by **loicduong** [<samp>(1616f)</samp>](https://github.com/dploc96/vue-naive-admin/commit/1616fe1)
+- **projects**:
+  - fix route guard hook onRouteSwitchWhenLoggedIn &nbsp;-&nbsp; by **loicduong** [<samp>(11142)</samp>](https://github.com/dploc96/vue-naive-admin/commit/111421d)
+  - check if init userInfo when initAuthRoute &nbsp;-&nbsp; by **loicduong** [<samp>(2c154)</samp>](https://github.com/dploc96/vue-naive-admin/commit/2c154b6)
+  - fix login success notification &nbsp;-&nbsp; by **loicduong** [<samp>(8acf7)</samp>](https://github.com/dploc96/vue-naive-admin/commit/8acf7a8)
+
+### &nbsp;&nbsp;&nbsp;🛠 Optimizations
+
+- **projects**:
+  - optimize vite &nbsp;-&nbsp; by **loicduong** [<samp>(bd039)</samp>](https://github.com/dploc96/vue-naive-admin/commit/bd039a0)
+  - optimize router guard &nbsp;-&nbsp; by **loicduong** [<samp>(7a6c3)</samp>](https://github.com/dploc96/vue-naive-admin/commit/7a6c314)
+  - use defu to fill added theme config &nbsp;-&nbsp; by **loicduong** [<samp>(0cdf5)</samp>](https://github.com/dploc96/vue-naive-admin/commit/0cdf5ee)
+
+### &nbsp;&nbsp;&nbsp;🏡 Chore
+
+- **deps**:
+  - update deps &nbsp;-&nbsp; by **loicduong** [<samp>(80155)</samp>](https://github.com/dploc96/vue-naive-admin/commit/8015534)
+- **projects**:
+  - update deps &nbsp;-&nbsp; by **loicduong** [<samp>(e28cb)</samp>](https://github.com/dploc96/vue-naive-admin/commit/e28cba6)
+  - remove home warning &nbsp;-&nbsp; by **loicduong** [<samp>(19230)</samp>](https://github.com/dploc96/vue-naive-admin/commit/192306d)
+  - update license &nbsp;-&nbsp; by **loicduong** [<samp>(a0c91)</samp>](https://github.com/dploc96/vue-naive-admin/commit/a0c9128)
+  - update deps & fix vite config &nbsp;-&nbsp; by **loicduong** [<samp>(05eaf)</samp>](https://github.com/dploc96/vue-naive-admin/commit/05eaf5c)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+
+[loicduong](mailto:mikhailcolt@gmail.com)
+
 ## [v0.0.3](https://github.com/dploc96/vue-naive-admin/compare/v0.0.2...v0.0.3) (2024-12-02)
 
 ### &nbsp;&nbsp;&nbsp;🚨 Breaking Changes
