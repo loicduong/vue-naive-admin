@@ -8,6 +8,7 @@
     "axios",
     "bumpp",
     "dagre",
+    "defu",
     "dhtmlx",
     "echarts",
     "execa",
