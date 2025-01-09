@@ -1,5 +1,6 @@
 export const include = [
   '@antv/g6',
+  '@better-scroll/core',
   '@visactor/vchart',
   '@visactor/vtable-editors',
   '@visactor/vtable-gantt',
@@ -8,7 +9,6 @@ export const include = [
   '@vue-flow/core',
   '@vueuse/components',
   'ag-grid-vue3',
-  'clipboard',
   'dagre',
   'dhtmlx-gantt',
   'echarts',
