@@ -2,9 +2,9 @@
 import { useDialog, useLoadingBar, useMessage, useNotification } from 'naive-ui'
 import { createTextVNode } from 'vue'
 
-defineOptions({
-  name: 'AppProvider',
-})
+defineOptions({ name: 'AppProvider' })
+
+const route = useRoute()
 
 const ContextHolder = defineComponent({
   name: 'ContextHolder',
@@ -25,7 +25,7 @@ const ContextHolder = defineComponent({
 
 <template>
   <NLoadingBarProvider>
-    <NDialogProvider>
+    <NDialogProvider :key="route.fullPath">
       <NNotificationProvider>
         <NMessageProvider>
           <ContextHolder />
