@@ -136,8 +136,6 @@ declare namespace App {
     type BaseToken = Record<string, Record<string, string>>
 
     interface ThemeSettingTokenColor {
-      /** the progress bar color, if not set, will use the primary color */
-      'nprogress'?: string
       'container': string
       'layout': string
       'inverted': string

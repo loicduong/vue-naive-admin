@@ -104,9 +104,6 @@ importers:
       naive-ui:
         specifier: 2.40.4
         version: 2.40.4(vue@3.5.13(typescript@5.7.2))
-      nprogress:
-        specifier: 0.2.0
-        version: 0.2.0
       pagedjs:
         specifier: 0.4.3
         version: 0.4.3
@@ -186,9 +183,6 @@ importers:
       '@types/node':
         specifier: 22.10.3
         version: 22.10.3
-      '@types/nprogress':
-        specifier: 0.2.3
-        version: 0.2.3
       '@unocss/eslint-config':
         specifier: 0.65.3
         version: 0.65.3(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2)
@@ -1861,9 +1855,6 @@ packages:
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
-
-  '@types/nprogress@0.2.3':
-    resolution: {integrity: sha512-k7kRA033QNtC+gLc4VPlfnue58CM1iQLgn1IMAU8VPHGOj7oIHPp9UlhedEnD/Gl8evoCjwkZjlBORtZ3JByUA==}
 
   '@types/qs@6.9.17':
     resolution: {integrity: sha512-rX4/bPcfmvxHDv0XjfJELTTr+iB+tn032nPILqHm5wbthUUUuVtNGGqzhya9XUxjTP8Fpr0qYgSZZKxGY++svQ==}
@@ -5294,9 +5285,6 @@ packages:
     resolution: {integrity: sha512-9qny7Z9DsQU8Ou39ERsPU4OZQlSTP47ShQzuKZ6PRXpYLtIFgl/DEBYEXKlvcEa+9tHVcK8CF81Y2V72qaZhWA==}
     engines: {node: '>=18'}
 
-  nprogress@0.2.0:
-    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
-
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
 
@@ -8580,8 +8568,6 @@ snapshots:
       undici-types: 6.20.0
 
   '@types/normalize-package-data@2.4.4': {}
-
-  '@types/nprogress@0.2.3': {}
 
   '@types/qs@6.9.17': {}
 
@@ -12824,8 +12810,6 @@ snapshots:
     dependencies:
       path-key: 4.0.0
       unicorn-magic: 0.3.0
-
-  nprogress@0.2.0: {}
 
   nth-check@2.1.1:
     dependencies:

@@ -6,7 +6,6 @@ import {
   setupDayjs,
   setupIconifyOffline,
   setupLoading,
-  setupNProgress,
 } from './plugins'
 import { setupRouter } from './router'
 import { setupStore } from './store'
@@ -14,8 +13,6 @@ import './plugins/assets'
 
 async function setupApp() {
   setupLoading()
-
-  setupNProgress()
 
   setupIconifyOffline()
 

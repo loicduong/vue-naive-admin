@@ -53,7 +53,6 @@ export function createThemeToken(
   const themeTokens: App.Theme.ThemeTokenCSSVars = {
     colors: {
       ...paletteColors,
-      nprogress: paletteColors.primary,
       ...light.colors,
     },
     boxShadow: {

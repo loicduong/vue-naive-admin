@@ -2,8 +2,6 @@ export {}
 
 declare global {
   export interface Window {
-    /** NProgress instance */
-    NProgress?: import('nprogress').NProgress
     /** Loading bar instance */
     $loadingBar?: import('naive-ui').LoadingBarProviderInst
     /** Dialog instance */

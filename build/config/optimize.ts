@@ -1,6 +1,5 @@
 export const include = [
   '@antv/g6',
-  '@better-scroll/core',
   '@visactor/vchart',
   '@visactor/vtable-editors',
   '@visactor/vtable-gantt',
@@ -23,6 +22,7 @@ export const include = [
   'swiper/modules',
   'swiper/vue',
   'typeit',
+  'vue-draggable-plus',
   'vue-json-pretty',
   'vue-pdf-embed',
   'vue3-google-map',
