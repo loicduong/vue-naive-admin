@@ -43,11 +43,9 @@ async function handleCopy() {
     <NButton type="error" ghost @click="handleReset">
       {{ $t('theme.configOperation.resetConfig') }}
     </NButton>
-    <div>
-      <NButton type="primary" @click="handleCopy">
-        {{ $t('theme.configOperation.copyConfig') }}
-      </NButton>
-    </div>
+    <NButton type="primary" @click="handleCopy">
+      {{ $t('theme.configOperation.copyConfig') }}
+    </NButton>
   </div>
 </template>
 
