@@ -4,8 +4,6 @@ import { createTextVNode } from 'vue'
 
 defineOptions({ name: 'AppProvider' })
 
-const route = useRoute()
-
 const ContextHolder = defineComponent({
   name: 'ContextHolder',
   setup() {
@@ -25,7 +23,7 @@ const ContextHolder = defineComponent({
 
 <template>
   <NLoadingBarProvider>
-    <NDialogProvider :key="route.fullPath">
+    <NDialogProvider>
       <NNotificationProvider>
         <NMessageProvider>
           <ContextHolder />
