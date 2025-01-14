@@ -324,7 +324,7 @@ const local: App.I18n.Schema = {
     },
     about: {
       title: 'Giới thiệu',
-      introduction: `SoybeanAdmin là một mẫu quản trị thanh lịch và mạnh mẽ, dựa trên công nghệ front-end mới nhất, bao gồm Vue3, Vite6, TypeScript, Pinia và UnoCSS. Nó có cấu hình chủ đề phong phú và các thành phần tích hợp sẵn, các quy định mã nghiêm ngặt và một hệ thống định tuyến tệp tự động. Ngoài ra, nó cũng sử dụng giải pháp dữ liệu giả trực tuyến dựa trên ApiFox. SoybeanAdmin cung cấp cho bạn một giải pháp quản trị một điểm dừng, không cần cấu hình thêm, và sẵn sàng sử dụng. Nó cũng là một phương pháp tốt nhất để học các công nghệ tiên tiến nhanh chóng.`,
+      introduction: `VueNaiveAdmin là một mẫu quản trị thanh lịch và mạnh mẽ, dựa trên công nghệ front-end mới nhất, bao gồm Vue3, Vite6, TypeScript, Pinia và UnoCSS. Nó có cấu hình chủ đề phong phú và các thành phần tích hợp sẵn, các quy định mã nghiêm ngặt và một hệ thống định tuyến tệp tự động. Ngoài ra, nó cũng sử dụng giải pháp dữ liệu giả trực tuyến dựa trên ApiFox. VueNaiveAdmin cung cấp cho bạn một giải pháp quản trị một điểm dừng, không cần cấu hình thêm, và sẵn sàng sử dụng. Nó cũng là một phương pháp tốt nhất để học các công nghệ tiên tiến nhanh chóng.`,
       projectInfo: {
         title: 'Thông tin dự án',
         version: 'Phiên bản',
