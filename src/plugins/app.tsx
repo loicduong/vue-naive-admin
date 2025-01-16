@@ -26,7 +26,7 @@ export function setupAppVersionNotification() {
     return [!isShow, document.visibilityState === 'visible', !import.meta.env.DEV].every(Boolean)
   }
 
-  const checkForUpdates = async () => {
+  async function checkForUpdates() {
     if (!shouldCheckForUpdates()) {
       return
     }
