@@ -121,7 +121,8 @@ function updateLocale() {
   updateOptions((opts, factory) => {
     const originOpts = factory()
 
-    opts.series[0].color = originOpts.series[0].name
+    opts.legend.data = originOpts.legend.data
+    opts.series[0].name = originOpts.series[0].name
     opts.series[1].name = originOpts.series[1].name
 
     return opts
