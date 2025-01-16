@@ -2,27 +2,33 @@
 import { useEcharts } from '@/hooks/common/echarts'
 import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
+import { useThemeStore } from '@/store/modules/theme'
+import { getPaletteColorByNumber } from '@sa/color'
 
-defineOptions({
-  name: 'PieChart',
-})
+defineOptions({ name: 'PieChart' })
+
+const themeStore = useThemeStore()
 
 const appStore = useAppStore()
 
+const colors = computed(() => {
+  const lightColor = getPaletteColorByNumber(themeStore.themeColor, 300)
+  const darkColor = getPaletteColorByNumber(themeStore.themeColor, 700)
+  const darkestColor = getPaletteColorByNumber(themeStore.themeColor, 900)
+
+  return [lightColor, themeStore.themeColor, darkColor, darkestColor]
+})
+
 const { domRef, updateOptions } = useEcharts(() => ({
-  tooltip: {
-    trigger: 'item',
-  },
+  tooltip: { trigger: 'item' },
   legend: {
     bottom: '1%',
     left: 'center',
-    itemStyle: {
-      borderWidth: 0,
-    },
+    itemStyle: { borderWidth: 0 },
   },
   series: [
     {
-      color: ['#5da8ff', '#8e9dff', '#fedc69', '#26deca'],
+      color: colors.value,
       name: $t('page.home.schedule'),
       type: 'pie',
       radius: ['45%', '75%'],
@@ -42,18 +48,14 @@ const { domRef, updateOptions } = useEcharts(() => ({
           fontSize: '12',
         },
       },
-      labelLine: {
-        show: false,
-      },
+      labelLine: { show: false },
       data: [] as { name: string, value: number }[],
     },
   ],
 }))
 
 async function mockData() {
-  await new Promise((resolve) => {
-    setTimeout(resolve, 1000)
-  })
+  await new Promise(resolve => (setTimeout(resolve, 1000)))
 
   updateOptions((opts) => {
     opts.series[0].data = [
@@ -84,18 +86,21 @@ function updateLocale() {
   })
 }
 
-async function init() {
-  mockData()
-}
+const init = async () => (await mockData())
+
+watch(() => appStore.locale, () => (updateLocale()))
 
 watch(
-  () => appStore.locale,
+  () => themeStore.themeColor,
   () => {
-    updateLocale()
+    updateOptions((opts) => {
+      opts.series[0].color = colors.value
+
+      return opts
+    })
   },
 )
 
-// init
 init()
 </script>
 

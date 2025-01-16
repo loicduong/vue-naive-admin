@@ -2,26 +2,26 @@
 import { useEcharts } from '@/hooks/common/echarts'
 import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
+import { useThemeStore } from '@/store/modules/theme'
+import { getPaletteColorByNumber } from '@sa/color'
 
-defineOptions({
-  name: 'LineChart',
-})
+defineOptions({ name: 'LineChart' })
+
+const themeStore = useThemeStore()
 
 const appStore = useAppStore()
+
+const lightColor = computed(() => getPaletteColorByNumber(themeStore.themeColor, 300))
 
 const { domRef, updateOptions } = useEcharts(() => ({
   tooltip: {
     trigger: 'axis',
     axisPointer: {
       type: 'cross',
-      label: {
-        backgroundColor: '#6a7985',
-      },
+      label: { backgroundColor: '#6a7985' },
     },
   },
-  legend: {
-    data: [$t('page.home.downloadCount'), $t('page.home.registerCount')],
-  },
+  legend: { data: [$t('page.home.downloadCount'), $t('page.home.registerCount')] },
   grid: {
     left: '3%',
     right: '4%',
@@ -33,12 +33,10 @@ const { domRef, updateOptions } = useEcharts(() => ({
     boundaryGap: false,
     data: [] as string[],
   },
-  yAxis: {
-    type: 'value',
-  },
+  yAxis: { type: 'value' },
   series: [
     {
-      color: '#8e9dff',
+      color: themeStore.themeColor,
       name: $t('page.home.downloadCount'),
       type: 'line',
       smooth: true,
@@ -53,7 +51,7 @@ const { domRef, updateOptions } = useEcharts(() => ({
           colorStops: [
             {
               offset: 0.25,
-              color: '#8e9dff',
+              color: themeStore.themeColor,
             },
             {
               offset: 1,
@@ -62,13 +60,11 @@ const { domRef, updateOptions } = useEcharts(() => ({
           ],
         },
       },
-      emphasis: {
-        focus: 'series',
-      },
+      emphasis: { focus: 'series' },
       data: [] as number[],
     },
     {
-      color: '#26deca',
+      color: lightColor.value,
       name: $t('page.home.registerCount'),
       type: 'line',
       smooth: true,
@@ -83,7 +79,7 @@ const { domRef, updateOptions } = useEcharts(() => ({
           colorStops: [
             {
               offset: 0.25,
-              color: '#26deca',
+              color: lightColor.value,
             },
             {
               offset: 1,
@@ -92,21 +88,28 @@ const { domRef, updateOptions } = useEcharts(() => ({
           ],
         },
       },
-      emphasis: {
-        focus: 'series',
-      },
+      emphasis: { focus: 'series' },
       data: [],
     },
   ],
 }))
 
 async function mockData() {
-  await new Promise((resolve) => {
-    setTimeout(resolve, 1000)
-  })
+  await new Promise(resolve => (setTimeout(resolve, 1000)))
 
   updateOptions((opts) => {
-    opts.xAxis.data = ['06:00', '08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00', '24:00']
+    opts.xAxis.data = [
+      '06:00',
+      '08:00',
+      '10:00',
+      '12:00',
+      '14:00',
+      '16:00',
+      '18:00',
+      '20:00',
+      '22:00',
+      '24:00',
+    ]
     opts.series[0].data = [4623, 6145, 6268, 6411, 1890, 4251, 2978, 3880, 3606, 4311]
     opts.series[1].data = [2208, 2016, 2916, 4512, 8281, 2008, 1963, 2367, 2956, 678]
 
@@ -118,26 +121,31 @@ function updateLocale() {
   updateOptions((opts, factory) => {
     const originOpts = factory()
 
-    opts.legend.data = originOpts.legend.data
-    opts.series[0].name = originOpts.series[0].name
+    opts.series[0].color = originOpts.series[0].name
     opts.series[1].name = originOpts.series[1].name
 
     return opts
   })
 }
 
-async function init() {
-  mockData()
-}
+const init = async () => (await mockData())
+
+watch(() => appStore.locale, () => (updateLocale()))
 
 watch(
-  () => appStore.locale,
+  () => themeStore.themeColor,
   () => {
-    updateLocale()
+    updateOptions((opts) => {
+      opts.series[0].color = themeStore.themeColor
+      opts.series[1].color = lightColor.value
+      opts.series[0].areaStyle.color.colorStops[0].color = themeStore.themeColor
+      opts.series[1].areaStyle.color.colorStops[0].color = lightColor.value
+
+      return opts
+    })
   },
 )
 
-// init
 init()
 </script>
 
