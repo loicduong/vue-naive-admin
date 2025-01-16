@@ -27,15 +27,16 @@ export function setupLoading() {
     .join('\n')
 
   const loading = `
-<div class="fixed-center flex-col" style="${primaryColor}">
-  ${logoWithClass}
-  <div class="w-56px h-56px my-36px">
-    <div class="relative h-full animate-spin">
-      ${dot}
+    <div class="bg-container fixed-center flex-col" style="${primaryColor}">
+      ${logoWithClass}
+      <div class="w-56px h-56px my-36px">
+        <div class="relative h-full animate-spin">
+          ${dot}
+        </div>
+      </div>
+      <h2 class="text-28px font-500 text-#646464">${$t('system.title')}</h2>
     </div>
-  </div>
-  <h2 class="text-28px font-500 text-#646464">${$t('system.title')}</h2>
-</div>`
+  `
 
   const app = document.getElementById('app')
 
