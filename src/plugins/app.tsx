@@ -14,21 +14,20 @@ export function setupAppErrorHandle(app: App) {
 export function setupAppVersionNotification() {
   const canAutoUpdateApp = import.meta.env.VITE_AUTOMATICALLY_DETECT_UPDATE === 'Y'
 
-  if (!canAutoUpdateApp)
+  if (!canAutoUpdateApp) {
     return
+  }
 
   let isShow = false
   let updateInterval: ReturnType<typeof setInterval> | undefined
 
   // Check if updates should be checked
-  const shouldCheckForUpdates = [
-    !isShow,
-    document.visibilityState === 'visible',
-    !import.meta.env.DEV,
-  ].every(Boolean)
+  function shouldCheckForUpdates() {
+    return [!isShow, document.visibilityState === 'visible', !import.meta.env.DEV].every(Boolean)
+  }
 
   const checkForUpdates = async () => {
-    if (!shouldCheckForUpdates) {
+    if (!shouldCheckForUpdates()) {
       return
     }
 
@@ -70,7 +69,7 @@ export function setupAppVersionNotification() {
     updateInterval = setInterval(checkForUpdates, UPDATE_CHECK_INTERVAL)
   }
   // If updates should be checked, set up the visibility change listener and start the update interval
-  if (shouldCheckForUpdates) {
+  if (shouldCheckForUpdates()) {
   // Check for updates when the document is visible
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState === 'visible') {
