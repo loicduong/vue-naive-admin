@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { $t } from '@/locales'
 
-defineOptions({
-  name: 'CardData',
-})
+defineOptions({ name: 'CardData' })
 
 interface CardData {
   key: string
@@ -24,8 +22,8 @@ const cardData = computed<CardData[]>(() => [
     value: 9725,
     unit: '',
     color: {
-      start: '#ec4786',
-      end: '#b955a4',
+      start: 'rgb(var(--primary-color))',
+      end: 'rgb(var(--primary-600-color))',
     },
     icon: 'ant-design:bar-chart-outlined',
   },
@@ -35,8 +33,8 @@ const cardData = computed<CardData[]>(() => [
     value: 1026,
     unit: '$',
     color: {
-      start: '#865ec0',
-      end: '#5144b4',
+      start: 'rgb(var(--primary-color))',
+      end: 'rgb(var(--primary-600-color))',
     },
     icon: 'ant-design:money-collect-outlined',
   },
@@ -46,8 +44,8 @@ const cardData = computed<CardData[]>(() => [
     value: 970925,
     unit: '',
     color: {
-      start: '#56cdf3',
-      end: '#719de3',
+      start: 'rgb(var(--primary-color))',
+      end: 'rgb(var(--primary-600-color))',
     },
     icon: 'carbon:document-download',
   },
@@ -57,8 +55,8 @@ const cardData = computed<CardData[]>(() => [
     value: 9527,
     unit: '',
     color: {
-      start: '#fcbc25',
-      end: '#f68057',
+      start: 'rgb(var(--primary-color))',
+      end: 'rgb(var(--primary-600-color))',
     },
     icon: 'ant-design:trademark-circle-outlined',
   },
@@ -79,7 +77,10 @@ function getGradientColor(color: CardData['color']) {
   <NCard :bordered="false" size="small" class="card-wrapper">
     <!-- define component start: GradientBg -->
     <DefineGradientBg v-slot="{ $slots, gradientColor }">
-      <div class="rd-8px px-16px pb-4px pt-8px text-white" :style="{ backgroundImage: gradientColor }">
+      <div
+        class="rd-8px px-16px pb-4px pt-8px text-white"
+        :style="{ backgroundImage: gradientColor }"
+      >
         <component :is="$slots.default" />
       </div>
     </DefineGradientBg>
