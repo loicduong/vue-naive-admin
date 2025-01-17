@@ -103,6 +103,7 @@ pnpm update-pkg
 - APIs auto importing: use [unplugin-auto-import](https://github.com/unplugin/unplugin-auto-import) to import APIs directly.
 - Deploy on Vercel, zero-config.
 - Apply [standard-readme](https://github.com/RichardLitt/standard-readme) to ensure the quality of the README file.
+- PWA
 
 ## Browser Support
 
