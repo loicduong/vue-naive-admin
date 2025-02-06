@@ -2,9 +2,6 @@ import type { App } from 'vue'
 import { $t } from '@/locales'
 import { NButton } from 'naive-ui'
 
-// Update check interval in milliseconds
-const UPDATE_CHECK_INTERVAL = 3 * 60 * 1000
-
 export function setupAppErrorHandle(app: App) {
   app.config.errorHandler = (err, vm, info) => {
     console.error(err, vm, info)
@@ -12,6 +9,9 @@ export function setupAppErrorHandle(app: App) {
 }
 
 export function setupAppVersionNotification() {
+  // Update check interval in milliseconds
+  const UPDATE_CHECK_INTERVAL = 3 * 60 * 1000
+
   const canAutoUpdateApp = import.meta.env.VITE_AUTOMATICALLY_DETECT_UPDATE === 'Y'
     && import.meta.env.PROD
 
