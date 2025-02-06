@@ -1,12 +1,11 @@
 import type { GlobalThemeOverrides } from 'naive-ui'
+import { DARK_CLASS } from '@/constants/app'
 import { overrideThemeSettings, themeSettings } from '@/theme/settings'
 import { themeVars } from '@/theme/vars'
 import { toggleHtmlClass } from '@/utils/common'
 import { localStg } from '@/utils/storage'
 import { addColorAlpha, getColorPalette, getPaletteColorByNumber, getRgb } from '@sa/color'
 import { defu } from 'defu'
-
-const DARK_CLASS = 'dark'
 
 /** Init theme settings */
 export function initThemeSettings() {

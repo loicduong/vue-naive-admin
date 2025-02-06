@@ -60,3 +60,5 @@ export const resetCacheStrategyRecord: Record<UnionKey.ResetCacheStrategy, App.I
 }
 
 export const resetCacheStrategyOptions = transformRecordToOption(resetCacheStrategyRecord)
+
+export const DARK_CLASS = 'dark'
