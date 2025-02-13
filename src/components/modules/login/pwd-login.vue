@@ -83,7 +83,10 @@ async function handleAccountLogin(account: Account) {
     @keyup.enter="handleSubmit"
   >
     <NFormItem path="userName">
-      <NInput v-model:value="model.userName" :placeholder="$t('page.login.common.userNamePlaceholder')" />
+      <NInput
+        v-model:value="model.userName"
+        :placeholder="$t('page.login.common.userNamePlaceholder')"
+      />
     </NFormItem>
     <NFormItem path="password">
       <NInput
@@ -100,7 +103,14 @@ async function handleAccountLogin(account: Account) {
           {{ $t('page.login.pwdLogin.forgetPassword') }}
         </NButton>
       </div>
-      <NButton type="primary" size="large" round block :loading="authStore.loginLoading" @click="handleSubmit">
+      <NButton
+        type="primary"
+        size="large"
+        round
+        block
+        :loading="authStore.loginLoading"
+        @click="handleSubmit"
+      >
         {{ $t('common.confirm') }}
       </NButton>
       <div class="flex-y-center justify-between gap-12px">
@@ -118,7 +128,6 @@ async function handleAccountLogin(account: Account) {
         <NButton
           v-for="item in accounts"
           :key="item.key"
-          :loading="authStore.loginLoading"
           type="primary"
           @click="handleAccountLogin(item)"
         >
