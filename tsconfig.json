@@ -18,7 +18,7 @@
       "unplugin-icons/types/vue",
       "naive-ui/volar",
       "unplugin-vue-router/client",
-      "vite-plugin-vue-layouts/client"
+      "vite-plugin-vue-layouts-next/client"
     ],
     "strict": true,
     "strictNullChecks": true,

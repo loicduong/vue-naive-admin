@@ -1,6 +1,6 @@
 import type { RouteMeta } from 'vue-router'
 import vueRouter from 'unplugin-vue-router/vite'
-import layouts from 'vite-plugin-vue-layouts'
+import layouts from 'vite-plugin-vue-layouts-next'
 
 export function setupRouter() {
   return [

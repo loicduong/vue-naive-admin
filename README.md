@@ -94,7 +94,7 @@ pnpm update-pkg
 - TypeScript: support strict type checking to improve code maintainability.
 - Rich theme configuration: built-in a variety of theme configurations, perfectly integrated with UnoCSS.
 - Built-in internationalization solution: easily realize multi-language support.
-- Automated file routing system: automatically generate route import, declaration and type. For more details, please refer to [unplugin-vue-router](https://github.com/posva/unplugin-vue-router) & [vite-plugin-vue-layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts).
+- Automated file routing system: automatically generate route import, declaration and type. For more details, please refer to [unplugin-vue-router](https://github.com/posva/unplugin-vue-router) & [vite-plugin-vue-layouts-next](https://github.com/loicduong/vite-plugin-vue-layouts-next).
 - Flexible permission routing: support both front-end static routing and back-end dynamic routing.
 - Rich page components: built-in a variety of pages and components, including 403, 404, 500 pages, as well as layout components, tag components, theme configuration components, etc.
 - Command line tool: built-in efficient command line tool, git commit, delete file, release, etc.
