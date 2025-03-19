@@ -68,6 +68,9 @@ importers:
       ag-grid-vue3:
         specifier: 33.1.1
         version: 33.1.1(vue@3.5.13(typescript@5.8.2))
+      consola:
+        specifier: 3.4.0
+        version: 3.4.0
       d3:
         specifier: 7.9.0
         version: 7.9.0
@@ -98,6 +101,9 @@ importers:
       jspdf:
         specifier: 3.0.0
         version: 3.0.0
+      kolorist:
+        specifier: 1.8.0
+        version: 1.8.0
       naive-ui:
         specifier: 2.41.0
         version: 2.41.0(vue@3.5.13(typescript@5.8.2))
