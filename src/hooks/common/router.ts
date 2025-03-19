@@ -16,15 +16,10 @@ export function useRouterPush(inSetup = true) {
 
   const routerBack = router.back
 
-  interface RouterPushOptions {
-    query?: Record<string, string>
-    params?: Record<string, string>
-  }
-
-  async function routerPushByKey(key: App.Global.RouteKey, options?: RouterPushOptions) {
+  async function routerPushByKey(key: App.Global.RouteKey, options?: App.Global.RouterPushOptions) {
     const { query, params } = options || {}
 
-    const routeLocation: RouterPushOptions & { name: App.Global.RouteKey } = {
+    const routeLocation: App.Global.RouterPushOptions & { name: App.Global.RouteKey } = {
       name: key,
     }
 
@@ -65,7 +60,7 @@ export function useRouterPush(inSetup = true) {
   async function toLogin(loginModule?: UnionKey.LoginModule, redirectUrl?: string) {
     const module = loginModule || 'pwd-login'
 
-    const options: RouterPushOptions = {
+    const options: App.Global.RouterPushOptions = {
       params: {
         module,
       },

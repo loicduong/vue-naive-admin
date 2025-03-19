@@ -158,6 +158,25 @@ export const useTabStore = defineStore(SetupStoreId.Tab, () => {
     update()
   }
 
+  const { routerPushByKey } = useRouterPush()
+  /**
+   * Replace tab
+   *
+   * @param key Route key
+   * @param options Router push options
+   */
+  async function replaceTab(key: App.Global.RouteKey, options?: App.Global.RouterPushOptions) {
+    const oldTabId = activeTabId.value
+
+    // push new route
+    await routerPushByKey(key, options)
+
+    // remove old tab (exclude fixed tab)
+    if (!isTabRetain(oldTabId)) {
+      await removeTab(oldTabId)
+    }
+  }
+
   /**
    * Switch route by tab
    *
@@ -286,6 +305,7 @@ export const useTabStore = defineStore(SetupStoreId.Tab, () => {
     removeTab,
     removeActiveTab,
     removeTabByRouteName,
+    replaceTab,
     clearTabs,
     clearLeftTabs,
     clearRightTabs,
