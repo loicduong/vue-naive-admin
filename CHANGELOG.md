@@ -1,6 +1,79 @@
 # Changelog
 
 
+## [v0.1.1](https://github.com/dploc96/vue-naive-admin/compare/v0.0.4...v0.1.1) (2025-03-19)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **projects**:
+  - remove nprogress &nbsp;-&nbsp; by **loicduong** [<samp>(6bb24)</samp>](https://github.com/dploc96/vue-naive-admin/commit/6bb241b)
+  - destroy dialog when changing path &nbsp;-&nbsp; by **loicduong** [<samp>(ff963)</samp>](https://github.com/dploc96/vue-naive-admin/commit/ff9633d)
+  - update data cards bg on home &nbsp;-&nbsp; by **loicduong** [<samp>(9369d)</samp>](https://github.com/dploc96/vue-naive-admin/commit/9369d9c)
+  - update charts color on home &nbsp;-&nbsp; by **loicduong** [<samp>(2a26b)</samp>](https://github.com/dploc96/vue-naive-admin/commit/2a26b4f)
+  - change loading bg by color mode &nbsp;-&nbsp; by **loicduong** [<samp>(0eaf9)</samp>](https://github.com/dploc96/vue-naive-admin/commit/0eaf97a)
+  - add pwa &nbsp;-&nbsp; by @loicduong [<samp>(00921)</samp>](https://github.com/dploc96/vue-naive-admin/commit/0092156)
+  - update logo &nbsp;-&nbsp; by @loicduong [<samp>(9f5b6)</samp>](https://github.com/dploc96/vue-naive-admin/commit/9f5b698)
+  - support loading page dark mode adaptation &nbsp;-&nbsp; by @loicduong [<samp>(0be39)</samp>](https://github.com/dploc96/vue-naive-admin/commit/0be3957)
+  - tab support touch event &nbsp;-&nbsp; by **loicduong** [<samp>(b3197)</samp>](https://github.com/dploc96/vue-naive-admin/commit/b31976e)
+  - tableColumnCheck title support VNode &nbsp;-&nbsp; by **loicduong** [<samp>(2aa06)</samp>](https://github.com/dploc96/vue-naive-admin/commit/2aa06bd)
+  - support proxy log in terminal &nbsp;-&nbsp; by **loicduong** [<samp>(0af66)</samp>](https://github.com/dploc96/vue-naive-admin/commit/0af660d)
+- **utils**:
+  - support replaceTab &nbsp;-&nbsp; by **loicduong** [<samp>(c5106)</samp>](https://github.com/dploc96/vue-naive-admin/commit/c510689)
+
+### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
+
+- **other**:
+  - warning pwa size &nbsp;-&nbsp; by @loicduong [<samp>(b35f3)</samp>](https://github.com/dploc96/vue-naive-admin/commit/b35f3d8)
+- **projects**:
+  - missing chart labels on home &nbsp;-&nbsp; by **loicduong** [<samp>(412ce)</samp>](https://github.com/dploc96/vue-naive-admin/commit/412cedc)
+  - show multi update notifications &nbsp;-&nbsp; by **loicduong** [<samp>(a310e)</samp>](https://github.com/dploc96/vue-naive-admin/commit/a310ebb)
+  - fix update notifications &nbsp;-&nbsp; by @loicduong [<samp>(594bf)</samp>](https://github.com/dploc96/vue-naive-admin/commit/594bf2b)
+  - hidden multi-language button in login page &nbsp;-&nbsp; by @loicduong [<samp>(9d6a9)</samp>](https://github.com/dploc96/vue-naive-admin/commit/9d6a91b)
+  - fix multiple calls to the login API when clicking quickly &nbsp;-&nbsp; by @loicduong [<samp>(f8f43)</samp>](https://github.com/dploc96/vue-naive-admin/commit/f8f4337)
+  - fix multiple calls to the login API when clicking quickly" &nbsp;-&nbsp; by @loicduong [<samp>(1b03c)</samp>](https://github.com/dploc96/vue-naive-admin/commit/1b03cfb)
+  - fix active tab switch issue after removal &nbsp;-&nbsp; by **loicduong** [<samp>(a8082)</samp>](https://github.com/dploc96/vue-naive-admin/commit/a808204)
+
+### &nbsp;&nbsp;&nbsp;🛠 Optimizations
+
+- **other**:
+  - update project name &nbsp;-&nbsp; by **loicduong** [<samp>(7a13d)</samp>](https://github.com/dploc96/vue-naive-admin/commit/7a13df0)
+- **projects**:
+  - remove clipboard &nbsp;-&nbsp; by **loicduong** [<samp>(cdded)</samp>](https://github.com/dploc96/vue-naive-admin/commit/cdded48)
+  - remove crypto-js &nbsp;-&nbsp; by **loicduong** [<samp>(7f253)</samp>](https://github.com/dploc96/vue-naive-admin/commit/7f25379)
+  - remove ofetch package &nbsp;-&nbsp; by **loicduong** [<samp>(dcf92)</samp>](https://github.com/dploc96/vue-naive-admin/commit/dcf9238)
+  - update config action btns layout &nbsp;-&nbsp; by **loicduong** [<samp>(d8a5d)</samp>](https://github.com/dploc96/vue-naive-admin/commit/d8a5dc0)
+  - change syntax of check for updates function &nbsp;-&nbsp; by **loicduong** [<samp>(d34af)</samp>](https://github.com/dploc96/vue-naive-admin/commit/d34af7b)
+  - optimize code &nbsp;-&nbsp; by @loicduong [<samp>(87ff1)</samp>](https://github.com/dploc96/vue-naive-admin/commit/87ff1c5)
+
+### &nbsp;&nbsp;&nbsp;📦 Build
+
+- **deps**: restrict the minimum Node.js version &nbsp;-&nbsp; by **loicduong** [<samp>(a4928)</samp>](https://github.com/dploc96/vue-naive-admin/commit/a49289c)
+
+### &nbsp;&nbsp;&nbsp;🏡 Chore
+
+- update deps &nbsp;-&nbsp; by **loicduong** [<samp>(c85b5)</samp>](https://github.com/dploc96/vue-naive-admin/commit/c85b5ac)
+- **deps**:
+  - update version &nbsp;-&nbsp; by **loicduong** [<samp>(4fd7d)</samp>](https://github.com/dploc96/vue-naive-admin/commit/4fd7dce)
+  - update deps &nbsp;-&nbsp; by @loicduong [<samp>(bce89)</samp>](https://github.com/dploc96/vue-naive-admin/commit/bce895f)
+  - update deps &nbsp;-&nbsp; by **loicduong** [<samp>(769a4)</samp>](https://github.com/dploc96/vue-naive-admin/commit/769a4c3)
+- **other**:
+  - update prd build prefix &nbsp;-&nbsp; by **loicduong** [<samp>(dc99b)</samp>](https://github.com/dploc96/vue-naive-admin/commit/dc99bb3)
+  - update vscode settings &nbsp;-&nbsp; by **loicduong** [<samp>(95578)</samp>](https://github.com/dploc96/vue-naive-admin/commit/9557830)
+  - update project desc &nbsp;-&nbsp; by **loicduong** [<samp>(b18bc)</samp>](https://github.com/dploc96/vue-naive-admin/commit/b18bc1d)
+  - remove volta config &nbsp;-&nbsp; by **loicduong** [<samp>(2fdb9)</samp>](https://github.com/dploc96/vue-naive-admin/commit/2fdb9ba)
+  - update README &nbsp;-&nbsp; by @loicduong [<samp>(dc7c1)</samp>](https://github.com/dploc96/vue-naive-admin/commit/dc7c1e0)
+- **projects**:
+  - update ports &nbsp;-&nbsp; by @loicduong [<samp>(10065)</samp>](https://github.com/dploc96/vue-naive-admin/commit/1006561)
+  - apply standard-readme &nbsp;-&nbsp; by **loicduong** [<samp>(e7df0)</samp>](https://github.com/dploc96/vue-naive-admin/commit/e7df0a6)
+  - add vite-plugin-vue-layout-next &nbsp;-&nbsp; by **loicduong** [<samp>(77984)</samp>](https://github.com/dploc96/vue-naive-admin/commit/7798414)
+  - update unocss preset &nbsp;-&nbsp; by **loicduong** [<samp>(02b1a)</samp>](https://github.com/dploc96/vue-naive-admin/commit/02b1a10)
+  - update vscode settings and launch &nbsp;-&nbsp; by **loicduong** [<samp>(5a170)</samp>](https://github.com/dploc96/vue-naive-admin/commit/5a17044)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![loicduong](https://github.com/loicduong.png?size=48)](https://github.com/loicduong)&nbsp;&nbsp;[![loicduong](https://github.com/loicduong.png?size=48)](https://github.com/loicduong)&nbsp;&nbsp;
+[loicduong](mailto:mikhailcolt@gmail.com),&nbsp;
+
 ## [v0.1.0](https://github.com/dploc96/vue-naive-admin/compare/v0.0.2...v0.1.0) (2025-02-06)
 
 ### &nbsp;&nbsp;&nbsp;🚨 Breaking Changes
