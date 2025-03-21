@@ -108,14 +108,6 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
     )
     addThemeVarsToGlobal(themeTokens, darkThemeTokens)
   }
-  /**
-   * Set layout reverse horizontal mix
-   *
-   * @param reverse Reverse horizontal mix
-   */
-  function setLayoutReverseHorizontalMix(reverse: boolean) {
-    settings.value.layout.reverseHorizontalMix = reverse
-  }
 
   /** Cache theme settings */
   function cacheThemeSettings() {
@@ -171,6 +163,5 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
     toggleThemeScheme,
     updateThemeColors,
     setThemeLayout,
-    setLayoutReverseHorizontalMix,
   }
 })

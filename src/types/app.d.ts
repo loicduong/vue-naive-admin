@@ -20,12 +20,6 @@ declare namespace App {
         mode: UnionKey.ThemeLayoutMode
         /** Scroll mode */
         scrollMode: UnionKey.ThemeScrollMode
-        /**
-         * Whether to reverse the horizontal mix
-         *
-         * if true, the vertical child level menus in left and horizontal first level menus in top
-         */
-        reverseHorizontalMix: boolean
       }
       /** Page */
       page: {
@@ -57,11 +51,11 @@ declare namespace App {
         width: number
         /** Collapsed sider width */
         collapsedWidth: number
-        /** Sider width when the layout is 'vertical-mix' or 'horizontal-mix' */
+        /** Sider width when the layout is 'vertical-mix' */
         mixWidth: number
-        /** Collapsed sider width when the layout is 'vertical-mix' or 'horizontal-mix' */
+        /** Collapsed sider width when the layout is 'vertical-mix' */
         mixCollapsedWidth: number
-        /** Child menu width when the layout is 'vertical-mix' or 'horizontal-mix' */
+        /** Child menu width when the layout is 'vertical-mix' */
         mixChildMenuWidth: number
       }
       /** Footer */
@@ -72,8 +66,6 @@ declare namespace App {
         fixed: boolean
         /** Footer height */
         height: number
-        /** Whether float the footer to the right when the layout is 'horizontal-mix' */
-        right: boolean
       }
       /** define some theme settings tokens, will transform to css variables */
       tokens: {
@@ -270,7 +262,7 @@ declare namespace App {
       }
       theme: {
         themeSchema: { title: string } & Record<UnionKey.ThemeScheme, string>
-        layoutMode: { title: string, reverseHorizontalMix: string } & Record<UnionKey.ThemeLayoutMode, string>
+        layoutMode: { title: string } & Record<UnionKey.ThemeLayoutMode, string>
         themeColor: {
           title: string
         } & Theme.ThemeColor

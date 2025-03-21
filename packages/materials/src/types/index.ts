@@ -113,10 +113,9 @@ export interface AdminLayoutFooterConfig {
 /**
  * Layout mode
  *
- * - Horizontal
  * - Vertical
  */
-export type LayoutMode = 'horizontal' | 'vertical'
+export type LayoutMode = 'vertical'
 
 /**
  * The scroll mode when content overflow

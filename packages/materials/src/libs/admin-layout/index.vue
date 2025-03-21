@@ -17,13 +17,11 @@ const props = withDefaults(defineProps<AdminLayoutProps>(), {
   maxZIndex: LAYOUT_MAX_Z_INDEX,
   headerVisible: true,
   headerHeight: 56,
-  siderVisible: true,
   siderCollapse: false,
   siderWidth: 220,
   siderCollapsedWidth: 64,
   footerVisible: true,
   footerHeight: 48,
-  rightFooter: false,
 })
 
 interface Emits {
@@ -52,8 +50,8 @@ const cssVars = computed(() => createLayoutCssVars(props))
 
 // config visible
 const showHeader = computed(() => Boolean(slots.header) && props.headerVisible)
-const showSider = computed(() => !props.isMobile && Boolean(slots.sider) && props.siderVisible)
-const showMobileSider = computed(() => props.isMobile && Boolean(slots.sider) && props.siderVisible)
+const showSider = computed(() => !props.isMobile && Boolean(slots.sider))
+const showMobileSider = computed(() => props.isMobile && Boolean(slots.sider))
 const showFooter = computed(() => Boolean(slots.footer) && props.footerVisible)
 
 // scroll mode
@@ -62,9 +60,8 @@ const isContentScroll = computed(() => props.scrollMode === 'content')
 
 // layout direction
 const isVertical = computed(() => props.mode === 'vertical')
-const isHorizontal = computed(() => props.mode === 'horizontal')
 
-const fixedHeader = computed(() => props.fixedTop || (isHorizontal.value && isWrapperScroll.value))
+const fixedHeader = computed(() => props.fixedTop)
 
 // css
 const leftGapClass = computed(() => {
@@ -78,11 +75,7 @@ const leftGapClass = computed(() => {
 const headerLeftGapClass = computed(() => (isVertical.value ? leftGapClass.value : ''))
 
 const footerLeftGapClass = computed(() => {
-  const condition1 = isVertical.value
-  const condition2 = isHorizontal.value && isWrapperScroll.value && !props.fixedFooter
-  const condition3 = Boolean(isHorizontal.value && props.rightFooter)
-
-  if (condition1 || condition2 || condition3) {
+  if (isVertical.value) {
     return leftGapClass.value
   }
 

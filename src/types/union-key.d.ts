@@ -25,11 +25,9 @@ declare namespace UnionKey {
    * The layout mode
    *
    * - vertical: the vertical menu in left
-   * - horizontal: the horizontal menu in top
    * - vertical-mix: two vertical mixed menus in left
-   * - horizontal-mix: the vertical first level menus in left and horizontal child level menus in top
    */
-  type ThemeLayoutMode = 'vertical' | 'horizontal' | 'vertical-mix' | 'horizontal-mix'
+  type ThemeLayoutMode = 'vertical' | 'vertical-mix'
 
   /**
    * The scroll mode when content overflow

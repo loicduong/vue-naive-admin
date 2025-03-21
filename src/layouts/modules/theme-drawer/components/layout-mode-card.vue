@@ -46,18 +46,6 @@ const layoutConfig: LayoutConfig = {
     menuClass: 'w-1/4 h-full',
     mainClass: 'w-2/3 h-3/4',
   },
-  'horizontal': {
-    placement: 'bottom',
-    headerClass: '',
-    menuClass: 'w-full h-1/4',
-    mainClass: 'w-full h-3/4',
-  },
-  'horizontal-mix': {
-    placement: 'bottom',
-    headerClass: '',
-    menuClass: 'w-full h-1/4',
-    mainClass: 'w-2/3 h-3/4',
-  },
 }
 
 function handleChangeMode(mode: UnionKey.ThemeLayoutMode) {

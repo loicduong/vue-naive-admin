@@ -12,7 +12,6 @@ export const themeSettings: App.Theme.ThemeSetting = {
   layout: {
     mode: 'vertical',
     scrollMode: 'content',
-    reverseHorizontalMix: false,
   },
   page: {
     animate: true,
@@ -40,7 +39,6 @@ export const themeSettings: App.Theme.ThemeSetting = {
     visible: true,
     fixed: false,
     height: 48,
-    right: true,
   },
   tokens: {
     light: {

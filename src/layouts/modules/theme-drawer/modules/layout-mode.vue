@@ -3,7 +3,6 @@ import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
 import LayoutModeCard from '../components/layout-mode-card.vue'
-import SettingItem from '../components/setting-item.vue'
 
 defineOptions({
   name: 'LayoutMode',
@@ -11,10 +10,6 @@ defineOptions({
 
 const appStore = useAppStore()
 const themeStore = useThemeStore()
-
-function handleReverseHorizontalMixChange(value: boolean) {
-  themeStore.setLayoutReverseHorizontalMix(value)
-}
 </script>
 
 <template>
@@ -35,27 +30,7 @@ function handleReverseHorizontalMixChange(value: boolean) {
         <div class="layout-main" />
       </div>
     </template>
-    <template #horizontal>
-      <div class="layout-header" />
-      <div class="horizontal-wrapper">
-        <div class="layout-main" />
-      </div>
-    </template>
-    <template #horizontal-mix>
-      <div class="layout-header" />
-      <div class="horizontal-wrapper">
-        <div class="layout-sider w-18px" />
-        <div class="layout-main" />
-      </div>
-    </template>
   </LayoutModeCard>
-  <SettingItem
-    v-if="themeStore.layout.mode === 'horizontal-mix'"
-    :label="$t('theme.layoutMode.reverseHorizontalMix')"
-    class="mt-16px"
-  >
-    <NSwitch :value="themeStore.layout.reverseHorizontalMix" @update:value="handleReverseHorizontalMixChange" />
-  </SettingItem>
 </template>
 
 <style scoped>
@@ -73,9 +48,5 @@ function handleReverseHorizontalMixChange(value: boolean) {
 
 .vertical-wrapper {
   --uno: flex-1 flex-col gap-6px;
-}
-
-.horizontal-wrapper {
-  --uno: flex-1 flex gap-6px;
 }
 </style>

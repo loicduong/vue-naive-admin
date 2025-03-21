@@ -137,13 +137,6 @@ const isWrapperScrollMode = computed(() => themeStore.layout.scrollMode === 'wra
         class="w-120px"
       />
     </SettingItem>
-    <SettingItem
-      v-if="themeStore.footer.visible && layoutMode === 'horizontal-mix'"
-      key="7-3"
-      :label="$t('theme.footer.right')"
-    >
-      <NSwitch v-model:value="themeStore.footer.right" />
-    </SettingItem>
     <SettingItem key="9" :label="$t('theme.header.multilingual.visible')">
       <NSwitch v-model:value="themeStore.header.multilingual.visible" />
     </SettingItem>

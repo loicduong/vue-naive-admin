@@ -22,8 +22,6 @@ export const loginModuleRecord: Record<UnionKey.LoginModule, App.I18n.I18nKey> =
 export const themeLayoutModeRecord: Record<UnionKey.ThemeLayoutMode, App.I18n.I18nKey> = {
   'vertical': 'theme.layoutMode.vertical',
   'vertical-mix': 'theme.layoutMode.vertical-mix',
-  'horizontal': 'theme.layoutMode.horizontal',
-  'horizontal-mix': 'theme.layoutMode.horizontal-mix',
 }
 
 export const themeLayoutModeOptions = transformRecordToOption(themeLayoutModeRecord)

@@ -16,18 +16,17 @@ defineOptions({
 
 const appStore = useAppStore()
 const themeStore = useThemeStore()
-const { childLevelMenus, isActiveFirstLevelMenuHasChildren } = setupMixMenuContext()
+const { childLevelMenus } = setupMixMenuContext()
 
 const GlobalMenu = defineAsyncComponent(() => import('./modules/global-menu/index.vue'))
 
 const layoutMode = computed(() => {
   const vertical: LayoutMode = 'vertical'
-  const horizontal: LayoutMode = 'horizontal'
-  return themeStore.layout.mode.includes(vertical) ? vertical : horizontal
+  return vertical
 })
 
 const headerProps = computed(() => {
-  const { mode, reverseHorizontalMix } = themeStore.layout
+  const { mode } = themeStore.layout
 
   const headerPropsConfig: Record<UnionKey.ThemeLayoutMode, App.Global.HeaderProps> = {
     'vertical': {
@@ -40,40 +39,21 @@ const headerProps = computed(() => {
       showMenu: false,
       showMenuToggler: false,
     },
-    'horizontal': {
-      showLogo: true,
-      showMenu: true,
-      showMenuToggler: false,
-    },
-    'horizontal-mix': {
-      showLogo: true,
-      showMenu: true,
-      showMenuToggler: reverseHorizontalMix && isActiveFirstLevelMenuHasChildren.value,
-    },
   }
 
   return headerPropsConfig[mode]
 })
 
-const siderVisible = computed(() => themeStore.layout.mode !== 'horizontal')
-
 const isVerticalMix = computed(() => themeStore.layout.mode === 'vertical-mix')
-
-const isHorizontalMix = computed(() => themeStore.layout.mode === 'horizontal-mix')
 
 const siderWidth = computed(() => getSiderWidth())
 
 const siderCollapsedWidth = computed(() => getSiderCollapsedWidth())
 
 function getSiderWidth() {
-  const { reverseHorizontalMix } = themeStore.layout
   const { width, mixWidth, mixChildMenuWidth } = themeStore.sider
 
-  if (isHorizontalMix.value && reverseHorizontalMix) {
-    return isActiveFirstLevelMenuHasChildren.value ? width : 0
-  }
-
-  let w = isVerticalMix.value || isHorizontalMix.value ? mixWidth : width
+  let w = isVerticalMix.value ? mixWidth : width
 
   if (isVerticalMix.value && appStore.mixSiderFixed && childLevelMenus.value.length) {
     w += mixChildMenuWidth
@@ -83,14 +63,9 @@ function getSiderWidth() {
 }
 
 function getSiderCollapsedWidth() {
-  const { reverseHorizontalMix } = themeStore.layout
   const { collapsedWidth, mixCollapsedWidth, mixChildMenuWidth } = themeStore.sider
 
-  if (isHorizontalMix.value && reverseHorizontalMix) {
-    return isActiveFirstLevelMenuHasChildren.value ? collapsedWidth : 0
-  }
-
-  let w = isVerticalMix.value || isHorizontalMix.value ? mixCollapsedWidth : collapsedWidth
+  let w = isVerticalMix.value ? mixCollapsedWidth : collapsedWidth
 
   if (isVerticalMix.value && appStore.mixSiderFixed && childLevelMenus.value.length) {
     w += mixChildMenuWidth
@@ -111,13 +86,11 @@ function getSiderCollapsedWidth() {
     :fixed-top="themeStore.fixedHeader"
     :header-height="themeStore.header.height"
     :content-class="appStore.contentXScrollable ? 'overflow-x-hidden' : ''"
-    :sider-visible="siderVisible"
     :sider-width="siderWidth"
     :sider-collapsed-width="siderCollapsedWidth"
     :footer-visible="themeStore.footer.visible"
     :footer-height="themeStore.footer.height"
     :fixed-footer="themeStore.footer.fixed"
-    :right-footer="themeStore.footer.right"
   >
     <template #header>
       <GlobalHeader v-bind="headerProps" />

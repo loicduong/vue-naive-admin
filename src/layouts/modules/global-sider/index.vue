@@ -12,8 +12,7 @@ const appStore = useAppStore()
 const themeStore = useThemeStore()
 
 const isVerticalMix = computed(() => themeStore.layout.mode === 'vertical-mix')
-const isHorizontalMix = computed(() => themeStore.layout.mode === 'horizontal-mix')
-const showLogo = computed(() => !isVerticalMix.value && !isHorizontalMix.value)
+const showLogo = computed(() => !isVerticalMix.value)
 const menuWrapperClass = computed(() => (showLogo.value ? 'flex-1-hidden' : 'h-full'))
 </script>
 

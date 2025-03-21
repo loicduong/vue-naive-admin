@@ -68,9 +68,6 @@ const local: App.I18n.Schema = {
       'title': 'Chế độ bố cục',
       'vertical': 'Chế độ menu bên trái',
       'vertical-mix': 'Chế độ menu bên trái kết hợp',
-      'horizontal': 'Chế độ menu trên cùng',
-      'horizontal-mix': 'Chế độ menu trên cùng kết hợp',
-      'reverseHorizontalMix': 'Vị trí menu cấp 1 và menu cấp 2 đảo ngược',
     },
     themeColor: {
       title: 'Màu chủ đề',
