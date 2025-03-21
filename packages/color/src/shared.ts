@@ -1,4 +1,4 @@
-import type { AnyColor, HslColor, RgbColor } from 'colord'
+import type { AnyColor, RgbColor } from 'colord'
 import { colord, extend } from 'colord'
 import labPlugin from 'colord/plugins/lab'
 import mixPlugin from 'colord/plugins/mix'
@@ -18,20 +18,8 @@ export function getRgb(color: AnyColor) {
   return colord(color).toRgb()
 }
 
-export function getHsl(color: AnyColor) {
-  return colord(color).toHsl()
-}
-
 export function getHsv(color: AnyColor) {
   return colord(color).toHsv()
-}
-
-export function getDeltaE(color1: AnyColor, color2: AnyColor) {
-  return colord(color1).delta(color2)
-}
-
-export function transformHslToHex(color: HslColor) {
-  return colord(color).toHex()
 }
 
 /**
@@ -79,15 +67,6 @@ export function transformColorWithOpacity(color: AnyColor, alpha: number, bgColo
   }
 
   return colord(resultRgb).toHex()
-}
-
-/**
- * Is white color
- *
- * @param color - Color
- */
-export function isWhiteColor(color: AnyColor) {
-  return colord(color).isEqual('#ffffff')
 }
 
 export { colord }

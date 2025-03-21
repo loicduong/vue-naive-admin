@@ -1,9 +1,6 @@
 /** Default theme settings */
 export const themeSettings: App.Theme.ThemeSetting = {
   themeScheme: 'light',
-  grayscale: false,
-  colourWeakness: false,
-  recommendColor: false,
   themeColor: '#646cff',
   otherColor: {
     info: '#2080f0',
@@ -11,7 +8,6 @@ export const themeSettings: App.Theme.ThemeSetting = {
     warning: '#faad14',
     error: '#f5222d',
   },
-  isInfoFollowPrimary: true,
   resetCacheStrategy: 'close',
   layout: {
     mode: 'vertical',
@@ -40,7 +36,6 @@ export const themeSettings: App.Theme.ThemeSetting = {
   },
   fixedHeaderAndTab: true,
   sider: {
-    inverted: false,
     width: 220,
     collapsedWidth: 64,
     mixWidth: 90,
@@ -62,7 +57,6 @@ export const themeSettings: App.Theme.ThemeSetting = {
       colors: {
         'container': 'rgb(255, 255, 255)',
         'layout': 'rgb(247, 250, 252)',
-        'inverted': 'rgb(0, 20, 40)',
         'base-text': 'rgb(31, 31, 31)',
       },
       boxShadow: {

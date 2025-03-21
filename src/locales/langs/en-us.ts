@@ -64,8 +64,6 @@ const local: App.I18n.Schema = {
       dark: 'Dark',
       auto: 'Follow System',
     },
-    grayscale: 'Grayscale',
-    colourWeakness: 'Colour Weakness',
     layoutMode: {
       'title': 'Layout Mode',
       'vertical': 'Vertical Menu Mode',
@@ -74,8 +72,6 @@ const local: App.I18n.Schema = {
       'horizontal-mix': 'Horizontal Mix menu Mode',
       'reverseHorizontalMix': 'Reverse first level menus and child level menus position',
     },
-    recommendColor: 'Apply Recommended Color Algorithm',
-    recommendColorDesc: 'The recommended color algorithm refers to',
     themeColor: {
       title: 'Theme Color',
       primary: 'Primary',
@@ -83,7 +79,6 @@ const local: App.I18n.Schema = {
       success: 'Success',
       warning: 'Warning',
       error: 'Error',
-      followPrimary: 'Follow Primary',
     },
     scrollMode: {
       title: 'Scroll Mode',
@@ -125,7 +120,6 @@ const local: App.I18n.Schema = {
       },
     },
     sider: {
-      inverted: 'Dark Sider',
       width: 'Sider Width',
       collapsedWidth: 'Sider Collapsed Width',
       mixWidth: 'Mix Sider Width',

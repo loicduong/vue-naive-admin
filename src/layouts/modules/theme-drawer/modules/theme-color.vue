@@ -36,37 +36,10 @@ const swatches: string[] = [
 <template>
   <NDivider>{{ $t('theme.themeColor.title') }}</NDivider>
   <div class="flex-col-stretch gap-12px">
-    <NTooltip placement="top-start">
-      <template #trigger>
-        <SettingItem key="recommend-color" :label="$t('theme.recommendColor')">
-          <NSwitch v-model:value="themeStore.recommendColor" />
-        </SettingItem>
-      </template>
-      <p>
-        <span class="pr-12px">{{ $t('theme.recommendColorDesc') }}</span>
-        <br>
-        <NButton
-          text
-          tag="a"
-          href="https://uicolors.app/create"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-gray"
-        >
-          https://uicolors.app/create
-        </NButton>
-      </p>
-    </NTooltip>
     <SettingItem v-for="(_, key) in themeStore.themeColors" :key="key" :label="$t(`theme.themeColor.${key}`)">
-      <template v-if="key === 'info'" #suffix>
-        <NCheckbox v-model:checked="themeStore.isInfoFollowPrimary">
-          {{ $t('theme.themeColor.followPrimary') }}
-        </NCheckbox>
-      </template>
       <NColorPicker
         class="w-90px"
         :value="themeStore.themeColors[key]"
-        :disabled="key === 'info' && themeStore.isInfoFollowPrimary"
         :show-alpha="false"
         :swatches="swatches"
         @update:value="handleUpdateColor($event, key)"

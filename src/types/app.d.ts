@@ -8,18 +8,10 @@ declare namespace App {
     interface ThemeSetting {
       /** Theme scheme */
       themeScheme: UnionKey.ThemeScheme
-      /** grayscale mode */
-      grayscale: boolean
-      /** colour weakness mode */
-      colourWeakness: boolean
-      /** Whether to recommend color */
-      recommendColor: boolean
       /** Theme color */
       themeColor: string
       /** Other color */
       otherColor: OtherColor
-      /** Whether info color is followed by the primary color */
-      isInfoFollowPrimary: boolean
       /** Reset cache strategy */
       resetCacheStrategy: UnionKey.ResetCacheStrategy
       /** Layout */
@@ -76,8 +68,6 @@ declare namespace App {
       fixedHeaderAndTab: boolean
       /** Sider */
       sider: {
-        /** Inverted sider */
-        inverted: boolean
         /** Sider width */
         width: number
         /** Collapsed sider width */
@@ -138,7 +128,6 @@ declare namespace App {
     interface ThemeSettingTokenColor {
       'container': string
       'layout': string
-      'inverted': string
       'base-text': string
     }
 
@@ -350,14 +339,9 @@ declare namespace App {
       }
       theme: {
         themeSchema: { title: string } & Record<UnionKey.ThemeScheme, string>
-        grayscale: string
-        colourWeakness: string
         layoutMode: { title: string, reverseHorizontalMix: string } & Record<UnionKey.ThemeLayoutMode, string>
-        recommendColor: string
-        recommendColorDesc: string
         themeColor: {
           title: string
-          followPrimary: string
         } & Theme.ThemeColor
         scrollMode: { title: string } & Record<UnionKey.ThemeScrollMode, string>
         page: {
@@ -382,7 +366,6 @@ declare namespace App {
           mode: { title: string } & Record<UnionKey.ThemeTabMode, string>
         }
         sider: {
-          inverted: string
           width: string
           collapsedWidth: string
           mixWidth: string

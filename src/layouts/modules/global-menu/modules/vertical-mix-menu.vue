@@ -31,8 +31,6 @@ const {
 } = useMixMenuContext()
 const { selectedKey } = useMenu()
 
-const inverted = computed(() => !themeStore.darkMode && themeStore.sider.inverted)
-
 const hasChildMenus = computed(() => childLevelMenus.value.length > 0)
 
 const showDrawer = computed(() => hasChildMenus.value && (drawerVisible.value || appStore.mixSiderFixed))
@@ -81,7 +79,6 @@ watch(
       <FirstLevelMenu
         :menus="allMenus"
         :active-menu-key="activeFirstLevelMenuKey"
-        :inverted="inverted"
         :sider-collapse="appStore.siderCollapse"
         :dark-mode="themeStore.darkMode"
         :theme-color="themeStore.themeColor"
@@ -96,7 +93,6 @@ watch(
       >
         <DarkModeContainer
           class="absolute-lt h-full flex-col-stretch nowrap-hidden shadow-sm transition-all-300"
-          :inverted="inverted"
           :style="{ width: showDrawer ? `${themeStore.sider.mixChildMenuWidth}px` : '0px' }"
         >
           <header class="flex-y-center justify-between px-12px" :style="{ height: `${themeStore.header.height}px` }">
@@ -105,7 +101,6 @@ watch(
             </h2>
             <PinToggler
               :pin="appStore.mixSiderFixed"
-              :class="{ 'text-white:88 !hover:text-white': inverted }"
               @click="appStore.toggleMixSiderFixed"
             />
           </header>
@@ -115,7 +110,6 @@ watch(
               mode="vertical"
               :value="selectedKey"
               :options="childLevelMenus"
-              :inverted="inverted"
               :indent="18"
               @update:value="routerPushByKeyWithMetaQuery"
             />

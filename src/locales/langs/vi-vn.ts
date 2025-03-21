@@ -64,8 +64,6 @@ const local: App.I18n.Schema = {
       dark: 'Chế độ tối',
       auto: 'Theo hệ thống',
     },
-    grayscale: 'Chế độ xám',
-    colourWeakness: 'Chế độ màu yếu',
     layoutMode: {
       'title': 'Chế độ bố cục',
       'vertical': 'Chế độ menu bên trái',
@@ -74,8 +72,6 @@ const local: App.I18n.Schema = {
       'horizontal-mix': 'Chế độ menu trên cùng kết hợp',
       'reverseHorizontalMix': 'Vị trí menu cấp 1 và menu cấp 2 đảo ngược',
     },
-    recommendColor: 'Màu được đề xuất',
-    recommendColorDesc: 'Thuật toán màu được đề xuất',
     themeColor: {
       title: 'Màu chủ đề',
       primary: 'Màu chính',
@@ -83,7 +79,6 @@ const local: App.I18n.Schema = {
       success: 'Màu thành công',
       warning: 'Màu cảnh báo',
       error: 'Màu lỗi',
-      followPrimary: 'Theo màu chính',
     },
     scrollMode: {
       title: 'Chế độ cuộn',
@@ -125,7 +120,6 @@ const local: App.I18n.Schema = {
       },
     },
     sider: {
-      inverted: 'Chế độ thanh bên tối',
       width: 'Chiều rộng thanh bên',
       collapsedWidth: 'Chiều rộng thanh bên khi thu gọn',
       mixWidth: 'Chiều rộng thanh bên chế độ kết hợp',

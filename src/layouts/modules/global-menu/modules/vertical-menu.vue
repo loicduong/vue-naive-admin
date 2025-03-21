@@ -18,8 +18,6 @@ const routeStore = useRouteStore()
 const { routerPushByKeyWithMetaQuery } = useRouterPush()
 const { selectedKey } = useMenu()
 
-const inverted = computed(() => !themeStore.darkMode && themeStore.sider.inverted)
-
 const expandedKeys = ref<string[]>([])
 
 function updateExpandedKeys() {
@@ -50,7 +48,6 @@ watch(
         :collapsed-width="themeStore.sider.collapsedWidth"
         :collapsed-icon-size="22"
         :options="routeStore.menus"
-        :inverted="inverted"
         :indent="18"
         @update:value="routerPushByKeyWithMetaQuery"
       />

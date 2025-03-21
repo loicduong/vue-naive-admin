@@ -1,13 +1,11 @@
 import { SetupStoreId } from '@/constants/enum'
 import { localStg } from '@/utils/storage'
-import { getPaletteColorByNumber } from '@sa/color'
 import { defineStore } from 'pinia'
 import {
   addThemeVarsToGlobal,
   createThemeToken,
   getNaiveTheme,
   initThemeSettings,
-  toggleAuxiliaryColorModes,
   toggleCssDarkMode,
 } from './shared'
 
@@ -27,25 +25,18 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
     return settings.value.themeScheme === 'dark'
   })
 
-  /** grayscale mode */
-  const grayscaleMode = computed(() => settings.value.grayscale)
-
-  /** colourWeakness mode */
-  const colourWeaknessMode = computed(() => settings.value.colourWeakness)
-
   /** Theme colors */
   const themeColors = computed(() => {
-    const { themeColor, otherColor, isInfoFollowPrimary } = settings.value
+    const { themeColor, otherColor } = settings.value
     const colors: App.Theme.ThemeColor = {
       primary: themeColor,
       ...otherColor,
-      info: isInfoFollowPrimary ? themeColor : otherColor.info,
     }
     return colors
   })
 
   /** Naive theme */
-  const naiveTheme = computed(() => getNaiveTheme(themeColors.value, settings.value.recommendColor))
+  const naiveTheme = computed(() => getNaiveTheme(themeColors.value))
 
   /**
    * Settings json
@@ -70,24 +61,6 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
     settings.value.themeScheme = themeScheme
   }
 
-  /**
-   * Set grayscale value
-   *
-   * @param isGrayscale
-   */
-  function setGrayscale(isGrayscale: boolean) {
-    settings.value.grayscale = isGrayscale
-  }
-
-  /**
-   * Set colourWeakness value
-   *
-   * @param isColourWeakness
-   */
-  function setColourWeakness(isColourWeakness: boolean) {
-    settings.value.colourWeakness = isColourWeakness
-  }
-
   /** Toggle theme scheme */
   function toggleThemeScheme() {
     const themeSchemes: UnionKey.ThemeScheme[] = ['light', 'dark', 'auto']
@@ -108,13 +81,7 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
    * @param color Theme color
    */
   function updateThemeColors(key: App.Theme.ThemeColorKey, color: string) {
-    let colorValue = color
-
-    if (settings.value.recommendColor) {
-      // get a color palette by provided color and color name, and use the suitable color
-
-      colorValue = getPaletteColorByNumber(color, 500, true)
-    }
+    const colorValue = color
 
     if (key === 'primary') {
       settings.value.themeColor = colorValue
@@ -138,7 +105,6 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
     const { themeTokens, darkThemeTokens } = createThemeToken(
       themeColors.value,
       settings.value.tokens,
-      settings.value.recommendColor,
     )
     addThemeVarsToGlobal(themeTokens, darkThemeTokens)
   }
@@ -178,14 +144,6 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
       { immediate: true },
     )
 
-    watch(
-      [grayscaleMode, colourWeaknessMode],
-      (val) => {
-        toggleAuxiliaryColorModes(val[0], val[1])
-      },
-      { immediate: true },
-    )
-
     // themeColors change, update css vars and storage theme color
     watch(
       themeColors,
@@ -208,8 +166,6 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
     themeColors,
     naiveTheme,
     settingsJson,
-    setGrayscale,
-    setColourWeakness,
     resetStore,
     setThemeScheme,
     toggleThemeScheme,
