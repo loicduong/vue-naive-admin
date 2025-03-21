@@ -17,8 +17,6 @@ const props = withDefaults(defineProps<AdminLayoutProps>(), {
   maxZIndex: LAYOUT_MAX_Z_INDEX,
   headerVisible: true,
   headerHeight: 56,
-  tabVisible: true,
-  tabHeight: 48,
   siderVisible: true,
   siderCollapse: false,
   siderWidth: 220,
@@ -42,8 +40,6 @@ interface Slots {
   default?: SlotFn
   /** Header */
   header?: SlotFn
-  /** Tab */
-  tab?: SlotFn
   /** Sider */
   sider?: SlotFn
   /** Footer */
@@ -56,7 +52,6 @@ const cssVars = computed(() => createLayoutCssVars(props))
 
 // config visible
 const showHeader = computed(() => Boolean(slots.header) && props.headerVisible)
-const showTab = computed(() => Boolean(slots.tab) && props.tabVisible)
 const showSider = computed(() => !props.isMobile && Boolean(slots.sider) && props.siderVisible)
 const showMobileSider = computed(() => props.isMobile && Boolean(slots.sider) && props.siderVisible)
 const showFooter = computed(() => Boolean(slots.footer) && props.footerVisible)
@@ -69,7 +64,7 @@ const isContentScroll = computed(() => props.scrollMode === 'content')
 const isVertical = computed(() => props.mode === 'vertical')
 const isHorizontal = computed(() => props.mode === 'horizontal')
 
-const fixedHeaderAndTab = computed(() => props.fixedTop || (isHorizontal.value && isWrapperScroll.value))
+const fixedHeader = computed(() => props.fixedTop || (isHorizontal.value && isWrapperScroll.value))
 
 // css
 const leftGapClass = computed(() => {
@@ -129,37 +124,15 @@ function handleClickMask() {
             commonClass,
             headerClass,
             headerLeftGapClass,
-            { 'absolute top-0 left-0 w-full': fixedHeaderAndTab },
+            { 'absolute top-0 left-0 w-full': fixedHeader },
           ]"
         >
           <slot name="header" />
         </header>
         <div
-          v-show="!fullContent && fixedHeaderAndTab"
+          v-show="!fullContent && fixedHeader"
           class="flex-shrink-0 overflow-hidden"
           :class="[style['layout-header-placement']]"
-        />
-      </template>
-
-      <!-- Tab -->
-      <template v-if="showTab">
-        <div
-          class="flex-shrink-0"
-          :class="[
-            style['layout-tab'],
-            commonClass,
-            tabClass,
-            { 'top-0!': fullContent || !showHeader },
-            leftGapClass,
-            { 'absolute left-0 w-full': fixedHeaderAndTab },
-          ]"
-        >
-          <slot name="tab" />
-        </div>
-        <div
-          v-show="fullContent || fixedHeaderAndTab"
-          class="flex-shrink-0 overflow-hidden"
-          :class="[style['layout-tab-placement']]"
         />
       </template>
 

@@ -30,8 +30,6 @@ declare namespace StorageType {
      * The value is the build time of the project
      */
     overrideThemeFlag: string
-    /** The global tabs */
-    globalTabs: App.Global.Tab[]
     /** The backup theme setting before is mobile */
     backupThemeSettingBeforeIsMobile: {
       layout: UnionKey.ThemeLayoutMode

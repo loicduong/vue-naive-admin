@@ -49,23 +49,8 @@ declare namespace App {
           visible: boolean
         }
       }
-      /** Tab */
-      tab: {
-        /** Whether to show the tab */
-        visible: boolean
-        /**
-         * Whether to cache the tab
-         *
-         * If cache, the tabs will get from the local storage when the page is refreshed
-         */
-        cache: boolean
-        /** Tab height */
-        height: number
-        /** Tab mode */
-        mode: UnionKey.ThemeTabMode
-      }
-      /** Fixed header and tab */
-      fixedHeaderAndTab: boolean
+      /** Fixed header */
+      fixedHeader: boolean
       /** Sider */
       sider: {
         /** Sider width */
@@ -127,7 +112,6 @@ declare namespace App {
     interface ThemeSettingTokenBoxShadow {
       header: string
       sider: string
-      tab: string
     }
 
     interface ThemeSettingToken {
@@ -194,52 +178,6 @@ declare namespace App {
 
     type Breadcrumb = Omit<Menu, 'children'> & {
       options?: Breadcrumb[]
-    }
-
-    /** Tab route */
-    type TabRoute = Pick<RouteLocationNormalizedLoaded, 'name' | 'path' | 'meta'> &
-      Partial<Pick<RouteLocationNormalizedLoaded, 'fullPath' | 'query' | 'matched'>>
-
-    /** The global tab */
-    interface Tab {
-      /** The tab id */
-      id: string
-      /** The tab label */
-      label: string
-      /**
-       * The new tab label
-       *
-       * If set, the tab label will be replaced by this value
-       */
-      newLabel?: string
-      /**
-       * The old tab label
-       *
-       * when reset the tab label, the tab label will be replaced by this value
-       */
-      oldLabel?: string
-      /** The tab route key */
-      routeKey: Global.RouteKey
-      /** The tab route path */
-      routePath: Global.RoutePath
-      /** The tab route full path */
-      fullPath: string
-      /** The tab fixed index */
-      fixedIndex?: number | null
-      /**
-       * Tab icon
-       *
-       * Iconify icon
-       */
-      icon?: string
-      /**
-       * Tab local icon
-       *
-       * Local icon
-       */
-      localIcon?: string
-      /** I18n key */
-      i18nKey?: I18n.I18nKey | null
     }
 
     /** Form rule */
@@ -341,7 +279,7 @@ declare namespace App {
           animate: string
           mode: { title: string } & Record<UnionKey.ThemePageAnimateMode, string>
         }
-        fixedHeaderAndTab: string
+        fixedHeader: string
         header: {
           height: string
           breadcrumb: {
@@ -351,12 +289,6 @@ declare namespace App {
           multilingual: {
             visible: string
           }
-        }
-        tab: {
-          visible: string
-          cache: string
-          height: string
-          mode: { title: string } & Record<UnionKey.ThemeTabMode, string>
         }
         sider: {
           width: string
@@ -454,30 +386,6 @@ declare namespace App {
           creativity: string
         }
         function: {
-          tab: {
-            tabOperate: {
-              title: string
-              addTab: string
-              addTabDesc: string
-              closeTab: string
-              closeCurrentTab: string
-              closeAboutTab: string
-              addMultiTab: string
-              addMultiTabDesc1: string
-              addMultiTabDesc2: string
-            }
-            tabTitle: {
-              title: string
-              changeTitle: string
-              change: string
-              resetTitle: string
-              reset: string
-            }
-          }
-          multiTab: {
-            routeParam: string
-            backTab: string
-          }
           request: {
             repeatedErrorOccurOnce: string
             repeatedError: string

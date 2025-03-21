@@ -42,14 +42,6 @@ declare namespace UnionKey {
   /** Page animate mode */
   type ThemePageAnimateMode = 'fade' | 'fade-slide' | 'fade-bottom' | 'fade-scale' | 'zoom-fade' | 'zoom-out' | 'none'
 
-  /**
-   * Tab mode
-   *
-   * - chrome: chrome style
-   * - button: button style
-   */
-  type ThemeTabMode = import('@sa/materials').PageTabMode
-
   /** Unocss animate key */
   type UnoCssAnimateKey =
     | 'pulse'

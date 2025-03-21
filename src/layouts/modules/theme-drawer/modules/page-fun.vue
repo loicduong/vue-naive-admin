@@ -3,7 +3,6 @@ import {
   resetCacheStrategyOptions,
   themePageAnimationModeOptions,
   themeScrollModeOptions,
-  themeTabModeOptions,
 } from '@/constants/app'
 import { $t } from '@/locales'
 import { useThemeStore } from '@/store/modules/theme'
@@ -51,8 +50,8 @@ const isWrapperScrollMode = computed(() => themeStore.layout.scrollMode === 'wra
         class="w-120px"
       />
     </SettingItem>
-    <SettingItem v-if="isWrapperScrollMode" key="2" :label="$t('theme.fixedHeaderAndTab')">
-      <NSwitch v-model:value="themeStore.fixedHeaderAndTab" />
+    <SettingItem v-if="isWrapperScrollMode" key="2" :label="$t('theme.fixedHeader')">
+      <NSwitch v-model:value="themeStore.fixedHeader" />
     </SettingItem>
     <SettingItem key="3" :label="$t('theme.header.height')">
       <NInputNumber
@@ -71,23 +70,6 @@ const isWrapperScrollMode = computed(() => themeStore.layout.scrollMode === 'wra
       :label="$t('theme.header.breadcrumb.showIcon')"
     >
       <NSwitch v-model:value="themeStore.header.breadcrumb.showIcon" />
-    </SettingItem>
-    <SettingItem key="5" :label="$t('theme.tab.visible')">
-      <NSwitch v-model:value="themeStore.tab.visible" />
-    </SettingItem>
-    <SettingItem v-if="themeStore.tab.visible" key="5-1" :label="$t('theme.tab.cache')">
-      <NSwitch v-model:value="themeStore.tab.cache" />
-    </SettingItem>
-    <SettingItem v-if="themeStore.tab.visible" key="5-2" :label="$t('theme.tab.height')">
-      <NInputNumber v-model:value="themeStore.tab.height" size="small" :step="1" class="w-120px" />
-    </SettingItem>
-    <SettingItem v-if="themeStore.tab.visible" key="5-3" :label="$t('theme.tab.mode.title')">
-      <NSelect
-        v-model:value="themeStore.tab.mode"
-        :options="translateOptions(themeTabModeOptions)"
-        size="small"
-        class="w-120px"
-      />
     </SettingItem>
     <SettingItem v-if="layoutMode === 'vertical'" key="6-1" :label="$t('theme.sider.width')">
       <NInputNumber

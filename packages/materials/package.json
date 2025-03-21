@@ -10,7 +10,6 @@
     }
   },
   "dependencies": {
-    "@sa/utils": "workspace:*",
     "simplebar-vue": "2.4.0"
   },
   "devDependencies": {

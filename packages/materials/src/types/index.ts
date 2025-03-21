@@ -20,28 +20,6 @@ interface AdminLayoutHeaderConfig {
   headerHeight?: number
 }
 
-/** Tab config */
-interface AdminLayoutTabConfig {
-  /**
-   * Whether tab is visible
-   *
-   * @default true
-   */
-  tabVisible?: boolean
-  /**
-   * Tab class
-   *
-   * @default ''
-   */
-  tabClass?: string
-  /**
-   * Tab height
-   *
-   * @default 48px
-   */
-  tabHeight?: number
-}
-
 /** Sider config */
 interface AdminLayoutSiderConfig {
   /**
@@ -153,7 +131,6 @@ export type LayoutScrollMode = 'wrapper' | 'content'
 /** Admin layout props */
 export interface AdminLayoutProps
   extends AdminLayoutHeaderConfig,
-  AdminLayoutTabConfig,
   AdminLayoutSiderConfig,
   AdminLayoutContentConfig,
   AdminLayoutFooterConfig {
@@ -201,7 +178,7 @@ export interface AdminLayoutProps
    */
   commonClass?: string
   /**
-   * Whether fix the header and tab
+   * Whether fix the header
    *
    * @default true
    */
@@ -209,7 +186,7 @@ export interface AdminLayoutProps
   /**
    * The max z-index of the layout
    *
-   * The z-index of Header,Tab,Sider and Footer will not exceed this value
+   * The z-index of Header,Sider and Footer will not exceed this value
    */
   maxZIndex?: number
 }
@@ -224,10 +201,9 @@ type Prefix = '--soy-'
 
 export type LayoutCssVarsProps = Pick<
   AdminLayoutProps,
-  'headerHeight' | 'tabHeight' | 'siderWidth' | 'siderCollapsedWidth' | 'footerHeight'
+  'headerHeight' | 'siderWidth' | 'siderCollapsedWidth' | 'footerHeight'
 > & {
   headerZIndex?: number
-  tabZIndex?: number
   siderZIndex?: number
   mobileSiderZIndex?: number
   footerZIndex?: number
@@ -235,60 +211,4 @@ export type LayoutCssVarsProps = Pick<
 
 export type LayoutCssVars = {
   [K in keyof LayoutCssVarsProps as `${Prefix}${KebabCase<K>}`]: string | number;
-}
-
-/**
- * The mode of the tab
- *
- * - Button: button style
- * - Chrome: chrome style
- *
- * @default chrome
- */
-export type PageTabMode = 'button' | 'chrome'
-
-export interface PageTabProps {
-  /** Whether is dark mode */
-  darkMode?: boolean
-  /**
-   * The mode of the tab
-   *
-   * - {@link TabMode}
-   */
-  mode?: PageTabMode
-  /**
-   * The common class of the layout
-   *
-   * Is can be used to configure the transition animation
-   *
-   * @default 'transition-all-300'
-   */
-  commonClass?: string
-  /** The class of the button tab */
-  buttonClass?: string
-  /** The class of the chrome tab */
-  chromeClass?: string
-  /** Whether the tab is active */
-  active?: boolean
-  /** The color of the active tab */
-  activeColor?: string
-  /**
-   * Whether the tab is closable
-   *
-   * Show the close icon when true
-   */
-  closable?: boolean
-}
-
-export type PageTabCssVarsProps = {
-  primaryColor: string
-  primaryColor1: string
-  primaryColor2: string
-  primaryColorOpacity1: string
-  primaryColorOpacity2: string
-  primaryColorOpacity3: string
-}
-
-export type PageTabCssVars = {
-  [K in keyof PageTabCssVarsProps as `${Prefix}${KebabCase<K>}`]: string | number;
 }

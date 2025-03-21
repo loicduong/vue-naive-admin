@@ -7,13 +7,11 @@ import { useBoolean } from '@sa/hooks'
 import { breakpointsTailwind } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { useRouteStore } from '../route'
-import { useTabStore } from '../tab'
 import { useThemeStore } from '../theme'
 
 export const useAppStore = defineStore(SetupStoreId.App, () => {
   const themeStore = useThemeStore()
   const routeStore = useRouteStore()
-  const tabStore = useTabStore()
   const scope = effectScope()
   const breakpoints = useBreakpoints(breakpointsTailwind)
   const { bool: themeDrawerVisible, setTrue: openThemeDrawer, setFalse: closeThemeDrawer } = useBoolean()
@@ -123,9 +121,6 @@ export const useAppStore = defineStore(SetupStoreId.App, () => {
 
       // update global menus by locale
       routeStore.updateGlobalMenusByLocale()
-
-      // update tabs by locale
-      tabStore.updateTabsByLocale()
 
       // set dayjs locale
       setDayjsLocale(locale.value)

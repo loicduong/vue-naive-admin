@@ -98,7 +98,7 @@ const local: App.I18n.Schema = {
         'none': 'Không có',
       },
     },
-    fixedHeaderAndTab: 'Cố định tiêu đề và tab',
+    fixedHeader: 'Cố định tiêu đề',
     header: {
       height: 'Chiều cao tiêu đề',
       breadcrumb: {
@@ -107,16 +107,6 @@ const local: App.I18n.Schema = {
       },
       multilingual: {
         visible: 'Hiển thị nút chuyển đổi ngôn ngữ',
-      },
-    },
-    tab: {
-      visible: 'Hiển thị tab',
-      cache: 'Lưu trữ thông tin tab',
-      height: 'Chiều cao tab',
-      mode: {
-        title: 'Kiểu tab',
-        chrome: 'Kiểu Chrome',
-        button: 'Kiểu nút',
       },
     },
     sider: {
@@ -164,8 +154,6 @@ const local: App.I18n.Schema = {
     '/function/hide-child/one': 'Ẩn con',
     '/function/hide-child/two': 'Hai',
     '/function/hide-child/three': 'Ba',
-    '/function/multi-tab': 'Nhiều tab',
-    '/function/tab': 'Tab',
     '/function/request': 'Yêu cầu',
     '/plugin': 'Tiện ích',
     '/plugin/audio': 'Audio',
@@ -281,30 +269,6 @@ const local: App.I18n.Schema = {
       creativity: 'Sáng tạo',
     },
     function: {
-      tab: {
-        tabOperate: {
-          title: 'Thao tác tab',
-          addTab: 'Thêm tab',
-          addTabDesc: 'Đến trang about',
-          closeTab: 'Đóng tab',
-          closeCurrentTab: 'Đóng tab hiện tại',
-          closeAboutTab: 'Đóng tab "About"',
-          addMultiTab: 'Thêm nhiều tab',
-          addMultiTabDesc1: 'Đến trang MultiTab',
-          addMultiTabDesc2: 'Đến trang MultiTab(với tham số đường dẫn)',
-        },
-        tabTitle: {
-          title: 'Tiêu đề tab',
-          changeTitle: 'Thay đổi tiêu đề',
-          change: 'Thay đổi',
-          resetTitle: 'Đặt lại tiêu đề',
-          reset: 'Đặt lại',
-        },
-      },
-      multiTab: {
-        routeParam: 'Route Param',
-        backTab: 'Back function_tab',
-      },
       request: {
         repeatedErrorOccurOnce: 'Lỗi yêu cầu lặp lại xảy ra một lần',
         repeatedError: 'Lỗi yêu cầu lặp lại',

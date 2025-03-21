@@ -35,13 +35,6 @@ export const themeScrollModeRecord: Record<UnionKey.ThemeScrollMode, App.I18n.I1
 
 export const themeScrollModeOptions = transformRecordToOption(themeScrollModeRecord)
 
-export const themeTabModeRecord: Record<UnionKey.ThemeTabMode, App.I18n.I18nKey> = {
-  chrome: 'theme.tab.mode.chrome',
-  button: 'theme.tab.mode.button',
-}
-
-export const themeTabModeOptions = transformRecordToOption(themeTabModeRecord)
-
 export const themePageAnimationModeRecord: Record<UnionKey.ThemePageAnimateMode, App.I18n.I18nKey> = {
   'fade-slide': 'theme.page.mode.fade-slide',
   'fade': 'theme.page.mode.fade',

@@ -6,7 +6,6 @@ import { getRouteName } from '@/router/routes/builtin'
 import { useBoolean } from '@sa/hooks'
 import { defineStore } from 'pinia'
 import { useAuthStore } from '../auth'
-import { useTabStore } from '../tab'
 import {
   filterAuthRoutesByRoles,
   getBreadcrumbsByRoute,
@@ -21,7 +20,6 @@ import {
 
 export const useRouteStore = defineStore(SetupStoreId.Route, () => {
   const authStore = useAuthStore()
-  const tabStore = useTabStore()
   const { bool: isInitConstantRoute, setBool: setIsInitConstantRoute } = useBoolean()
   const { bool: isInitAuthRoute, setBool: setIsInitAuthRoute } = useBoolean()
 
@@ -128,8 +126,6 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
     handleConstantAndAuthRoutes()
 
     setIsInitConstantRoute(true)
-
-    tabStore.initHomeTab()
   }
 
   /** Init auth route */
@@ -140,8 +136,6 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
     }
 
     initStaticAuthRoute()
-
-    tabStore.initHomeTab()
   }
 
   /** Init static auth route */

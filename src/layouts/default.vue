@@ -8,7 +8,6 @@ import GlobalContent from './modules/global-content/index.vue'
 import GlobalFooter from './modules/global-footer/index.vue'
 import GlobalHeader from './modules/global-header/index.vue'
 import GlobalSider from './modules/global-sider/index.vue'
-import GlobalTab from './modules/global-tab/index.vue'
 import ThemeDrawer from './modules/theme-drawer/index.vue'
 
 defineOptions({
@@ -109,10 +108,8 @@ function getSiderCollapsedWidth() {
     :scroll-mode="themeStore.layout.scrollMode"
     :is-mobile="appStore.isMobile"
     :full-content="appStore.fullContent"
-    :fixed-top="themeStore.fixedHeaderAndTab"
+    :fixed-top="themeStore.fixedHeader"
     :header-height="themeStore.header.height"
-    :tab-visible="themeStore.tab.visible"
-    :tab-height="themeStore.tab.height"
     :content-class="appStore.contentXScrollable ? 'overflow-x-hidden' : ''"
     :sider-visible="siderVisible"
     :sider-width="siderWidth"
@@ -124,9 +121,6 @@ function getSiderCollapsedWidth() {
   >
     <template #header>
       <GlobalHeader v-bind="headerProps" />
-    </template>
-    <template #tab>
-      <GlobalTab />
     </template>
     <template #sider>
       <GlobalSider />
