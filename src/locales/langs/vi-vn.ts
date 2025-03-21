@@ -132,10 +132,6 @@ const local: App.I18n.Schema = {
       height: 'Chiều cao footer',
       right: 'Footer phía bên phải',
     },
-    watermark: {
-      visible: 'Hiển thị watermark toàn màn hình',
-      text: 'Văn bản watermark',
-    },
     themeDrawerTitle: 'Cấu hình chủ đề',
     pageFunTitle: 'Chức năng trang',
     resetCacheStrategy: {
