@@ -465,8 +465,6 @@ declare namespace App {
         themeConfig: string
         themeSchema: string
         lang: string
-        fullscreen: string
-        fullscreenExit: string
         reload: string
         collapse: string
         expand: string

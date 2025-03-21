@@ -377,8 +377,6 @@ const local: App.I18n.Schema = {
     themeConfig: 'Cấu hình chủ đề',
     themeSchema: 'Chế độ chủ đề',
     lang: 'Chuyển đổi ngôn ngữ',
-    fullscreen: 'Toàn màn hình',
-    fullscreenExit: 'Thoát toàn màn hình',
     reload: 'Làm mới trang',
     collapse: 'Thu gọn menu',
     expand: 'Mở rộng menu',

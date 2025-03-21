@@ -4,7 +4,6 @@ import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
 import GlobalBreadcrumb from '../global-breadcrumb/index.vue'
 import GlobalLogo from '../global-logo/index.vue'
-import GlobalSearch from '../global-search/index.vue'
 import ThemeButton from './components/theme-button.vue'
 import UserAvatar from './components/user-avatar.vue'
 
@@ -25,7 +24,6 @@ defineProps<Props>()
 
 const appStore = useAppStore()
 const themeStore = useThemeStore()
-const { isFullscreen, toggle } = useFullscreen()
 const isAuthRouteVisible = computed(() => import.meta.env.VITE_AUTH_ROUTE_VISIBLE !== 'N')
 </script>
 
@@ -42,13 +40,6 @@ const isAuthRouteVisible = computed(() => import.meta.env.VITE_AUTH_ROUTE_VISIBL
       <GlobalBreadcrumb v-if="!appStore.isMobile" class="ml-12px" />
     </div>
     <div class="h-full flex-y-center justify-end">
-      <GlobalSearch />
-      <FullScreen
-        v-if="!appStore.isMobile"
-        id="global-full-screen"
-        :full="isFullscreen"
-        @click="toggle"
-      />
       <LangSwitch
         v-if="themeStore.header.multilingual.visible"
         :lang="appStore.locale"
