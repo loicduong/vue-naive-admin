@@ -14,11 +14,11 @@ interface Props {
   module?: UnionKey.LoginModule
 }
 
+const props = defineProps<Props>()
+
 definePage({
   props: true,
 })
-
-const props = defineProps<Props>()
 
 const appStore = useAppStore()
 const themeStore = useThemeStore()

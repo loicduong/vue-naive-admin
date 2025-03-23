@@ -5,6 +5,12 @@ defineOptions({
   name: 'LangSwitch',
 })
 
+const props = withDefaults(defineProps<Props>(), {
+  showTooltip: true,
+})
+
+const emit = defineEmits<Emits>()
+
 interface Props {
   /** Current language */
   lang: App.I18n.LangType
@@ -14,15 +20,9 @@ interface Props {
   showTooltip?: boolean
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  showTooltip: true,
-})
-
 type Emits = {
   (e: 'changeLang', lang: App.I18n.LangType): void
 }
-
-const emit = defineEmits<Emits>()
 
 const tooltipContent = computed(() => {
   if (!props.showTooltip)

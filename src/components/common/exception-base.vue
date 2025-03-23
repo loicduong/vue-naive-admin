@@ -4,6 +4,8 @@ import { $t } from '@/locales'
 
 defineOptions({ name: 'ExceptionBase' })
 
+const props = defineProps<Props>()
+
 type ExceptionType = '403' | '404' | '500'
 
 interface Props {
@@ -16,8 +18,6 @@ interface Props {
    */
   type: ExceptionType
 }
-
-const props = defineProps<Props>()
 
 const { routerPushByKey } = useRouterPush()
 

@@ -9,6 +9,8 @@ defineOptions({
   name: 'AntvFLow',
 })
 
+const props = defineProps<Props>()
+
 interface Props {
   behaviors?: CustomBehaviorOption[]
   data: CustomGraphData
@@ -16,8 +18,6 @@ interface Props {
   height?: string
   autoFit?: 'view' | 'center'
 }
-
-const props = defineProps<Props>()
 
 const containerRef = useTemplateRef('containerRef')
 const graphRef = shallowRef<Graph | null>(null)

@@ -5,21 +5,21 @@ defineOptions({
   name: 'TableHeaderOperation',
 })
 
+defineProps<Props>()
+
+const emit = defineEmits<Emits>()
+
 interface Props {
   itemAlign?: NaiveUI.Align
   disabledDelete?: boolean
   loading?: boolean
 }
 
-defineProps<Props>()
-
 interface Emits {
   (e: 'add'): void
   (e: 'delete'): void
   (e: 'refresh'): void
 }
-
-const emit = defineEmits<Emits>()
 
 const columns = defineModel<NaiveUI.TableColumnCheck[]>('columns', {
   default: () => [],

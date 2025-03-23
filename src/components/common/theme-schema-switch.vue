@@ -4,6 +4,13 @@ import { $t } from '@/locales'
 
 defineOptions({ name: 'ThemeSchemaSwitch' })
 
+const props = withDefaults(defineProps<Props>(), {
+  showTooltip: true,
+  tooltipPlacement: 'bottom',
+})
+
+const emit = defineEmits<Emits>()
+
 interface Props {
   /** Theme schema */
   themeSchema: UnionKey.ThemeScheme
@@ -13,16 +20,9 @@ interface Props {
   tooltipPlacement?: PopoverPlacement
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  showTooltip: true,
-  tooltipPlacement: 'bottom',
-})
-
 interface Emits {
   (e: 'switch'): void
 }
-
-const emit = defineEmits<Emits>()
 
 function handleSwitch() {
   emit('switch')

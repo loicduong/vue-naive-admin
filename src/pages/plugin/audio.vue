@@ -2,9 +2,9 @@
 import { longpress } from '@/directives/longpress'
 import WaveSurfer from 'wavesurfer.js'
 
-definePage({ meta: { icon: 'material-symbols:sound-sensing' } })
-
 defineOptions({ directives: { longpress } })
+
+definePage({ meta: { icon: 'material-symbols:sound-sensing' } })
 
 const loading = ref(true)
 const wavesurfer = ref<WaveSurfer>()

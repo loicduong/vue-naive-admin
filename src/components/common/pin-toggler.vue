@@ -3,11 +3,11 @@ import { $t } from '@/locales'
 
 defineOptions({ name: 'PinToggler' })
 
+const props = defineProps<Props>()
+
 interface Props {
   pin?: boolean
 }
-
-const props = defineProps<Props>()
 
 const icon = computed(() => (props.pin ? 'mdi-pin-off' : 'mdi-pin'))
 </script>

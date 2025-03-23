@@ -4,6 +4,8 @@ import BScroll from '@better-scroll/core'
 
 defineOptions({ name: 'BetterScroll' })
 
+const props = defineProps<Props>()
+
 interface Props {
   /**
    * BetterScroll options
@@ -12,8 +14,6 @@ interface Props {
    */
   options: Options
 }
-
-const props = defineProps<Props>()
 
 const bsWrapper = ref<HTMLElement>()
 const bsContent = ref<HTMLElement>()

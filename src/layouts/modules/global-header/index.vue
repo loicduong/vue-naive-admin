@@ -11,6 +11,8 @@ defineOptions({
   name: 'GlobalHeader',
 })
 
+defineProps<Props>()
+
 interface Props {
   /** Whether to show the logo */
   showLogo?: App.Global.HeaderProps['showLogo']
@@ -19,8 +21,6 @@ interface Props {
   /** Whether to show the menu */
   showMenu?: App.Global.HeaderProps['showMenu']
 }
-
-defineProps<Props>()
 
 const appStore = useAppStore()
 const themeStore = useThemeStore()

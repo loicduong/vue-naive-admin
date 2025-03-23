@@ -1,6 +1,12 @@
 <script lang="ts" setup>
 defineOptions({ name: 'CustomIconSelect' })
 
+const props = withDefaults(defineProps<Props>(), {
+  emptyIcon: 'mdi:apps',
+})
+
+const emit = defineEmits<Emits>()
+
 interface Props {
   /** Selected icon */
   value: string
@@ -10,15 +16,9 @@ interface Props {
   emptyIcon?: string
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  emptyIcon: 'mdi:apps',
-})
-
 interface Emits {
   (e: 'update:value', val: string): void
 }
-
-const emit = defineEmits<Emits>()
 
 const modelValue = computed({
   get() {

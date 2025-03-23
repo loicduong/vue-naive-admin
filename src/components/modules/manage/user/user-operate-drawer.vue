@@ -8,6 +8,10 @@ defineOptions({
   name: 'UserOperateDrawer',
 })
 
+const props = defineProps<Props>()
+
+const emit = defineEmits<Emits>()
+
 interface Props {
   /** the type of operation */
   operateType: NaiveUI.TableOperateType
@@ -15,13 +19,9 @@ interface Props {
   rowData?: Api.SystemManage.User | null
 }
 
-const props = defineProps<Props>()
-
 interface Emits {
   (e: 'submitted'): void
 }
-
-const emit = defineEmits<Emits>()
 
 const visible = defineModel<boolean>('visible', {
   default: false,

@@ -24,12 +24,14 @@ const props = withDefaults(defineProps<AdminLayoutProps>(), {
   footerHeight: 48,
 })
 
+const emit = defineEmits<Emits>()
+
+const slots = defineSlots<Slots>()
+
 interface Emits {
   /** Update siderCollapse */
   (e: 'update:siderCollapse', collapse: boolean): void
 }
-
-const emit = defineEmits<Emits>()
 
 type SlotFn = (props?: Record<string, unknown>) => any
 
@@ -43,8 +45,6 @@ interface Slots {
   /** Footer */
   footer?: SlotFn
 }
-
-const slots = defineSlots<Slots>()
 
 const cssVars = computed(() => createLayoutCssVars(props))
 

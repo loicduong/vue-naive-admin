@@ -3,12 +3,12 @@ import { getPaletteColorByNumber } from '@sa/color'
 
 defineOptions({ name: 'WaveBg' })
 
+const props = defineProps<Props>()
+
 interface Props {
   /** Theme color */
   themeColor: string
 }
-
-const props = defineProps<Props>()
 
 const lightColor = computed(() => getPaletteColorByNumber(props.themeColor, 300))
 const darkColor = computed(() => getPaletteColorByNumber(props.themeColor, 600))

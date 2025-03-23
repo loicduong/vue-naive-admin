@@ -8,12 +8,12 @@ defineOptions({
   name: 'UserSearch',
 })
 
+const emit = defineEmits<Emits>()
+
 interface Emits {
   (e: 'reset'): void
   (e: 'search'): void
 }
-
-const emit = defineEmits<Emits>()
 
 const { formRef, validate, restoreValidation } = useNaiveForm()
 

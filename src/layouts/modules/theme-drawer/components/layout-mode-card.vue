@@ -7,6 +7,10 @@ defineOptions({
   name: 'LayoutModeCard',
 })
 
+const props = defineProps<Props>()
+
+const emit = defineEmits<Emits>()
+
 interface Props {
   /** Layout mode */
   mode: UnionKey.ThemeLayoutMode
@@ -14,14 +18,10 @@ interface Props {
   disabled?: boolean
 }
 
-const props = defineProps<Props>()
-
 interface Emits {
   /** Layout mode change */
   (e: 'update:mode', mode: UnionKey.ThemeLayoutMode): void
 }
-
-const emit = defineEmits<Emits>()
 
 type LayoutConfig = Record<
   UnionKey.ThemeLayoutMode,

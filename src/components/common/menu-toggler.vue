@@ -3,6 +3,11 @@ import { $t } from '@/locales'
 
 defineOptions({ name: 'MenuToggler' })
 
+const props = withDefaults(defineProps<Props>(), {
+  arrowIcon: false,
+  zIndex: 98,
+})
+
 interface Props {
   /** Show collapsed icon */
   collapsed?: boolean
@@ -10,11 +15,6 @@ interface Props {
   arrowIcon?: boolean
   zIndex?: number
 }
-
-const props = withDefaults(defineProps<Props>(), {
-  arrowIcon: false,
-  zIndex: 98,
-})
 
 type NumberBool = 0 | 1
 

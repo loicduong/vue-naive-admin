@@ -3,6 +3,8 @@ import { Icon } from '@iconify/vue'
 
 defineOptions({ name: 'SvgIcon', inheritAttrs: false })
 
+const props = defineProps<Props>()
+
 /**
  * Props
  *
@@ -15,8 +17,6 @@ interface Props {
   /** Local svg icon name */
   localIcon?: string
 }
-
-const props = defineProps<Props>()
 
 const attrs = useAttrs()
 

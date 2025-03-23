@@ -6,6 +6,10 @@ defineOptions({
   name: 'FirstLevelMenu',
 })
 
+const props = defineProps<Props>()
+
+const emit = defineEmits<Emits>()
+
 interface Props {
   menus: App.Global.Menu[]
   activeMenuKey?: string
@@ -14,14 +18,10 @@ interface Props {
   themeColor: string
 }
 
-const props = defineProps<Props>()
-
 interface Emits {
   (e: 'select', menu: App.Global.Menu): boolean
   (e: 'toggleSiderCollapse'): void
 }
-
-const emit = defineEmits<Emits>()
 
 interface MixMenuItemProps {
   /** Menu item label */

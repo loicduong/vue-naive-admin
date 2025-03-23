@@ -7,6 +7,14 @@ defineOptions({
   inheritAttrs: false,
 })
 
+const props = withDefaults(defineProps<Props>(), {
+  class: '',
+  icon: '',
+  tooltipContent: '',
+  tooltipPlacement: 'bottom',
+  zIndex: 98,
+})
+
 interface Props {
   /** Button class */
   class?: string
@@ -18,14 +26,6 @@ interface Props {
   tooltipPlacement?: PopoverPlacement
   zIndex?: number
 }
-
-const props = withDefaults(defineProps<Props>(), {
-  class: '',
-  icon: '',
-  tooltipContent: '',
-  tooltipPlacement: 'bottom',
-  zIndex: 98,
-})
 
 const DEFAULT_CLASS = 'h-[36px] text-icon'
 </script>
