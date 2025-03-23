@@ -1,4 +1,5 @@
-import { type Node, useVueFlow } from '@vue-flow/core'
+import type { Node } from '@vue-flow/core'
+import { useVueFlow } from '@vue-flow/core'
 
 export function useRunProcess({
   graph: dagreGraph,

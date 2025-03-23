@@ -6,9 +6,11 @@ import { localStg } from '@/utils/storage'
 import { useLoading } from '@sa/hooks'
 import { defineStore } from 'pinia'
 import { useRouteStore } from '../route'
+import { useThemeStore } from '../theme'
 import { clearAuthStorage, getToken } from './shared'
 
 export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
+  useThemeStore()
   const route = useRoute()
   const routeStore = useRouteStore()
   const { toLogin, redirectFromLogin } = useRouterPush(false)

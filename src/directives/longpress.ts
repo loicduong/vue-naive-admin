@@ -45,9 +45,9 @@ export const longpress: Directive = {
         if (timer === null) {
           timer = isInter
             ? setTimeout(() => {
-              cb()
-              onDownInter(ev)
-            }, num)
+                cb()
+                onDownInter(ev)
+              }, num)
             : setTimeout(() => cb(), num)
         }
       }

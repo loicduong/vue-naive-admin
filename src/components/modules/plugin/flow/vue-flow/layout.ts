@@ -1,4 +1,5 @@
-import { type Edge, type Node, Position, useVueFlow } from '@vue-flow/core'
+import type { Edge, Node } from '@vue-flow/core'
+import { Position, useVueFlow } from '@vue-flow/core'
 import dagre from 'dagre'
 
 export function useLayout() {
