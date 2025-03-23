@@ -49,14 +49,6 @@ const local: App.I18n.Schema = {
       no: 'No',
     },
   },
-  request: {
-    logout: 'Logout user after request failed',
-    logoutMsg: 'User status is invalid, please log in again',
-    logoutWithModal: 'Pop up modal after request failed and then log out user',
-    logoutWithModalMsg: 'User status is invalid, please log in again',
-    refreshToken: 'The requested token has expired, refresh the token',
-    tokenExpired: 'The requested token has expired',
-  },
   theme: {
     themeSchema: {
       title: 'Theme Schema',
@@ -151,7 +143,6 @@ const local: App.I18n.Schema = {
     '/function/hide-child/one': 'Hide Child',
     '/function/hide-child/two': 'Two',
     '/function/hide-child/three': 'Three',
-    '/function/request': 'Request',
     '/plugin': 'Plugin',
     '/plugin/audio': 'Audio',
     '/plugin/copy': 'Copy',
@@ -264,14 +255,6 @@ const local: App.I18n.Schema = {
         desc5: 'Loic Duong just wrote some of the workbench pages casually, and it was enough to see!',
       },
       creativity: 'Creativity',
-    },
-    function: {
-      request: {
-        repeatedErrorOccurOnce: 'Repeated Request Error Occurs Once',
-        repeatedError: 'Repeated Request Error',
-        repeatedErrorMsg1: 'Custom Request Error 1',
-        repeatedErrorMsg2: 'Custom Request Error 2',
-      },
     },
     about: {
       title: 'About',

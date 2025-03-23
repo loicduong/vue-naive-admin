@@ -252,14 +252,6 @@ declare namespace App {
           no: string
         }
       }
-      request: {
-        logout: string
-        logoutMsg: string
-        logoutWithModal: string
-        logoutWithModalMsg: string
-        refreshToken: string
-        tokenExpired: string
-      }
       theme: {
         themeSchema: { title: string } & Record<UnionKey.ThemeScheme, string>
         layoutMode: { title: string } & Record<UnionKey.ThemeLayoutMode, string>
@@ -376,14 +368,6 @@ declare namespace App {
             desc5: string
           }
           creativity: string
-        }
-        function: {
-          request: {
-            repeatedErrorOccurOnce: string
-            repeatedError: string
-            repeatedErrorMsg1: string
-            repeatedErrorMsg2: string
-          }
         }
         about: {
           title: string

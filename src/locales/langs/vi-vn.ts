@@ -49,14 +49,6 @@ const local: App.I18n.Schema = {
       no: 'Không',
     },
   },
-  request: {
-    logout: 'Đăng xuất người dùng sau khi yêu cầu thất bại',
-    logoutMsg: 'Trạng thái người dùng hết hiệu lực, vui lòng đăng nhập lại',
-    logoutWithModal: 'Đăng xuất người dùng sau khi yêu cầu thất bại và hiển thị hộp thoại',
-    logoutWithModalMsg: 'Trạng thái người dùng hết hiệu lực, vui lòng đăng nhập lại',
-    refreshToken: 'Yêu cầu mã thông báo đã hết hạn, làm mới mã thông báo',
-    tokenExpired: 'Mã thông báo đã hết hạn',
-  },
   theme: {
     themeSchema: {
       title: 'Chế độ chủ đề',
@@ -151,7 +143,6 @@ const local: App.I18n.Schema = {
     '/function/hide-child/one': 'Ẩn con',
     '/function/hide-child/two': 'Hai',
     '/function/hide-child/three': 'Ba',
-    '/function/request': 'Yêu cầu',
     '/plugin': 'Tiện ích',
     '/plugin/audio': 'Audio',
     '/plugin/copy': 'Sao chép',
@@ -264,14 +255,6 @@ const local: App.I18n.Schema = {
         desc5: 'Loic Duong vừa viết một số nội dung tạm thời cho trang bàn làm việc của vue-naive-admin!',
       },
       creativity: 'Sáng tạo',
-    },
-    function: {
-      request: {
-        repeatedErrorOccurOnce: 'Lỗi yêu cầu lặp lại xảy ra một lần',
-        repeatedError: 'Lỗi yêu cầu lặp lại',
-        repeatedErrorMsg1: 'Lỗi yêu cầu tùy chỉnh 1',
-        repeatedErrorMsg2: 'Lỗi yêu cầu tùy chỉnh 2',
-      },
     },
     about: {
       title: 'Giới thiệu',
