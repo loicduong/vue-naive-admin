@@ -21,7 +21,7 @@
     "enquirer": "2.4.1",
     "execa": "9.5.2",
     "kolorist": "1.8.0",
-    "npm-check-updates": "17.1.15",
+    "npm-check-updates": "17.1.16",
     "rimraf": "6.0.1"
   }
 }
