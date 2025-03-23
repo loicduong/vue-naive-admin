@@ -10,6 +10,7 @@ export default antfu(
   {
     rules: {
       '@typescript-eslint/consistent-type-definitions': 'off',
+      'ts/no-unsafe-function-type': 'off',
       'unocss/order-attributify': 'off',
       'vue/max-attributes-per-line': [
         'error',
