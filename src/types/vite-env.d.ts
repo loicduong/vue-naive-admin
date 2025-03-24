@@ -33,6 +33,8 @@ declare namespace Env {
      * success code of backend service
      *
      * when the code is received, the request is successful
+     *
+     * use "," to separate multiple codes
      */
     readonly VITE_SERVICE_SUCCESS_CODES: string
     /**
@@ -59,6 +61,8 @@ declare namespace Env {
     readonly VITE_AUTH_ROUTE_VISIBLE?: CommonType.YesOrNo
     /** The home route key */
     readonly VITE_ROUTE_HOME: App.Global.RoutePath
+    /** Whether to redirect after login */
+    readonly VITE_ROUTE_REDIRECT_AFTER_LOGIN?: CommonType.YesOrNo
     /**
      * Default menu icon if menu icon is not set
      *

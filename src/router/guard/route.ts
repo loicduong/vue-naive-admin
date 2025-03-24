@@ -51,7 +51,12 @@ export function createRouteGuard(router: Router) {
     }
     // the route need login but the user is not logged in, then switch to the login page
     if (!isLogin) {
-      next({ name: loginRoute, query: { redirect: to.fullPath } })
+      if (import.meta.env.VITE_ROUTE_REDIRECT_AFTER_LOGIN === 'Y') {
+        next({ name: loginRoute, query: { redirect: to.fullPath } })
+      }
+      else {
+        next({ name: loginRoute })
+      }
       return
     }
     // if the user is logged in but does not have authorization, then switch to the 403 page
@@ -176,19 +181,23 @@ function handleRouteSwitch(
 }
 
 function getRouteQueryOfLoginRoute(to: RouteLocationNormalized, routeHome: App.Global.RouteKey) {
-  const loginRoute: App.Global.RouteKey = '/login'
-  const redirect = to.path
-  const [redirectPath, redirectQuery] = redirect.split('?')
+  if (import.meta.env.VITE_ROUTE_REDIRECT_AFTER_LOGIN === 'Y') {
+    const loginRoute: App.Global.RouteKey = '/login'
+    const redirect = to.path
+    const [redirectPath, redirectQuery] = redirect.split('?')
 
-  const redirectName = getRouteName(redirectPath as App.Global.RoutePath)
+    const redirectName = getRouteName(redirectPath as App.Global.RoutePath)
 
-  const isRedirectHome = routeHome === redirectName
+    const isRedirectHome = routeHome === redirectName
 
-  const query: LocationQueryRaw = to.name !== loginRoute && !isRedirectHome ? { redirect } : {}
+    const query: LocationQueryRaw = to.name !== loginRoute && !isRedirectHome ? { redirect } : {}
 
-  if (isRedirectHome && redirectQuery) {
-    query.redirect = `/?${redirectQuery}`
+    if (isRedirectHome && redirectQuery) {
+      query.redirect = `/?${redirectQuery}`
+    }
+
+    return query
   }
 
-  return query
+  return {}
 }

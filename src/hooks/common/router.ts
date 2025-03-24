@@ -66,10 +66,12 @@ export function useRouterPush(inSetup = true) {
       },
     }
 
-    const redirect = redirectUrl || route.value.fullPath
+    if (import.meta.env.VITE_ROUTE_REDIRECT_AFTER_LOGIN === 'Y') {
+      const redirect = redirectUrl || route.value.fullPath
 
-    options.query = {
-      redirect,
+      options.query = {
+        redirect,
+      }
     }
 
     return routerPushByKey('/login', options)
@@ -94,7 +96,7 @@ export function useRouterPush(inSetup = true) {
   async function redirectFromLogin(needRedirect = true) {
     const redirect = route.value.query?.redirect as string
 
-    if (needRedirect && redirect) {
+    if (needRedirect && redirect && import.meta.env.VITE_ROUTE_REDIRECT_AFTER_LOGIN === 'Y') {
       await routerPush(redirect)
     }
     else {
