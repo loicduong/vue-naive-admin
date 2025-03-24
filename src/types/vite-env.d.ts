@@ -41,8 +41,6 @@ declare namespace Env {
      * use "," to separate multiple codes
      */
     readonly VITE_SERVICE_LOGOUT_CODES: string
-    /** the defined super role */
-    readonly VITE_STATIC_SUPER_ROLE: string
     /**
      * other backend service base url
      *

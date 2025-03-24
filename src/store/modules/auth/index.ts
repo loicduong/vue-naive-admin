@@ -27,9 +27,7 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
 
   /** is super role */
   const isStaticSuper = computed(() => {
-    const { VITE_STATIC_SUPER_ROLE } = import.meta.env
-
-    return userInfo.roles.includes(VITE_STATIC_SUPER_ROLE)
+    return userInfo.roles.includes('R_SUPER')
   })
 
   /** Is login */
