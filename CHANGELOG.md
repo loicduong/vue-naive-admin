@@ -1,6 +1,44 @@
 # Changelog
 
 
+## [v0.1.2](https://github.com/dploc96/vue-naive-admin/compare/v0.1.1...v0.1.2) (2025-05-06)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- remove some color config &nbsp;-&nbsp; by **loicduong** [<samp>(1ffff)</samp>](https://github.com/dploc96/vue-naive-admin/commit/1ffff54)
+- remove watermark configs &nbsp;-&nbsp; by **loicduong** [<samp>(3405e)</samp>](https://github.com/dploc96/vue-naive-admin/commit/3405e45)
+- remove tab components &nbsp;-&nbsp; by **loicduong** [<samp>(982cf)</samp>](https://github.com/dploc96/vue-naive-admin/commit/982cf6f)
+- remove some layout configs &nbsp;-&nbsp; by **loicduong** [<samp>(02894)</samp>](https://github.com/dploc96/vue-naive-admin/commit/028943c)
+- remove search & fullscreen &nbsp;-&nbsp; by **loicduong** [<samp>(34b69)</samp>](https://github.com/dploc96/vue-naive-admin/commit/34b6990)
+- remove refresh token &nbsp;-&nbsp; by **loicduong** [<samp>(1f98f)</samp>](https://github.com/dploc96/vue-naive-admin/commit/1f98fc2)
+- change vite-plugin-svg-icons to vite-plugin-svg-icons-ng &nbsp;-&nbsp; by **loicduong** [<samp>(05356)</samp>](https://github.com/dploc96/vue-naive-admin/commit/05356e7)
+- add toggle dynamic title config &nbsp;-&nbsp; by @loicduong [<samp>(53323)</samp>](https://github.com/dploc96/vue-naive-admin/commit/53323f7)
+- add redirect after login config &nbsp;-&nbsp; by @loicduong [<samp>(48988)</samp>](https://github.com/dploc96/vue-naive-admin/commit/489881b)
+- **types**: enhance Option type to support customizable label types &nbsp;-&nbsp; by **loicduong** [<samp>(96e66)</samp>](https://github.com/dploc96/vue-naive-admin/commit/96e66e1)
+
+### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
+
+- loading always dark mode &nbsp;-&nbsp; by **loicduong** [<samp>(91ddd)</samp>](https://github.com/dploc96/vue-naive-admin/commit/91ddd03)
+- **hooks**: fixed the issue where loading was not properly closed in some cases &nbsp;-&nbsp; by **loicduong** [<samp>(1ac64)</samp>](https://github.com/dploc96/vue-naive-admin/commit/1ac640e)
+
+### &nbsp;&nbsp;&nbsp;🛠 Optimizations
+
+- remove codes &nbsp;-&nbsp; by **loicduong** [<samp>(e61a2)</samp>](https://github.com/dploc96/vue-naive-admin/commit/e61a278)
+
+### &nbsp;&nbsp;&nbsp;🏡 Chore
+
+- update pnpm-lock &nbsp;-&nbsp; by **loicduong** [<samp>(4baab)</samp>](https://github.com/dploc96/vue-naive-admin/commit/4baab75)
+- update eslint rules &nbsp;-&nbsp; by **loicduong** [<samp>(ba761)</samp>](https://github.com/dploc96/vue-naive-admin/commit/ba761ec)
+- update eslint rules &nbsp;-&nbsp; by **loicduong** [<samp>(c0147)</samp>](https://github.com/dploc96/vue-naive-admin/commit/c014709)
+- update deps &nbsp;-&nbsp; by **loicduong** [<samp>(949a6)</samp>](https://github.com/dploc96/vue-naive-admin/commit/949a6cb)
+- update npm config &nbsp;-&nbsp; by **loicduong** [<samp>(f4235)</samp>](https://github.com/dploc96/vue-naive-admin/commit/f4235b0)
+- remove VITE_STATIC_SUPER_ROLE &nbsp;-&nbsp; by @loicduong [<samp>(5f940)</samp>](https://github.com/dploc96/vue-naive-admin/commit/5f940b8)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![loicduong](https://github.com/loicduong.png?size=48)](https://github.com/loicduong)&nbsp;&nbsp;
+[loicduong](mailto:mikhailcolt@gmail.com),&nbsp;
+
 ## [v0.1.1](https://github.com/dploc96/vue-naive-admin/compare/v0.0.4...v0.1.1) (2025-03-19)
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
