@@ -1,6 +1,8 @@
+# eslint-disable yaml/plain-scalar
 shellEmulator: true
 
-trustPolicy: no-downgrade
+# eslint-disable-next-line pnpm/yaml-enforce-settings
+trustPolicy: 'off'
 
 packages:
   - 'packages/*'
