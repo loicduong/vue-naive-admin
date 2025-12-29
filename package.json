@@ -2,6 +2,7 @@
   "name": "vue-naive-admin",
   "type": "module",
   "version": "0.1.2",
+  "packageManager": "pnpm@10.26.2",
   "description": "A fresh and elegant admin template, based on Vue 3, Vite 6, TypeScript, Naive UI and UnoCSS.",
   "author": {
     "name": "Loic Duong",
@@ -143,6 +144,6 @@
   },
   "volta": {
     "node": "22.21.0",
-    "pnpm": "10.19.0"
+    "pnpm": "10.26.2"
   }
 }
