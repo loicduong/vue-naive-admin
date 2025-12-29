@@ -1,6 +1,6 @@
+import { defineStore } from 'pinia'
 import { SetupStoreId } from '@/constants/enum'
 import { localStg } from '@/utils/storage'
-import { defineStore } from 'pinia'
 import {
   addThemeVarsToGlobal,
   createThemeToken,

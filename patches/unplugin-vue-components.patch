@@ -1,0 +1,62 @@
+diff --git a/dist/src-BcnnO6GN.js b/dist/src-BcnnO6GN.js
+index cb1ccc8d2a1f09837d977d091aafb2f7aa92801a..d3b5e06cfd13bc33c57cbbe981efda45aa9272b8 100644
+--- a/dist/src-BcnnO6GN.js
++++ b/dist/src-BcnnO6GN.js
+@@ -125,11 +125,24 @@ declare module 'vue' {`;
+   }`;
+ 	code += "\n}\n";
+ 	if (ctx.options.dtsTsx) {
+-		if (Object.keys(declarations.component).length > 0) code += `
++		if (Object.keys(declarations.component).length > 0) {
++			const toValidIdentifier = (raw) => {
++				const unquoted = raw.replace(/^['"]|['"]$/g, "");
++				const normalized = unquoted.replace(/[^A-Za-z0-9_$]/g, "_");
++				return normalized.match(/^[A-Za-z_$]/) ? normalized : `_${normalized}`;
++			};
++			code += `
+ // For TSX support
+ declare global {
+-  ${declarations.component.map((d) => d.replace(/(.+):/, "const $1:")).join("\n  ")}
++  ${declarations.component.map((d) => {
++				const match = d.match(/^(.+?):\s*(.+)$/);
++				if (!match) return `const ${d}`;
++				const [, rawName, typeDecl] = match;
++				const identifier = toValidIdentifier(rawName.trim());
++				return `const ${identifier}: ${typeDecl}`;
++			}).join("\n  ")}
+ }`;
++		}
+ 	}
+ 	return code;
+ }
+diff --git a/dist/src-DzdkjKhH.cjs b/dist/src-DzdkjKhH.cjs
+index 5f110bc95cbb472676d9b20191a79bcb23a82fac..8b5e1f32e9e58b02326743f6933dd0f94aa27c70 100644
+--- a/dist/src-DzdkjKhH.cjs
++++ b/dist/src-DzdkjKhH.cjs
+@@ -136,11 +136,24 @@ declare module 'vue' {`;
+   }`;
+ 	code += "\n}\n";
+ 	if (ctx.options.dtsTsx) {
+-		if (Object.keys(declarations.component).length > 0) code += `
++		if (Object.keys(declarations.component).length > 0) {
++			const toValidIdentifier = (raw) => {
++				const unquoted = raw.replace(/^['"]|['"]$/g, "");
++				const normalized = unquoted.replace(/[^A-Za-z0-9_$]/g, "_");
++				return /^[A-Za-z_$]/.test(normalized) ? normalized : `_${normalized}`;
++			};
++			code += `
+ // For TSX support
+ declare global {
+-  ${declarations.component.map((d) => d.replace(/(.+):/, "const $1:")).join("\n  ")}
++  ${declarations.component.map((d) => {
++				const match = d.match(/^(.+?):\s*(.+)$/);
++				if (!match) return `const ${d}`;
++				const [, rawName, typeDecl] = match;
++				const identifier = toValidIdentifier(rawName.trim());
++				return `const ${identifier}: ${typeDecl}`;
++			}).join("\n  ")}
+ }`;
++		}
+ 	}
+ 	return code;
+ }

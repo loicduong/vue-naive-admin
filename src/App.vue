@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { darkTheme, NConfigProvider } from 'naive-ui'
 import GlobalBuildDesc from '@/layouts/modules/global-build-desc/index.vue'
 import { getEnvVariable } from '@/utils/env'
-import { darkTheme, NConfigProvider } from 'naive-ui'
 import { naiveDateLocales, naiveLocales } from './locales/naive'
 import { useAppStore } from './store/modules/app'
 import { useThemeStore } from './store/modules/theme'

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { getPaletteColorByNumber, mixColor } from '@sa/color'
 import CodeLogin from '@/components/modules/login/code-login.vue'
 import PwdLogin from '@/components/modules/login/pwd-login.vue'
 import Register from '@/components/modules/login/register.vue'
@@ -7,7 +8,6 @@ import { loginModuleRecord } from '@/constants/app'
 import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
-import { getPaletteColorByNumber, mixColor } from '@sa/color'
 
 interface Props {
   /** The login module */
@@ -24,7 +24,7 @@ const appStore = useAppStore()
 const themeStore = useThemeStore()
 
 interface LoginModule {
-  label: string
+  label: App.I18n.I18nKey
   component: Component
 }
 

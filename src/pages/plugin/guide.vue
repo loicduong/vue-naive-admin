@@ -1,7 +1,16 @@
 <script setup lang="ts">
-import type { IntroStep } from 'intro.js/src/core/steps'
 import intro from 'intro.js'
 import 'intro.js/minified/introjs.min.css'
+
+interface IntroStep {
+  element?: HTMLElement | string
+  title?: string
+  intro?: string
+  position?: 'top' | 'bottom' | 'left' | 'right'
+  tooltipClass?: string
+  highlightClass?: string
+  scrollTo?: 'off' | 'tooltip' | 'element'
+}
 
 definePage({
   meta: {

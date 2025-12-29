@@ -1,2 +1,16 @@
+shellEmulator: true
+
+trustPolicy: no-downgrade
+
 packages:
   - 'packages/*'
+
+patchedDependencies:
+  unplugin-vue-components@30.0.0: patches/unplugin-vue-components.patch
+
+onlyBuiltDependencies:
+  - esbuild
+  - json-editor-vue
+  - simple-git-hooks
+  - unrs-resolver
+  - vue-demi

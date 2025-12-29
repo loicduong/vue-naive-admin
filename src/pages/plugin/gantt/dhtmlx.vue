@@ -1,7 +1,7 @@
 <script setup lang="tsx">
 import type { GanttConfigOptions, ZoomLevel } from 'dhtmlx-gantt'
-import { ganttTasks } from '@/components/modules/plugin/gantt/dhtmlx/data'
 import { gantt } from 'dhtmlx-gantt'
+import { ganttTasks } from '@/components/modules/plugin/gantt/dhtmlx/data'
 import 'dhtmlx-gantt/codebase/dhtmlxgantt.css'
 
 definePage({

@@ -288,6 +288,9 @@ declare namespace App {
           right: string
         }
         themeDrawerTitle: string
+        appearance: {
+          themeColor: { title: string } & Record<Theme.ThemeColorKey, string>
+        }
         pageFunTitle: string
         resetCacheStrategy: { title: string } & Record<UnionKey.ResetCacheStrategy, string>
         configOperation: {

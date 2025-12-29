@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import { getPaletteColorByNumber } from '@sa/color'
 import { useEcharts } from '@/hooks/common/echarts'
 import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
-import { getPaletteColorByNumber } from '@sa/color'
 
 defineOptions({ name: 'PieChart' })
 

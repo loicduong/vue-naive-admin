@@ -1,11 +1,11 @@
 <script setup lang="tsx">
+import { NButton, NTag } from 'naive-ui'
+import { utils, writeFile } from 'xlsx'
 import { enableStatusRecord, userGenderRecord } from '@/constants/business'
 import { useTable } from '@/hooks/common/table'
 import { $t } from '@/locales'
 import { fetchGetUserList } from '@/service/api'
 import { useAppStore } from '@/store/modules/app'
-import { NButton, NTag } from 'naive-ui'
-import { utils, writeFile } from 'xlsx'
 
 definePage({
   meta: {
@@ -194,7 +194,7 @@ function isTableColumnHasTitle<T>(
       title="Excel Export"
       :bordered="false"
       size="small"
-      class="sm:flex-1-hidden card-wrapper"
+      class="card-wrapper sm:flex-1-hidden"
     >
       <template #header-extra>
         <NSpace align="end" wrap justify="end" class="lt-sm:w-200px">

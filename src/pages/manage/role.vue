@@ -1,4 +1,5 @@
 <script setup lang="tsx">
+import { NButton, NPopconfirm, NTag } from 'naive-ui'
 import RoleOperateDrawer from '@/components/modules/manage/role/role-operate-drawer.vue'
 import RoleSearch from '@/components/modules/manage/role/role-search.vue'
 import { enableStatusRecord } from '@/constants/business'
@@ -6,7 +7,6 @@ import { useTable, useTableOperate } from '@/hooks/common/table'
 import { $t } from '@/locales'
 import { fetchGetRoleList } from '@/service/api'
 import { useAppStore } from '@/store/modules/app'
-import { NButton, NPopconfirm, NTag } from 'naive-ui'
 
 definePage({
   meta: {
@@ -152,7 +152,7 @@ function edit(id: number) {
       :title="$t('page.manage.role.title')"
       :bordered="false"
       size="small"
-      class="sm:flex-1-hidden card-wrapper"
+      class="card-wrapper sm:flex-1-hidden"
     >
       <template #header-extra>
         <TableHeaderOperation

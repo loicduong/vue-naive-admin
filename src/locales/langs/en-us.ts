@@ -112,6 +112,16 @@ const local: App.I18n.Schema = {
       right: 'Right Footer',
     },
     themeDrawerTitle: 'Theme Configuration',
+    appearance: {
+      themeColor: {
+        title: 'Theme Color',
+        primary: 'Primary',
+        info: 'Info',
+        success: 'Success',
+        warning: 'Warning',
+        error: 'Error',
+      },
+    },
     pageFunTitle: 'Page Function',
     resetCacheStrategy: {
       title: 'Reset Cache Strategy',

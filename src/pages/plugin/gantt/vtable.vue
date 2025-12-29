@@ -1,12 +1,12 @@
 <script setup lang="tsx">
+import * as VTable_editors from '@visactor/vtable-editors'
+import * as VTableGantt from '@visactor/vtable-gantt'
 import {
   basicGanttRecords,
   customGanttRecords,
   linkGanttRecords,
 } from '@/components/modules/plugin/gantt/vtable/data'
 import { useThemeStore } from '@/store/modules/theme'
-import * as VTable_editors from '@visactor/vtable-editors'
-import * as VTableGantt from '@visactor/vtable-gantt'
 
 definePage({
   meta: {

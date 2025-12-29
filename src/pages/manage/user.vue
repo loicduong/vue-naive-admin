@@ -1,4 +1,5 @@
 <script setup lang="tsx">
+import { NButton, NPopconfirm, NTag } from 'naive-ui'
 import UserOperateDrawer from '@/components/modules/manage/user/user-operate-drawer.vue'
 import UserSearch from '@/components/modules/manage/user/user-search.vue'
 import { enableStatusRecord, userGenderRecord } from '@/constants/business'
@@ -6,7 +7,6 @@ import { useTable, useTableOperate } from '@/hooks/common/table'
 import { $t } from '@/locales'
 import { fetchGetUserList } from '@/service/api'
 import { useAppStore } from '@/store/modules/app'
-import { NButton, NPopconfirm, NTag } from 'naive-ui'
 
 definePage({
   meta: {
@@ -185,7 +185,7 @@ function edit(id: number) {
 <template>
   <div class="min-h-500px flex-col-stretch gap-16px overflow-hidden lt-sm:overflow-auto">
     <UserSearch v-model:model="searchParams" @reset="resetSearchParams" @search="getDataByPage" />
-    <NCard :title="$t('page.manage.user.title')" :bordered="false" size="small" class="sm:flex-1-hidden card-wrapper">
+    <NCard :title="$t('page.manage.user.title')" :bordered="false" size="small" class="card-wrapper sm:flex-1-hidden">
       <template #header-extra>
         <TableHeaderOperation
           v-model:columns="columnChecks"

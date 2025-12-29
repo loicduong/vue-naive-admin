@@ -1,8 +1,8 @@
 import type { ISpec, ITheme } from '@visactor/vchart'
-import { useThemeStore } from '@/store/modules/theme'
 import VChart, { registerLiquidChart } from '@visactor/vchart'
 import dark from '@visactor/vchart-theme/public/dark.json'
 import light from '@visactor/vchart-theme/public/light.json'
+import { useThemeStore } from '@/store/modules/theme'
 
 registerLiquidChart()
 

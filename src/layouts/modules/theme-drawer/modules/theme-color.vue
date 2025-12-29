@@ -34,9 +34,13 @@ const swatches: string[] = [
 </script>
 
 <template>
-  <NDivider>{{ $t('theme.themeColor.title') }}</NDivider>
+  <NDivider>{{ $t('theme.appearance.themeColor.title') }}</NDivider>
   <div class="flex-col-stretch gap-12px">
-    <SettingItem v-for="(_, key) in themeStore.themeColors" :key="key" :label="$t(`theme.themeColor.${key}`)">
+    <SettingItem
+      v-for="(_, key) in themeStore.themeColors"
+      :key="key"
+      :label="$t(`theme.appearance.themeColor.${key}`)"
+    >
       <NColorPicker
         class="w-90px"
         :value="themeStore.themeColors[key]"

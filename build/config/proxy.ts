@@ -1,4 +1,4 @@
-import type { HttpProxy, ProxyOptions } from 'vite'
+import type { ProxyOptions } from 'vite'
 import { consola } from 'consola'
 import { bgRed, bgYellow, green, lightBlue } from 'kolorist'
 import { createServiceConfig } from '../../src/utils/service'
@@ -12,9 +12,8 @@ import { createServiceConfig } from '../../src/utils/service'
 export function createViteProxy(env: Env.ImportMeta, enable: boolean) {
   const isEnableHttpProxy = enable && env.VITE_HTTP_PROXY === 'Y'
 
-  if (!isEnableHttpProxy) {
+  if (!isEnableHttpProxy)
     return undefined
-  }
 
   const isEnableProxyLog = env.VITE_PROXY_LOG === 'Y'
 
@@ -35,7 +34,7 @@ function createProxyItem(item: App.Service.ServiceConfigItem, enableLog: boolean
   proxy[item.proxyPattern] = {
     target: item.baseURL,
     changeOrigin: true,
-    configure: (_proxy: HttpProxy.Server, options: ProxyOptions) => {
+    configure: (_proxy, options) => {
       _proxy.on('proxyReq', (_proxyReq, req, _res) => {
         if (!enableLog)
           return

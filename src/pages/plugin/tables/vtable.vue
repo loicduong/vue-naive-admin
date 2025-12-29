@@ -1,12 +1,4 @@
 <script setup lang="tsx">
-import {
-  customListRecords,
-  listTableRecords,
-  pivotChartColumns,
-  pivotChartIndicators,
-  pivotChartRows,
-} from '@/components/modules/plugin/tables/vtable/data'
-import { useThemeStore } from '@/store/modules/theme'
 import VChart from '@visactor/vchart'
 import {
   Group,
@@ -25,6 +17,14 @@ import {
   Text,
   VTable,
 } from '@visactor/vue-vtable'
+import {
+  customListRecords,
+  listTableRecords,
+  pivotChartColumns,
+  pivotChartIndicators,
+  pivotChartRows,
+} from '@/components/modules/plugin/tables/vtable/data'
+import { useThemeStore } from '@/store/modules/theme'
 
 definePage({
   meta: {

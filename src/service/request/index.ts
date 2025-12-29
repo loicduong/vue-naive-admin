@@ -1,9 +1,9 @@
 import type { RequestInstanceState } from './type'
+import { BACKEND_ERROR_CODE, createFlatRequest, createRequest } from '@sa/axios'
 import { $t } from '@/locales'
 import { useAuthStore } from '@/store/modules/auth'
 import { getServiceBaseURL } from '@/utils/service'
 import { localStg } from '@/utils/storage'
-import { BACKEND_ERROR_CODE, createFlatRequest, createRequest } from '@sa/axios'
 import { getAuthorization, showErrorMsg } from './shared'
 
 const isHttpProxy = import.meta.env.DEV && import.meta.env.VITE_HTTP_PROXY === 'Y'

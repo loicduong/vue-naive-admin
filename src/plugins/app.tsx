@@ -1,6 +1,6 @@
 import type { App } from 'vue'
-import { $t } from '@/locales'
 import { NButton } from 'naive-ui'
+import { $t } from '@/locales'
 
 export function setupAppErrorHandle(app: App) {
   app.config.errorHandler = (err, vm, info) => {

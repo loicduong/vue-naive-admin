@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { Background } from '@vue-flow/background'
+import { Panel, useVueFlow, VueFlow } from '@vue-flow/core'
 import AnimationEdge from '@/components/modules/plugin/flow/vue-flow/animation-edge.vue'
 import Icon from '@/components/modules/plugin/flow/vue-flow/icon.vue'
 import { initialEdges, initialNodes } from '@/components/modules/plugin/flow/vue-flow/initial-elements'
@@ -6,8 +8,6 @@ import { useLayout } from '@/components/modules/plugin/flow/vue-flow/layout'
 import ProcessNode from '@/components/modules/plugin/flow/vue-flow/process-node.vue'
 import { useRunProcess } from '@/components/modules/plugin/flow/vue-flow/run-process'
 import { useShuffle } from '@/components/modules/plugin/flow/vue-flow/shuffle'
-import { Background } from '@vue-flow/background'
-import { Panel, useVueFlow, VueFlow } from '@vue-flow/core'
 import '@vue-flow/core/dist/style.css'
 import '@vue-flow/core/dist/theme-default.css'
 

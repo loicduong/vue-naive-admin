@@ -65,6 +65,6 @@ export default defineConfig<Theme>({
       'card-wrapper': 'rd-8px shadow-sm',
     },
   ],
-  transformers: [transformerDirectives(), transformerVariantGroup()],
-  presets: [presetWind3({ dark: 'class' })],
+  transformers: [transformerDirectives(), transformerVariantGroup()] as any,
+  presets: [presetWind3({ dark: 'class' })] as any,
 })

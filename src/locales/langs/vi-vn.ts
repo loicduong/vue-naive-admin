@@ -112,6 +112,16 @@ const local: App.I18n.Schema = {
       right: 'Footer phía bên phải',
     },
     themeDrawerTitle: 'Cấu hình chủ đề',
+    appearance: {
+      themeColor: {
+        title: 'Màu chủ đề',
+        primary: 'Màu chính',
+        info: 'Màu thông tin',
+        success: 'Màu thành công',
+        warning: 'Màu cảnh báo',
+        error: 'Màu lỗi',
+      },
+    },
     pageFunTitle: 'Chức năng trang',
     resetCacheStrategy: {
       title: 'Chiến lược đặt lại cache',

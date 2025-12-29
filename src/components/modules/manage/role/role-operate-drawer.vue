@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import { useBoolean } from '@sa/hooks'
 import { enableStatusOptions } from '@/constants/business'
 import { useFormRules, useNaiveForm } from '@/hooks/common/form'
 import { $t } from '@/locales'
-import { useBoolean } from '@sa/hooks'
 import ButtonAuthModal from './button-auth-modal.vue'
 
 defineOptions({

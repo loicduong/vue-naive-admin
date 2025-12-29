@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import { getPaletteColorByNumber } from '@sa/color'
 import { useEcharts } from '@/hooks/common/echarts'
 import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
-import { getPaletteColorByNumber } from '@sa/color'
 
 defineOptions({ name: 'LineChart' })
 
@@ -21,12 +21,15 @@ const { domRef, updateOptions } = useEcharts(() => ({
       label: { backgroundColor: '#6a7985' },
     },
   },
-  legend: { data: [$t('page.home.downloadCount'), $t('page.home.registerCount')] },
+  legend: {
+    data: [$t('page.home.downloadCount'), $t('page.home.registerCount')],
+    top: '0',
+  },
   grid: {
     left: '3%',
     right: '4%',
     bottom: '3%',
-    containLabel: true,
+    top: '15%',
   },
   xAxis: {
     type: 'category',

@@ -1,10 +1,10 @@
+import { getRgb } from '@sa/color'
 // @unocss-include
 import systemLogo from '@/assets/svg-icon/logo.svg?raw'
 import { DARK_CLASS } from '@/constants/app'
 import { $t } from '@/locales'
 import { toggleHtmlClass } from '@/utils/common'
 import { localStg } from '@/utils/storage'
-import { getRgb } from '@sa/color'
 
 export function setupLoading() {
   const themeColor = localStg.get('themeColor') || '#646cff'

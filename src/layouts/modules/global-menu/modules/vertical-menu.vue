@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import { SimpleScrollbar } from '@sa/materials'
 import { GLOBAL_SIDER_MENU_ID } from '@/constants/app'
 import { useRouterPush } from '@/hooks/common/router'
 import { useAppStore } from '@/store/modules/app'
 import { useRouteStore } from '@/store/modules/route'
 import { useThemeStore } from '@/store/modules/theme'
-import { SimpleScrollbar } from '@sa/materials'
 import { useMenu } from '../../../context'
 
 defineOptions({

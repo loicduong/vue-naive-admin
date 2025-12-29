@@ -1,12 +1,12 @@
 import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 
-export type ContentType =
-  | 'text/html'
-  | 'text/plain'
-  | 'multipart/form-data'
-  | 'application/json'
-  | 'application/x-www-form-urlencoded'
-  | 'application/octet-stream'
+export type ContentType
+  = | 'text/html'
+    | 'text/plain'
+    | 'multipart/form-data'
+    | 'application/json'
+    | 'application/x-www-form-urlencoded'
+    | 'application/octet-stream'
 
 export interface RequestOption<ResponseData = any> {
   /**
@@ -33,7 +33,7 @@ export interface RequestOption<ResponseData = any> {
    */
   onBackendFail: (
     response: AxiosResponse<ResponseData>,
-    instance: AxiosInstance
+    instance: AxiosInstance,
   ) => Promise<AxiosResponse | null> | Promise<void>
   /**
    * transform backend response when the responseType is json
@@ -103,9 +103,9 @@ export interface FlatResponseFailData<ResponseData = any> {
   response: AxiosResponse<ResponseData>
 }
 
-export type FlatResponseData<T = any, ResponseData = any> =
-  | FlatResponseSuccessData<T, ResponseData>
-  | FlatResponseFailData<ResponseData>
+export type FlatResponseData<T = any, ResponseData = any>
+  = | FlatResponseSuccessData<T, ResponseData>
+    | FlatResponseFailData<ResponseData>
 
 export interface FlatRequestInstance<S = Record<string, unknown>, ResponseData = any> extends RequestInstanceCommon<S> {
   <T = any, R extends ResponseType = 'json'>(

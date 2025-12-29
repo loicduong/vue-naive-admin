@@ -1,6 +1,6 @@
-import type { ECOption } from '@/hooks/common/echarts'
 import type { ScatterSeriesOption } from 'echarts/charts'
 import type { SingleAxisComponentOption, TitleComponentOption } from 'echarts/components'
+import type { ECOption } from '@/hooks/common/echarts'
 import { graphic } from 'echarts'
 
 export const pieOptions: ECOption = {

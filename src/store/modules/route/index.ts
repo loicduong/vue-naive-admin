@@ -1,10 +1,10 @@
 import type { RouteRecordRaw } from 'vue-router'
+import { useBoolean } from '@sa/hooks'
+import { defineStore } from 'pinia'
 import { SetupStoreId } from '@/constants/enum'
 import { router } from '@/router'
 import { createStaticRoutes } from '@/router/routes'
 import { getRouteName } from '@/router/routes/builtin'
-import { useBoolean } from '@sa/hooks'
-import { defineStore } from 'pinia'
 import { useAuthStore } from '../auth'
 import {
   filterAuthRoutesByRoles,

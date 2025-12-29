@@ -1,8 +1,8 @@
 import type { PaginationProps } from 'naive-ui'
-import { $t } from '@/locales'
-import { useAppStore } from '@/store/modules/app'
 import { useBoolean, useHookTable } from '@sa/hooks'
 import { jsonClone } from '@sa/utils'
+import { $t } from '@/locales'
+import { useAppStore } from '@/store/modules/app'
 
 type TableData = NaiveUI.TableData
 type GetTableData<A extends NaiveUI.TableApiFn> = NaiveUI.GetTableData<A>

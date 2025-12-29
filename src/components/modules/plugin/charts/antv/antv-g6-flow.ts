@@ -1,8 +1,8 @@
 import type { CustomBehaviorOption, IPointerEvent } from '@antv/g6'
 import type { Canvas } from '@antv/g6/lib/runtime/canvas'
 import type { CustomEdgeData, CustomGraphData, CustomNodeData } from './types'
-import { useThemeStore } from '@/store/modules/theme'
 import { Graph } from '@antv/g6'
+import { useThemeStore } from '@/store/modules/theme'
 import { getNodeIcon, nodeStatus } from './status'
 
 interface AntFlowConfig {

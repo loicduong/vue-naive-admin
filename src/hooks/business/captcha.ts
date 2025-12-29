@@ -1,6 +1,6 @@
+import { useCountDown, useLoading } from '@sa/hooks'
 import { REG_PHONE } from '@/constants/reg'
 import { $t } from '@/locales'
-import { useCountDown, useLoading } from '@sa/hooks'
 
 export function useCaptcha() {
   const { loading, startLoading, endLoading } = useLoading()

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { longpress } from '@/directives/longpress'
 import WaveSurfer from 'wavesurfer.js'
+import { longpress } from '@/directives/longpress'
 
 defineOptions({ directives: { longpress } })
 

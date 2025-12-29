@@ -18,8 +18,8 @@ function loginOrRegister() {
 
 type DropdownKey = '/user-center' | 'logout'
 
-type DropdownOption =
-  | {
+type DropdownOption
+  = | {
     key: DropdownKey
     label: string
     icon?: () => VNode

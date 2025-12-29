@@ -1,7 +1,7 @@
 import type { RouteLocationNormalizedLoaded, RouteRecordRaw } from 'vue-router'
+import { RouterLink } from 'vue-router'
 import { useSvgIcon } from '@/hooks/common/icon'
 import { $t } from '@/locales'
-import { RouterLink } from 'vue-router'
 
 /**
  * Filter auth routes by roles

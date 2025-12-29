@@ -25,7 +25,7 @@ export function setupUnocss(viteEnv: Env.ImportMeta) {
             svg.replace(/^<svg\s/, '<svg width="1em" height="1em" ')),
         },
         warn: true,
-      }),
+      }) as any,
     ],
   })
 }

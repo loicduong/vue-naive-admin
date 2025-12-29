@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import pagedCss from '@/assets/scss/paged.scss?inline'
-import PdfHtmlAction from '@/components/modules/plugin/pdf/html/pdf-html-action.vue'
-import PdfHtmlRoot from '@/components/modules/plugin/pdf/html/pdf-html-root.vue'
 import { useLoading } from '@sa/hooks'
 import { toPng } from 'html-to-image'
 import { Handler, Previewer, registerHandlers } from 'pagedjs'
+import pagedCss from '@/assets/scss/paged.scss?inline'
+import PdfHtmlAction from '@/components/modules/plugin/pdf/html/pdf-html-action.vue'
+import PdfHtmlRoot from '@/components/modules/plugin/pdf/html/pdf-html-root.vue'
 
 definePage({
   meta: {

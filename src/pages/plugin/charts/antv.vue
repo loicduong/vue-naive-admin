@@ -1,6 +1,6 @@
 <script setup lang="tsx">
-import type { CustomGraphData } from '@/components/modules/plugin/charts/antv/types'
 import type { CustomBehaviorOption, IPointerEvent } from '@antv/g6'
+import type { CustomGraphData } from '@/components/modules/plugin/charts/antv/types'
 import AntvFlow from '@/components/modules/plugin/charts/antv/antv-flow.vue'
 import { getFlowData } from '@/components/modules/plugin/charts/antv/data'
 
