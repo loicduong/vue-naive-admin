@@ -24,10 +24,6 @@
     "naive-ui",
     "unocss"
   ],
-  "engines": {
-    "node": ">=18.20.0",
-    "pnpm": ">=8.7.0"
-  },
   "scripts": {
     "build": "vite build",
     "build:dev": "vite build --mode development",

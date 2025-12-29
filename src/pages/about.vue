@@ -43,8 +43,8 @@ const pkgJson: PkgJson = {
   name,
   version,
   engines: {
-    pnpm: pkg.engines?.pnpm,
-    node: pkg.engines?.node,
+    pnpm: pkg.volta?.pnpm,
+    node: pkg.volta?.node,
   },
   dependencies: Object.entries(dependencies).map(item => transformVersionData(item)),
   devDependencies: Object.entries(devDependencies).map(item => transformVersionData(item)),
