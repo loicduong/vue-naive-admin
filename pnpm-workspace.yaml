@@ -1,14 +1,9 @@
-# eslint-disable yaml/plain-scalar
 shellEmulator: true
 
-# eslint-disable-next-line pnpm/yaml-enforce-settings
-trustPolicy: 'off'
+trustPolicy: no-downgrade
 
 packages:
   - 'packages/*'
-
-patchedDependencies:
-  unplugin-vue-components@30.0.0: patches/unplugin-vue-components.patch
 
 onlyBuiltDependencies:
   - esbuild
