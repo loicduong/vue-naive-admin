@@ -10,6 +10,8 @@ declare namespace App {
       themeScheme: UnionKey.ThemeScheme
       /** Theme color */
       themeColor: string
+      /** Theme radius */
+      themeRadius: number
       /** Other color */
       otherColor: OtherColor
       /** Layout */
@@ -264,6 +266,9 @@ declare namespace App {
           themeColor: {
             title: string
           } & Record<Theme.ThemeColorKey, string>
+          themeRadius: {
+            title: string
+          }
         }
         layout: {
           layoutMode: { title: string } & Record<UnionKey.ThemeLayoutMode, string> & {

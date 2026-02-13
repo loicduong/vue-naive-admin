@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { $t } from '@/locales'
+import { useThemeStore } from '@/store/modules/theme'
 
 defineOptions({ name: 'CardData' })
 
@@ -68,6 +69,8 @@ interface GradientBgProps {
 
 const [DefineGradientBg, GradientBg] = createReusableTemplate<GradientBgProps>()
 
+const themeStore = useThemeStore()
+
 function getGradientColor(color: CardData['color']) {
   return `linear-gradient(to bottom right, ${color.start}, ${color.end})`
 }
@@ -79,7 +82,7 @@ function getGradientColor(color: CardData['color']) {
     <DefineGradientBg v-slot="{ $slots, gradientColor }">
       <div
         class="rd-8px px-16px pb-4px pt-8px text-white"
-        :style="{ backgroundImage: gradientColor }"
+        :style="{ backgroundImage: gradientColor, borderRadius: `${themeStore.themeRadius}px` }"
       >
         <component :is="$slots.default" />
       </div>

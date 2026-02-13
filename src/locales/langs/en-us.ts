@@ -71,6 +71,9 @@ const local: App.I18n.Schema = {
         warning: 'Warning',
         error: 'Error',
       },
+      themeRadius: {
+        title: 'Theme Radius',
+      },
     },
     layout: {
       layoutMode: {

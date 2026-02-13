@@ -2,6 +2,7 @@
 export const themeSettings: App.Theme.ThemeSetting = {
   themeScheme: 'light',
   themeColor: '#646cff',
+  themeRadius: 8,
   otherColor: {
     info: '#2080f0',
     success: '#52c41a',

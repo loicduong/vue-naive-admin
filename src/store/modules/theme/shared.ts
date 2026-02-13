@@ -221,20 +221,21 @@ function getNaiveThemeColors(colors: App.Theme.ThemeColor) {
  * Get naive theme
  *
  * @param colors Theme colors
+ * @param settings Theme settings
  */
-export function getNaiveTheme(colors: App.Theme.ThemeColor) {
+export function getNaiveTheme(colors: App.Theme.ThemeColor, settings: App.Theme.ThemeSetting) {
   const { primary: colorLoading } = colors
 
   const theme: GlobalThemeOverrides = {
     common: {
       ...getNaiveThemeColors(colors),
-      borderRadius: '6px',
+      borderRadius: `${settings.themeRadius}px`,
     },
     LoadingBar: {
       colorLoading,
     },
     Tag: {
-      borderRadius: '6px',
+      borderRadius: `${settings.themeRadius}px`,
     },
   }
 

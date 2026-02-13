@@ -71,6 +71,9 @@ const local: App.I18n.Schema = {
         warning: 'Màu cảnh báo',
         error: 'Màu lỗi',
       },
+      themeRadius: {
+        title: 'Bán kính chủ đề',
+      },
     },
     layout: {
       layoutMode: {
