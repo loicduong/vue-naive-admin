@@ -127,11 +127,6 @@ const local: App.I18n.Schema = {
         },
         fixedHeader: 'Cố định tiêu đề',
       },
-      resetCacheStrategy: {
-        title: 'Chiến lược đặt lại cache',
-        close: 'Đóng trang',
-        refresh: 'Làm mới trang',
-      },
     },
     general: {
       multilingual: {

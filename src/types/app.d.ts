@@ -12,8 +12,6 @@ declare namespace App {
       themeColor: string
       /** Other color */
       otherColor: OtherColor
-      /** Reset cache strategy */
-      resetCacheStrategy: UnionKey.ResetCacheStrategy
       /** Layout */
       layout: {
         /** Layout mode */
@@ -308,7 +306,6 @@ declare namespace App {
             }
             fixedHeader: string
           }
-          resetCacheStrategy: { title: string } & Record<UnionKey.ResetCacheStrategy, string>
         }
         general: {
           multilingual: {

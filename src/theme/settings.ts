@@ -8,7 +8,6 @@ export const themeSettings: App.Theme.ThemeSetting = {
     warning: '#faad14',
     error: '#f5222d',
   },
-  resetCacheStrategy: 'refresh',
   layout: {
     mode: 'vertical',
     scrollMode: 'content',
