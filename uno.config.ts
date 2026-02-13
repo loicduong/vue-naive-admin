@@ -62,7 +62,7 @@ export default defineConfig<Theme>({
       'ellipsis-text': 'nowrap-hidden text-ellipsis',
     },
     {
-      'card-wrapper': 'shadow-sm',
+      'card-wrapper': 'rd-8px shadow-sm',
     },
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()] as any,
