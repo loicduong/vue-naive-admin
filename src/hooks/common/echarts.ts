@@ -76,7 +76,7 @@ interface ChartHooks {
  * use echarts
  *
  * @param optionsFactory echarts options factory function
- * @param hooks chart hooks for customizing chart behavior
+ * @param darkMode dark mode
  */
 export function useEcharts<T extends ECOption>(optionsFactory: () => T, hooks: ChartHooks = {}) {
   const scope = effectScope()
@@ -84,11 +84,11 @@ export function useEcharts<T extends ECOption>(optionsFactory: () => T, hooks: C
   const themeStore = useThemeStore()
   const darkMode = computed(() => themeStore.darkMode)
 
-  const domRef = ref<HTMLElement | null>(null)
+  const domRef = shallowRef<HTMLElement | null>(null)
   const initialSize = { width: 0, height: 0 }
   const { width, height } = useElementSize(domRef, initialSize)
 
-  let chart: echarts.ECharts | null = null
+  const chart = shallowRef<echarts.ECharts | null>(null)
   const chartOptions: T = optionsFactory()
 
   const {
@@ -109,15 +109,6 @@ export function useEcharts<T extends ECOption>(optionsFactory: () => T, hooks: C
     onDestroy,
   } = hooks
 
-  /**
-   * whether can render chart
-   *
-   * when domRef is ready and initialSize is valid
-   */
-  function canRender() {
-    return domRef.value && initialSize.width > 0 && initialSize.height > 0
-  }
-
   /** is chart rendered */
   function isRendered() {
     return Boolean(domRef.value && chart)
@@ -137,53 +128,54 @@ export function useEcharts<T extends ECOption>(optionsFactory: () => T, hooks: C
     Object.assign(chartOptions, updatedOpts)
 
     if (isRendered()) {
-      chart?.clear()
+      chart.value?.clear()
     }
 
-    chart?.setOption({ ...updatedOpts, backgroundColor: 'transparent' })
+    chart.value?.setOption({ ...updatedOpts, backgroundColor: 'transparent' })
 
-    await onUpdated?.(chart!)
+    await onUpdated?.(chart.value!)
   }
 
   function setOptions(options: T) {
-    chart?.setOption(options)
+    chart.value?.setOption(options)
   }
 
   /** render chart */
   async function render() {
-    if (!isRendered()) {
-      const chartTheme = darkMode.value ? 'dark' : 'light'
+    if (isRendered())
+      return
 
-      await nextTick()
+    const chartTheme = darkMode.value ? 'dark' : 'light'
 
-      chart = echarts.init(domRef.value, chartTheme)
+    await nextTick()
 
-      chart.setOption({ ...chartOptions, backgroundColor: 'transparent' })
+    chart.value = echarts.init(domRef.value, chartTheme)
 
-      await onRender?.(chart)
-    }
+    chart.value?.setOption({ ...chartOptions, backgroundColor: 'transparent' })
+
+    await onRender?.(chart.value!)
   }
 
   /** resize chart */
   function resize() {
-    chart?.resize()
+    chart.value?.resize()
   }
 
   /** destroy chart */
   async function destroy() {
-    if (!chart)
+    if (!chart.value)
       return
 
-    await onDestroy?.(chart)
-    chart?.dispose()
-    chart = null
+    await onDestroy?.(chart.value)
+    chart.value?.dispose()
+    chart.value = null
   }
 
   /** change chart theme */
   async function changeTheme() {
     await destroy()
     await render()
-    await onUpdated?.(chart!)
+    await onUpdated?.(chart.value!)
   }
 
   /**
@@ -196,13 +188,6 @@ export function useEcharts<T extends ECOption>(optionsFactory: () => T, hooks: C
     initialSize.width = w
     initialSize.height = h
 
-    // size is abnormal, destroy chart
-    if (!canRender()) {
-      await destroy()
-
-      return
-    }
-
     // resize chart
     if (isRendered()) {
       resize()
@@ -211,15 +196,17 @@ export function useEcharts<T extends ECOption>(optionsFactory: () => T, hooks: C
     // render chart
     await render()
 
-    if (chart) {
-      await onUpdated?.(chart)
-    }
+    await onUpdated?.(chart.value!)
   }
 
   scope.run(() => {
-    watch([width, height], ([newWidth, newHeight]) => {
-      renderChartBySize(newWidth, newHeight)
-    })
+    watch(
+      [width, height],
+      ([newWidth, newHeight]) => {
+        renderChartBySize(newWidth, newHeight)
+      },
+      { flush: 'post' },
+    )
 
     watch(darkMode, () => {
       changeTheme()
@@ -233,6 +220,7 @@ export function useEcharts<T extends ECOption>(optionsFactory: () => T, hooks: C
 
   return {
     domRef,
+    chart,
     updateOptions,
     setOptions,
   }
