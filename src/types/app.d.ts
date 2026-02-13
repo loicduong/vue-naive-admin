@@ -220,6 +220,7 @@ declare namespace App {
         cancel: string
         close: string
         check: string
+        selectAll: string
         expandColumn: string
         columnSetting: string
         config: string

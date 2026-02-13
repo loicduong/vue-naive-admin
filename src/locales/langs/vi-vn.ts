@@ -15,6 +15,7 @@ const local: App.I18n.Schema = {
     cancel: 'Hủy',
     close: 'Đóng',
     check: 'Chọn',
+    selectAll: 'Chọn tất cả',
     expandColumn: 'Mở rộng cột',
     columnSetting: 'Cài đặt cột',
     config: 'Cấu hình',
