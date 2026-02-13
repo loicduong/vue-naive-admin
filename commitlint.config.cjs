@@ -36,6 +36,7 @@ module.exports = {
         'release', // release project
         'other', // other changes
         'auth', // auth related changes
+        'app', // app related changes
       ],
     ],
   },
