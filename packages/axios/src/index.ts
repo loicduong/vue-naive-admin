@@ -105,10 +105,7 @@ export function createRequest<ResponseData, ApiData, State extends Record<string
   axiosConfig?: CreateAxiosDefaults,
   options?: Partial<RequestOption<ResponseData, ApiData, State>>,
 ) {
-  const { instance, opts, cancelAllRequest } = createCommonRequest<ResponseData, ApiData, State>(
-    axiosConfig,
-    options,
-  )
+  const { instance, opts, cancelAllRequest } = createCommonRequest<ResponseData, ApiData, State>(axiosConfig, options)
 
   const request: RequestInstance<ApiData, State> = async function request<
     T extends ApiData = ApiData,
@@ -119,7 +116,7 @@ export function createRequest<ResponseData, ApiData, State extends Record<string
     const responseType = response.config?.responseType || 'json'
 
     if (responseType === 'json') {
-      return opts.transformBackendResponse(response)
+      return opts.transform(response)
     }
 
     return response.data as MappedType<R, T>
@@ -143,10 +140,7 @@ export function createFlatRequest<ResponseData, ApiData, State extends Record<st
   axiosConfig?: CreateAxiosDefaults,
   options?: Partial<RequestOption<ResponseData, ApiData, State>>,
 ) {
-  const { instance, opts, cancelAllRequest } = createCommonRequest<ResponseData, ApiData, State>(
-    axiosConfig,
-    options,
-  )
+  const { instance, opts, cancelAllRequest } = createCommonRequest<ResponseData, ApiData, State>(axiosConfig, options)
 
   const flatRequest: FlatRequestInstance<ResponseData, ApiData, State> = async function flatRequest<
     T extends ApiData = ApiData,
@@ -158,7 +152,7 @@ export function createFlatRequest<ResponseData, ApiData, State extends Record<st
       const responseType = response.config?.responseType || 'json'
 
       if (responseType === 'json') {
-        const data = await opts.transformBackendResponse(response)
+        const data = await opts.transform(response)
 
         return { data, error: null, response }
       }
