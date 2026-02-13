@@ -104,7 +104,6 @@ function toggleSelectAll(checked: boolean) {
           </div>
           <ButtonIcon
             :disabled="!item.checked"
-            text
             :focusable="false"
             :tooltip-content="$t(tooltipRecord[item.fixed!])"
             @click="handleFixed(item)"
