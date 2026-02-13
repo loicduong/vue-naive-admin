@@ -390,6 +390,11 @@ const local: App.I18n.Schema = {
   },
   datatable: {
     itemCount: 'Tổng {total} bản ghi',
+    fixed: {
+      left: 'Cố định bên trái',
+      right: 'Cố định bên phải',
+      unFixed: 'Không cố định',
+    },
   },
 }
 
