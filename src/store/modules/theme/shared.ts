@@ -221,7 +221,8 @@ function getNaiveThemeColors(colors: App.Theme.ThemeColor) {
  * Get naive theme
  *
  * @param colors Theme colors
- * @param settings Theme settings
+ * @param settings Theme settings object.
+ * @param settings.themeRadius Border radius to use in the theme (in px).
  */
 export function getNaiveTheme(colors: App.Theme.ThemeColor, settings: App.Theme.ThemeSetting) {
   const { primary: colorLoading } = colors
