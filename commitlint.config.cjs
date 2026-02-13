@@ -21,23 +21,5 @@ module.exports = {
         'revert', // Reverts a previous commit
       ],
     ],
-    'scope-enum': [
-      2,
-      'always',
-      [
-        'projects', // project
-        'packages', // packages
-        'components', // components
-        'hooks', // hook functions
-        'utils', // utils functions
-        'types', // TS declaration
-        'styles', // style
-        'deps', // project dependencies
-        'release', // release project
-        'other', // other changes
-        'auth', // auth related changes
-        'app', // app related changes
-      ],
-    ],
   },
 }

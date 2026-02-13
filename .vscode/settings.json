@@ -78,7 +78,5 @@
     "postcss"
   ],
   "prettier.enable": false,
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "unocss.root": ["./"],
-  "vue.server.hybridMode": true
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
