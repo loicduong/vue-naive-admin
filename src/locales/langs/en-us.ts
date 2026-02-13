@@ -108,6 +108,7 @@ const local: App.I18n.Schema = {
         title: 'Content Area Settings',
         scrollMode: {
           title: 'Scroll Mode',
+          tip: 'The theme scroll only scrolls the main part, the outer scroll can carry the header and footer together',
           wrapper: 'Wrapper',
           content: 'Content',
         },

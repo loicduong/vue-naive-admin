@@ -108,6 +108,7 @@ const local: App.I18n.Schema = {
         title: 'Cài đặt vùng nội dung',
         scrollMode: {
           title: 'Chế độ cuộn',
+          tip: 'Chế độ cuộn khi nội dung vượt quá',
           wrapper: 'Cuộn ngoài',
           content: 'Cuộn nội dung',
         },

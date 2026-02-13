@@ -301,7 +301,7 @@ declare namespace App {
           }
           content: {
             title: string
-            scrollMode: { title: string } & Record<UnionKey.ThemeScrollMode, string>
+            scrollMode: { title: string, tip: string } & Record<UnionKey.ThemeScrollMode, string>
             page: {
               animate: string
               mode: { title: string } & Record<UnionKey.ThemePageAnimateMode, string>
