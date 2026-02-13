@@ -1,6 +1,109 @@
 # Changelog
 
 
+## [v1.0.0](https://github.com/dploc96/vue-naive-admin/compare/v0.1.2...v1.0.0) (2026-02-13)
+
+### &nbsp;&nbsp;&nbsp;🚨 Breaking Changes
+
+- **projects**: optimize layout mode &nbsp;-&nbsp; by **loicduong** [<samp>(5f34c)</samp>](https://github.com/dploc96/vue-naive-admin/commit/5f34c24)
+- **request**: remove cancelRequest method and related logic from request instances &nbsp;-&nbsp; by **loicduong** [<samp>(04a22)</samp>](https://github.com/dploc96/vue-naive-admin/commit/04a2260)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **components**:
+  - add the IconTooltip component &nbsp;-&nbsp; by **loicduong** [<samp>(93924)</samp>](https://github.com/dploc96/vue-naive-admin/commit/9392499)
+  - replace NTooltip with IconTooltip and optimize the layout of related components &nbsp;-&nbsp; by **loicduong** [<samp>(f4c12)</samp>](https://github.com/dploc96/vue-naive-admin/commit/f4c1265)
+  - column settings support fixed columns &nbsp;-&nbsp; by **loicduong** [<samp>(7c868)</samp>](https://github.com/dploc96/vue-naive-admin/commit/7c868bb)
+  - add “Select All” to TableColumnSetting &nbsp;-&nbsp; by **loicduong** [<samp>(2dfc3)</samp>](https://github.com/dploc96/vue-naive-admin/commit/2dfc3ee)
+- **hooks**:
+  - add scrollX computation for total table width in useNaiveTable &nbsp;-&nbsp; by **loicduong** [<samp>(c2b45)</samp>](https://github.com/dploc96/vue-naive-admin/commit/c2b4531)
+- **projects**:
+  - refactor theme drawer with tabbed layout for better UX &nbsp;-&nbsp; by **loicduong** [<samp>(3075e)</samp>](https://github.com/dploc96/vue-naive-admin/commit/3075ed1)
+  - add prompt information for scrolling mode &nbsp;-&nbsp; by **loicduong** [<samp>(439e3)</samp>](https://github.com/dploc96/vue-naive-admin/commit/439e34b)
+  - modify the default value of the reset cache policy to 'refresh' &nbsp;-&nbsp; by **loicduong** [<samp>(922d2)</samp>](https://github.com/dploc96/vue-naive-admin/commit/922d2e9)
+  - optimize tabs cache cleaning strategy &nbsp;-&nbsp; by **loicduong** [<samp>(a993a)</samp>](https://github.com/dploc96/vue-naive-admin/commit/a993a80)
+  - support set global redius &nbsp;-&nbsp; by **loicduong** [<samp>(20c45)</samp>](https://github.com/dploc96/vue-naive-admin/commit/20c4501)
+  - support set global redius &nbsp;-&nbsp; by **loicduong** [<samp>(6d28e)</samp>](https://github.com/dploc96/vue-naive-admin/commit/6d28eaa)
+- **types**:
+  - add type definition force to router push options &nbsp;-&nbsp; by **loicduong** [<samp>(95d35)</samp>](https://github.com/dploc96/vue-naive-admin/commit/95d3503)
+
+### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
+
+- build error &nbsp;-&nbsp; by **locdp** [<samp>(1b2a0)</samp>](https://github.com/dploc96/vue-naive-admin/commit/1b2a01a)
+- **app**:
+  - replace console.error with window.console.error for consistency &nbsp;-&nbsp; by **loicduong** [<samp>(146c5)</samp>](https://github.com/dploc96/vue-naive-admin/commit/146c597)
+- **auth**:
+  - remove redundant authStore declaration in resetStore function &nbsp;-&nbsp; by **loicduong** [<samp>(de79e)</samp>](https://github.com/dploc96/vue-naive-admin/commit/de79e4e)
+- **hooks**:
+  - refactor useCountDown hook for improved countdown logic and clarity &nbsp;-&nbsp; by **loicduong** [<samp>(49165)</samp>](https://github.com/dploc96/vue-naive-admin/commit/4916526)
+  - correct chart rendering logic in useEcharts &nbsp;-&nbsp; by **loicduong** [<samp>(0e5c0)</samp>](https://github.com/dploc96/vue-naive-admin/commit/0e5c0e2)
+- **layout**:
+  - fix getSiderWidth &nbsp;-&nbsp; by **loicduong** [<samp>(5b8e9)</samp>](https://github.com/dploc96/vue-naive-admin/commit/5b8e9f3)
+- **packages**:
+  - fix the parsing logic for stored data to ensure correct return of boolean values &nbsp;-&nbsp; by **loicduong** [<samp>(f64aa)</samp>](https://github.com/dploc96/vue-naive-admin/commit/f64aa7e)
+  - axios: fix json response &nbsp;-&nbsp; by **loicduong** [<samp>(f908c)</samp>](https://github.com/dploc96/vue-naive-admin/commit/f908c70)
+- **projects**:
+  - ensure proper text color when themes are inverted &nbsp;-&nbsp; by **loicduong** [<samp>(ce474)</samp>](https://github.com/dploc96/vue-naive-admin/commit/ce47454)
+  - fix the long list TableColumnSetting component exceeds the viewport &nbsp;-&nbsp; by **loicduong** [<samp>(92ef9)</samp>](https://github.com/dploc96/vue-naive-admin/commit/92ef986)
+  - fix NButton props conflicts &nbsp;-&nbsp; by **loicduong** [<samp>(42e7c)</samp>](https://github.com/dploc96/vue-naive-admin/commit/42e7cac)
+  - ensure HTML lang attribute is updated when setting locale &nbsp;-&nbsp; by **loicduong** [<samp>(ccb1b)</samp>](https://github.com/dploc96/vue-naive-admin/commit/ccb1b60)
+- **scripts**:
+  - update command to use 'npm-check-updates' instead of 'ncu' &nbsp;-&nbsp; by **loicduong** [<samp>(fa0f2)</samp>](https://github.com/dploc96/vue-naive-admin/commit/fa0f2b9)
+- **styles**:
+  - show light color scrollbar while dark mode is on &nbsp;-&nbsp; by **loicduong** [<samp>(f5607)</samp>](https://github.com/dploc96/vue-naive-admin/commit/f560728)
+- **types**:
+  - the environment variable VITE_ICON_LOCAL_PREFIX has the wrong type &nbsp;-&nbsp; by **loicduong** [<samp>(df96a)</samp>](https://github.com/dploc96/vue-naive-admin/commit/df96abb)
+  - fix ts type error &nbsp;-&nbsp; by **loicduong** [<samp>(e8c74)</samp>](https://github.com/dploc96/vue-naive-admin/commit/e8c7443)
+
+### &nbsp;&nbsp;&nbsp;🛠 Optimizations
+
+- **components**:
+  - optimize spacing for lang-switch dropdown options &nbsp;-&nbsp; by **loicduong** [<samp>(3c59b)</samp>](https://github.com/dploc96/vue-naive-admin/commit/3c59b38)
+- **hooks**:
+  - update detection function to cover the exceptions that occur when the request fails &nbsp;-&nbsp; by **loicduong** [<samp>(9b761)</samp>](https://github.com/dploc96/vue-naive-admin/commit/9b761ac)
+  - optimize useEcharts &nbsp;-&nbsp; by **loicduong** [<samp>(84a68)</samp>](https://github.com/dploc96/vue-naive-admin/commit/84a686b)
+- **projects**:
+  - improve theme drawer responsive width for mobile devices &nbsp;-&nbsp; by **loicduong** [<samp>(028e7)</samp>](https://github.com/dploc96/vue-naive-admin/commit/028e7a4)
+  - optimize theme drawer width &nbsp;-&nbsp; by **loicduong** [<samp>(6d562)</samp>](https://github.com/dploc96/vue-naive-admin/commit/6d56215)
+  - optimize radius settings &nbsp;-&nbsp; by **loicduong** [<samp>(f53c1)</samp>](https://github.com/dploc96/vue-naive-admin/commit/f53c179)
+  - modify the injection location of the token &nbsp;-&nbsp; by **loicduong** [<samp>(48b58)</samp>](https://github.com/dploc96/vue-naive-admin/commit/48b58f5)
+- **request**:
+  - enhance request options and response handling with generic types &nbsp;-&nbsp; by **loicduong** [<samp>(f0ecd)</samp>](https://github.com/dploc96/vue-naive-admin/commit/f0ecd29)
+
+### &nbsp;&nbsp;&nbsp;💅 Refactors
+
+- **hooks**:
+  - optimize useContext and update useMixMenuContext &nbsp;-&nbsp; by **loicduong** [<samp>(9ad33)</samp>](https://github.com/dploc96/vue-naive-admin/commit/9ad33a3)
+  - streamline column visibility handling in useTable and table components &nbsp;-&nbsp; by **loicduong** [<samp>(722fc)</samp>](https://github.com/dploc96/vue-naive-admin/commit/722fce7)
+  - remove useSignal hook and update exports &nbsp;-&nbsp; by **loicduong** [<samp>(f70e2)</samp>](https://github.com/dploc96/vue-naive-admin/commit/f70e2e9)
+- **projects**:
+  - remove unnecessary logic in onRouteSwitchWhenLoggedIn &nbsp;-&nbsp; by **loicduong** [<samp>(68c7a)</samp>](https://github.com/dploc96/vue-naive-admin/commit/68c7aa3)
+- **request**:
+  - unify response transformation methods and deprecate transformBackendResponse &nbsp;-&nbsp; by **loicduong** [<samp>(fbfce)</samp>](https://github.com/dploc96/vue-naive-admin/commit/fbfce3b)
+- **types**:
+  - move Auth namespaces to separate files and clean up api.d.ts &nbsp;-&nbsp; by **loicduong** [<samp>(941bc)</samp>](https://github.com/dploc96/vue-naive-admin/commit/941bc76)
+
+### &nbsp;&nbsp;&nbsp;🏡 Chore
+
+- update deps &nbsp;-&nbsp; by **locdp** [<samp>(cf895)</samp>](https://github.com/dploc96/vue-naive-admin/commit/cf89545)
+- update pnpm version &nbsp;-&nbsp; by **locdp** [<samp>(05e72)</samp>](https://github.com/dploc96/vue-naive-admin/commit/05e7203)
+- remove engine &nbsp;-&nbsp; by **locdp** [<samp>(5ba5d)</samp>](https://github.com/dploc96/vue-naive-admin/commit/5ba5d97)
+- update deps &nbsp;-&nbsp; by **loicduong** [<samp>(13dad)</samp>](https://github.com/dploc96/vue-naive-admin/commit/13dad3a)
+- update pnpm-lock &nbsp;-&nbsp; by **loicduong** [<samp>(ed174)</samp>](https://github.com/dploc96/vue-naive-admin/commit/ed1748c)
+- update package-lock &nbsp;-&nbsp; by **loicduong** [<samp>(67db6)</samp>](https://github.com/dploc96/vue-naive-admin/commit/67db692)
+- **packages**: add picomatch to fix scripts &nbsp;-&nbsp; by **loicduong** [<samp>(1f671)</samp>](https://github.com/dploc96/vue-naive-admin/commit/1f67179)
+- **vscode**: remove unused vue.server.hybridMode setting from .vscode/settings.json &nbsp;-&nbsp; by **loicduong** [<samp>(c4515)</samp>](https://github.com/dploc96/vue-naive-admin/commit/c451559)
+
+### &nbsp;&nbsp;&nbsp;🎨 Styles
+
+- update .editorconfig &nbsp;-&nbsp; by **locdp** [<samp>(449bb)</samp>](https://github.com/dploc96/vue-naive-admin/commit/449bbaf)
+- update .editorconfig &nbsp;-&nbsp; by **loicduong** [<samp>(013f8)</samp>](https://github.com/dploc96/vue-naive-admin/commit/013f836)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+
+[loicduong](mailto:mikhailcolt@gmail.com),&nbsp;[locdp](mailto:locdp@teanis.vn)
+
 ## [v0.1.2](https://github.com/dploc96/vue-naive-admin/compare/v0.1.1...v0.1.2) (2025-05-06)
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
