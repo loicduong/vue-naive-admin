@@ -3,20 +3,20 @@ import type { LayoutMode } from '@sa/materials'
 import { AdminLayout, LAYOUT_SCROLL_EL_ID } from '@sa/materials'
 import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
-import { setupMixMenuContext } from './context'
 import GlobalContent from './modules/global-content/index.vue'
 import GlobalFooter from './modules/global-footer/index.vue'
 import GlobalHeader from './modules/global-header/index.vue'
+import { provideMixMenuContext } from './modules/global-menu/context'
 import GlobalSider from './modules/global-sider/index.vue'
 import ThemeDrawer from './modules/theme-drawer/index.vue'
 
 defineOptions({
-  name: 'DefaultLayout',
+  name: 'BaseLayout',
 })
 
 const appStore = useAppStore()
 const themeStore = useThemeStore()
-const { childLevelMenus } = setupMixMenuContext()
+const { childLevelMenus } = provideMixMenuContext()
 
 const GlobalMenu = defineAsyncComponent(() => import('./modules/global-menu/index.vue'))
 
@@ -50,28 +50,34 @@ const siderWidth = computed(() => getSiderWidth())
 
 const siderCollapsedWidth = computed(() => getSiderCollapsedWidth())
 
-function getSiderWidth() {
-  const { width, mixWidth, mixChildMenuWidth } = themeStore.sider
+function getSiderAndCollapsedWidth(isCollapsed: boolean) {
+  const {
+    mixChildMenuWidth,
+    collapsedWidth,
+    width: themeWidth,
+    mixCollapsedWidth,
+    mixWidth: themeMixWidth,
+  } = themeStore.sider
 
-  let w = isVerticalMix.value ? mixWidth : width
+  const width = isCollapsed ? collapsedWidth : themeWidth
+  const mixWidth = isCollapsed ? mixCollapsedWidth : themeMixWidth
+
+  const isMixMode = isVerticalMix.value
+  let finalWidth = isMixMode ? mixWidth : width
 
   if (isVerticalMix.value && appStore.mixSiderFixed && childLevelMenus.value.length) {
-    w += mixChildMenuWidth
+    finalWidth += mixChildMenuWidth
   }
 
-  return w
+  return finalWidth
+}
+
+function getSiderWidth() {
+  return getSiderAndCollapsedWidth(false)
 }
 
 function getSiderCollapsedWidth() {
-  const { collapsedWidth, mixCollapsedWidth, mixChildMenuWidth } = themeStore.sider
-
-  let w = isVerticalMix.value ? mixCollapsedWidth : collapsedWidth
-
-  if (isVerticalMix.value && appStore.mixSiderFixed && childLevelMenus.value.length) {
-    w += mixChildMenuWidth
-  }
-
-  return w
+  return getSiderAndCollapsedWidth(true)
 }
 </script>
 

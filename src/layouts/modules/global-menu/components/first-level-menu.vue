@@ -19,7 +19,7 @@ interface Props {
 }
 
 interface Emits {
-  (e: 'select', menu: App.Global.Menu): boolean
+  (e: 'select', menuKey: App.Global.RouteKey): boolean
   (e: 'toggleSiderCollapse'): void
 }
 
@@ -44,8 +44,8 @@ const selectedBgColor = computed(() => {
   return darkMode ? dark : light
 })
 
-function handleClickMixMenu(menu: App.Global.Menu) {
-  emit('select', menu)
+function handleClickMixMenu(menuKey: App.Global.RouteKey) {
+  emit('select', menuKey)
 }
 
 function toggleSiderCollapse() {
@@ -83,7 +83,7 @@ function toggleSiderCollapse() {
         :icon="menu.icon"
         :active="menu.key === activeMenuKey"
         :is-mini="siderCollapse"
-        @click="handleClickMixMenu(menu)"
+        @click="handleClickMixMenu(menu.routeKey)"
       />
     </SimpleScrollbar>
     <MenuToggler

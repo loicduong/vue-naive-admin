@@ -7,9 +7,9 @@ import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
 import { useRouteStore } from '@/store/modules/route'
 import { useThemeStore } from '@/store/modules/theme'
-import { useMenu, useMixMenuContext } from '../../../context'
 import GlobalLogo from '../../global-logo/index.vue'
 import FirstLevelMenu from '../components/first-level-menu.vue'
+import { useMenu, useMixMenuContext } from '../context'
 
 defineOptions({
   name: 'VerticalMixMenu',
@@ -22,27 +22,24 @@ const routeStore = useRouteStore()
 const { routerPushByKeyWithMetaQuery } = useRouterPush()
 const { bool: drawerVisible, setBool: setDrawerVisible } = useBoolean()
 const {
-  allMenus,
-  childLevelMenus,
+  firstLevelMenus,
+  secondLevelMenus,
   activeFirstLevelMenuKey,
-  setActiveFirstLevelMenuKey,
+  isActiveFirstLevelMenuHasChildren,
   getActiveFirstLevelMenuKey,
-  //
-} = useMixMenuContext()
+  handleSelectFirstLevelMenu,
+} = useMixMenuContext('VerticalMixMenu')
 const { selectedKey } = useMenu()
 
-const hasChildMenus = computed(() => childLevelMenus.value.length > 0)
+const hasChildMenus = computed(() => secondLevelMenus.value.length > 0)
 
 const showDrawer = computed(() => hasChildMenus.value && (drawerVisible.value || appStore.mixSiderFixed))
 
-function handleSelectMixMenu(menu: App.Global.Menu) {
-  setActiveFirstLevelMenuKey(menu.key)
+function handleSelectMenu(key: App.Global.RouteKey) {
+  handleSelectFirstLevelMenu(key)
 
-  if (menu.children?.length) {
+  if (isActiveFirstLevelMenuHasChildren.value) {
     setDrawerVisible(true)
-  }
-  else {
-    routerPushByKeyWithMetaQuery(menu.routeKey)
   }
 }
 
@@ -77,12 +74,12 @@ watch(
   <Teleport :to="`#${GLOBAL_SIDER_MENU_ID}`">
     <div class="h-full flex" @mouseleave="handleResetActiveMenu">
       <FirstLevelMenu
-        :menus="allMenus"
+        :menus="firstLevelMenus"
         :active-menu-key="activeFirstLevelMenuKey"
         :sider-collapse="appStore.siderCollapse"
         :dark-mode="themeStore.darkMode"
         :theme-color="themeStore.themeColor"
-        @select="handleSelectMixMenu"
+        @select="handleSelectMenu"
         @toggle-sider-collapse="appStore.toggleSiderCollapse"
       >
         <GlobalLogo :show-title="false" :style="{ height: `${themeStore.header.height}px` }" />
@@ -109,7 +106,7 @@ watch(
               v-model:expanded-keys="expandedKeys"
               mode="vertical"
               :value="selectedKey"
-              :options="childLevelMenus"
+              :options="secondLevelMenus"
               :indent="18"
               @update:value="routerPushByKeyWithMetaQuery"
             />
