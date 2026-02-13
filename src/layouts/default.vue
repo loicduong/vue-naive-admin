@@ -16,7 +16,7 @@ defineOptions({
 
 const appStore = useAppStore()
 const themeStore = useThemeStore()
-const { childLevelMenus } = provideMixMenuContext()
+const { secondLevelMenus } = provideMixMenuContext()
 
 const GlobalMenu = defineAsyncComponent(() => import('./modules/global-menu/index.vue'))
 
@@ -46,9 +46,9 @@ const headerProps = computed(() => {
 
 const isVerticalMix = computed(() => themeStore.layout.mode === 'vertical-mix')
 
-const siderWidth = computed(() => getSiderWidth())
+const siderWidth = computed(() => getSiderAndCollapsedWidth(false))
 
-const siderCollapsedWidth = computed(() => getSiderCollapsedWidth())
+const siderCollapsedWidth = computed(() => getSiderAndCollapsedWidth(true))
 
 function getSiderAndCollapsedWidth(isCollapsed: boolean) {
   const {
@@ -65,19 +65,11 @@ function getSiderAndCollapsedWidth(isCollapsed: boolean) {
   const isMixMode = isVerticalMix.value
   let finalWidth = isMixMode ? mixWidth : width
 
-  if (isVerticalMix.value && appStore.mixSiderFixed && childLevelMenus.value.length) {
+  if (isVerticalMix.value && appStore.mixSiderFixed && secondLevelMenus.value.length) {
     finalWidth += mixChildMenuWidth
   }
 
   return finalWidth
-}
-
-function getSiderWidth() {
-  return getSiderAndCollapsedWidth(false)
-}
-
-function getSiderCollapsedWidth() {
-  return getSiderAndCollapsedWidth(true)
 }
 </script>
 
