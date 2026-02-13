@@ -292,6 +292,9 @@ const local: App.I18n.Schema = {
       devDep: 'Development Dependencies',
     },
     manage: {
+      menu: {
+        home: 'Home',
+      },
       common: {
         status: {
           enable: 'Enable',

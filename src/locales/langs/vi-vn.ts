@@ -292,6 +292,9 @@ const local: App.I18n.Schema = {
       devDep: 'Phụ thuộc phát triển',
     },
     manage: {
+      menu: {
+        home: 'Trang chủ',
+      },
       common: {
         status: {
           enable: 'Kích hoạt',

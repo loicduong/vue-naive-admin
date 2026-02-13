@@ -1,43 +1,30 @@
 <script setup lang="tsx">
 import { NButton, NPopconfirm, NTag } from 'naive-ui'
+import { reactive } from 'vue'
 import RoleOperateDrawer from '@/components/modules/manage/role/role-operate-drawer.vue'
 import RoleSearch from '@/components/modules/manage/role/role-search.vue'
 import { enableStatusRecord } from '@/constants/business'
-import { useTable, useTableOperate } from '@/hooks/common/table'
+import { defaultTransform, useNaivePaginatedTable, useTableOperate } from '@/hooks/common/table'
 import { $t } from '@/locales'
 import { fetchGetRoleList } from '@/service/api'
 import { useAppStore } from '@/store/modules/app'
 
-definePage({
-  meta: {
-    icon: 'carbon:user-role',
-    order: 2,
-    roles: ['R_SUPER'],
-  },
-})
-
 const appStore = useAppStore()
 
-const {
-  columns,
-  columnChecks,
-  data,
-  loading,
-  getData,
-  getDataByPage,
-  mobilePagination,
-  searchParams,
-  resetSearchParams,
-} = useTable({
-  apiFn: fetchGetRoleList,
-  apiParams: {
-    current: 1,
-    size: 10,
-    // if you want to use the searchParams in Form, you need to define the following properties, and the value is null
-    // the value can not be undefined, otherwise the property in Form will not be reactive
-    status: null,
-    roleName: null,
-    roleCode: null,
+const searchParams: Api.SystemManage.RoleSearchParams = reactive({
+  current: 1,
+  size: 10,
+  roleName: null,
+  roleCode: null,
+  status: null,
+})
+
+const { columns, columnChecks, data, loading, getData, getDataByPage, mobilePagination } = useNaivePaginatedTable({
+  api: () => fetchGetRoleList(searchParams),
+  transform: response => defaultTransform(response),
+  onPaginationParamsChange: (params) => {
+    searchParams.current = params.page
+    searchParams.size = params.pageSize
   },
   columns: () => [
     {
@@ -50,6 +37,7 @@ const {
       title: $t('common.index'),
       width: 64,
       align: 'center',
+      render: (_, index) => index + 1,
     },
     {
       key: 'roleName',
@@ -85,13 +73,7 @@ const {
 
         const label = $t(enableStatusRecord[row.status])
 
-        return (
-          <NTag type={tagMap[row.status]}>
-            {' '}
-            { label }
-            {' '}
-          </NTag>
-        )
+        return <NTag type={tagMap[row.status]}>{label}</NTag>
       },
     },
     {
@@ -102,14 +84,14 @@ const {
       render: row => (
         <div class="flex-center gap-8px">
           <NButton type="primary" ghost size="small" onClick={() => edit(row.id)}>
-            { $t('common.edit') }
+            {$t('common.edit')}
           </NButton>
-          <NPopconfirm onPositiveClick={() => handleDelete()}>
+          <NPopconfirm onPositiveClick={() => handleDelete(row.id)}>
             {{
               default: () => $t('common.confirmDelete'),
               trigger: () => (
                 <NButton type="error" ghost size="small">
-                  { $t('common.delete') }
+                  {$t('common.delete')}
                 </NButton>
               ),
             }}
@@ -130,13 +112,21 @@ const {
   onBatchDeleted,
   onDeleted,
   // closeDrawer
-} = useTableOperate(data, getData)
+} = useTableOperate(data, 'id', getData)
 
 async function handleBatchDelete() {
+  // request
+  // eslint-disable-next-line no-console
+  console.log(checkedRowKeys.value)
+
   onBatchDeleted()
 }
 
-function handleDelete() {
+function handleDelete(id: number) {
+  // request
+  // eslint-disable-next-line no-console
+  console.log(id)
+
   onDeleted()
 }
 
@@ -147,13 +137,8 @@ function edit(id: number) {
 
 <template>
   <div class="min-h-500px flex-col-stretch gap-16px overflow-hidden lt-sm:overflow-auto">
-    <RoleSearch v-model:model="searchParams" @reset="resetSearchParams" @search="getDataByPage" />
-    <NCard
-      :title="$t('page.manage.role.title')"
-      :bordered="false"
-      size="small"
-      class="card-wrapper sm:flex-1-hidden"
-    >
+    <RoleSearch v-model:model="searchParams" @search="getDataByPage" />
+    <NCard :title="$t('page.manage.role.title')" :bordered="false" size="small" class="card-wrapper sm:flex-1-hidden">
       <template #header-extra>
         <TableHeaderOperation
           v-model:columns="columnChecks"

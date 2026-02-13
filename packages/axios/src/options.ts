@@ -4,13 +4,17 @@ import type { RequestOption } from './type'
 import { stringify } from 'qs'
 import { isHttpSuccess } from './shared'
 
-export function createDefaultOptions<ResponseData = any>(options?: Partial<RequestOption<ResponseData>>) {
-  const opts: RequestOption<ResponseData> = {
+export function createDefaultOptions<
+  ResponseData,
+  ApiData = ResponseData,
+  State extends Record<string, unknown> = Record<string, unknown>,
+>(options?: Partial<RequestOption<ResponseData, ApiData, State>>) {
+  const opts: RequestOption<ResponseData, ApiData, State> = {
     onRequest: async config => config,
     isBackendSuccess: _response => true,
-    onBackendFail: async () => {},
-    transformBackendResponse: async response => response.data,
-    onError: async () => {},
+    onBackendFail: async () => { },
+    transformBackendResponse: async response => response.data as unknown as ApiData,
+    onError: async () => { },
   }
 
   Object.assign(opts, options)
@@ -29,7 +33,10 @@ export function createRetryOptions(config?: Partial<CreateAxiosDefaults>) {
 }
 
 export function createAxiosConfig(config?: Partial<CreateAxiosDefaults>) {
+  const TEN_SECONDS = 10 * 1000
+
   const axiosConfig: CreateAxiosDefaults = {
+    timeout: TEN_SECONDS,
     headers: {
       'Content-Type': 'application/json',
     },

@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { useBoolean } from '@sa/hooks'
+import { jsonClone } from '@sa/utils'
+import { computed, ref, watch } from 'vue'
 import { enableStatusOptions } from '@/constants/business'
 import { useFormRules, useNaiveForm } from '@/hooks/common/form'
 import { $t } from '@/locales'
 import ButtonAuthModal from './button-auth-modal.vue'
+import MenuAuthModal from './menu-auth-modal.vue'
 
 defineOptions({
   name: 'RoleOperateDrawer',
@@ -30,6 +33,7 @@ const visible = defineModel<boolean>('visible', {
 
 const { formRef, validate, restoreValidation } = useNaiveForm()
 const { defaultRequiredRule } = useFormRules()
+const { bool: menuAuthVisible, setTrue: openMenuAuthModal } = useBoolean()
 const { bool: buttonAuthVisible, setTrue: openButtonAuthModal } = useBoolean()
 
 const title = computed(() => {
@@ -69,7 +73,7 @@ function handleInitModel() {
   model.value = createDefaultModel()
 
   if (props.operateType === 'edit' && props.rowData) {
-    Object.assign(model.value, props.rowData)
+    Object.assign(model.value, jsonClone(props.rowData))
   }
 }
 
@@ -113,6 +117,10 @@ watch(visible, () => {
         </NFormItem>
       </NForm>
       <NSpace v-if="isEdit">
+        <NButton @click="openMenuAuthModal">
+          {{ $t('page.manage.role.menuAuth') }}
+        </NButton>
+        <MenuAuthModal v-model:visible="menuAuthVisible" :role-id="roleId" />
         <NButton @click="openButtonAuthModal">
           {{ $t('page.manage.role.buttonAuth') }}
         </NButton>

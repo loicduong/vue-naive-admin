@@ -411,6 +411,9 @@ declare namespace App {
           devDep: string
         }
         manage: {
+          menu: {
+            home: string
+          }
           common: {
             status: {
               enable: string
