@@ -193,7 +193,7 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
   }
 
   async function onRouteSwitchWhenLoggedIn() {
-    await authStore.initUserInfo()
+    // some global init logic when logged in and switch route
   }
   async function onRouteSwitchWhenNotLoggedIn() {
     // some global init logic if it does not need to be logged in
