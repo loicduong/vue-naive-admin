@@ -39,7 +39,9 @@ declare namespace App {
           /** Whether to show the breadcrumb icon */
           showIcon: boolean
         }
+        /** Multilingual */
         multilingual: {
+          /** Whether to show the multilingual */
           visible: boolean
         }
       }
@@ -253,46 +255,65 @@ declare namespace App {
         }
       }
       theme: {
-        themeSchema: { title: string } & Record<UnionKey.ThemeScheme, string>
-        layoutMode: { title: string } & Record<UnionKey.ThemeLayoutMode, string>
-        themeColor: {
-          title: string
-        } & Theme.ThemeColor
-        scrollMode: { title: string } & Record<UnionKey.ThemeScrollMode, string>
-        page: {
-          animate: string
-          mode: { title: string } & Record<UnionKey.ThemePageAnimateMode, string>
-        }
-        fixedHeader: string
-        header: {
-          height: string
-          breadcrumb: {
-            visible: string
-            showIcon: string
-          }
-          multilingual: {
-            visible: string
-          }
-        }
-        sider: {
-          width: string
-          collapsedWidth: string
-          mixWidth: string
-          mixCollapsedWidth: string
-          mixChildMenuWidth: string
-        }
-        footer: {
-          visible: string
-          fixed: string
-          height: string
-          right: string
-        }
         themeDrawerTitle: string
-        appearance: {
-          themeColor: { title: string } & Record<Theme.ThemeColorKey, string>
+        tabs: {
+          appearance: string
+          layout: string
+          general: string
         }
-        pageFunTitle: string
-        resetCacheStrategy: { title: string } & Record<UnionKey.ResetCacheStrategy, string>
+        appearance: {
+          themeSchema: { title: string } & Record<UnionKey.ThemeScheme, string>
+          themeColor: {
+            title: string
+            primary: string
+            info: string
+            success: string
+            warning: string
+            error: string
+          }
+        }
+        layout: {
+          layoutMode: { title: string } & Record<UnionKey.ThemeLayoutMode, string>
+          header: {
+            title: string
+            height: string
+            breadcrumb: {
+              visible: string
+              showIcon: string
+            }
+          }
+          sider: {
+            title: string
+            width: string
+            collapsedWidth: string
+            mixWidth: string
+            mixCollapsedWidth: string
+            mixChildMenuWidth: string
+          }
+          footer: {
+            title: string
+            visible: string
+            fixed: string
+            height: string
+            right: string
+          }
+          content: {
+            title: string
+            scrollMode: { title: string } & Record<UnionKey.ThemeScrollMode, string>
+            page: {
+              animate: string
+              mode: { title: string } & Record<UnionKey.ThemePageAnimateMode, string>
+            }
+            fixedHeader: string
+          }
+          resetCacheStrategy: { title: string } & Record<UnionKey.ResetCacheStrategy, string>
+        }
+        general: {
+          multilingual: {
+            title: string
+            visible: string
+          }
+        }
         configOperation: {
           copyConfig: string
           copySuccessMsg: string

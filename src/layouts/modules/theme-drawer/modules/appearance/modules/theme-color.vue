@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { $t } from '@/locales'
 import { useThemeStore } from '@/store/modules/theme'
-import SettingItem from '../components/setting-item.vue'
+import SettingItem from '../../../components/setting-item.vue'
 
 defineOptions({
   name: 'ThemeColor',

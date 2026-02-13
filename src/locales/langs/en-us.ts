@@ -50,69 +50,19 @@ const local: App.I18n.Schema = {
     },
   },
   theme: {
-    themeSchema: {
-      title: 'Theme Schema',
-      light: 'Light',
-      dark: 'Dark',
-      auto: 'Follow System',
-    },
-    layoutMode: {
-      'title': 'Layout Mode',
-      'vertical': 'Vertical Menu Mode',
-      'vertical-mix': 'Vertical Mix Menu Mode',
-    },
-    themeColor: {
-      title: 'Theme Color',
-      primary: 'Primary',
-      info: 'Info',
-      success: 'Success',
-      warning: 'Warning',
-      error: 'Error',
-    },
-    scrollMode: {
-      title: 'Scroll Mode',
-      wrapper: 'Wrapper',
-      content: 'Content',
-    },
-    page: {
-      animate: 'Page Animate',
-      mode: {
-        'title': 'Page Animate Mode',
-        'fade': 'Fade',
-        'fade-slide': 'Slide',
-        'fade-bottom': 'Fade Zoom',
-        'fade-scale': 'Fade Scale',
-        'zoom-fade': 'Zoom Fade',
-        'zoom-out': 'Zoom Out',
-        'none': 'None',
-      },
-    },
-    fixedHeader: 'Fixed Header',
-    header: {
-      height: 'Header Height',
-      breadcrumb: {
-        visible: 'Breadcrumb Visible',
-        showIcon: 'Breadcrumb Icon Visible',
-      },
-      multilingual: {
-        visible: 'Display multilingual button',
-      },
-    },
-    sider: {
-      width: 'Sider Width',
-      collapsedWidth: 'Sider Collapsed Width',
-      mixWidth: 'Mix Sider Width',
-      mixCollapsedWidth: 'Mix Sider Collapse Width',
-      mixChildMenuWidth: 'Mix Child Menu Width',
-    },
-    footer: {
-      visible: 'Footer Visible',
-      fixed: 'Fixed Footer',
-      height: 'Footer Height',
-      right: 'Right Footer',
-    },
     themeDrawerTitle: 'Theme Configuration',
+    tabs: {
+      appearance: 'Appearance',
+      layout: 'Layout',
+      general: 'General',
+    },
     appearance: {
+      themeSchema: {
+        title: 'Theme Schema',
+        light: 'Light',
+        dark: 'Dark',
+        auto: 'Follow System',
+      },
       themeColor: {
         title: 'Theme Color',
         primary: 'Primary',
@@ -122,11 +72,68 @@ const local: App.I18n.Schema = {
         error: 'Error',
       },
     },
-    pageFunTitle: 'Page Function',
-    resetCacheStrategy: {
-      title: 'Reset Cache Strategy',
-      close: 'Close Page',
-      refresh: 'Refresh Page',
+    layout: {
+      layoutMode: {
+        'title': 'Layout Mode',
+        'vertical': 'Vertical Menu Mode',
+        'vertical-mix': 'Vertical Mix Menu Mode',
+      },
+      header: {
+        title: 'Header Settings',
+        height: 'Header Height',
+        breadcrumb: {
+          visible: 'Breadcrumb Visible',
+          showIcon: 'Breadcrumb Icon Visible',
+        },
+      },
+      sider: {
+        title: 'Sider Settings',
+        width: 'Sider Width',
+        collapsedWidth: 'Sider Collapsed Width',
+        mixWidth: 'Mix Sider Width',
+        mixCollapsedWidth: 'Mix Sider Collapse Width',
+        mixChildMenuWidth: 'Mix Child Menu Width',
+      },
+      footer: {
+        title: 'Footer Settings',
+        visible: 'Footer Visible',
+        fixed: 'Fixed Footer',
+        height: 'Footer Height',
+        right: 'Right Footer',
+      },
+      content: {
+        title: 'Content Area Settings',
+        scrollMode: {
+          title: 'Scroll Mode',
+          wrapper: 'Wrapper',
+          content: 'Content',
+        },
+        page: {
+          animate: 'Page Animate',
+          mode: {
+            'title': 'Page Animate Mode',
+            'fade': 'Fade',
+            'fade-slide': 'Slide',
+            'fade-bottom': 'Fade Zoom',
+            'fade-scale': 'Fade Scale',
+            'zoom-fade': 'Zoom Fade',
+            'zoom-out': 'Zoom Out',
+            'none': 'None',
+          },
+        },
+        fixedHeader: 'Fixed Header',
+      },
+      resetCacheStrategy: {
+        title: 'Reset Cache Strategy',
+        close: 'Close Page',
+        refresh: 'Refresh Page',
+      },
+    },
+    general: {
+      multilingual: {
+        title: 'Multilingual Settings',
+        visible: 'Display multilingual button',
+      },
     },
     configOperation: {
       copyConfig: 'Copy Config',

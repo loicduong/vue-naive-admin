@@ -50,69 +50,19 @@ const local: App.I18n.Schema = {
     },
   },
   theme: {
-    themeSchema: {
-      title: 'Chế độ chủ đề',
-      light: 'Chế độ sáng',
-      dark: 'Chế độ tối',
-      auto: 'Theo hệ thống',
-    },
-    layoutMode: {
-      'title': 'Chế độ bố cục',
-      'vertical': 'Chế độ menu bên trái',
-      'vertical-mix': 'Chế độ menu bên trái kết hợp',
-    },
-    themeColor: {
-      title: 'Màu chủ đề',
-      primary: 'Màu chính',
-      info: 'Màu thông tin',
-      success: 'Màu thành công',
-      warning: 'Màu cảnh báo',
-      error: 'Màu lỗi',
-    },
-    scrollMode: {
-      title: 'Chế độ cuộn',
-      wrapper: 'Cuộn ngoài',
-      content: 'Cuộn nội dung',
-    },
-    page: {
-      animate: 'Hiệu ứng chuyển trang',
-      mode: {
-        'title': 'Loại hiệu ứng chuyển trang',
-        'fade-slide': 'Trượt',
-        'fade': 'Hiện ra mờ dần',
-        'fade-bottom': 'Mờ dần từ dưới lên',
-        'fade-scale': 'Thu nhỏ mờ dần',
-        'zoom-fade': 'Hiện ra từ từ',
-        'zoom-out': 'Hiện ra nhanh',
-        'none': 'Không có',
-      },
-    },
-    fixedHeader: 'Cố định tiêu đề',
-    header: {
-      height: 'Chiều cao tiêu đề',
-      breadcrumb: {
-        visible: 'Hiển thị breadcrumb',
-        showIcon: 'Hiển thị biểu tượng breadcrumb',
-      },
-      multilingual: {
-        visible: 'Hiển thị nút chuyển đổi ngôn ngữ',
-      },
-    },
-    sider: {
-      width: 'Chiều rộng thanh bên',
-      collapsedWidth: 'Chiều rộng thanh bên khi thu gọn',
-      mixWidth: 'Chiều rộng thanh bên chế độ kết hợp',
-      mixCollapsedWidth: 'Chiều rộng thanh bên chế độ kết hợp khi thu gọn',
-      mixChildMenuWidth: 'Chiều rộng menu con chế độ kết hợp',
-    },
-    footer: {
-      visible: 'Hiển thị footer',
-      fixed: 'Cố định footer',
-      height: 'Chiều cao footer',
-      right: 'Footer phía bên phải',
-    },
     themeDrawerTitle: 'Cấu hình chủ đề',
+    tabs: {
+      appearance: 'Giao diện',
+      layout: 'Bố cục',
+      general: 'Chung',
+    },
     appearance: {
+      themeSchema: {
+        title: 'Chế độ chủ đề',
+        light: 'Chế độ sáng',
+        dark: 'Chế độ tối',
+        auto: 'Theo hệ thống',
+      },
       themeColor: {
         title: 'Màu chủ đề',
         primary: 'Màu chính',
@@ -122,11 +72,68 @@ const local: App.I18n.Schema = {
         error: 'Màu lỗi',
       },
     },
-    pageFunTitle: 'Chức năng trang',
-    resetCacheStrategy: {
-      title: 'Chiến lược đặt lại cache',
-      close: 'Đóng trang',
-      refresh: 'Làm mới trang',
+    layout: {
+      layoutMode: {
+        'title': 'Chế độ bố cục',
+        'vertical': 'Chế độ menu bên trái',
+        'vertical-mix': 'Chế độ menu bên trái kết hợp',
+      },
+      header: {
+        title: 'Cài đặt header',
+        height: 'Chiều cao header',
+        breadcrumb: {
+          visible: 'Hiển thị breadcrumb',
+          showIcon: 'Hiển thị biểu tượng breadcrumb',
+        },
+      },
+      sider: {
+        title: 'Cài đặt thanh bên',
+        width: 'Chiều rộng thanh bên',
+        collapsedWidth: 'Chiều rộng thanh bên khi thu gọn',
+        mixWidth: 'Chiều rộng thanh bên chế độ kết hợp',
+        mixCollapsedWidth: 'Chiều rộng thanh bên chế độ kết hợp khi thu gọn',
+        mixChildMenuWidth: 'Chiều rộng menu con chế độ kết hợp',
+      },
+      footer: {
+        title: 'Cài đặt footer',
+        visible: 'Hiển thị footer',
+        fixed: 'Cố định footer',
+        height: 'Chiều cao footer',
+        right: 'Footer phía bên phải',
+      },
+      content: {
+        title: 'Cài đặt vùng nội dung',
+        scrollMode: {
+          title: 'Chế độ cuộn',
+          wrapper: 'Cuộn ngoài',
+          content: 'Cuộn nội dung',
+        },
+        page: {
+          animate: 'Hiệu ứng chuyển trang',
+          mode: {
+            'title': 'Loại hiệu ứng chuyển trang',
+            'fade-slide': 'Trượt',
+            'fade': 'Hiện ra mờ dần',
+            'fade-bottom': 'Mờ dần từ dưới lên',
+            'fade-scale': 'Thu nhỏ mờ dần',
+            'zoom-fade': 'Hiện ra từ từ',
+            'zoom-out': 'Hiện ra nhanh',
+            'none': 'Không có',
+          },
+        },
+        fixedHeader: 'Cố định tiêu đề',
+      },
+      resetCacheStrategy: {
+        title: 'Chiến lược đặt lại cache',
+        close: 'Đóng trang',
+        refresh: 'Làm mới trang',
+      },
+    },
+    general: {
+      multilingual: {
+        title: 'Cài đặt đa ngôn ngữ',
+        visible: 'Hiển thị nút chuyển đổi ngôn ngữ',
+      },
     },
     configOperation: {
       copyConfig: 'Sao chép cấu hình',

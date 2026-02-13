@@ -4,7 +4,7 @@ import { $t } from '@/locales'
 import { useThemeStore } from '@/store/modules/theme'
 
 defineOptions({
-  name: 'DarkMode',
+  name: 'ThemeSchema',
 })
 
 const themeStore = useThemeStore()
@@ -21,7 +21,7 @@ function handleSegmentChange(value: string | number) {
 </script>
 
 <template>
-  <NDivider>{{ $t('theme.themeSchema.title') }}</NDivider>
+  <NDivider>{{ $t('theme.appearance.themeSchema.title') }}</NDivider>
   <div class="flex-col-stretch gap-16px">
     <div class="i-flex-center">
       <NTabs
