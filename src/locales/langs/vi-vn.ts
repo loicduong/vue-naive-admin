@@ -75,8 +75,11 @@ const local: App.I18n.Schema = {
     layout: {
       layoutMode: {
         'title': 'Chế độ bố cục',
-        'vertical': 'Chế độ menu bên trái',
-        'vertical-mix': 'Chế độ menu bên trái kết hợp',
+        'vertical': 'Chế độ menu dọc',
+        'vertical-mix': 'Chế độ menu dọc kết hợp',
+        'vertical_detail': 'Bố cục menu dọc, menu bên trái và nội dung bên phải.',
+        'vertical-mix_detail':
+          'Bố cục menu dọc kết hợp, menu chính bên trái tối màu và menu phụ bên phải sáng hơn.',
       },
       header: {
         title: 'Cài đặt header',

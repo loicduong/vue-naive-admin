@@ -27,7 +27,6 @@ type LayoutConfig = Record<
   UnionKey.ThemeLayoutMode,
   {
     placement: PopoverPlacement
-    headerClass: string
     menuClass: string
     mainClass: string
   }
@@ -36,13 +35,11 @@ type LayoutConfig = Record<
 const layoutConfig: LayoutConfig = {
   'vertical': {
     placement: 'bottom',
-    headerClass: '',
     menuClass: 'w-1/3 h-full',
     mainClass: 'w-2/3 h-3/4',
   },
   'vertical-mix': {
     placement: 'bottom',
-    headerClass: '',
     menuClass: 'w-1/4 h-full',
     mainClass: 'w-2/3 h-3/4',
   },
@@ -57,25 +54,30 @@ function handleChangeMode(mode: UnionKey.ThemeLayoutMode) {
 </script>
 
 <template>
-  <div class="grid grid-cols-3 gap-x-32px gap-y-16px">
+  <div class="grid grid-cols-2 gap-x-16px gap-y-12px md:grid-cols-3">
     <div
       v-for="(item, key) in layoutConfig"
       :key="key"
-      class="flex-center cursor-pointer border-2px rounded-6px hover:border-primary"
+      class="flex-col-center cursor-pointer"
       :class="[mode === key ? 'border-primary' : 'border-transparent']"
       @click="handleChangeMode(key)"
     >
       <NTooltip :placement="item.placement">
         <template #trigger>
           <div
-            class="h-64px w-96px gap-6px rd-4px p-6px shadow dark:shadow-coolGray-5"
-            :class="[key.includes('vertical') ? 'flex' : 'flex-col']"
+            class="h-64px w-96px gap-6px rd-4px p-6px shadow ring-2 ring-transparent transition-all hover:ring-primary"
+            :class="{ '!ring-primary': mode === key }"
           >
-            <slot :name="key" />
+            <div class="h-full w-full flex gap-1">
+              <slot :name="key" />
+            </div>
           </div>
         </template>
-        {{ $t(themeLayoutModeRecord[key]) }}
+        {{ $t(`theme.layout.layoutMode.${key}_detail`) }}
       </NTooltip>
+      <p class="mt-8px text-12px">
+        {{ $t(themeLayoutModeRecord[key]) }}
+      </p>
     </div>
   </div>
 </template>

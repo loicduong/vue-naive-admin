@@ -273,7 +273,9 @@ declare namespace App {
           }
         }
         layout: {
-          layoutMode: { title: string } & Record<UnionKey.ThemeLayoutMode, string>
+          layoutMode: { title: string } & Record<UnionKey.ThemeLayoutMode, string> & {
+            [K in `${UnionKey.ThemeLayoutMode}_detail`]: string;
+          }
           header: {
             title: string
             height: string
