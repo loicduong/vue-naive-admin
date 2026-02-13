@@ -12,6 +12,7 @@ import { clearAuthStorage, getToken } from './shared'
 export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
   useThemeStore()
   const route = useRoute()
+  const authStore = useAuthStore()
   const routeStore = useRouteStore()
   const { toLogin, redirectFromLogin } = useRouterPush(false)
   const { loading: loginLoading, startLoading, endLoading } = useLoading()
@@ -37,8 +38,6 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
 
   /** Reset auth store */
   async function resetStore() {
-    const authStore = useAuthStore()
-
     clearAuthStorage()
 
     authStore.$reset()

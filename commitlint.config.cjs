@@ -35,6 +35,7 @@ module.exports = {
         'deps', // project dependencies
         'release', // release project
         'other', // other changes
+        'auth', // auth related changes
       ],
     ],
   },
