@@ -62,7 +62,7 @@ function handleChangeMode(mode: UnionKey.ThemeLayoutMode) {
       :class="[mode === key ? 'border-primary' : 'border-transparent']"
       @click="handleChangeMode(key)"
     >
-      <NTooltip :placement="item.placement">
+      <IconTooltip :placement="item.placement">
         <template #trigger>
           <div
             class="h-64px w-96px gap-6px rd-4px p-6px shadow ring-2 ring-transparent transition-all hover:ring-primary"
@@ -74,7 +74,7 @@ function handleChangeMode(mode: UnionKey.ThemeLayoutMode) {
           </div>
         </template>
         {{ $t(`theme.layout.layoutMode.${key}_detail`) }}
-      </NTooltip>
+      </IconTooltip>
       <p class="mt-8px text-12px">
         {{ $t(themeLayoutModeRecord[key]) }}
       </p>
