@@ -263,12 +263,7 @@ declare namespace App {
           themeSchema: { title: string } & Record<UnionKey.ThemeScheme, string>
           themeColor: {
             title: string
-            primary: string
-            info: string
-            success: string
-            warning: string
-            error: string
-          }
+          } & Record<Theme.ThemeColorKey, string>
         }
         layout: {
           layoutMode: { title: string } & Record<UnionKey.ThemeLayoutMode, string> & {
