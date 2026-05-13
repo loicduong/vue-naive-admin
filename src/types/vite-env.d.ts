@@ -98,3 +98,5 @@ declare namespace Env {
 interface ImportMeta {
   readonly env: Env.ImportMeta
 }
+
+declare module 'virtual:svg-icons/register'

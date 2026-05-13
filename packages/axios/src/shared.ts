@@ -33,7 +33,7 @@ export async function transformResponse(response: AxiosResponse) {
   if (responseType === 'json')
     return
 
-  const isJson = response.headers['content-type']?.includes('application/json')
+  const isJson = String(response.headers['content-type'] || '').includes('application/json')
   if (!isJson)
     return
 

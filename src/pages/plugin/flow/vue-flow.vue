@@ -17,9 +17,9 @@ definePage({
   },
 })
 
-const nodes = ref(initialNodes)
+const nodes = shallowRef(initialNodes)
 
-const edges = ref(initialEdges)
+const edges = shallowRef(initialEdges)
 
 const cancelOnError = ref(true)
 

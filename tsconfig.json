@@ -5,6 +5,7 @@
     "jsxImportSource": "vue",
     "lib": ["DOM", "ESNext"],
     "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "paths": {
@@ -20,6 +21,7 @@
       "unplugin-vue-router/client",
       "vite-plugin-vue-layouts-next/client"
     ],
+    "allowImportingTsExtensions": true,
     "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": false,

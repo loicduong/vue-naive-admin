@@ -12,3 +12,12 @@ onlyBuiltDependencies:
   - simple-git-hooks
   - unrs-resolver
   - vue-demi
+
+allowBuilds:
+  core-js: true
+  es5-ext: true
+  esbuild: true
+  json-editor-vue: true
+  simple-git-hooks: true
+  typeit: true
+  vue-demi: true
