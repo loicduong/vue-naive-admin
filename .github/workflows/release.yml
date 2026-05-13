@@ -35,4 +35,13 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm dlx semantic-release
+        run: >
+          pnpm dlx
+          --package semantic-release
+          --package @semantic-release/changelog
+          --package @semantic-release/commit-analyzer
+          --package @semantic-release/git
+          --package @semantic-release/github
+          --package @semantic-release/npm
+          --package @semantic-release/release-notes-generator
+          semantic-release
