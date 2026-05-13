@@ -18,7 +18,6 @@
       "node",
       "unplugin-icons/types/vue",
       "naive-ui/volar",
-      "unplugin-vue-router/client",
       "vite-plugin-vue-layouts-next/client"
     ],
     "allowImportingTsExtensions": true,
