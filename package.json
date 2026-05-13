@@ -28,7 +28,6 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "build:tst": "vite build --mode testing",
-    "cleanup": "sa cleanup",
     "commit": "commitlint --edit",
     "dev": "vite",
     "dev:prd": "vite --mode production",
@@ -37,9 +36,7 @@
     "lint:fix": "eslint . --fix",
     "prepare": "simple-git-hooks",
     "preview": "vite preview",
-    "release": "sa release",
-    "typecheck": "vue-tsc --noEmit --skipLibCheck",
-    "update-pkg": "sa update-pkg"
+    "typecheck": "vue-tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
     "@antv/data-set": "0.11.8",
@@ -101,7 +98,6 @@
     "@commitlint/config-conventional": "21.0.1",
     "@iconify/json": "2.2.472",
     "@iconify/utils": "3.1.0",
-    "@sa/scripts": "workspace:*",
     "@types/d3": "7.4.3",
     "@types/dagre": "0.7.54",
     "@types/html-minifier-terser": "7.0.2",
