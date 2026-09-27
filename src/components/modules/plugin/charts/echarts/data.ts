@@ -596,8 +596,8 @@ export function getScatterOption() {
     })
   })
 
-  data.forEach((dataItem) => {
-    (series as any)[dataItem[0]].data.push([dataItem[1], dataItem[2]])
+  data.forEach(dataItem => {
+    ;(series as any)[dataItem[0]].data.push([dataItem[1], dataItem[2]])
   })
 
   const option: ECOption = {

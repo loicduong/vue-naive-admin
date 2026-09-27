@@ -15,12 +15,7 @@ const rowData = ref([
   { make: 'Nissan', model: 'Juke', price: 20675, electric: false },
 ])
 
-const colDefs = ref([
-  { field: 'make' },
-  { field: 'model' },
-  { field: 'price' },
-  { field: 'electric' },
-])
+const colDefs = ref([{ field: 'make' }, { field: 'model' }, { field: 'price' }, { field: 'electric' }])
 </script>
 
 <template>
@@ -28,12 +23,7 @@ const colDefs = ref([
     <NCard title="AG Grid Table" :bordered="false" class="h-full card-wrapper">
       <div class="h-full flex flex-col">
         <GithubLink link="https://github.com/ag-grid/ag-grid" class="mb-4" />
-        <AgGridVue
-          class="h-full w-full"
-          :column-defs="colDefs"
-          :row-data="rowData"
-          :default-col-def="{ flex: 1 }"
-        />
+        <AgGridVue class="h-full w-full" :column-defs="colDefs" :row-data="rowData" :default-col-def="{ flex: 1 }" />
       </div>
     </NCard>
   </div>

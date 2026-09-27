@@ -1,13 +1,7 @@
 import { defineStore } from 'pinia'
 import { SetupStoreId } from '@/constants/enum'
 import { localStg } from '@/utils/storage'
-import {
-  addThemeVarsToGlobal,
-  createThemeToken,
-  getNaiveTheme,
-  initThemeSettings,
-  toggleCssDarkMode,
-} from './shared'
+import { addThemeVarsToGlobal, createThemeToken, getNaiveTheme, initThemeSettings, toggleCssDarkMode } from './shared'
 
 /** Theme store */
 export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
@@ -85,8 +79,7 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
 
     if (key === 'primary') {
       settings.value.themeColor = colorValue
-    }
-    else {
+    } else {
       settings.value.otherColor[key] = colorValue
     }
   }
@@ -102,10 +95,7 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
 
   /** Setup theme vars to global */
   function setupThemeVarsToGlobal() {
-    const { themeTokens, darkThemeTokens } = createThemeToken(
-      themeColors.value,
-      settings.value.tokens,
-    )
+    const { themeTokens, darkThemeTokens } = createThemeToken(themeColors.value, settings.value.tokens)
     addThemeVarsToGlobal(themeTokens, darkThemeTokens)
   }
 
@@ -113,8 +103,7 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
   function cacheThemeSettings() {
     const isProd = import.meta.env.PROD
 
-    if (!isProd)
-      return
+    if (!isProd) return
 
     localStg.set('themeSettings', settings.value)
   }
@@ -129,7 +118,7 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
     // watch dark mode
     watch(
       darkMode,
-      (val) => {
+      val => {
         toggleCssDarkMode(val)
         localStg.set('darkMode', val)
       },
@@ -139,7 +128,7 @@ export const useThemeStore = defineStore(SetupStoreId.Theme, () => {
     // themeColors change, update css vars and storage theme color
     watch(
       themeColors,
-      (val) => {
+      val => {
         setupThemeVarsToGlobal()
         localStg.set('themeColor', val.primary)
       },

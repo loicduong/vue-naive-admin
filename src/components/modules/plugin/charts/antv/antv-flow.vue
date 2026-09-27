@@ -47,8 +47,7 @@ async function selectNode() {
   if (props.selected && graphRef.value) {
     try {
       await graphRef.value.setElementState(props.selected, 'selected')
-    }
-    catch {}
+    } catch {}
   }
 }
 
@@ -107,9 +106,7 @@ defineExpose({ selectNode, graph: graphRef })
             </NButton>
           </template>
           <div class="flex-col gap-8px">
-            <div span="2" class="text-12px font-bold">
-              Node Legend
-            </div>
+            <div span="2" class="text-12px font-bold">Node Legend</div>
             <NGrid :cols="2" :y-gap="8" class="w-180px!">
               <NGi v-for="(config, status) in nodeStatus" :key="status" class="flex-center">
                 <NTag size="small" round :bordered="false">

@@ -32,7 +32,7 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
   function addConstantRoutes(routes: RouteRecordRaw[]) {
     const constantRoutesMap = new Map<string, RouteRecordRaw>([])
 
-    routes.forEach((route) => {
+    routes.forEach(route => {
       constantRoutesMap.set(route.name as string, route)
     })
 
@@ -45,7 +45,7 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
   function addAuthRoutes(routes: RouteRecordRaw[]) {
     const authRoutesMap = new Map<string, RouteRecordRaw>([])
 
-    routes.forEach((route) => {
+    routes.forEach(route => {
       authRoutesMap.set(route.name as string, route)
     })
 
@@ -116,8 +116,7 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
 
   /** init constant route */
   async function initConstantRoute() {
-    if (isInitConstantRoute.value)
-      return
+    if (isInitConstantRoute.value) return
 
     const staticRoute = createStaticRoutes()
 
@@ -144,8 +143,7 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
 
     if (authStore.isStaticSuper) {
       addAuthRoutes(staticAuthRoutes)
-    }
-    else {
+    } else {
       const filteredAuthRoutes = filterAuthRoutesByRoles(staticAuthRoutes, authStore.userInfo.roles)
 
       addAuthRoutes(filteredAuthRoutes)

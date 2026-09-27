@@ -12,8 +12,7 @@ definePage({
 const textRef = shallowRef<El>()
 
 function init() {
-  if (!textRef.value)
-    return
+  if (!textRef.value) return
 
   const options: Options = {
     strings: 'VueNaiveAdmin is a fresh, elegant, visually appealing, and powerful backend management template.',
@@ -39,9 +38,7 @@ onMounted(() => {
         <GithubLink link="https://github.com/alexmacarthur/typeit" />
         <WebSiteLink label="Document address: " link="https://www.typeitjs.com/docs/vanilla/usage/" />
       </NSpace>
-      <NDivider title-placement="left">
-        Basic Example
-      </NDivider>
+      <NDivider title-placement="left"> Basic Example </NDivider>
       <span ref="textRef" class="text-18px" />
     </NCard>
   </div>

@@ -103,8 +103,7 @@ export default function useTable<ResponseData, ApiData, Column, Pagination exten
       setEmpty(data.value.length === 0)
 
       await onFetched?.(transformed)
-    }
-    finally {
+    } finally {
       endLoading()
     }
   }

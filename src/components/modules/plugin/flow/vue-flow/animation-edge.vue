@@ -1,12 +1,5 @@
 <script lang="ts" setup>
-import {
-  BaseEdge,
-  EdgeLabelRenderer,
-  getSmoothStepPath,
-  Position,
-  useNodesData,
-  useVueFlow,
-} from '@vue-flow/core'
+import { BaseEdge, EdgeLabelRenderer, getSmoothStepPath, Position, useNodesData, useVueFlow } from '@vue-flow/core'
 import { executeTransition, TransitionPresets } from '@vueuse/core'
 
 interface Props {
@@ -79,13 +72,13 @@ const path = computed(() =>
   }),
 )
 
-watch(isCancelled, (isCancelled) => {
+watch(isCancelled, isCancelled => {
   if (isCancelled) {
     reset()
   }
 })
 
-watch(isAnimating, (isAnimating) => {
+watch(isAnimating, isAnimating => {
   const edge = findEdge(props.id)
 
   if (edge) {
@@ -96,7 +89,7 @@ watch(isAnimating, (isAnimating) => {
   }
 })
 
-watch(edgePoint, (point) => {
+watch(edgePoint, point => {
   const pathEl = edgeRef.value?.pathEl
 
   if (!pathEl || point === 0 || !isAnimating.value) {
@@ -113,7 +106,7 @@ watch(edgePoint, (point) => {
   labelPosition.value = pathEl.getPointAtLength(point)
 })
 
-watch(isFinished, (isFinished) => {
+watch(isFinished, isFinished => {
   if (isFinished) {
     runAnimation()
   }
@@ -158,12 +151,7 @@ function reset() {
 </script>
 
 <template>
-  <BaseEdge
-    :id="id"
-    ref="edgeRef"
-    :path="path[0]"
-    :style="{ stroke: edgeColor }"
-  />
+  <BaseEdge :id="id" ref="edgeRef" :path="path[0]" :style="{ stroke: edgeColor }" />
 
   <EdgeLabelRenderer v-if="isAnimating">
     <div

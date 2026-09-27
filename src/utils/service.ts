@@ -10,8 +10,7 @@ export function createServiceConfig(env: Env.ImportMeta) {
   let other = {} as Record<App.Service.OtherBaseURLKey, string>
   try {
     other = json5.parse(getEnvVariable('VITE_OTHER_SERVICE_BASE_URL', env))
-  }
-  catch {
+  } catch {
     console.error('VITE_OTHER_SERVICE_BASE_URL is not a valid json5 string')
   }
 
@@ -22,7 +21,7 @@ export function createServiceConfig(env: Env.ImportMeta) {
 
   const otherHttpKeys = Object.keys(httpConfig.other) as App.Service.OtherBaseURLKey[]
 
-  const otherConfig: App.Service.OtherServiceConfigItem[] = otherHttpKeys.map((key) => {
+  const otherConfig: App.Service.OtherServiceConfigItem[] = otherHttpKeys.map(key => {
     return {
       key,
       baseURL: httpConfig.other[key],
@@ -50,7 +49,7 @@ export function getServiceBaseURL(env: Env.ImportMeta, isProxy: boolean) {
 
   const otherBaseURL = {} as Record<App.Service.OtherBaseURLKey, string>
 
-  other.forEach((item) => {
+  other.forEach(item => {
     otherBaseURL[item.key] = isProxy ? item.proxyPattern : item.baseURL
   })
 

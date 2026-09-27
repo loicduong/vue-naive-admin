@@ -18,8 +18,8 @@ const center = { lat: 10.779736, lng: 106.6990376 }
       <GithubLink link="https://github.com/inocan-group/vue3-google-map" class="mb-4" />
       <GoogleMap class="h-full w-full" :center="center" :zoom="15">
         <Marker :options="{ position: center }" />
-      </Googlemap>
-    </ncard>
+      </GoogleMap>
+    </NCard>
   </div>
 </template>
 

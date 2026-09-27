@@ -30,8 +30,7 @@ export function createStorage<T extends object>(type: StorageType, storagePrefix
 
         try {
           storageData = JSON.parse(json)
-        }
-        catch {}
+        } catch {}
 
         // storageData may be `false` if it is boolean type
         if (storageData !== null) {

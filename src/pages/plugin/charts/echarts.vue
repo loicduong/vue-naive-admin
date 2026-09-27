@@ -22,10 +22,7 @@ const { domRef: barRef } = useEcharts(() => barOptions, { onRender() {} })
 const { domRef: pictorialBarRef } = useEcharts(() => getPictorialBarOption(), { onRender() {} })
 const { domRef: radarRef } = useEcharts(() => radarOptions, { onRender() {} })
 const { domRef: scatterRef } = useEcharts(() => getScatterOption(), { onRender() {} })
-const { domRef: gaugeRef, setOptions: setGaugeOptions } = useEcharts(
-  () => gaugeOptions,
-  { onRender() { } },
-)
+const { domRef: gaugeRef, setOptions: setGaugeOptions } = useEcharts(() => gaugeOptions, { onRender() {} })
 
 let intervalId: NodeJS.Timeout
 

@@ -98,21 +98,10 @@ const { domRef, updateOptions } = useEcharts(() => ({
 }))
 
 async function mockData() {
-  await new Promise(resolve => (setTimeout(resolve, 1000)))
+  await new Promise(resolve => setTimeout(resolve, 1000))
 
-  updateOptions((opts) => {
-    opts.xAxis.data = [
-      '06:00',
-      '08:00',
-      '10:00',
-      '12:00',
-      '14:00',
-      '16:00',
-      '18:00',
-      '20:00',
-      '22:00',
-      '24:00',
-    ]
+  updateOptions(opts => {
+    opts.xAxis.data = ['06:00', '08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00', '24:00']
     opts.series[0].data = [4623, 6145, 6268, 6411, 1890, 4251, 2978, 3880, 3606, 4311]
     opts.series[1].data = [2208, 2016, 2916, 4512, 8281, 2008, 1963, 2367, 2956, 678]
 
@@ -132,14 +121,17 @@ function updateLocale() {
   })
 }
 
-const init = async () => (await mockData())
+const init = async () => await mockData()
 
-watch(() => appStore.locale, () => (updateLocale()))
+watch(
+  () => appStore.locale,
+  () => updateLocale(),
+)
 
 watch(
   () => themeStore.themeColor,
   () => {
-    updateOptions((opts) => {
+    updateOptions(opts => {
       opts.series[0].color = themeStore.themeColor
       opts.series[1].color = lightColor.value
       opts.series[0].areaStyle.color.colorStops[0].color = themeStore.themeColor

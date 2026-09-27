@@ -27,13 +27,11 @@ const visibleStats = computed(() => {
   let total = 0
   let checked = 0
 
-  columns.value.forEach((column) => {
-    if (!column.visible)
-      return
+  columns.value.forEach(column => {
+    if (!column.visible) return
 
     total += 1
-    if (column.checked)
-      checked += 1
+    if (column.checked) checked += 1
   })
 
   return { total, checked }
@@ -52,9 +50,8 @@ const selectAllIndeterminate = computed(() => {
 })
 
 function toggleSelectAll(checked: boolean) {
-  columns.value.forEach((column) => {
-    if (!column.visible)
-      return
+  columns.value.forEach(column => {
+    if (!column.visible) return
 
     column.checked = checked
   })

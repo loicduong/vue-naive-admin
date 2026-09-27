@@ -1,13 +1,7 @@
 import type { App } from 'vue'
 import type { RouterHistory } from 'vue-router'
 import { setupLayouts } from 'virtual:generated-layouts'
-import {
-  createMemoryHistory,
-  createRouter,
-  createWebHashHistory,
-  createWebHistory,
-
-} from 'vue-router'
+import { createMemoryHistory, createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
 import { createRouterGuard } from './guard'
 

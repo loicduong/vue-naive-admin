@@ -64,15 +64,9 @@ onMounted(() => {
         <NButton @click="selectedNode = 'N5'">
           Select node N5 (you need to handle the selection event yourself, it will not trigger the element click)
         </NButton>
-        <NButton v-if="!hasNodeN" @click="addNode">
-          Add a node and connect it to Node 5
-        </NButton>
-        <NButton v-else @click="() => removeNode('NN')">
-          Delete the newly added node
-        </NButton>
-        <NButton @click="() => removeNode('NX')">
-          Delete NodeX
-        </NButton>
+        <NButton v-if="!hasNodeN" @click="addNode"> Add a node and connect it to Node 5 </NButton>
+        <NButton v-else @click="() => removeNode('NN')"> Delete the newly added node </NButton>
+        <NButton @click="() => removeNode('NX')"> Delete NodeX </NButton>
       </NFlex>
     </NCard>
   </div>

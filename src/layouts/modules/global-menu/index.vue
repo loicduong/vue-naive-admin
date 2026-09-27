@@ -13,7 +13,7 @@ const themeStore = useThemeStore()
 
 const activeMenu = computed(() => {
   const menuMap: Record<UnionKey.ThemeLayoutMode, Component> = {
-    'vertical': VerticalMenu,
+    vertical: VerticalMenu,
     'vertical-mix': VerticalMixMenu,
   }
 

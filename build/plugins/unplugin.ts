@@ -1,4 +1,4 @@
-import type { PluginOption } from 'vite'
+import type { PluginOption } from 'vite-plus'
 import path from 'node:path'
 import process from 'node:process'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -22,22 +22,16 @@ export function setupUnplugin(viteEnv: Env.ImportMeta) {
       compiler: 'vue3',
       customCollections: {
         [collectionName]: FileSystemIconLoader(localIconPath, svg =>
-          svg.replace(/^<svg\s/, '<svg width="1em" height="1em" ')),
+          svg.replace(/^<svg\s/, '<svg width="1em" height="1em" '),
+        ),
       },
       scale: 1,
       defaultClass: 'inline-block',
     }),
     AutoImport({
       dts: 'src/types/auto-imports.d.ts',
-      imports: [
-        '@vueuse/core',
-        'vue-router',
-        'vue',
-      ],
-      dirs: [
-        'src/hooks',
-        'src/store',
-      ],
+      imports: ['@vueuse/core', 'vue-router', 'vue'],
+      dirs: ['src/hooks', 'src/store'],
     }),
     Components({
       dts: 'src/types/components.d.ts',

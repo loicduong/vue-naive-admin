@@ -36,7 +36,7 @@ export function useLayout() {
 
     dagre.layout(dagreGraph)
 
-    return nodes.map((node) => {
+    return nodes.map(node => {
       const nodeWithPosition = dagreGraph.node(node.id)
 
       return {

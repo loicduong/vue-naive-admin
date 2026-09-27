@@ -16,8 +16,7 @@ export const longpress: Directive = {
         const [delay, interval] = binding.arg.split(':')
         num = Number(delay)
         interNum = Number(interval)
-      }
-      else if (binding.arg) {
+      } else if (binding.arg) {
         num = Number(binding.arg)
       }
 
@@ -56,8 +55,7 @@ export const longpress: Directive = {
       useEventListener(el, 'pointerdown', onDown)
       useEventListener(el, 'pointerup', clear)
       useEventListener(el, 'pointerleave', clear)
-    }
-    else {
+    } else {
       throw new Error(
         '[Directive: longpress]: need callback and callback must be a function! Like v-longpress="callback"',
       )

@@ -76,15 +76,13 @@ export function sortRoutesByOrder(routes: RouteRecordRaw[]) {
  * @param menus - Array of global menu items to process
  */
 export function updateLabelOfGlobalMenus(menus: App.Global.Menu[]) {
-  return menus.map((menu) => {
+  return menus.map(menu => {
     if (menu?.children?.length) {
       return { ...menu }
     }
 
     const label = () => {
-      return menu.href
-        ? <a href={menu.href}>{menu.label}</a>
-        : <RouterLink to={menu.routeKey}>{menu.label}</RouterLink>
+      return menu.href ? <a href={menu.href}>{menu.label}</a> : <RouterLink to={menu.routeKey}>{menu.label}</RouterLink>
     }
 
     return { ...menu, label }
@@ -99,7 +97,7 @@ export function updateLabelOfGlobalMenus(menus: App.Global.Menu[]) {
 export function getGlobalMenusByAuthRoutes(routes: RouteRecordRaw[]) {
   const menus: App.Global.Menu[] = []
 
-  routes.forEach((route) => {
+  routes.forEach(route => {
     if (!route.meta?.hideInMenu) {
       const menu = getGlobalMenuByBaseRoute(route)
 
@@ -122,7 +120,7 @@ export function getGlobalMenusByAuthRoutes(routes: RouteRecordRaw[]) {
 export function updateLocaleOfGlobalMenus(menus: App.Global.Menu[]) {
   const result: App.Global.Menu[] = []
 
-  menus.forEach((menu) => {
+  menus.forEach(menu => {
     const { i18nKey, label, children } = menu
 
     const newLabel = i18nKey ? $t(i18nKey) : label
@@ -151,14 +149,7 @@ function getGlobalMenuByBaseRoute(route: RouteLocationNormalizedLoaded | RouteRe
   const { SvgIconVNode } = useSvgIcon()
 
   const { name, path } = route
-  const {
-    title,
-    i18nKey,
-    icon = import.meta.env.VITE_MENU_ICON,
-    localIcon,
-    iconFontSize,
-    href,
-  } = route.meta ?? {}
+  const { title, i18nKey, icon = import.meta.env.VITE_MENU_ICON, localIcon, iconFontSize, href } = route.meta ?? {}
 
   const label = i18nKey ? $t(i18nKey) : title!
 
@@ -183,9 +174,9 @@ function getGlobalMenuByBaseRoute(route: RouteLocationNormalizedLoaded | RouteRe
 export function getCacheRouteNames(routes: RouteRecordRaw[]) {
   const cacheNames: App.Global.RouteKey[] = []
 
-  routes.forEach((route) => {
+  routes.forEach(route => {
     // only get last two level route, which has component
-    route.children?.forEach((child) => {
+    route.children?.forEach(child => {
       if (child.component && child.meta?.keepAlive) {
         cacheNames.push(child.name as App.Global.RouteKey)
       }
@@ -211,10 +202,7 @@ export function isRouteExistByRouteName(routeName: App.Global.RouteKey, routes: 
  * @param route
  * @param routeName
  */
-function recursiveGetIsRouteExistByRouteName(
-  route: RouteRecordRaw,
-  routeName: App.Global.RouteKey,
-) {
+function recursiveGetIsRouteExistByRouteName(route: RouteRecordRaw, routeName: App.Global.RouteKey) {
   let isExist = route.name === routeName
 
   if (isExist) {
@@ -237,7 +225,7 @@ function recursiveGetIsRouteExistByRouteName(
 export function getSelectedMenuKeyPathByKey(selectedKey: string, menus: App.Global.Menu[]) {
   const keyPath: string[] = []
 
-  menus.some((menu) => {
+  menus.some(menu => {
     const path = findMenuPath(selectedKey, menu)
 
     const find = Boolean(path?.length)
@@ -355,12 +343,8 @@ export function getBreadcrumbsByRoute(
  * @param menus - menus
  * @param treeMap
  */
-export function transformMenuToSearchMenus(
-  menus: App.Global.Menu[],
-  treeMap: App.Global.Menu[] = [],
-) {
-  if (menus && menus.length === 0)
-    return []
+export function transformMenuToSearchMenus(menus: App.Global.Menu[], treeMap: App.Global.Menu[] = []) {
+  if (menus && menus.length === 0) return []
   return menus.reduce((acc, cur) => {
     if (!cur.children) {
       acc.push(cur)

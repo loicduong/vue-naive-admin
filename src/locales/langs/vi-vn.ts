@@ -78,12 +78,11 @@ const local: App.I18n.Schema = {
     },
     layout: {
       layoutMode: {
-        'title': 'Chế độ bố cục',
-        'vertical': 'Chế độ menu dọc',
+        title: 'Chế độ bố cục',
+        vertical: 'Chế độ menu dọc',
         'vertical-mix': 'Chế độ menu dọc kết hợp',
-        'vertical_detail': 'Bố cục menu dọc, menu bên trái và nội dung bên phải.',
-        'vertical-mix_detail':
-          'Bố cục menu dọc kết hợp, menu chính bên trái tối màu và menu phụ bên phải sáng hơn.',
+        vertical_detail: 'Bố cục menu dọc, menu bên trái và nội dung bên phải.',
+        'vertical-mix_detail': 'Bố cục menu dọc kết hợp, menu chính bên trái tối màu và menu phụ bên phải sáng hơn.',
       },
       header: {
         title: 'Cài đặt header',
@@ -119,14 +118,14 @@ const local: App.I18n.Schema = {
         page: {
           animate: 'Hiệu ứng chuyển trang',
           mode: {
-            'title': 'Loại hiệu ứng chuyển trang',
+            title: 'Loại hiệu ứng chuyển trang',
             'fade-slide': 'Trượt',
-            'fade': 'Hiện ra mờ dần',
+            fade: 'Hiện ra mờ dần',
             'fade-bottom': 'Mờ dần từ dưới lên',
             'fade-scale': 'Thu nhỏ mờ dần',
             'zoom-fade': 'Hiện ra từ từ',
             'zoom-out': 'Hiện ra nhanh',
-            'none': 'Không có',
+            none: 'Không có',
           },
         },
         fixedHeader: 'Cố định tiêu đề',

@@ -12,8 +12,7 @@ export function setupAppVersionNotification() {
   // Update check interval in milliseconds
   const UPDATE_CHECK_INTERVAL = 3 * 60 * 1000
 
-  const canAutoUpdateApp = import.meta.env.VITE_AUTOMATICALLY_DETECT_UPDATE === 'Y'
-    && import.meta.env.PROD
+  const canAutoUpdateApp = import.meta.env.VITE_AUTOMATICALLY_DETECT_UPDATE === 'Y' && import.meta.env.PROD
 
   if (!canAutoUpdateApp) {
     return
@@ -43,10 +42,11 @@ export function setupAppVersionNotification() {
       action() {
         return (
           <div style={{ display: 'flex', justifyContent: 'end', gap: '12px', width: '325px' }}>
-            <NButton onClick={() => {
-              n?.destroy()
-              isShow = false
-            }}
+            <NButton
+              onClick={() => {
+                n?.destroy()
+                isShow = false
+              }}
             >
               {$t('system.updateCancel')}
             </NButton>
@@ -70,7 +70,7 @@ export function setupAppVersionNotification() {
   }
   // If updates should be checked, set up the visibility change listener and start the update interval
   if (!isShow && document.visibilityState === 'visible') {
-  // Check for updates when the document is visible
+    // Check for updates when the document is visible
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState === 'visible') {
         checkForUpdates()
@@ -95,8 +95,7 @@ async function getHtmlBuildTime(): Promise<string | null> {
     const html = await res.text()
     const match = html.match(/<meta name="build-time" content="([^"]*)">/)
     return match?.[1] || null
-  }
-  catch (error) {
+  } catch (error) {
     window.console.error('getHtmlBuildTime error:', error)
     return null
   }

@@ -24,8 +24,7 @@ const instance = ref<BScroll>()
 const isScrollY = computed(() => Boolean(props.options.scrollY))
 
 function initBetterScroll() {
-  if (!bsWrapper.value)
-    return
+  if (!bsWrapper.value) return
   instance.value = new BScroll(bsWrapper.value, props.options)
 }
 

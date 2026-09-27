@@ -12,8 +12,7 @@ export function initThemeSettings() {
   const isProd = import.meta.env.PROD
 
   // if it is development mode, the theme settings will not be cached, by update `themeSettings` in `src/theme/settings.ts` to update theme settings
-  if (!isProd)
-    return themeSettings
+  if (!isProd) return themeSettings
 
   // if it is production mode, the theme settings will be cached in localStorage
   // if want to update theme settings when publish new version, please update `overrideThemeSettings` in `src/theme/settings.ts`
@@ -39,10 +38,7 @@ export function initThemeSettings() {
  * @param colors Theme colors
  * @param tokens Theme setting tokens
  */
-export function createThemeToken(
-  colors: App.Theme.ThemeColor,
-  tokens?: App.Theme.ThemeSetting['tokens'],
-) {
+export function createThemeToken(colors: App.Theme.ThemeColor, tokens?: App.Theme.ThemeSetting['tokens']) {
   const paletteColors = createThemePaletteColors(colors)
 
   const { light, dark } = tokens || themeSettings.tokens
@@ -83,7 +79,7 @@ function createThemePaletteColors(colors: App.Theme.ThemeColor) {
   const colorKeys = Object.keys(colors) as App.Theme.ThemeColorKey[]
   const colorPaletteVar = {} as App.Theme.ThemePaletteColor
 
-  colorKeys.forEach((key) => {
+  colorKeys.forEach(key => {
     const colorMap = getColorPalette(colors[key])
 
     colorPaletteVar[key] = colorMap.get(500)!
@@ -174,8 +170,7 @@ export function toggleCssDarkMode(darkMode = false) {
 
   if (darkMode) {
     add()
-  }
-  else {
+  } else {
     remove()
   }
 }
@@ -206,8 +201,8 @@ function getNaiveThemeColors(colors: App.Theme.ThemeColor) {
 
   const colorEntries = Object.entries(colors) as [App.Theme.ThemeColorKey, string][]
 
-  colorEntries.forEach((color) => {
-    colorActions.forEach((action) => {
+  colorEntries.forEach(color => {
+    colorActions.forEach(action => {
       const [colorType, colorValue] = color
       const colorKey: NaiveColorKey = `${colorType}Color${action.scene}`
       themeColors[colorKey] = action.handler(colorValue)

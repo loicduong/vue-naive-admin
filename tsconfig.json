@@ -4,7 +4,6 @@
     "jsx": "preserve",
     "jsxImportSource": "vue",
     "lib": ["DOM", "ESNext"],
-    "baseUrl": ".",
     "ignoreDeprecations": "6.0",
     "module": "ESNext",
     "moduleResolution": "bundler",
@@ -21,6 +20,7 @@
       "vite-plugin-vue-layouts-next/client"
     ],
     "allowImportingTsExtensions": true,
+    "noEmit": true,
     "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": false,

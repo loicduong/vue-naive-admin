@@ -15,7 +15,7 @@ function useMixMenu() {
   const allMenus = computed<App.Global.Menu[]>(() => routeStore.menus)
 
   const firstLevelMenus = computed<App.Global.Menu[]>(() =>
-    routeStore.menus.map((menu) => {
+    routeStore.menus.map(menu => {
       const { children: _, ...rest } = menu
 
       return rest

@@ -38,7 +38,7 @@ function handleSave() {
   document.body.removeChild(link)
 }
 
-const handleClear = () => (signature.value?.clear())
+const handleClear = () => signature.value?.clear()
 </script>
 
 <template>

@@ -20,7 +20,7 @@ interface Props {
 
 const attrs = useAttrs()
 
-const bindAttrs = computed<{ class: string, style: string }>(() => ({
+const bindAttrs = computed<{ class: string; style: string }>(() => ({
   class: (attrs.class as string) || '',
   style: (attrs.style as string) || '',
 }))

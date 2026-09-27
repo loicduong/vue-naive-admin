@@ -43,8 +43,8 @@ export const themeSettings: App.Theme.ThemeSetting = {
   tokens: {
     light: {
       colors: {
-        'container': 'rgb(255, 255, 255)',
-        'layout': 'rgb(247, 250, 252)',
+        container: 'rgb(255, 255, 255)',
+        layout: 'rgb(247, 250, 252)',
         'base-text': 'rgb(31, 31, 31)',
       },
       boxShadow: {
@@ -54,8 +54,8 @@ export const themeSettings: App.Theme.ThemeSetting = {
     },
     dark: {
       colors: {
-        'container': 'rgb(28, 28, 28)',
-        'layout': 'rgb(18, 18, 18)',
+        container: 'rgb(28, 28, 28)',
+        layout: 'rgb(18, 18, 18)',
         'base-text': 'rgb(224, 224, 224)',
       },
     },

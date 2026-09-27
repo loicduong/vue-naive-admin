@@ -29,12 +29,7 @@ export function setupRouter() {
         route.addToMeta(meta)
 
         if (key === '/login') {
-          const modules: UnionKey.LoginModule[] = [
-            'pwd-login',
-            'code-login',
-            'register',
-            'reset-pwd',
-          ]
+          const modules: UnionKey.LoginModule[] = ['pwd-login', 'code-login', 'register', 'reset-pwd']
 
           const moduleReg = modules.join('|')
 

@@ -73,8 +73,7 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
           duration: 4500,
         })
       }
-    }
-    else {
+    } else {
       resetStore()
     }
 
