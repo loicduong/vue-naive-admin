@@ -7,7 +7,6 @@
 "*.json"   eol=lf
 "*.html"   eol=lf
 "*.css"    eol=lf
-"*.scss"   eol=lf
 "*.md"     eol=lf
 "*.yaml"   eol=lf
 "*.yml"    eol=lf

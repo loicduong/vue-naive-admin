@@ -105,8 +105,31 @@ function getSiderAndCollapsedWidth(isCollapsed: boolean) {
   </AdminLayout>
 </template>
 
-<style lang="scss">
+<style>
 #__SCROLL_EL_ID__ {
-  @include scrollbar();
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+}
+
+.dark #__SCROLL_EL_ID__ {
+  /* guide safari use light color scrollbar */
+  color-scheme: dark;
+  scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+
+#__SCROLL_EL_ID__::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+#__SCROLL_EL_ID__::-webkit-scrollbar-thumb,
+#__SCROLL_EL_ID__::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+}
+
+#__SCROLL_EL_ID__::-webkit-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 0;
 }
 </style>

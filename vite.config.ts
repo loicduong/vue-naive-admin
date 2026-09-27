@@ -27,14 +27,6 @@ export default defineConfig(configEnv => {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
       },
     },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler',
-          additionalData: '@use "@/assets/scss/global.scss" as *;',
-        },
-      },
-    },
     server: {
       host: '0.0.0.0',
       port: viteEnv.VITE_SERVER_PORT,

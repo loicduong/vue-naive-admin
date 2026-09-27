@@ -65,7 +65,7 @@ function handleChange(iconItem: string) {
   </NPopover>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 :deep(.n-input-wrapper) {
   padding-right: 0;
 }
