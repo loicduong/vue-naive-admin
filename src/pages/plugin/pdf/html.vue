@@ -2,7 +2,7 @@
 import { useLoading } from '@sa/hooks'
 import { toPng } from 'html-to-image'
 import { Handler, Previewer, registerHandlers } from 'pagedjs'
-import pagedCss from '@/assets/scss/paged.scss?inline'
+import pagedCss from '@/assets/css/paged.css?inline'
 import PdfHtmlAction from '@/components/modules/plugin/pdf/html/pdf-html-action.vue'
 import PdfHtmlRoot from '@/components/modules/plugin/pdf/html/pdf-html-root.vue'
 

@@ -110,7 +110,6 @@
     "@vitejs/plugin-vue": "6.0.9",
     "@vitejs/plugin-vue-jsx": "5.1.6",
     "dagre": "0.8.5",
-    "sass": "1.105.0",
     "tsx": "4.23.15",
     "typescript": "6.0.3",
     "unplugin-auto-import": "21.1.0",
