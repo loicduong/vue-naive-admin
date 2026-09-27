@@ -238,5 +238,5 @@ export const lint: UserConfig['lint'] = {
 /** Staged-file checks run by the `.vite-hooks/pre-commit` hook */
 export const staged: UserConfig['staged'] = {
   '*.{js,mjs,cjs,ts,mts,cts,tsx,vue}': 'vp check --fix',
-  '*.{json,jsonc,json5,yaml,yml,md,css,scss,html}': 'vp fmt',
+  '*.{json,jsonc,json5,yaml,yml,md,css,html}': 'vp fmt',
 }
