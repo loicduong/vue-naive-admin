@@ -1,4 +1,4 @@
-import type { Plugin } from 'vite'
+import type { Plugin } from 'vite-plus'
 import { minify } from 'html-minifier-terser'
 
 export function setupHtmlPlugin(buildTime: string, buildVersion: string) {
@@ -7,7 +7,10 @@ export function setupHtmlPlugin(buildTime: string, buildVersion: string) {
     apply: 'build',
     async transformIndexHtml(html) {
       const htmlStr = html
-        .replace('<head>', `<head>\n    <meta name="build-time" content="${buildTime}">\n    <meta name="build-version" content="${buildVersion}">`)
+        .replace(
+          '<head>',
+          `<head>\n    <meta name="build-time" content="${buildTime}">\n    <meta name="build-version" content="${buildVersion}">`,
+        )
         .replace('runtime.config.js', `runtime.config.js?v=${buildVersion}`)
 
       return await minify(htmlStr, {

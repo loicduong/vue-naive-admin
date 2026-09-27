@@ -1,41 +1,42 @@
 {
   "name": "vue-naive-admin",
-  "type": "module",
   "version": "1.0.0",
-  "packageManager": "pnpm@11.28.0",
-  "description": "A fresh and elegant admin template, based on Vue 3, Vite 6, TypeScript, Naive UI and UnoCSS.",
+  "description": "A fresh and elegant admin template, based on Vue 3, Vite+, TypeScript, Naive UI and UnoCSS.",
+  "keywords": [
+    "naive-ui",
+    "typescript",
+    "unocss",
+    "vite-plus",
+    "vue 3"
+  ],
+  "homepage": "https://github.com/loicduong/vue-naive-admin",
+  "bugs": {
+    "url": "https://github.com/loicduong/vue-naive-admin/issues"
+  },
+  "license": "MIT",
   "author": {
     "name": "Loic Duong",
     "email": "dploc96@gmail.com",
     "url": "https://github.com/loicduong"
   },
-  "license": "MIT",
-  "homepage": "https://github.com/loicduong/vue-naive-admin",
   "repository": {
     "url": "https://github.com/loicduong/vue-naive-admin.git"
   },
-  "bugs": {
-    "url": "https://github.com/loicduong/vue-naive-admin/issues"
-  },
-  "keywords": [
-    "vue 3",
-    "vite 6",
-    "typescript",
-    "naive-ui",
-    "unocss"
-  ],
+  "type": "module",
   "scripts": {
-    "build": "vite build",
-    "build:dev": "vite build --mode development",
-    "build:tst": "vite build --mode testing",
-    "commit": "commitlint --edit",
-    "dev": "vite",
-    "dev:prd": "vite --mode production",
-    "dev:tst": "vite --mode testing",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "prepare": "simple-git-hooks",
-    "preview": "vite preview",
+    "build": "vp build",
+    "build:dev": "vp build --mode development",
+    "build:tst": "vp build --mode testing",
+    "check": "vp check",
+    "check:fix": "vp check --fix",
+    "dev": "vp dev",
+    "dev:prd": "vp dev --mode production",
+    "dev:tst": "vp dev --mode testing",
+    "fmt": "vp fmt",
+    "lint": "vp lint",
+    "lint:fix": "vp lint --fix",
+    "prepare": "vp config",
+    "preview": "vp preview",
     "typecheck": "vue-tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
@@ -93,7 +94,6 @@
     "xlsx": "0.18.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "9.5.1",
     "@commitlint/cli": "21.2.3",
     "@commitlint/config-conventional": "21.2.3",
     "@iconify/json": "2.2.534",
@@ -103,7 +103,6 @@
     "@types/html-minifier-terser": "7.0.2",
     "@types/intro.js": "5.1.5",
     "@types/node": "24.19.0",
-    "@unocss/eslint-config": "66.10.5",
     "@unocss/preset-icons": "66.10.5",
     "@unocss/preset-wind3": "66.10.5",
     "@unocss/transformer-directives": "66.10.5",
@@ -112,33 +111,24 @@
     "@vitejs/plugin-vue": "6.0.9",
     "@vitejs/plugin-vue-jsx": "5.1.6",
     "dagre": "0.8.5",
-    "eslint": "10.11.0",
-    "eslint-plugin-format": "2.0.1",
     "html-minifier-terser": "7.2.0",
-    "lint-staged": "17.6.0",
     "sass": "1.105.0",
-    "simple-git-hooks": "2.14.0",
     "tsx": "4.23.15",
     "typescript": "6.0.3",
     "unplugin-auto-import": "21.1.0",
     "unplugin-icons": "24.0.0",
     "unplugin-vue-components": "32.1.0",
-    "vite": "8.3.1",
+    "vite": "catalog:",
     "vite-plugin-pwa": "1.3.0",
     "vite-plugin-svg-icons-ng": "1.9.3",
     "vite-plugin-vue-devtools": "8.2.1",
     "vite-plugin-vue-layouts-next": "3.1.0",
+    "vite-plus": "catalog:",
     "vue-tsc": "3.3.11"
-  },
-  "simple-git-hooks": {
-    "commit-msg": "pnpm commit",
-    "pre-commit": "pnpm lint-staged"
-  },
-  "lint-staged": {
-    "*": "eslint --fix"
   },
   "volta": {
     "node": "24.21.0",
     "pnpm": "11.28.0"
-  }
+  },
+  "packageManager": "pnpm@11.28.0"
 }

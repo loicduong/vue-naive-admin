@@ -4,9 +4,9 @@
 
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE) [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-A fresh and elegant admin template, based on Vue 3, Vite 6, TypeScript, Naive UI and UnoCSS.
+A fresh and elegant admin template, based on Vue 3, Vite+, TypeScript, Naive UI and UnoCSS.
 
-`VueNaiveAdmin` is a clean, elegant, beautiful and powerful admin template, based on the latest front-end technology stack, including Vue 3, Vite 6, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on ApiFox. `VueNaiveAdmin` provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly.
+`VueNaiveAdmin` is a clean, elegant, beautiful and powerful admin template, based on the latest front-end technology stack, including Vue 3, Vite+, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on ApiFox. `VueNaiveAdmin` provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly.
 
 ## Table of Contents
 
@@ -52,9 +52,6 @@ pnpm build:tst
 # Clean cache & related files
 pnpm cleanup
 
-# Check format of commit message
-pnpm commit
-
 # Start project on development environment
 pnpm dev
 
@@ -64,13 +61,19 @@ pnpm dev:tst
 # Start project on production environment
 pnpm dev:prd
 
-# Lint
+# Format, lint & type check (Vite+)
+pnpm check
+
+# Format, lint & auto fix
+pnpm check:fix
+
+# Lint only
 pnpm lint
 
-# Lint & auto fix
-pnpm lint:fix
+# Format only
+pnpm fmt
 
-# Install & configure simple-git-hooks
+# Install Vite+ git hooks
 pnpm prepare
 
 # Release project
@@ -88,9 +91,9 @@ pnpm update-pkg
 
 ## Features
 
-- Cutting-edge technology application: using the latest popular technology stack such as Vue 3, Vite 6, TypeScript, Pinia and UnoCSS.
+- Cutting-edge technology application: using the latest popular technology stack such as Vue 3, Vite+, TypeScript, Pinia and UnoCSS.
 - Clear project architecture: using pnpm monorepo architecture, clear structure, elegant and easy to understand.
-- Strict code specifications: follow the [Antfu Eslint Config](https://eslint-config.antfu.me/), integrate eslint and simple-git-hooks to ensure the code is standardized.
+- Strict code specifications: powered by [Vite+](https://viteplus.dev/) (Oxlint + Oxfmt) with staged-file checks on git hooks to ensure the code is standardized.
 - TypeScript: support strict type checking to improve code maintainability.
 - Rich theme configuration: built-in a variety of theme configurations, perfectly integrated with UnoCSS.
 - Built-in internationalization solution: easily realize multi-language support.
