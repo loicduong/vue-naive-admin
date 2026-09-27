@@ -50,7 +50,7 @@ export function setupAppVersionNotification() {
             >
               {$t('system.updateCancel')}
             </NButton>
-            <NButton type="primary" onClick={() => location.reload()}>
+            <NButton type="primary" onClick={reloadWithoutCache}>
               {$t('system.updateConfirm')}
             </NButton>
           </div>
@@ -80,6 +80,35 @@ export function setupAppVersionNotification() {
     // Start the update interval
     startUpdateInterval()
   }
+}
+
+/**
+ * The PWA service worker serves the precached (old) index.html and assets on navigation, so a plain
+ * `location.reload()` keeps the old version. Unregister the service worker and clear its caches first.
+ * Only this app's scope is touched, so other apps sharing the origin (under another base URL) are left intact.
+ */
+async function reloadWithoutCache() {
+  try {
+    if ('serviceWorker' in navigator) {
+      const scope = new URL(import.meta.env.VITE_BASE_URL || '/', location.origin).href
+      const registrations = await navigator.serviceWorker.getRegistrations()
+      const appRegistrations = registrations.filter(registration => registration.scope === scope)
+
+      await Promise.all(appRegistrations.map(registration => registration.unregister()))
+
+      // Workbox suffixes its cache names with the registration scope, e.g. `workbox-precache-v2-<scope>`
+      if (appRegistrations.length && 'caches' in window) {
+        const keys = await caches.keys()
+        await Promise.all(
+          keys.filter(key => key.startsWith('workbox-') && key.endsWith(scope)).map(key => caches.delete(key)),
+        )
+      }
+    }
+  } catch (error) {
+    window.console.error('reloadWithoutCache error:', error)
+  }
+
+  location.reload()
 }
 
 async function getHtmlBuildTime(): Promise<string | null> {
