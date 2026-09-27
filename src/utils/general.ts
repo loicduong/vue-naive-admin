@@ -22,7 +22,7 @@ export function isRegExp(val: unknown): val is RegExp {
   return toTypeString(val) === '[object RegExp]'
 }
 
-export function isFunction(val: unknown): val is Function {
+export function isFunction(val: unknown): val is (...args: any[]) => any {
   return typeof val === 'function'
 }
 

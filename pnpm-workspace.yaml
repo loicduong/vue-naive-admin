@@ -1,17 +1,12 @@
-shellEmulator: true
-
+minimumReleaseAgeExcludePrune: true
+minimumReleaseAgeExclude:
+  - '@iconify/json@2.2.534'
 # eslint-disable-next-line pnpm/yaml-enforce-settings
 trustPolicy: off
+shellEmulator: true
 
 packages:
   - 'packages/*'
-
-onlyBuiltDependencies:
-  - esbuild
-  - json-editor-vue
-  - simple-git-hooks
-  - unrs-resolver
-  - vue-demi
 
 allowBuilds:
   core-js: true
@@ -21,3 +16,10 @@ allowBuilds:
   simple-git-hooks: true
   typeit: true
   vue-demi: true
+
+onlyBuiltDependencies:
+  - esbuild
+  - json-editor-vue
+  - simple-git-hooks
+  - unrs-resolver
+  - vue-demi
