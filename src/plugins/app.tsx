@@ -50,7 +50,7 @@ export function setupAppVersionNotification() {
             >
               {$t('system.updateCancel')}
             </NButton>
-            <NButton type="primary" onClick={() => location.reload()}>
+            <NButton type="primary" onClick={reloadWithoutCache}>
               {$t('system.updateConfirm')}
             </NButton>
           </div>
@@ -80,6 +80,28 @@ export function setupAppVersionNotification() {
     // Start the update interval
     startUpdateInterval()
   }
+}
+
+/**
+ * The PWA service worker serves the precached (old) index.html and assets on navigation, so a plain
+ * `location.reload()` keeps the old version. Unregister the service worker and clear its caches first.
+ */
+async function reloadWithoutCache() {
+  try {
+    if ('serviceWorker' in navigator) {
+      const registrations = await navigator.serviceWorker.getRegistrations()
+      await Promise.all(registrations.map(registration => registration.unregister()))
+    }
+
+    if ('caches' in window) {
+      const keys = await caches.keys()
+      await Promise.all(keys.map(key => caches.delete(key)))
+    }
+  } catch (error) {
+    window.console.error('reloadWithoutCache error:', error)
+  }
+
+  location.reload()
 }
 
 async function getHtmlBuildTime(): Promise<string | null> {
