@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/loicduong/vue-naive-admin/compare/v1.0.1...v1.0.2) (2026-09-27)
+
+
+### Bug Fixes
+
+* clear service worker cache on refresh-immediately action ([#50](https://github.com/loicduong/vue-naive-admin/issues/50)) ([2fe698e](https://github.com/loicduong/vue-naive-admin/commit/2fe698e18c0ecefa962db17b143c1063d3696b0f))
+
 # Changelog
 
 
@@ -628,4 +635,3 @@
 
 [![loicduong](https://github.com/loicduong.png?size=48)](https://github.com/loicduong)&nbsp;&nbsp;
 [loicduong](mailto:mikhailcolt@gmail.com)&nbsp;
-
