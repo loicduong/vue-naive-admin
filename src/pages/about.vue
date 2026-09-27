@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useAppStore } from '@/store/modules/app'
+import nodeVersion from '~/.node-version?raw'
 import pkg from '~/package.json'
 
 definePage({
@@ -43,8 +44,8 @@ const pkgJson: PkgJson = {
   name,
   version,
   engines: {
-    pnpm: pkg.volta?.pnpm,
-    node: pkg.volta?.node,
+    pnpm: pkg.packageManager.split('@')[1],
+    node: nodeVersion.trim(),
   },
   dependencies: Object.entries(dependencies).map(item => transformVersionData(item)),
   devDependencies: Object.entries(devDependencies).map(item => transformVersionData(item)),

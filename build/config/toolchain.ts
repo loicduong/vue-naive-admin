@@ -7,7 +7,14 @@ export const fmt: UserConfig['fmt'] = {
   singleQuote: true,
   trailingComma: 'all',
   arrowParens: 'avoid',
-  ignorePatterns: ['CHANGELOG.md', 'pnpm-lock.yaml', 'src/types/auto-imports.d.ts', 'src/types/components.d.ts'],
+  ignorePatterns: [
+    '.claude',
+    'CHANGELOG.md',
+    'pnpm-lock.yaml',
+    'src/types/auto-imports.d.ts',
+    'src/types/components.d.ts',
+    'src/types/typed-router.d.ts',
+  ],
 }
 
 /** Oxlint rules, migrated from @antfu/eslint-config via `vp migrate` */
@@ -36,6 +43,7 @@ export const lint: UserConfig['lint'] = {
     '**/*.min.*',
     'src/types/auto-imports.d.ts',
     'src/types/components.d.ts',
+    'src/types/typed-router.d.ts',
   ],
   rules: {
     'accessor-pairs': ['error', { enforceForClassMembers: true, setWithoutGet: true }],
@@ -132,12 +140,22 @@ export const lint: UserConfig['lint'] = {
   },
   overrides: [
     {
-      files: ['**/*.?([cm])ts', '**/*.?([cm])tsx', '**/*.vue'],
+      files: ['**/*.{ts,mts,cts,tsx}', '**/*.vue'],
       rules: {
         // TypeScript already reports these
         'no-redeclare': 'off',
         'no-undef': 'off',
-        'no-unused-vars': 'off',
+        // same options as antfu's unused-imports/no-unused-vars
+        'no-unused-vars': [
+          'error',
+          {
+            args: 'after-used',
+            argsIgnorePattern: '^_',
+            ignoreRestSiblings: true,
+            vars: 'all',
+            varsIgnorePattern: '^_',
+          },
+        ],
         'no-useless-constructor': 'off',
 
         'typescript/ban-ts-comment': ['error', { 'ts-expect-error': 'allow-with-description' }],
@@ -167,7 +185,7 @@ export const lint: UserConfig['lint'] = {
       },
     },
     {
-      files: ['**/*.d.?([cm])ts'],
+      files: ['**/*.d.{ts,mts,cts}'],
       rules: {
         // global `declare namespace Api/Env/...` typings
         'typescript/no-namespace': 'off',
@@ -209,7 +227,7 @@ export const lint: UserConfig['lint'] = {
       },
     },
     {
-      files: ['**/*.config.?([cm])[jt]s', 'build/**', 'scripts/**'],
+      files: ['**/*.config.{js,mjs,cjs,ts,mts,cts}', 'build/**', 'scripts/**'],
       rules: {
         'no-console': 'off',
       },
