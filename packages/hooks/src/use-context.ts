@@ -54,7 +54,7 @@ import { inject, provide } from 'vue'
  *   // C.vue is same as B.vue
  *
  * @param contextName Context name
- * @param fn Context function
+ * @param composable Context function
  */
 export default function useContext<Arguments extends Array<any>, T>(
   contextName: string,

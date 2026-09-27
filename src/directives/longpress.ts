@@ -3,7 +3,7 @@ import { useEventListener } from '@vueuse/core'
 import { isFunction } from '@/utils/general'
 
 export const longpress: Directive = {
-  mounted(el: HTMLElement, binding: DirectiveBinding<Function>) {
+  mounted(el: HTMLElement, binding: DirectiveBinding<() => void>) {
     const cb = binding.value
     if (cb && isFunction(cb)) {
       let timer: NodeJS.Timeout | null = null
@@ -35,7 +35,7 @@ export const longpress: Directive = {
       const onDownInter = (ev: PointerEvent) => {
         ev.preventDefault()
         if (interTimer === null) {
-          interTimer = setInterval(() => cb(), interNum ?? 0)
+          interTimer = setInterval(cb, interNum ?? 0)
         }
       }
 
@@ -48,7 +48,7 @@ export const longpress: Directive = {
                 cb()
                 onDownInter(ev)
               }, num)
-            : setTimeout(() => cb(), num)
+            : setTimeout(cb, num)
         }
       }
 

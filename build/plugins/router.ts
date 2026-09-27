@@ -1,4 +1,3 @@
-import type { RouteMeta } from 'vue-router'
 import layouts from 'vite-plugin-vue-layouts-next'
 import vueRouter from 'vue-router/vite'
 
@@ -13,7 +12,7 @@ export function setupRouter() {
 
         const builtinRoutes: App.Global.RouteKey[] = ['/', '/[...all]']
 
-        const meta: Partial<RouteMeta> = {
+        const meta: Parameters<typeof route.addToMeta>[0] = {
           title: key,
         }
 

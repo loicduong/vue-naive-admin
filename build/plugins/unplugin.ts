@@ -41,6 +41,7 @@ export function setupUnplugin(viteEnv: Env.ImportMeta) {
     }),
     Components({
       dts: 'src/types/components.d.ts',
+      dtsTsx: false,
       types: [{ from: 'vue-router', names: ['RouterLink', 'RouterView'] }],
       resolvers: [
         NaiveUiResolver(),
