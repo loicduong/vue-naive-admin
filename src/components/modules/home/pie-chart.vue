@@ -49,15 +49,15 @@ const { domRef, updateOptions } = useEcharts(() => ({
         },
       },
       labelLine: { show: false },
-      data: [] as { name: string, value: number }[],
+      data: [] as { name: string; value: number }[],
     },
   ],
 }))
 
 async function mockData() {
-  await new Promise(resolve => (setTimeout(resolve, 1000)))
+  await new Promise(resolve => setTimeout(resolve, 1000))
 
-  updateOptions((opts) => {
+  updateOptions(opts => {
     opts.series[0].data = [
       { name: $t('page.home.study'), value: 20 },
       { name: $t('page.home.entertainment'), value: 10 },
@@ -86,14 +86,17 @@ function updateLocale() {
   })
 }
 
-const init = async () => (await mockData())
+const init = async () => await mockData()
 
-watch(() => appStore.locale, () => (updateLocale()))
+watch(
+  () => appStore.locale,
+  () => updateLocale(),
+)
 
 watch(
   () => themeStore.themeColor,
   () => {
-    updateOptions((opts) => {
+    updateOptions(opts => {
       opts.series[0].color = colors.value
 
       return opts

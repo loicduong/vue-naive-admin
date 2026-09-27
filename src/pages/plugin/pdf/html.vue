@@ -16,11 +16,7 @@ const a = useTemplateRef('root')
 const preview = useTemplateRef('preview')
 
 const { loading, endLoading } = useLoading(true)
-const {
-  loading: btnLoading,
-  endLoading: btnEndLoading,
-  startLoading: btnStartLoading,
-} = useLoading()
+const { loading: btnLoading, endLoading: btnEndLoading, startLoading: btnStartLoading } = useLoading()
 
 const currentPage = ref(1)
 const pageTotal = ref(1)
@@ -28,22 +24,16 @@ const pageTotal = ref(1)
 onMounted(async () => {
   class MyHandler extends Handler {
     afterPageLayout(pageElement: any) {
-      const splitTables = pageElement.querySelectorAll(
-        'table[data-split-from]',
-      )
+      const splitTables = pageElement.querySelectorAll('table[data-split-from]')
 
       splitTables.forEach((table: any) => {
         const originalTableId = table.getAttribute('data-split-from')
 
-        const originalTable = document.querySelector(
-          `table[data-split-to="${originalTableId}"]`,
-        )
-        if (!originalTable)
-          return
+        const originalTable = document.querySelector(`table[data-split-to="${originalTableId}"]`)
+        if (!originalTable) return
 
         if (!table.querySelector('colgroup')) {
-          const originalColgroup
-            = originalTable.querySelector('table colgroup')
+          const originalColgroup = originalTable.querySelector('table colgroup')
           if (originalColgroup) {
             const newColgroup = originalColgroup.cloneNode(true)
             table.insertBefore(newColgroup, table.firstChild)
@@ -56,8 +46,7 @@ onMounted(async () => {
             const newHeader = originalHeader.cloneNode(true)
             if (table.querySelector('colgroup')) {
               table.querySelector('colgroup').after(newHeader)
-            }
-            else {
+            } else {
               table.insertBefore(newHeader, table.firstChild)
             }
           }
@@ -95,19 +84,21 @@ async function handleDownload() {
 
   try {
     const images = await Promise.all(
-      sheets.map(sheet => toPng(sheet as HTMLElement, {
-        fontEmbedCSS: `
+      sheets.map(sheet =>
+        toPng(sheet as HTMLElement, {
+          fontEmbedCSS: `
           @font-face {
             font-family: 'Gilroy';
             src: url('/fonts/Gilroy.woff2') format('woff2');
           }
         `,
-        pixelRatio: 2.5,
-        style: { backgroundColor: '#fff' },
-      })),
+          pixelRatio: 2.5,
+          style: { backgroundColor: '#fff' },
+        }),
+      ),
     )
 
-    const pdfPromise = new Promise<Blob>((resolve) => {
+    const pdfPromise = new Promise<Blob>(resolve => {
       worker.onmessage = event => resolve(event.data)
     })
 
@@ -116,11 +107,9 @@ async function handleDownload() {
     const pdfBlob = await pdfPromise
 
     downloadPdf(pdfBlob)
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error)
-  }
-  finally {
+  } finally {
     worker.terminate()
     btnEndLoading()
   }
@@ -147,12 +136,7 @@ function handleScroll(e: Event) {
 
 <template>
   <div class="overflow-hidden">
-    <NCard
-      title="PDF HTML Preview"
-      :bordered="false"
-      class="h-full card-wrapper"
-      content-class="overflow-hidden"
-    >
+    <NCard title="PDF HTML Preview" :bordered="false" class="h-full card-wrapper" content-class="overflow-hidden">
       <div class="h-full flex-col-stretch">
         <GithubLink link="https://github.com/pagedjs/pagedjs" />
         <div class="flex-y-center justify-end gap-12px">
@@ -167,11 +151,7 @@ function handleScroll(e: Event) {
 
           <PdfHtmlRoot ref="root" class="hidden" />
 
-          <main
-            ref="preview"
-            class="bg-layout py-5"
-            :class="{ 'h-0 overflow-hidden': loading }"
-          />
+          <main ref="preview" class="bg-layout py-5" :class="{ 'h-0 overflow-hidden': loading }" />
         </NScrollbar>
       </div>
     </NCard>

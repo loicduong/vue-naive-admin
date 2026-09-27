@@ -14,16 +14,15 @@ const ZOOM_STEP = 0.25
 
 function setZoomFromPoint(scale: number, mouseX: number, mouseY: number) {
   const pages = document.querySelector('.pagedjs_pages')
-  if (!pages)
-    return
+  if (!pages) return
 
   const newZoom = Math.min(Math.max(scale, MIN_ZOOM), MAX_ZOOM)
   const prevZoom = currentZoom.value
 
   const mouseXReal = (mouseX + window.scrollX) / prevZoom
-  const mouseYReal = (mouseY + window.scrollY) / prevZoom;
+  const mouseYReal = (mouseY + window.scrollY) / prevZoom
 
-  (pages as HTMLElement).style.zoom = newZoom.toString()
+  ;(pages as HTMLElement).style.zoom = newZoom.toString()
   currentZoom.value = newZoom
 
   const newScrollX = mouseXReal * newZoom - mouseX
@@ -36,8 +35,8 @@ function setZoom(scale: number) {
   const pages = document.querySelector('.pagedjs_pages')
 
   if (pages) {
-    currentZoom.value = Math.min(Math.max(scale, MIN_ZOOM), MAX_ZOOM);
-    (pages as HTMLElement).style.zoom = currentZoom.value.toString()
+    currentZoom.value = Math.min(Math.max(scale, MIN_ZOOM), MAX_ZOOM)
+    ;(pages as HTMLElement).style.zoom = currentZoom.value.toString()
   }
 }
 
@@ -97,19 +96,13 @@ useEventListener('wheel', handleWheel, { passive: false })
     >
       <div>Page {{ model }} / {{ total }}</div>
       <div class="flex justify-center gap-[10px]">
-        <div
-          class="h-[32px] w-[32px] flex cursor-pointer items-center justify-center"
-          @click="handleZoomOut"
-        >
+        <div class="h-[32px] w-[32px] flex cursor-pointer items-center justify-center" @click="handleZoomOut">
           <icon-ic:baseline-minus class="h-[16px] w-[16px]" />
         </div>
 
         <NTooltip>
           <template #trigger>
-            <div
-              v-if="currentZoom >= 1"
-              class="h-[32px] w-[32px] flex cursor-pointer items-center justify-center"
-            >
+            <div v-if="currentZoom >= 1" class="h-[32px] w-[32px] flex cursor-pointer items-center justify-center">
               <icon-ic:baseline-zoom-in class="h-[16px] w-[16px] text-white" />
             </div>
 
@@ -120,10 +113,7 @@ useEventListener('wheel', handleWheel, { passive: false })
           {{ Math.round(currentZoom * 100) }}%
         </NTooltip>
 
-        <div
-          class="h-[32px] w-[32px] flex cursor-pointer items-center justify-center"
-          @click="handleZoomIn"
-        >
+        <div class="h-[32px] w-[32px] flex cursor-pointer items-center justify-center" @click="handleZoomIn">
           <icon-ic:baseline-plus class="h-[16px] w-[16px] text-white" />
         </div>
       </div>

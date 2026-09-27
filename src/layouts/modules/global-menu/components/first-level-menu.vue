@@ -86,12 +86,7 @@ function toggleSiderCollapse() {
         @click="handleClickMixMenu(menu.routeKey)"
       />
     </SimpleScrollbar>
-    <MenuToggler
-      arrow-icon
-      :collapsed="siderCollapse"
-      :z-index="99"
-      @click="toggleSiderCollapse"
-    />
+    <MenuToggler arrow-icon :collapsed="siderCollapse" :z-index="99" @click="toggleSiderCollapse" />
   </div>
 </template>
 

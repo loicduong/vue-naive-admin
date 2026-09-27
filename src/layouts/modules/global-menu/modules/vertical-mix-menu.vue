@@ -96,10 +96,7 @@ watch(
             <h2 class="text-16px text-primary font-bold">
               {{ $t('system.title') }}
             </h2>
-            <PinToggler
-              :pin="appStore.mixSiderFixed"
-              @click="appStore.toggleMixSiderFixed"
-            />
+            <PinToggler :pin="appStore.mixSiderFixed" @click="appStore.toggleMixSiderFixed" />
           </header>
           <SimpleScrollbar>
             <NMenu

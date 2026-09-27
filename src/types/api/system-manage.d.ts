@@ -54,8 +54,8 @@ declare namespace Api {
 
     /** user search params */
     type UserSearchParams = CommonType.RecordNullable<
-      Pick<Api.SystemManage.User, 'userName' | 'userGender' | 'nickName' | 'userPhone' | 'userEmail' | 'status'>
-      & CommonSearchParams
+      Pick<Api.SystemManage.User, 'userName' | 'userGender' | 'nickName' | 'userPhone' | 'userEmail' | 'status'> &
+        CommonSearchParams
     >
 
     /** user list */
@@ -90,16 +90,16 @@ declare namespace Api {
 
     type MenuPropsOfRoute = Pick<
       import('vue-router').RouteMeta,
-        | 'i18nKey'
-        | 'keepAlive'
-        | 'constant'
-        | 'order'
-        | 'href'
-        | 'hideInMenu'
-        | 'activeMenu'
-        | 'multiTab'
-        | 'fixedIndexInTab'
-        | 'query'
+      | 'i18nKey'
+      | 'keepAlive'
+      | 'constant'
+      | 'order'
+      | 'href'
+      | 'hideInMenu'
+      | 'activeMenu'
+      | 'multiTab'
+      | 'fixedIndexInTab'
+      | 'query'
     >
 
     type Menu = Common.CommonRecord<{
@@ -123,8 +123,8 @@ declare namespace Api {
       buttons?: MenuButton[] | null
       /** children menu */
       children?: Menu[] | null
-    }>
-    & MenuPropsOfRoute
+    }> &
+      MenuPropsOfRoute
 
     /** menu list */
     type MenuList = Common.PaginatingQueryRecord<Menu>

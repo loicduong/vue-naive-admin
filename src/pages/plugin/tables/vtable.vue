@@ -198,7 +198,7 @@ const pivotChartOptions = computed(() => {
 })
 const pivotChartRecords = ref({} as any)
 function handleLegendItemClick(args: { value: any }) {
-  (pivotChartRef?.value as any)?.vTableInstance.updateFilterRules([
+  ;(pivotChartRef?.value as any)?.vTableInstance.updateFilterRules([
     {
       filterKey: 'Segment-Indicator',
       filteredValues: args.value,
@@ -221,7 +221,7 @@ onMounted(() => {
   // pivot tablt records
   fetch('https://lf9-dp-fe-cms-tos.byteorg.com/obj/bit-cloud/VTable/North_American_Superstore_Pivot_data.json')
     .then(res => res.json())
-    .then((jsonData) => {
+    .then(jsonData => {
       // update record
       pivotTableRecords.value = jsonData
     })
@@ -229,7 +229,7 @@ onMounted(() => {
   // pivot chart records
   fetch('https://lf9-dp-fe-cms-tos.byteorg.com/obj/bit-cloud/VTable/North_American_Superstore_Pivot_Chart_data.json')
     .then(res => res.json())
-    .then((data) => {
+    .then(data => {
       // update record
       pivotChartRecords.value = data
     })
@@ -256,12 +256,7 @@ onMounted(() => {
       </NCard>
 
       <NCard title="Group Table" :bordered="false" class="h-full w-2/3 card-wrapper">
-        <ListTable
-          ref="groupTableRef"
-          :options="groupOptions"
-          :records="groupRecords"
-          height="400px"
-        >
+        <ListTable ref="groupTableRef" :options="groupOptions" :records="groupRecords" height="400px">
           <ListColumn field="Order ID" title="Order ID" width="auto" />
           <ListColumn field="Customer ID" title="Customer ID" width="auto" />
           <ListColumn field="Product Name" title="Product Name" width="auto" />
@@ -277,12 +272,7 @@ onMounted(() => {
       </NCard>
 
       <NCard title="Pivot Table" :bordered="false" class="h-full w-2/3 card-wrapper">
-        <PivotTable
-          ref="pivotTableRef"
-          :options="pivotTableOptions"
-          :records="pivotTableRecords"
-          height="400px"
-        >
+        <PivotTable ref="pivotTableRef" :options="pivotTableOptions" :records="pivotTableRecords" height="400px">
           <PivotColumnDimension
             title="Category"
             dimension-key="Category"
@@ -336,13 +326,7 @@ onMounted(() => {
           <!-- Anchor Nickname Column with Custom Layout -->
           <ListColumn field="bloggerName" title="Anchor Nickname" :width="330">
             <template #customLayout="{ record, height, width }">
-              <Group
-                :height="height"
-                :width="width"
-                display="flex"
-                flex-direction="row"
-                flex-wrap="nowrap"
-              >
+              <Group :height="height" :width="width" display="flex" flex-direction="row" flex-wrap="nowrap">
                 <!-- Avatar Group -->
                 <Group
                   :height="height"
@@ -354,22 +338,10 @@ onMounted(() => {
                   fill="red"
                   :opacity="0.1"
                 >
-                  <Image
-                    id="icon0"
-                    :width="50"
-                    :height="50"
-                    :image="record.bloggerAvatar"
-                    :corner-radius="25"
-                  />
+                  <Image id="icon0" :width="50" :height="50" :image="record.bloggerAvatar" :corner-radius="25" />
                 </Group>
                 <!-- Blogger Info Group -->
-                <Group
-                  :height="height"
-                  :width="width - 60"
-                  display="flex"
-                  flex-direction="column"
-                  flex-wrap="nowrap"
-                >
+                <Group :height="height" :width="width - 60" display="flex" flex-direction="column" flex-wrap="nowrap">
                   <Group
                     :height="height / 2"
                     :width="width - 60"
@@ -394,12 +366,7 @@ onMounted(() => {
                       :bounds-padding="[0, 0, 0, 10]"
                       cursor="pointer"
                     />
-                    <Text
-                      :text="record.city"
-                      :font-size="11"
-                      font-family="sans-serif"
-                      fill="#6f7070"
-                    />
+                    <Text :text="record.city" :font-size="11" font-family="sans-serif" fill="#6f7070" />
                   </Group>
                   <!-- Tags Group -->
                   <Group
@@ -433,12 +400,7 @@ onMounted(() => {
             :field-format="rec => `${rec.fansCount}w`"
             :style="customLayoutListTableColumnStyle"
           />
-          <ListColumn
-            field="worksCount"
-            title="Works Count"
-            :style="customLayoutListTableColumnStyle"
-            width="135"
-          />
+          <ListColumn field="worksCount" title="Works Count" :style="customLayoutListTableColumnStyle" width="135" />
           <ListColumn
             field="viewCount"
             title="View Count"

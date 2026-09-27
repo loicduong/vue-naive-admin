@@ -48,7 +48,7 @@ export function useCaptcha() {
     startLoading()
 
     // request
-    await new Promise((resolve) => {
+    await new Promise(resolve => {
       setTimeout(resolve, 500)
     })
 

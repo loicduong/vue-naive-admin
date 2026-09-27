@@ -23,7 +23,7 @@ const searchParams: Api.SystemManage.UserSearchParams = reactive({
 
 const { columns, data, loading } = useNaiveTable({
   api: () => fetchGetUserList(searchParams),
-  transform: (response) => {
+  transform: response => {
     const { data: list, error } = response
 
     if (!error) {
@@ -56,7 +56,7 @@ const { columns, data, loading } = useNaiveTable({
       title: $t('page.manage.user.userGender'),
       align: 'center',
       width: 100,
-      render: (row) => {
+      render: row => {
         if (row.userGender === null) {
           return null
         }
@@ -94,7 +94,7 @@ const { columns, data, loading } = useNaiveTable({
       title: $t('page.manage.user.userStatus'),
       align: 'center',
       width: 100,
-      render: (row) => {
+      render: row => {
         if (row.status === null) {
           return null
         }

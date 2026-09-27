@@ -15,14 +15,13 @@ export function createDefaultOptions<
     transformBackendResponse: async response => response.data as unknown as ApiData,
     onRequest: async config => config,
     isBackendSuccess: _response => true,
-    onBackendFail: async () => { },
-    onError: async () => { },
+    onBackendFail: async () => {},
+    onError: async () => {},
   }
 
   if (options?.transform) {
     opts.transform = options.transform
-  }
-  else {
+  } else {
     opts.transform = options?.transformBackendResponse || opts.transform
   }
 
@@ -50,7 +49,7 @@ export function createAxiosConfig(config?: Partial<CreateAxiosDefaults>) {
       'Content-Type': 'application/json',
     },
     validateStatus: isHttpSuccess,
-    paramsSerializer: (params) => {
+    paramsSerializer: params => {
       return stringify(params)
     },
   }

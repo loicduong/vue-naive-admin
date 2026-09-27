@@ -47,19 +47,12 @@ async function handleDownload() {
 
 <template>
   <div class="overflow-hidden">
-    <NCard
-      title="PDF Link Preview"
-      :bordered="false"
-      class="h-full card-wrapper"
-      content-class="overflow-hidden"
-    >
+    <NCard title="PDF Link Preview" :bordered="false" class="h-full card-wrapper" content-class="overflow-hidden">
       <div class="h-full flex-col-stretch">
         <GithubLink link="https://github.com/hrynko/vue-pdf-embed" />
         <WebSiteLink label="Document address: " link="https://www.npmjs.com/package/vue-pdf-embed" />
         <div class="flex-y-center justify-end gap-12px">
-          <NCheckbox v-model:checked="showAllPages" @update:checked="showAllPagesChange">
-            Show all pages
-          </NCheckbox>
+          <NCheckbox v-model:checked="showAllPages" @update:checked="showAllPagesChange"> Show all pages </NCheckbox>
           <ButtonIcon tooltip-content="Rotate 90 degrees" @click="handleRotate">
             <icon-material-symbols-light:rotate-90-degrees-ccw-outline-rounded />
           </ButtonIcon>
@@ -83,9 +76,7 @@ async function handleDownload() {
           />
         </NScrollbar>
         <div class="flex-y-center justify-between">
-          <div v-if="showAllPages" class="text-18px font-medium">
-            Total {{ pageCount }} pages
-          </div>
+          <div v-if="showAllPages" class="text-18px font-medium">Total {{ pageCount }} pages</div>
           <NPagination v-else v-model:page="currentPage" :page-count="pageCount" :page-size="1" />
         </div>
       </div>

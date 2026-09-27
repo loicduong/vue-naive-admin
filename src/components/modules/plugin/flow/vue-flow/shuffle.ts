@@ -2,8 +2,8 @@ import type { Node } from '@vue-flow/core'
 
 function shuffleArray(array: unknown[]) {
   for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]]
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[array[i], array[j]] = [array[j], array[i]]
   }
 }
 
@@ -37,10 +37,7 @@ export function useShuffle() {
     const newEdges = []
 
     for (const edge of possibleEdges) {
-      if (
-        !usedNodes.has(edge.target)
-        && (usedNodes.size === 0 || usedNodes.has(edge.source))
-      ) {
+      if (!usedNodes.has(edge.target) && (usedNodes.size === 0 || usedNodes.has(edge.source))) {
         newEdges.push(edge)
         usedNodes.add(edge.source)
         usedNodes.add(edge.target)

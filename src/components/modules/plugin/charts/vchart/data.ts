@@ -276,7 +276,7 @@ const colors = {
   Bangladesh: '#FFC400',
 }
 
-const dataSpecs = Object.keys(goldenMedals).map((year) => {
+const dataSpecs = Object.keys(goldenMedals).map(year => {
   return {
     data: [
       {

@@ -26,10 +26,13 @@ export type HookRequestInstanceResponseData<ResponseData, ApiData> = {
   loading: Ref<boolean>
 } & (HookRequestInstanceResponseSuccessData<ApiData> | HookRequestInstanceResponseFailData<ResponseData>)
 
-export interface HookRequestInstance<ResponseData, ApiData, State extends Record<string, unknown>>
-  extends RequestInstanceCommon<State> {
+export interface HookRequestInstance<
+  ResponseData,
+  ApiData,
+  State extends Record<string, unknown>,
+> extends RequestInstanceCommon<State> {
   <T extends ApiData = ApiData, R extends ResponseType = 'json'>(
-    config: CustomAxiosRequestConfig
+    config: CustomAxiosRequestConfig,
   ): HookRequestInstanceResponseData<ResponseData, MappedType<R, T>>
 }
 
@@ -56,11 +59,10 @@ export default function createHookRequest<ResponseData, ApiData, State extends R
 
     startLoading()
 
-    request(config).then((res) => {
+    request(config).then(res => {
       if (res.data) {
         data.value = res.data as MappedType<R, T>
-      }
-      else {
+      } else {
         error.value = res.error
       }
 

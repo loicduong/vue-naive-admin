@@ -13,20 +13,15 @@ const marginLeft = ref(20)
 
 const data = ref(d3.ticks(-2, 2, 200).map(Math.sin))
 
-const x = computed(() => d3.scaleLinear(
-  [0, data.value.length - 1],
-  [marginLeft.value, width.value - marginRight.value],
-))
+const x = computed(() =>
+  d3.scaleLinear([0, data.value.length - 1], [marginLeft.value, width.value - marginRight.value]),
+)
 
-const y = computed(() => d3.scaleLinear(
-  d3.extent(data.value) as [number, number],
-  [height.value - marginBottom.value, marginTop.value],
-))
+const y = computed(() =>
+  d3.scaleLinear(d3.extent(data.value) as [number, number], [height.value - marginBottom.value, marginTop.value]),
+)
 
-const line = computed(() => d3.line(
-  (d: number, i: number) => x.value(i),
-  y.value,
-))
+const line = computed(() => d3.line((d: number, i: number) => x.value(i), y.value))
 
 function handleMousemove(event: MouseEvent) {
   const [xPos, yPos] = d3.pointer(event)

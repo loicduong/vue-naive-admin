@@ -100,8 +100,7 @@ function getHue(hsv: HsvColor, i: number, isLight: boolean) {
 
   if (hsvH >= 60 && hsvH <= 240) {
     hue = isLight ? hsvH - hueStep * i : hsvH + hueStep * i
-  }
-  else {
+  } else {
     hue = isLight ? hsvH + hueStep * i : hsvH - hueStep * i
   }
 
@@ -132,11 +131,9 @@ function getSaturation(hsv: HsvColor, i: number, isLight: boolean) {
 
   if (isLight) {
     saturation = hsv.s - saturationStep * i
-  }
-  else if (i === darkColorCount) {
+  } else if (i === darkColorCount) {
     saturation = hsv.s + saturationStep
-  }
-  else {
+  } else {
     saturation = hsv.s + saturationStep2 * i
   }
 
@@ -167,8 +164,7 @@ function getValue(hsv: HsvColor, i: number, isLight: boolean) {
 
   if (isLight) {
     value = hsv.v + brightnessStep1 * i
-  }
-  else {
+  } else {
     value = hsv.v - brightnessStep2 * i
   }
 

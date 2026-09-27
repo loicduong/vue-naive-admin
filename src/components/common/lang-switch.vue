@@ -25,8 +25,7 @@ type Emits = {
 }
 
 const tooltipContent = computed(() => {
-  if (!props.showTooltip)
-    return ''
+  if (!props.showTooltip) return ''
 
   return $t('icon.lang')
 })

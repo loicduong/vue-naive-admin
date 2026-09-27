@@ -4,7 +4,10 @@ import { useVueFlow } from '@vue-flow/core'
 export function useRunProcess({
   graph: dagreGraph,
   cancelOnError = ref(true),
-}: { graph: Ref<dagre.graphlib.Graph>, cancelOnError: Ref<boolean> }) {
+}: {
+  graph: Ref<dagre.graphlib.Graph>
+  cancelOnError: Ref<boolean>
+}) {
   const { updateNodeData, getConnectedEdges } = useVueFlow()
 
   const graph = toRef(() => toValue(dagreGraph))
@@ -24,13 +27,9 @@ export function useRunProcess({
 
     upcomingTasks.add(node.id)
 
-    const incomers = getConnectedEdges(node.id).filter(
-      connection => connection.target === node.id,
-    )
+    const incomers = getConnectedEdges(node.id).filter(connection => connection.target === node.id)
 
-    await Promise.all(
-      incomers.map(incomer => until(() => !incomer.data.isAnimating)),
-    )
+    await Promise.all(incomers.map(incomer => until(() => !incomer.data.isAnimating)))
 
     upcomingTasks.clear()
 
@@ -49,7 +48,7 @@ export function useRunProcess({
 
     const delay = Math.floor(Math.random() * 2000) + 1000
 
-    return new Promise<void>((resolve) => {
+    return new Promise<void>(resolve => {
       const timeout = setTimeout(
         async () => {
           const children = graph.value.successors(node.id)
@@ -94,9 +93,7 @@ export function useRunProcess({
 
     isRunning.value = true
 
-    const startingNodes = nodes.filter(
-      node => graph.value.predecessors(node.id)?.length === 0,
-    )
+    const startingNodes = nodes.filter(node => graph.value.predecessors(node.id)?.length === 0)
 
     await Promise.all(startingNodes.map(node => runNode(node, true)))
 
@@ -169,7 +166,7 @@ export function useRunProcess({
 }
 
 async function until(condition: () => boolean) {
-  return new Promise<void>((resolve) => {
+  return new Promise<void>(resolve => {
     const interval = setInterval(() => {
       if (condition()) {
         clearInterval(interval)

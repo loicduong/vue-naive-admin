@@ -54,33 +54,16 @@ const data = reactive<JsonData>({
     >
       <GithubLink link="https://github.com/cloydlau/json-editor-vue" class="mb-4" />
       <div class="mb-4 flex gap-2">
-        <NButton @click="data.value = Math.random()">
-          Set value to string
-        </NButton>
-        <NButton @click="data.value = { abc: Math.random() }">
-          Set value to JSON
-        </NButton>
-        <NButton
-          @click="data.value && typeof data.value === 'object' && (data.value.number = Math.random())"
-        >
+        <NButton @click="data.value = Math.random()"> Set value to string </NButton>
+        <NButton @click="data.value = { abc: Math.random() }"> Set value to JSON </NButton>
+        <NButton @click="data.value && typeof data.value === 'object' && (data.value.number = Math.random())">
           Change property
         </NButton>
-        <NButton @click="data.value = undefined">
-          Clear
-        </NButton>
-        <NButton @click="data.mode = (data.mode === 'text' ? 'tree' : 'text') as Mode">
-          Toggle Mode
-        </NButton>
-        <NButton @click="data.readOnly = !data.readOnly">
-          Toggle read-only
-        </NButton>
+        <NButton @click="data.value = undefined"> Clear </NButton>
+        <NButton @click="data.mode = (data.mode === 'text' ? 'tree' : 'text') as Mode"> Toggle Mode </NButton>
+        <NButton @click="data.readOnly = !data.readOnly"> Toggle read-only </NButton>
       </div>
-      <JsonEditorVue
-        v-model="data.value"
-        :mode="data.mode"
-        :read-only="data.readOnly"
-        class="mb-4"
-      />
+      <JsonEditorVue v-model="data.value" :mode="data.mode" :read-only="data.readOnly" class="mb-4" />
       <NDescriptions label-placement="left" :column="1">
         <NDescriptionsItem label="Mode">
           {{ data.mode }}

@@ -30,7 +30,7 @@ function createCommonRequest<
   const retryOptions = createRetryOptions(axiosConf)
   axiosRetry(instance, retryOptions)
 
-  instance.interceptors.request.use((conf) => {
+  instance.interceptors.request.use(conf => {
     const config: InternalAxiosRequestConfig = { ...conf }
 
     // set request id
@@ -51,7 +51,7 @@ function createCommonRequest<
   })
 
   instance.interceptors.response.use(
-    async (response) => {
+    async response => {
       const responseType: ResponseType = (response.config?.responseType as ResponseType) || 'json'
 
       await transformResponse(response)
@@ -85,7 +85,7 @@ function createCommonRequest<
   )
 
   function cancelAllRequest() {
-    abortControllerMap.forEach((abortController) => {
+    abortControllerMap.forEach(abortController => {
       abortController.abort()
     })
     abortControllerMap.clear()
@@ -161,8 +161,7 @@ export function createFlatRequest<ResponseData, ApiData, State extends Record<st
       }
 
       return { data: response.data as MappedType<R, T>, error: null, response }
-    }
-    catch (error) {
+    } catch (error) {
       return { data: null, error, response: (error as AxiosError<ResponseData>).response }
     }
   } as FlatRequestInstance<ResponseData, ApiData, State>

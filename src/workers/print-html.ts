@@ -1,6 +1,6 @@
 import PDF from 'jspdf'
 
-globalThis.onmessage = async (e) => {
+globalThis.onmessage = async e => {
   const pdf = new PDF({ orientation: 'portrait', unit: 'mm', format: 'a4' })
 
   for (let i = 0; i < e.data.length; i++) {

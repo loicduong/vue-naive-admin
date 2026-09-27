@@ -82,9 +82,7 @@ function onGuide() {
       class="h-full card-wrapper"
     >
       <GithubLink link="https://github.com/usablica/intro.js" class="mb-4" />
-      <NButton @click="onGuide">
-        Open Guide
-      </NButton>
+      <NButton @click="onGuide"> Open Guide </NButton>
     </NCard>
   </div>
 </template>

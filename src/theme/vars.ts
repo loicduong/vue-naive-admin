@@ -5,9 +5,9 @@ function createColorPaletteVars() {
 
   const colorPaletteVar = {} as App.Theme.ThemePaletteColor
 
-  colors.forEach((color) => {
+  colors.forEach(color => {
     colorPaletteVar[color] = `rgb(var(--${color}-color))`
-    colorPaletteNumbers.forEach((number) => {
+    colorPaletteNumbers.forEach(number => {
       colorPaletteVar[`${color}-${number}`] = `rgb(var(--${color}-${number}-color))`
     })
   })
@@ -21,8 +21,8 @@ const colorPaletteVars = createColorPaletteVars()
 export const themeVars: App.Theme.ThemeTokenCSSVars = {
   colors: {
     ...colorPaletteVars,
-    'container': 'rgb(var(--container-bg-color))',
-    'layout': 'rgb(var(--layout-bg-color))',
+    container: 'rgb(var(--container-bg-color))',
+    layout: 'rgb(var(--layout-bg-color))',
     'base-text': 'rgb(var(--base-text-color))',
   },
   boxShadow: {

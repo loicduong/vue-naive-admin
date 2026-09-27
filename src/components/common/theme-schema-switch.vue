@@ -37,8 +37,7 @@ const icons: Record<UnionKey.ThemeScheme, string> = {
 const icon = computed(() => icons[props.themeSchema])
 
 const tooltipContent = computed(() => {
-  if (!props.showTooltip)
-    return ''
+  if (!props.showTooltip) return ''
 
   return $t('icon.themeSchema')
 })

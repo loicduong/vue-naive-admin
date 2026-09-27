@@ -129,7 +129,7 @@ export function useNaivePaginatedTable<ResponseData, ApiData>(
     pagination: true,
     getColumnChecks: cols => getColumnChecks(cols, options.getColumnVisible),
     getColumns,
-    onFetched: (data) => {
+    onFetched: data => {
       pagination.itemCount = data.total
       pagination.pageSize = data.pageSize
     },
@@ -155,7 +155,7 @@ export function useNaivePaginatedTable<ResponseData, ApiData>(
       },
     )
 
-    watch(paginationParams, async (newVal) => {
+    watch(paginationParams, async newVal => {
       await options.onPaginationParamsChange?.(newVal)
 
       await result.getData()
@@ -263,7 +263,7 @@ function getColumnChecks<Column extends NaiveUI.TableColumn<any>>(
 ) {
   const checks: TableColumnCheck[] = []
 
-  cols.forEach((column) => {
+  cols.forEach(column => {
     if (isTableColumnHasKey(column)) {
       checks.push({
         key: column.key as string,
@@ -272,8 +272,7 @@ function getColumnChecks<Column extends NaiveUI.TableColumn<any>>(
         fixed: column.fixed ?? 'unFixed',
         visible: getColumnVisible?.(column) ?? true,
       })
-    }
-    else if (column.type === 'selection') {
+    } else if (column.type === 'selection') {
       checks.push({
         key: SELECTION_KEY,
         title: $t('common.check'),
@@ -281,8 +280,7 @@ function getColumnChecks<Column extends NaiveUI.TableColumn<any>>(
         fixed: column.fixed ?? 'unFixed',
         visible: getColumnVisible?.(column) ?? false,
       })
-    }
-    else if (column.type === 'expand') {
+    } else if (column.type === 'expand') {
       checks.push({
         key: EXPAND_KEY,
         title: $t('common.expandColumn'),
@@ -299,21 +297,19 @@ function getColumnChecks<Column extends NaiveUI.TableColumn<any>>(
 function getColumns<Column extends NaiveUI.TableColumn<any>>(cols: Column[], checks: TableColumnCheck[]) {
   const columnMap = new Map<string, Column>()
 
-  cols.forEach((column) => {
+  cols.forEach(column => {
     if (isTableColumnHasKey(column)) {
       columnMap.set(column.key as string, column)
-    }
-    else if (column.type === 'selection') {
+    } else if (column.type === 'selection') {
       columnMap.set(SELECTION_KEY, column)
-    }
-    else if (column.type === 'expand') {
+    } else if (column.type === 'expand') {
       columnMap.set(EXPAND_KEY, column)
     }
   })
 
   const filteredColumns = checks
     .filter(item => item.checked)
-    .map((check) => {
+    .map(check => {
       return {
         ...columnMap.get(check.key),
         fixed: check.fixed,

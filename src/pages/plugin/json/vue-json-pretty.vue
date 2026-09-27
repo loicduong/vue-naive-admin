@@ -18,15 +18,13 @@ const defaultData = {
     },
     {
       news_id: 51183,
-      title:
-        'Traffic paradise: How to design streets for people and unmanned vehicles in the future?',
+      title: 'Traffic paradise: How to design streets for people and unmanned vehicles in the future?',
       source: 'Netease smart',
       link: 'http://netease.smart/traffic-paradise/1235',
     },
     {
       news_id: 51182,
-      title:
-        'Teslamask\'s American Business Relations: The government does not pay billions to build factories',
+      title: "Teslamask's American Business Relations: The government does not pay billions to build factories",
       source: 'AI Finance',
       members: ['Daniel', 'Mike', 'John'],
     },
@@ -48,21 +46,19 @@ const state = reactive({
 
 watch(
   () => state.val,
-  (newVal) => {
+  newVal => {
     try {
       state.data = JSON.parse(newVal)
-    }
-    catch {}
+    } catch {}
   },
 )
 
 watch(
   () => state.data,
-  (newVal) => {
+  newVal => {
     try {
       state.val = JSON.stringify(newVal)
-    }
-    catch {}
+    } catch {}
   },
 )
 </script>

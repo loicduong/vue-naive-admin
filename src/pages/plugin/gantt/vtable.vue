@@ -1,11 +1,7 @@
 <script setup lang="tsx">
 import * as VTable_editors from '@visactor/vtable-editors'
 import * as VTableGantt from '@visactor/vtable-gantt'
-import {
-  basicGanttRecords,
-  customGanttRecords,
-  linkGanttRecords,
-} from '@/components/modules/plugin/gantt/vtable/data'
+import { basicGanttRecords, customGanttRecords, linkGanttRecords } from '@/components/modules/plugin/gantt/vtable/data'
 import { useThemeStore } from '@/store/modules/theme'
 
 definePage({
@@ -412,28 +408,8 @@ const linkGanttOption: VTableGantt.GanttConstructorOptions = {
   overscrollBehavior: 'none',
 }
 
-const barColors0 = [
-  '#aecde6',
-  '#c6a49a',
-  '#ffb582',
-  '#eec1de',
-  '#b3d9b3',
-  '#cccccc',
-  '#e59a9c',
-  '#d9d1a5',
-  '#c9bede',
-]
-const barColors = [
-  '#1f77b4',
-  '#8c564b',
-  '#ff7f0e',
-  '#e377c2',
-  '#2ca02c',
-  '#7f7f7f',
-  '#d62728',
-  '#bcbd22',
-  '#9467bd',
-]
+const barColors0 = ['#aecde6', '#c6a49a', '#ffb582', '#eec1de', '#b3d9b3', '#cccccc', '#e59a9c', '#d9d1a5', '#c9bede']
+const barColors = ['#1f77b4', '#8c564b', '#ff7f0e', '#e377c2', '#2ca02c', '#7f7f7f', '#d62728', '#bcbd22', '#9467bd']
 const customGanttColumns: VTableGantt.ColumnsDefine = [
   {
     field: 'title',
@@ -764,14 +740,8 @@ const customGanttOption: VTableGantt.GanttConstructorOptions = {
 }
 
 function initVTableGantt() {
-  basicGanttInstance.value = new VTableGantt.Gantt(
-    basicGanttDomRef.value as HTMLElement,
-    getOption(basicGanttOption),
-  )
-  linkGanttInstance.value = new VTableGantt.Gantt(
-    linkGanttDomRef.value as HTMLElement,
-    getOption(linkGanttOption),
-  )
+  basicGanttInstance.value = new VTableGantt.Gantt(basicGanttDomRef.value as HTMLElement, getOption(basicGanttOption))
+  linkGanttInstance.value = new VTableGantt.Gantt(linkGanttDomRef.value as HTMLElement, getOption(linkGanttOption))
   customGanttInstance.value = new VTableGantt.Gantt(
     customGanttDomRef.value as HTMLElement,
     getOption(customGanttOption),
@@ -784,8 +754,7 @@ function getOption(option: VTableGantt.GanttConstructorOptions) {
     option.taskListTable!.theme = VTableGantt.VTable.themes.DARK
     option.timelineHeader.backgroundColor = '#212121'
     option.underlayBackgroundColor = '#000'
-  }
-  else {
+  } else {
     option.taskListTable!.theme = VTableGantt.VTable.themes.DEFAULT
     option.timelineHeader.backgroundColor = '#f0f0fb'
     option.underlayBackgroundColor = '#fff'
@@ -796,7 +765,7 @@ function getOption(option: VTableGantt.GanttConstructorOptions) {
 
 const stopHandle = watch(
   () => theme.darkMode,
-  (_newValue) => {
+  _newValue => {
     basicGanttInstance.value?.release()
     linkGanttInstance.value?.release()
     customGanttInstance.value?.release()

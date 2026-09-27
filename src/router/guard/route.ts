@@ -30,8 +30,7 @@ export function createRouteGuard(router: Router) {
     const loginRoute: App.Global.RouteKey = '/login'
     const noAuthorizationRoute: App.Global.RouteKey = '/403'
 
-    const isLogin
-      = import.meta.env.VITE_AUTH_ROUTE_VISIBLE === 'N' || Boolean(localStg.get('token'))
+    const isLogin = import.meta.env.VITE_AUTH_ROUTE_VISIBLE === 'N' || Boolean(localStg.get('token'))
     const needLogin = !to.meta.constant
     const routeRoles = to.meta.roles || []
 
@@ -53,8 +52,7 @@ export function createRouteGuard(router: Router) {
     if (!isLogin) {
       if (import.meta.env.VITE_ROUTE_REDIRECT_AFTER_LOGIN === 'Y') {
         next({ name: loginRoute, query: { redirect: to.fullPath } })
-      }
-      else {
+      } else {
         next({ name: loginRoute })
       }
       return
@@ -163,11 +161,7 @@ async function initRoute(to: RouteLocationNormalized): Promise<RouteLocationRaw 
   return null
 }
 
-function handleRouteSwitch(
-  to: RouteLocationNormalized,
-  from: RouteLocationNormalized,
-  next: NavigationGuardNext,
-) {
+function handleRouteSwitch(to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) {
   // route with href
   if (to.meta.href) {
     window.open(to.meta.href, '_blank')

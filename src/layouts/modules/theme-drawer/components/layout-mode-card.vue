@@ -33,7 +33,7 @@ type LayoutConfig = Record<
 >
 
 const layoutConfig: LayoutConfig = {
-  'vertical': {
+  vertical: {
     placement: 'bottom',
     menuClass: 'w-1/3 h-full',
     mainClass: 'w-2/3 h-3/4',
@@ -46,8 +46,7 @@ const layoutConfig: LayoutConfig = {
 }
 
 function handleChangeMode(mode: UnionKey.ThemeLayoutMode) {
-  if (props.disabled)
-    return
+  if (props.disabled) return
 
   emit('update:mode', mode)
 }

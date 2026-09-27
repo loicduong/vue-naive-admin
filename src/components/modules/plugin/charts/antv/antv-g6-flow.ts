@@ -139,7 +139,7 @@ export function useAntFlow(config: AntFlowConfig) {
           let result = '<div style="display: flex; flex-direction: column; gap: 8px;">'
 
           // Pop-up prompts can be customized with various content, but it's strange here that some classes do not follow the unocss styles
-          items?.forEach((item) => {
+          items?.forEach(item => {
             result += `<h3 style="display: flex; align-items: center; gap: 8px;">${item.name}</h3>`
             result += `<div style="display: flex;"><b>Status: </b><div style="display: flex; gap: 4px;"><img src="${getNodeIcon(item)}" /><span style="font-weight: 400 !important;">${nodeStatus[item.status as keyof typeof nodeStatus].type}</span></div></div>`
 

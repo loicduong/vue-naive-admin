@@ -50,8 +50,7 @@ export function useVChart<T extends ISpec>(specFactory: () => T, hooks: ChartHoo
    * @param callback callback function
    */
   async function updateSpec(callback: (opts: T, optsFactory: () => T) => ISpec = () => spec) {
-    if (!isRendered())
-      return
+    if (!isRendered()) return
 
     const updatedOpts = callback(spec, specFactory)
 
@@ -76,8 +75,7 @@ export function useVChart<T extends ISpec>(specFactory: () => T, hooks: ChartHoo
       // apply the theme
       if (darkMode.value) {
         VChart.ThemeManager.setCurrentTheme('dark')
-      }
-      else {
+      } else {
         VChart.ThemeManager.setCurrentTheme('light')
       }
 
@@ -95,8 +93,7 @@ export function useVChart<T extends ISpec>(specFactory: () => T, hooks: ChartHoo
 
   /** destroy chart */
   async function destroy() {
-    if (!chart)
-      return
+    if (!chart) return
 
     await onDestroy?.(chart)
     chart?.release()

@@ -29,7 +29,7 @@ const headerProps = computed(() => {
   const { mode } = themeStore.layout
 
   const headerPropsConfig: Record<UnionKey.ThemeLayoutMode, App.Global.HeaderProps> = {
-    'vertical': {
+    vertical: {
       showLogo: false,
       showMenu: false,
       showMenuToggler: true,

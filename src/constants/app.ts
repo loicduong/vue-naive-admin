@@ -15,12 +15,12 @@ export const themeSchemaOptions = transformRecordToOption(themeSchemaRecord)
 export const loginModuleRecord: Record<UnionKey.LoginModule, App.I18n.I18nKey> = {
   'pwd-login': 'page.login.pwdLogin.title',
   'code-login': 'page.login.codeLogin.title',
-  'register': 'page.login.register.title',
+  register: 'page.login.register.title',
   'reset-pwd': 'page.login.resetPwd.title',
 }
 
 export const themeLayoutModeRecord: Record<UnionKey.ThemeLayoutMode, App.I18n.I18nKey> = {
-  'vertical': 'theme.layout.layoutMode.vertical',
+  vertical: 'theme.layout.layoutMode.vertical',
   'vertical-mix': 'theme.layout.layoutMode.vertical-mix',
 }
 
@@ -35,12 +35,12 @@ export const themeScrollModeOptions = transformRecordToOption(themeScrollModeRec
 
 export const themePageAnimationModeRecord: Record<UnionKey.ThemePageAnimateMode, App.I18n.I18nKey> = {
   'fade-slide': 'theme.layout.content.page.mode.fade-slide',
-  'fade': 'theme.layout.content.page.mode.fade',
+  fade: 'theme.layout.content.page.mode.fade',
   'fade-bottom': 'theme.layout.content.page.mode.fade-bottom',
   'fade-scale': 'theme.layout.content.page.mode.fade-scale',
   'zoom-fade': 'theme.layout.content.page.mode.zoom-fade',
   'zoom-out': 'theme.layout.content.page.mode.zoom-out',
-  'none': 'theme.layout.content.page.mode.none',
+  none: 'theme.layout.content.page.mode.none',
 }
 
 export const themePageAnimationModeOptions = transformRecordToOption(themePageAnimationModeRecord)

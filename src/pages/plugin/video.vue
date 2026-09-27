@@ -12,8 +12,7 @@ const domRef = ref<HTMLElement>()
 const player = ref<Player>()
 
 function renderXgPlayer() {
-  if (!domRef.value)
-    return
+  if (!domRef.value) return
   const url = 'https://file-examples.com/storage/fec85039006734629a992d7/2017/04/file_example_MP4_480_1_5MG.mp4'
   player.value = new Player({
     el: domRef.value,

@@ -23,9 +23,7 @@ const localIcons = ['custom-icon', 'activity', 'at-sign', 'cast', 'chrome', 'cop
         </template>
       </div>
       <div class="mt-50px">
-        <h1 class="mb-20px text-18px font-500">
-          Icon icon selector
-        </h1>
+        <h1 class="mb-20px text-18px font-500">Icon icon selector</h1>
         <CustomIconSelect v-model:value="selectValue" :icons="icons" />
       </div>
       <template #footer>

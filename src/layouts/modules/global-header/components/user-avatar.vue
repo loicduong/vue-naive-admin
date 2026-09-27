@@ -18,16 +18,16 @@ function loginOrRegister() {
 
 type DropdownKey = '/user-center' | 'logout'
 
-type DropdownOption
-  = | {
-    key: DropdownKey
-    label: string
-    icon?: () => VNode
-  }
+type DropdownOption =
   | {
-    type: 'divider'
-    key: string
-  }
+      key: DropdownKey
+      label: string
+      icon?: () => VNode
+    }
+  | {
+      type: 'divider'
+      key: string
+    }
 
 const options = computed(() => {
   const opts: DropdownOption[] = [
@@ -65,8 +65,7 @@ function logout() {
 function handleDropdown(key: DropdownKey) {
   if (key === 'logout') {
     logout()
-  }
-  else {
+  } else {
     // If your other options are jumps from other routes, they will be directly supported here
     routerPushByKey(key as App.Global.RouteKey)
   }

@@ -12,8 +12,7 @@ definePage({
 
 type SwiperExampleOptions = Pick<
   SwiperOptions,
-  'navigation' | 'pagination' | 'scrollbar' | 'slidesPerView' | 'slidesPerGroup' | 'spaceBetween'
-  | 'direction' | 'loop'
+  'navigation' | 'pagination' | 'scrollbar' | 'slidesPerView' | 'slidesPerGroup' | 'spaceBetween' | 'direction' | 'loop'
 >
 
 interface SwiperExample {
@@ -107,9 +106,7 @@ const swiperExample: SwiperExample[] = [
           </h3>
           <Swiper v-bind="item.options">
             <SwiperSlide v-for="i in 5" :key="i">
-              <div class="h-240px w-full flex-center border-1px border-#999 text-18px font-bold">
-                Slide{{ i }}
-              </div>
+              <div class="h-240px w-full flex-center border-1px border-#999 text-18px font-bold">Slide{{ i }}</div>
             </SwiperSlide>
           </Swiper>
         </div>

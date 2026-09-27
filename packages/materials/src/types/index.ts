@@ -123,10 +123,7 @@ export type LayoutScrollMode = 'wrapper' | 'content'
 
 /** Admin layout props */
 export interface AdminLayoutProps
-  extends AdminLayoutHeaderConfig,
-  AdminLayoutSiderConfig,
-  AdminLayoutContentConfig,
-  AdminLayoutFooterConfig {
+  extends AdminLayoutHeaderConfig, AdminLayoutSiderConfig, AdminLayoutContentConfig, AdminLayoutFooterConfig {
   /**
    * Layout mode
    *
@@ -203,5 +200,5 @@ export type LayoutCssVarsProps = Pick<
 }
 
 export type LayoutCssVars = {
-  [K in keyof LayoutCssVarsProps as `${Prefix}${KebabCase<K>}`]: string | number;
+  [K in keyof LayoutCssVarsProps as `${Prefix}${KebabCase<K>}`]: string | number
 }

@@ -73,7 +73,7 @@ declare namespace App {
       tokens: {
         light: ThemeSettingToken
         dark?: {
-          [K in keyof ThemeSettingToken]?: Partial<ThemeSettingToken[K]>;
+          [K in keyof ThemeSettingToken]?: Partial<ThemeSettingToken[K]>
         }
       }
     }
@@ -92,14 +92,14 @@ declare namespace App {
     type ThemeColorKey = keyof ThemeColor
 
     type ThemePaletteColor = {
-      [key in ThemeColorKey | `${ThemeColorKey}-${ColorPaletteNumber}`]: string;
+      [key in ThemeColorKey | `${ThemeColorKey}-${ColorPaletteNumber}`]: string
     }
 
     type BaseToken = Record<string, Record<string, string>>
 
     interface ThemeSettingTokenColor {
-      'container': string
-      'layout': string
+      container: string
+      layout: string
       'base-text': string
     }
 
@@ -274,8 +274,8 @@ declare namespace App {
         }
         layout: {
           layoutMode: { title: string } & Record<UnionKey.ThemeLayoutMode, string> & {
-            [K in `${UnionKey.ThemeLayoutMode}_detail`]: string;
-          }
+              [K in `${UnionKey.ThemeLayoutMode}_detail`]: string
+            }
           header: {
             title: string
             height: string
@@ -301,7 +301,7 @@ declare namespace App {
           }
           content: {
             title: string
-            scrollMode: { title: string, tip: string } & Record<UnionKey.ThemeScrollMode, string>
+            scrollMode: { title: string; tip: string } & Record<UnionKey.ThemeScrollMode, string>
             page: {
               animate: string
               mode: { title: string } & Record<UnionKey.ThemePageAnimateMode, string>

@@ -78,10 +78,10 @@ const local: App.I18n.Schema = {
     },
     layout: {
       layoutMode: {
-        'title': 'Layout Mode',
-        'vertical': 'Vertical Mode',
+        title: 'Layout Mode',
+        vertical: 'Vertical Mode',
         'vertical-mix': 'Vertical Mix Mode',
-        'vertical_detail': 'Vertical menu layout, with the menu on the left and content on the right.',
+        vertical_detail: 'Vertical menu layout, with the menu on the left and content on the right.',
         'vertical-mix_detail':
           'Vertical mix-menu layout, with the primary menu on the dark left side and the secondary menu on the lighter right side.',
       },
@@ -119,14 +119,14 @@ const local: App.I18n.Schema = {
         page: {
           animate: 'Page Animate',
           mode: {
-            'title': 'Page Animate Mode',
-            'fade': 'Fade',
+            title: 'Page Animate Mode',
+            fade: 'Fade',
             'fade-slide': 'Slide',
             'fade-bottom': 'Fade Zoom',
             'fade-scale': 'Fade Scale',
             'zoom-fade': 'Zoom Fade',
             'zoom-out': 'Zoom Out',
-            'none': 'None',
+            none: 'None',
           },
         },
         fixedHeader: 'Fixed Header',

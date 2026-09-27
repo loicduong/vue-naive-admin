@@ -36,8 +36,7 @@ function init() {
 
   // Triggered when the audio is decoded and ready to play
   wavesurfer.value.on('ready', () => {
-    if (!wavesurfer.value)
-      return
+    if (!wavesurfer.value) return
     const decodedData = wavesurfer.value.getDecodedData()
     totalSecondTime.value = decodedData!.duration
     const m = Math.floor(decodedData!.duration / 60)
@@ -50,9 +49,8 @@ function init() {
   })
 
   // Triggered when the audio position changes, continuously during playback
-  wavesurfer.value.on('timeupdate', (timer) => {
-    if (timer > totalSecondTime.value)
-      return
+  wavesurfer.value.on('timeupdate', timer => {
+    if (timer > totalSecondTime.value) return
     const m = Math.floor(timer / 60)
     const s = Math.floor(timer % 60)
     curTime.value = `${m}:${s}`
@@ -77,12 +75,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="overflow-hidden">
-    <NCard
-      title="Audio Visualization"
-      :bordered="false"
-      class="h-full card-wrapper"
-      content-class="overflow-hidden"
-    >
+    <NCard title="Audio Visualization" :bordered="false" class="h-full card-wrapper" content-class="overflow-hidden">
       <div class="h-full flex-col-stretch">
         <GithubLink link="https://github.com/katspaugh/wavesurfer.js" />
         <NScrollbar class="flex-1-hidden">

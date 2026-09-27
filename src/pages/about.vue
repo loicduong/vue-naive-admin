@@ -57,22 +57,10 @@ const website = 'https://v-naive-admin.vercel.app'
 
 <template>
   <NSpace vertical :size="16">
-    <NCard
-      :title="$t('page.about.title')"
-      :bordered="false"
-      size="small"
-      segmented
-      class="card-wrapper"
-    >
+    <NCard :title="$t('page.about.title')" :bordered="false" size="small" segmented class="card-wrapper">
       <p>{{ $t('page.about.introduction') }}</p>
     </NCard>
-    <NCard
-      :title="$t('page.about.projectInfo.title')"
-      :bordered="false"
-      size="small"
-      segmented
-      class="card-wrapper"
-    >
+    <NCard :title="$t('page.about.projectInfo.title')" :bordered="false" size="small" segmented class="card-wrapper">
       <NDescriptions label-placement="left" bordered size="small" :column="column">
         <NDescriptionsItem :label="$t('page.about.projectInfo.version')">
           <NTag type="primary">
@@ -137,11 +125,7 @@ const website = 'https://v-naive-admin.vercel.app'
         </NTag>
       </template>
       <NDescriptions label-placement="left" bordered size="small" :column="column">
-        <NDescriptionsItem
-          v-for="item in pkgJson.devDependencies"
-          :key="item.name"
-          :label="item.name"
-        >
+        <NDescriptionsItem v-for="item in pkgJson.devDependencies" :key="item.name" :label="item.name">
           <a
             v-if="!item.version.includes('workspace')"
             :href="`https://www.npmjs.com/package/${item.name}`"

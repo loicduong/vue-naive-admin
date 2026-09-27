@@ -58,6 +58,6 @@ declare module 'vue-router' {
      */
     activeMenu?: App.Global.RouteKey | null
     /** if set query parameters, it will be automatically carried when entering the route */
-    query?: { key: string, value: string }[] | null
+    query?: { key: string; value: string }[] | null
   }
 }

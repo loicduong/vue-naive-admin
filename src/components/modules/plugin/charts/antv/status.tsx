@@ -70,8 +70,7 @@ export const nodeStatus: Record<NodeStatus, NodeStatusConfig> = {
 }
 
 export function getNodeIcon(node: CustomNodeData) {
-  if (!node.status)
-    return ''
+  if (!node.status) return ''
 
   const type = node.milestone ? 'flag64' : 'base64'
 

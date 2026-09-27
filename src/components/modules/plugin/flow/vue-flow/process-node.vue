@@ -75,15 +75,8 @@ const processLabel = toRef(() => {
     }"
   >
     <Handle v-if="!isSender" type="target" :position="targetPosition as any">
-      <span
-        v-if="
-          !data.isRunning
-            && !data.isFinished
-            && !data.isCancelled
-            && !data.isSkipped
-            && !data.hasError
-        "
-      >📥
+      <span v-if="!data.isRunning && !data.isFinished && !data.isCancelled && !data.isSkipped && !data.hasError"
+        >📥
       </span>
     </Handle>
     <Handle v-if="!isReceiver" type="source" :position="sourcePosition as any" />

@@ -40,7 +40,7 @@ export function useRouterPush(inSetup = true) {
 
     const query: Record<string, string> = {}
 
-    meta?.query?.forEach((item) => {
+    meta?.query?.forEach(item => {
       query[item.key] = item.value
     })
 
@@ -98,8 +98,7 @@ export function useRouterPush(inSetup = true) {
 
     if (needRedirect && redirect && import.meta.env.VITE_ROUTE_REDIRECT_AFTER_LOGIN === 'Y') {
       await routerPush(redirect)
-    }
-    else {
+    } else {
       await toHome()
     }
   }

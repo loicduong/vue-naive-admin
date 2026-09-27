@@ -22,7 +22,7 @@ const searchParams: Api.SystemManage.RoleSearchParams = reactive({
 const { columns, columnChecks, data, loading, getData, getDataByPage, mobilePagination } = useNaivePaginatedTable({
   api: () => fetchGetRoleList(searchParams),
   transform: response => defaultTransform(response),
-  onPaginationParamsChange: (params) => {
+  onPaginationParamsChange: params => {
     searchParams.current = params.page
     searchParams.size = params.pageSize
   },
@@ -61,7 +61,7 @@ const { columns, columnChecks, data, loading, getData, getDataByPage, mobilePagi
       title: $t('page.manage.role.roleStatus'),
       align: 'center',
       width: 100,
-      render: (row) => {
+      render: row => {
         if (row.status === null) {
           return null
         }
@@ -116,7 +116,7 @@ const {
 
 async function handleBatchDelete() {
   // request
-  // eslint-disable-next-line no-console
+  // oxlint-disable-next-line no-console
   console.log(checkedRowKeys.value)
 
   onBatchDeleted()
@@ -124,7 +124,7 @@ async function handleBatchDelete() {
 
 function handleDelete(id: number) {
   // request
-  // eslint-disable-next-line no-console
+  // oxlint-disable-next-line no-console
   console.log(id)
 
   onDeleted()

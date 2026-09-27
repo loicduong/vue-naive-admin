@@ -92,7 +92,7 @@ export function useEcharts<T extends ECOption>(optionsFactory: () => T, hooks: C
   const chartOptions: T = optionsFactory()
 
   const {
-    onRender = (instance) => {
+    onRender = instance => {
       const textColor = darkMode.value ? 'rgb(224, 224, 224)' : 'rgb(31, 31, 31)'
       const maskColor = darkMode.value ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.8)'
 
@@ -103,7 +103,7 @@ export function useEcharts<T extends ECOption>(optionsFactory: () => T, hooks: C
         maskColor,
       })
     },
-    onUpdated = (instance) => {
+    onUpdated = instance => {
       instance.hideLoading()
     },
     onDestroy,
@@ -126,8 +126,7 @@ export function useEcharts<T extends ECOption>(optionsFactory: () => T, hooks: C
 
     await nextTick()
 
-    if (!isRendered())
-      return
+    if (!isRendered()) return
 
     if (isRendered()) {
       chart.value?.clear()
@@ -144,8 +143,7 @@ export function useEcharts<T extends ECOption>(optionsFactory: () => T, hooks: C
 
   /** render chart */
   async function render() {
-    if (isRendered())
-      return
+    if (isRendered()) return
 
     const chartTheme = darkMode.value ? 'dark' : 'light'
 
@@ -163,8 +161,7 @@ export function useEcharts<T extends ECOption>(optionsFactory: () => T, hooks: C
 
   /** destroy chart */
   async function destroy() {
-    if (!chart.value)
-      return
+    if (!chart.value) return
 
     await onDestroy?.(chart.value)
     chart.value?.dispose()

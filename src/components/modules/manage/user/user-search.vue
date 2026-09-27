@@ -47,16 +47,8 @@ async function search() {
       <NCollapseItem :title="$t('common.search')" name="user-search">
         <NForm ref="formRef" :model="model" :rules="rules" label-placement="left" :label-width="80">
           <NGrid responsive="screen" item-responsive>
-            <NFormItemGi
-              span="24 s:12 m:6"
-              :label="$t('page.manage.user.userName')"
-              path="userName"
-              class="pr-24px"
-            >
-              <NInput
-                v-model:value="model.userName"
-                :placeholder="$t('page.manage.user.form.userName')"
-              />
+            <NFormItemGi span="24 s:12 m:6" :label="$t('page.manage.user.userName')" path="userName" class="pr-24px">
+              <NInput v-model:value="model.userName" :placeholder="$t('page.manage.user.form.userName')" />
             </NFormItemGi>
             <NFormItemGi
               span="24 s:12 m:6"
@@ -71,38 +63,14 @@ async function search() {
                 clearable
               />
             </NFormItemGi>
-            <NFormItemGi
-              span="24 s:12 m:6"
-              :label="$t('page.manage.user.nickName')"
-              path="nickName"
-              class="pr-24px"
-            >
-              <NInput
-                v-model:value="model.nickName"
-                :placeholder="$t('page.manage.user.form.nickName')"
-              />
+            <NFormItemGi span="24 s:12 m:6" :label="$t('page.manage.user.nickName')" path="nickName" class="pr-24px">
+              <NInput v-model:value="model.nickName" :placeholder="$t('page.manage.user.form.nickName')" />
             </NFormItemGi>
-            <NFormItemGi
-              span="24 s:12 m:6"
-              :label="$t('page.manage.user.userPhone')"
-              path="userPhone"
-              class="pr-24px"
-            >
-              <NInput
-                v-model:value="model.userPhone"
-                :placeholder="$t('page.manage.user.form.userPhone')"
-              />
+            <NFormItemGi span="24 s:12 m:6" :label="$t('page.manage.user.userPhone')" path="userPhone" class="pr-24px">
+              <NInput v-model:value="model.userPhone" :placeholder="$t('page.manage.user.form.userPhone')" />
             </NFormItemGi>
-            <NFormItemGi
-              span="24 s:12 m:6"
-              :label="$t('page.manage.user.userEmail')"
-              path="userEmail"
-              class="pr-24px"
-            >
-              <NInput
-                v-model:value="model.userEmail"
-                :placeholder="$t('page.manage.user.form.userEmail')"
-              />
+            <NFormItemGi span="24 s:12 m:6" :label="$t('page.manage.user.userEmail')" path="userEmail" class="pr-24px">
+              <NInput v-model:value="model.userEmail" :placeholder="$t('page.manage.user.form.userEmail')" />
             </NFormItemGi>
             <NFormItemGi
               span="24 s:12 m:6"
