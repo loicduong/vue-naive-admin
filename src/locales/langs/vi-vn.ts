@@ -169,7 +169,6 @@ const local: App.I18n.Schema = {
     '/plugin/map': 'Bản đồ',
     '/plugin/map/google': 'Google',
     '/plugin/pdf': 'Xem trước PDF',
-    '/plugin/pdf/html': 'HTML',
     '/plugin/pdf/link': 'Link',
     '/plugin/signature': 'Chữ ký',
     '/plugin/swiper': 'Swiper',

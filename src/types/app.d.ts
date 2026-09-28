@@ -563,5 +563,3 @@ declare namespace App {
     }
   }
 }
-
-declare module 'pagedjs'

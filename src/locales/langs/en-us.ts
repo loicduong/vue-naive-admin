@@ -170,7 +170,6 @@ const local: App.I18n.Schema = {
     '/plugin/map': 'Map',
     '/plugin/map/google': 'Google',
     '/plugin/pdf': 'PDF Preview',
-    '/plugin/pdf/html': 'HTML',
     '/plugin/pdf/link': 'Link',
     '/plugin/signature': 'Signature',
     '/plugin/swiper': 'Swiper',
