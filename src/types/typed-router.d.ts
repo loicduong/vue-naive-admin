@@ -268,7 +268,6 @@ declare module 'vue-router/auto-routes' {
       | '/plugin/map'
       | '/plugin/map/google'
       | '/plugin/pdf'
-      | '/plugin/pdf/html'
       | '/plugin/pdf/link'
       | '/plugin/signature'
       | '/plugin/swiper'
@@ -428,15 +427,7 @@ declare module 'vue-router/auto-routes' {
       '/plugin/pdf',
       Record<never, never>,
       Record<never, never>,
-      | '/plugin/pdf/html'
       | '/plugin/pdf/link'
-    >,
-    '/plugin/pdf/html': RouteRecordInfo<
-      '/plugin/pdf/html',
-      '/plugin/pdf/html',
-      Record<never, never>,
-      Record<never, never>,
-      | never
     >,
     '/plugin/pdf/link': RouteRecordInfo<
       '/plugin/pdf/link',
@@ -786,7 +777,6 @@ declare module 'vue-router/auto-routes' {
         | '/plugin/map'
         | '/plugin/map/google'
         | '/plugin/pdf'
-        | '/plugin/pdf/html'
         | '/plugin/pdf/link'
         | '/plugin/signature'
         | '/plugin/swiper'
@@ -973,18 +963,9 @@ declare module 'vue-router/auto-routes' {
     'src/pages/plugin/pdf.vue': {
       routes:
         | '/plugin/pdf'
-        | '/plugin/pdf/html'
         | '/plugin/pdf/link'
       views:
         | 'default'
-      pathParamNames:
-        | never
-    }
-    'src/pages/plugin/pdf/html.vue': {
-      routes:
-        | '/plugin/pdf/html'
-      views:
-        | never
       pathParamNames:
         | never
     }
