@@ -178,6 +178,8 @@ const local: App.I18n.Schema = {
     '/function/hide-child/one': 'Hide Child',
     '/function/hide-child/two': 'Two',
     '/function/hide-child/three': 'Three',
+    '/function/multi-tab': 'Multi Tab',
+    '/function/tab': 'Tab',
     '/plugin': 'Plugin',
     '/plugin/audio': 'Audio',
     '/plugin/copy': 'Copy',
@@ -304,6 +306,32 @@ const local: App.I18n.Schema = {
       },
       prdDep: 'Production Dependencies',
       devDep: 'Development Dependencies',
+    },
+    function: {
+      tab: {
+        tabOperate: {
+          title: 'Tab Operation',
+          addTab: 'Add Tab',
+          addTabDesc: 'To about page',
+          closeTab: 'Close Tab',
+          closeCurrentTab: 'Close Current Tab',
+          closeAboutTab: 'Close "About" Tab',
+          addMultiTab: 'Add Multi Tab',
+          addMultiTabDesc1: 'To MultiTab page',
+          addMultiTabDesc2: 'To MultiTab page(with query params)',
+        },
+        tabTitle: {
+          title: 'Tab Title',
+          changeTitle: 'Change Title',
+          change: 'Change',
+          resetTitle: 'Reset Title',
+          reset: 'Reset',
+        },
+      },
+      multiTab: {
+        routeParam: 'Route Param',
+        backTab: 'Back function_tab',
+      },
     },
     manage: {
       menu: {

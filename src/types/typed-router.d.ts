@@ -120,6 +120,8 @@ declare module 'vue-router/auto-routes' {
       | '/function/hide-child/one'
       | '/function/hide-child/three'
       | '/function/hide-child/two'
+      | '/function/multi-tab'
+      | '/function/tab'
     >,
     '/function/hide-child': RouteRecordInfo<
       '/function/hide-child',
@@ -147,6 +149,20 @@ declare module 'vue-router/auto-routes' {
     '/function/hide-child/two': RouteRecordInfo<
       '/function/hide-child/two',
       '/function/hide-child/two',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/function/multi-tab': RouteRecordInfo<
+      '/function/multi-tab',
+      '/function/multi-tab',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/function/tab': RouteRecordInfo<
+      '/function/tab',
+      '/function/tab',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -605,6 +621,8 @@ declare module 'vue-router/auto-routes' {
         | '/function/hide-child/one'
         | '/function/hide-child/three'
         | '/function/hide-child/two'
+        | '/function/multi-tab'
+        | '/function/tab'
       views:
         | 'default'
       pathParamNames:
@@ -640,6 +658,22 @@ declare module 'vue-router/auto-routes' {
     'src/pages/function/hide-child/two.vue': {
       routes:
         | '/function/hide-child/two'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/function/multi-tab.vue': {
+      routes:
+        | '/function/multi-tab'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/function/tab.vue': {
+      routes:
+        | '/function/tab'
       views:
         | never
       pathParamNames:

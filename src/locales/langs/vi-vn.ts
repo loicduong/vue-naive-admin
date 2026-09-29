@@ -177,6 +177,8 @@ const local: App.I18n.Schema = {
     '/function/hide-child/one': 'Ẩn con',
     '/function/hide-child/two': 'Hai',
     '/function/hide-child/three': 'Ba',
+    '/function/multi-tab': 'Nhiều tab',
+    '/function/tab': 'Tab',
     '/plugin': 'Tiện ích',
     '/plugin/audio': 'Audio',
     '/plugin/copy': 'Sao chép',
@@ -303,6 +305,32 @@ const local: App.I18n.Schema = {
       },
       prdDep: 'Phụ thuộc sản xuất',
       devDep: 'Phụ thuộc phát triển',
+    },
+    function: {
+      tab: {
+        tabOperate: {
+          title: 'Thao tác tab',
+          addTab: 'Thêm tab',
+          addTabDesc: 'Đến trang about',
+          closeTab: 'Đóng tab',
+          closeCurrentTab: 'Đóng tab hiện tại',
+          closeAboutTab: 'Đóng tab "About"',
+          addMultiTab: 'Thêm nhiều tab',
+          addMultiTabDesc1: 'Đến trang MultiTab',
+          addMultiTabDesc2: 'Đến trang MultiTab (với tham số truy vấn)',
+        },
+        tabTitle: {
+          title: 'Tiêu đề tab',
+          changeTitle: 'Thay đổi tiêu đề',
+          change: 'Thay đổi',
+          resetTitle: 'Đặt lại tiêu đề',
+          reset: 'Đặt lại',
+        },
+      },
+      multiTab: {
+        routeParam: 'Tham số route',
+        backTab: 'Quay lại trang Tab',
+      },
     },
     manage: {
       menu: {
