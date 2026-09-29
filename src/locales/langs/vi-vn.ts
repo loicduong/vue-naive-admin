@@ -143,7 +143,7 @@ const local: App.I18n.Schema = {
             none: 'Không có',
           },
         },
-        fixedHeader: 'Cố định tiêu đề',
+        fixedHeader: 'Cố định tiêu đề và tab',
       },
     },
     general: {

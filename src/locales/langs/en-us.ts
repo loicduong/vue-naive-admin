@@ -144,7 +144,7 @@ const local: App.I18n.Schema = {
             none: 'None',
           },
         },
-        fixedHeader: 'Fixed Header',
+        fixedHeader: 'Fixed Header And Tab',
       },
     },
     general: {
