@@ -403,6 +403,8 @@ const local: App.I18n.Schema = {
     expand: 'Mở rộng menu',
     pin: 'Ghim',
     unpin: 'Bỏ ghim',
+    fullscreen: 'Toàn màn hình',
+    fullscreenExit: 'Thoát toàn màn hình',
   },
   datatable: {
     itemCount: 'Tổng {total} bản ghi',

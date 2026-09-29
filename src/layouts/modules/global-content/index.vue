@@ -2,6 +2,7 @@
 import { LAYOUT_SCROLL_EL_ID } from '../admin-layout'
 import { useAppStore } from '@/store/modules/app'
 import { useRouteStore } from '@/store/modules/route'
+import { useTabStore } from '@/store/modules/tab'
 import { useThemeStore } from '@/store/modules/theme'
 
 defineOptions({
@@ -20,6 +21,7 @@ interface Props {
 const appStore = useAppStore()
 const themeStore = useThemeStore()
 const routeStore = useRouteStore()
+const tabStore = useTabStore()
 
 const transitionName = computed(() => (themeStore.page.animate ? themeStore.page.animateMode : ''))
 
@@ -43,7 +45,7 @@ function resetScroll() {
         <component
           :is="Component"
           v-if="appStore.reloadFlag"
-          :key="route.path"
+          :key="tabStore.getTabIdByRoute(route as App.Global.TabRoute)"
           :class="{ 'p-16px': showPadding }"
           class="flex-grow bg-layout transition-300"
         />

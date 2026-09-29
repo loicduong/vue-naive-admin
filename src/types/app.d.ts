@@ -556,6 +556,8 @@ declare namespace App {
         expand: string
         pin: string
         unpin: string
+        fullscreen: string
+        fullscreenExit: string
       }
       datatable: {
         itemCount: string

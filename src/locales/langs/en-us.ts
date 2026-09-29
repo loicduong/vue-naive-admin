@@ -404,6 +404,8 @@ const local: App.I18n.Schema = {
     expand: 'Expand Menu',
     pin: 'Pin',
     unpin: 'Unpin',
+    fullscreen: 'Fullscreen',
+    fullscreenExit: 'Exit Fullscreen',
   },
   datatable: {
     itemCount: 'Total {total} items',
