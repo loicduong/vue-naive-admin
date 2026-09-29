@@ -1,6 +1,6 @@
 import type { AxiosResponse } from 'axios'
 import type { RequestInstanceState } from './type'
-import { BACKEND_ERROR_CODE, createFlatRequest, createRequest } from '@sa/axios'
+import { BACKEND_ERROR_CODE, createFlatRequest, createRequest } from '@/service/request/axios'
 import { $t } from '@/locales'
 import { useAuthStore } from '@/store/modules/auth'
 import { getServiceBaseURL } from '@/utils/service'

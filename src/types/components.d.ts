@@ -127,6 +127,7 @@ declare module 'vue' {
     RoleSearch: typeof import('./../components/modules/manage/role/role-search.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SimpleScrollbar: typeof import('./../components/common/simple-scrollbar.vue')['default']
     SvgIcon: typeof import('./../components/custom/svg-icon.vue')['default']
     SystemLogo: typeof import('./../components/common/system-logo.vue')['default']
     TableColumnSetting: typeof import('./../components/advanced/table-column-setting.vue')['default']

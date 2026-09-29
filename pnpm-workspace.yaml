@@ -15,9 +15,6 @@ minimumReleaseAgeExclude:
 trustPolicy: off
 shellEmulator: true
 
-packages:
-  - 'packages/*'
-
 allowBuilds:
   core-js: true
   es5-ext: true

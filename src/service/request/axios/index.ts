@@ -7,7 +7,7 @@ import type {
   RequestOption,
   ResponseType,
 } from './type'
-import { nanoid } from '@sa/utils'
+import { nanoid } from '@/utils/nanoid'
 import axios, { AxiosError } from 'axios'
 import axiosRetry from 'axios-retry'
 import { BACKEND_ERROR_CODE, REQUEST_ID_KEY } from './constant'

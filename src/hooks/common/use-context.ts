@@ -9,7 +9,7 @@ import { inject, provide } from 'vue'
  *
  *   // context.ts
  *   import { ref } from 'vue';
- *   import { useContext } from '@sa/hooks';
+ *   import useContext from '@/hooks/common/use-context';
  *
  *   export const [provideDemoContext, useDemoContext] = useContext('demo', () => {
  *     const count = ref(0);

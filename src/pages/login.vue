@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getPaletteColorByNumber, mixColor } from '@sa/color'
+import { getPaletteColorByNumber, mixColor } from '@/utils/color'
 import CodeLogin from '@/components/modules/login/code-login.vue'
 import PwdLogin from '@/components/modules/login/pwd-login.vue'
 import Register from '@/components/modules/login/register.vue'

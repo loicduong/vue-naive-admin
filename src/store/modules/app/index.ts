@@ -1,4 +1,4 @@
-import { useBoolean } from '@sa/hooks'
+import useBoolean from '@/hooks/common/use-boolean'
 import { breakpointsTailwind } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { SetupStoreId } from '@/constants/enum'

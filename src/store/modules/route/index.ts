@@ -1,5 +1,5 @@
 import type { RouteRecordRaw } from 'vue-router'
-import { useBoolean } from '@sa/hooks'
+import useBoolean from '@/hooks/common/use-boolean'
 import { defineStore } from 'pinia'
 import { SetupStoreId } from '@/constants/enum'
 import { router } from '@/router'

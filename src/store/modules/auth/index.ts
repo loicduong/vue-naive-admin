@@ -1,4 +1,4 @@
-import { useLoading } from '@sa/hooks'
+import useLoading from '@/hooks/common/use-loading'
 import { defineStore } from 'pinia'
 import { SetupStoreId } from '@/constants/enum'
 import { useRouterPush } from '@/hooks/common/router'
