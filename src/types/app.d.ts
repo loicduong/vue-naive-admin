@@ -45,6 +45,23 @@ declare namespace App {
           visible: boolean
         }
       }
+      /** Tab */
+      tab: {
+        /** Whether to show the tab */
+        visible: boolean
+        /**
+         * Whether to cache the tab
+         *
+         * If cache, the tabs will get from the local storage when the page is refreshed
+         */
+        cache: boolean
+        /** Tab height */
+        height: number
+        /** Tab mode */
+        mode: UnionKey.ThemeTabMode
+        /** Whether to close tab by middle click */
+        closeTabByMiddleClick: boolean
+      }
       /** Fixed header */
       fixedHeader: boolean
       /** Sider */
@@ -105,6 +122,7 @@ declare namespace App {
 
     interface ThemeSettingTokenBoxShadow {
       header: string
+      tab: string
       sider: string
     }
 
@@ -344,6 +362,16 @@ declare namespace App {
             fixed: string
             height: string
             right: string
+          }
+          tab: {
+            title: string
+            visible: string
+            cache: string
+            cacheTip: string
+            height: string
+            mode: { title: string } & Record<UnionKey.ThemeTabMode, string>
+            closeByMiddleClick: string
+            closeByMiddleClickTip: string
           }
           content: {
             title: string

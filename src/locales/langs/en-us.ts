@@ -108,6 +108,21 @@ const local: App.I18n.Schema = {
         height: 'Footer Height',
         right: 'Right Footer',
       },
+      tab: {
+        title: 'Tab Settings',
+        visible: 'Tab Visible',
+        cache: 'Tag Bar Info Cache',
+        cacheTip: 'Keep the tab bar information after leaving the page',
+        height: 'Tab Height',
+        mode: {
+          title: 'Tab Mode',
+          slider: 'Slider',
+          chrome: 'Chrome',
+          button: 'Button',
+        },
+        closeByMiddleClick: 'Close Tab by Middle Click',
+        closeByMiddleClickTip: 'Enable closing tabs by clicking with the middle mouse button',
+      },
       content: {
         title: 'Content Area Settings',
         scrollMode: {
@@ -377,6 +392,8 @@ const local: App.I18n.Schema = {
     closeLeft: 'Close Left',
     closeRight: 'Close Right',
     closeAll: 'Close All',
+    pin: 'Pin',
+    unpin: 'Unpin',
   },
   icon: {
     themeConfig: 'Theme Configuration',

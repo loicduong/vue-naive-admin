@@ -27,6 +27,7 @@ export const themeVars: App.Theme.ThemeTokenCSSVars = {
   },
   boxShadow: {
     header: 'var(--header-box-shadow)',
+    tab: 'var(--tab-box-shadow)',
     sider: 'var(--sider-box-shadow)',
   },
 }

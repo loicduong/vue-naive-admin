@@ -135,4 +135,13 @@ declare namespace UnionKey {
     | 'back-out-down'
     | 'back-out-right'
     | 'back-out-left'
+
+  /**
+   * Tab mode
+   *
+   * - chrome: chrome style
+   * - button: button style
+   * - slider: slider style
+   */
+  type ThemeTabMode = 'chrome' | 'button' | 'slider'
 }

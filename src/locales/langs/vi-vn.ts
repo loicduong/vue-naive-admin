@@ -107,6 +107,21 @@ const local: App.I18n.Schema = {
         height: 'Chiều cao footer',
         right: 'Footer phía bên phải',
       },
+      tab: {
+        title: 'Cài đặt tab',
+        visible: 'Hiển thị tab',
+        cache: 'Lưu trữ thông tin tab',
+        cacheTip: 'Giữ lại thanh tab sau khi rời trang',
+        height: 'Chiều cao tab',
+        mode: {
+          title: 'Kiểu tab',
+          slider: 'Kiểu trượt',
+          chrome: 'Kiểu Chrome',
+          button: 'Kiểu nút',
+        },
+        closeByMiddleClick: 'Đóng tab bằng chuột giữa',
+        closeByMiddleClickTip: 'Cho phép đóng tab bằng cách nhấn chuột giữa',
+      },
       content: {
         title: 'Cài đặt vùng nội dung',
         scrollMode: {
@@ -376,6 +391,8 @@ const local: App.I18n.Schema = {
     closeLeft: 'Đóng các tab bên trái',
     closeRight: 'Đóng các tab bên phải',
     closeAll: 'Đóng tất cả',
+    pin: 'Ghim',
+    unpin: 'Bỏ ghim',
   },
   icon: {
     themeConfig: 'Cấu hình chủ đề',
