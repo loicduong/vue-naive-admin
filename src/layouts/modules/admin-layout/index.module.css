@@ -5,6 +5,16 @@
   height: var(--soy-header-height);
 }
 
+.layout-tab {
+  top: var(--soy-header-height);
+  height: var(--soy-tab-height);
+  z-index: var(--soy-tab-z-index);
+}
+
+.layout-tab-placement {
+  height: var(--soy-tab-height);
+}
+
 .layout-header {
   z-index: var(--soy-header-z-index);
 }
