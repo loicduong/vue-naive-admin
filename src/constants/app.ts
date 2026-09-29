@@ -33,6 +33,17 @@ export const themeScrollModeRecord: Record<UnionKey.ThemeScrollMode, App.I18n.I1
 
 export const themeScrollModeOptions = transformRecordToOption(themeScrollModeRecord)
 
+export const themeTabModeRecord: Record<UnionKey.ThemeTabMode, App.I18n.I18nKey> = {
+  chrome: 'theme.layout.tab.mode.chrome',
+  button: 'theme.layout.tab.mode.button',
+  slider: 'theme.layout.tab.mode.slider',
+}
+
+export const themeTabModeOptions = transformRecordToOption(themeTabModeRecord)
+
+/** Scroll speed ratio when converting vertical wheel delta to horizontal tab scroll */
+export const GLOBAL_TAB_WHEEL_SPEED_RATIO = 0.3
+
 export const themePageAnimationModeRecord: Record<UnionKey.ThemePageAnimateMode, App.I18n.I18nKey> = {
   'fade-slide': 'theme.layout.content.page.mode.fade-slide',
   fade: 'theme.layout.content.page.mode.fade',
