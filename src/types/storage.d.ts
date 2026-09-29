@@ -35,5 +35,7 @@ declare namespace StorageType {
       layout: UnionKey.ThemeLayoutMode
       siderCollapse: boolean
     }
+    /** The global tabs */
+    globalTabs: App.Global.Tab[]
   }
 }
