@@ -1,13 +1,16 @@
-import type { Router } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router'
 import { describe, expect, it, vi } from 'vite-plus/test'
 import {
-  extractTabsByAllRoutes,
+  collectRouteNames,
+  extractTabsByRouteNames,
   findTabByRouteName,
   getAllTabs,
   getFixedTabIds,
   getNextActiveTab,
   getTabIdByRoute,
+  insertTab,
   reorderFixedTabs,
+  shouldResetTabs,
   updateTabsByI18nKey,
 } from './shared'
 
@@ -34,10 +37,6 @@ function tab(id: string, extra: Partial<App.Global.Tab> = {}): App.Global.Tab {
 
 function route(path: string, meta: Record<string, unknown> = {}, query: Record<string, string> = {}) {
   return { name: path, path, meta, query } as unknown as App.Global.TabRoute
-}
-
-function routerWith(names: string[]) {
-  return { getRoutes: () => names.map(name => ({ name })) } as unknown as Router
 }
 
 describe('getTabIdByRoute', () => {
@@ -92,11 +91,85 @@ describe('fixed tabs', () => {
   })
 })
 
-describe('extractTabsByAllRoutes', () => {
+describe('extractTabsByRouteNames', () => {
   it('drops tabs whose route no longer exists', () => {
     const tabs = [tab('/a'), tab('/gone')]
 
-    expect(extractTabsByAllRoutes(routerWith(['/a']), tabs).map(t => t.id)).toEqual(['/a'])
+    expect(extractTabsByRouteNames(['/a'], tabs).map(t => t.id)).toEqual(['/a'])
+  })
+
+  it('drops tabs whose route is registered but not allowed for the current user', () => {
+    const allowed = collectRouteNames([
+      { name: '/home', path: '/home' },
+      { name: '/function', path: '/function', children: [{ name: '/function/tab', path: 'tab' }] },
+    ] as RouteRecordRaw[])
+
+    const tabs = [tab('/function/tab'), tab('/manage/user')]
+
+    expect(extractTabsByRouteNames(allowed, tabs).map(t => t.id)).toEqual(['/function/tab'])
+  })
+})
+
+describe('label after rename and reset', () => {
+  it('follows the current locale once a custom label is reset', () => {
+    const renamedThenReset = tab('/a', {
+      i18nKey: 'route./a' as App.I18n.I18nKey,
+      label: 'en:route./a',
+      oldLabel: 'en:route./a',
+      newLabel: undefined,
+    })
+
+    locale = 'vi'
+    const [, shown] = getAllTabs(updateTabsByI18nKey([renamedThenReset]), tab('/home'))
+    locale = 'en'
+
+    expect(shown.label).toBe('vi:route./a')
+  })
+})
+
+describe('insertTab', () => {
+  it('puts a meta-fixed tab into the fixed block, so neighbours follow display order', () => {
+    const tabs: App.Global.Tab[] = []
+
+    insertTab(tabs, tab('/a'))
+    insertTab(tabs, tab('/b'))
+    insertTab(tabs, tab('/m', { fixedIndex: 0 }))
+
+    expect(tabs.map(t => t.id)).toEqual(['/m', '/a', '/b'])
+    expect(getAllTabs(tabs, tab('/home')).map(t => t.id)).toEqual(['/home', '/m', '/a', '/b'])
+    expect(
+      getNextActiveTab(
+        tabs,
+        tabs.findIndex(t => t.id === '/b'),
+        tab('/home'),
+      )?.id,
+    ).toBe('/a')
+  })
+
+  it('orders several meta-fixed tabs by their fixed index', () => {
+    const tabs: App.Global.Tab[] = []
+
+    insertTab(tabs, tab('/y', { fixedIndex: 1 }))
+    insertTab(tabs, tab('/x', { fixedIndex: 0 }))
+
+    expect(tabs.map(t => [t.id, t.fixedIndex])).toEqual([
+      ['/x', 0],
+      ['/y', 1],
+    ])
+  })
+})
+
+describe('shouldResetTabs', () => {
+  it('resets when another user logs in', () => {
+    expect(shouldResetTabs('1', '2')).toBe(true)
+  })
+
+  it('resets when no previous user was recorded', () => {
+    expect(shouldResetTabs(null, '2')).toBe(true)
+  })
+
+  it('keeps tabs for the same user', () => {
+    expect(shouldResetTabs('2', '2')).toBe(false)
   })
 })
 

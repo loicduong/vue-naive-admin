@@ -7,7 +7,7 @@ import { useRouteStore } from '@/store/modules/route'
 import { localStg } from '@/utils/storage'
 import { useThemeStore } from '../theme'
 import {
-  extractTabsByAllRoutes,
+  extractTabsByRouteNames,
   filterTabsByIds,
   findTabByRouteName,
   getAllTabs,
@@ -16,6 +16,7 @@ import {
   getNextActiveTab,
   getTabByRoute,
   getTabIdByRoute,
+  insertTab,
   isTabInTabs,
   reorderFixedTabs,
   updateTabByI18nKey,
@@ -53,6 +54,9 @@ export const useTabStore = defineStore(SetupStoreId.Tab, () => {
     activeTabId.value = id
   }
 
+  /** Whether the tabs have been restored from storage in this session */
+  let isTabStoreInitialized = false
+
   /**
    * Init tab store
    *
@@ -61,12 +65,24 @@ export const useTabStore = defineStore(SetupStoreId.Tab, () => {
   function initTabStore(currentRoute: App.Global.TabRoute) {
     const storageTabs = localStg.get('globalTabs')
 
-    if (themeStore.tab.cache && storageTabs) {
-      const extractedTabs = extractTabsByAllRoutes(router, storageTabs)
+    // restore from storage only once per session, the tab bar may remount (e.g. after a blank-layout page)
+    if (!isTabStoreInitialized && themeStore.tab.cache && storageTabs) {
+      const extractedTabs = extractTabsByRouteNames(routeStore.allowedRouteNames, storageTabs)
       tabs.value = updateTabsByI18nKey(extractedTabs)
     }
 
+    isTabStoreInitialized = true
+
     addTab(currentRoute)
+  }
+
+  /** Reset all tabs, including fixed ones, and the cached tabs */
+  function resetTabs() {
+    tabs.value = []
+    activeTabId.value = ''
+    isTabStoreInitialized = false
+
+    localStg.remove('globalTabs')
   }
 
   /**
@@ -81,7 +97,7 @@ export const useTabStore = defineStore(SetupStoreId.Tab, () => {
     const isHomeTab = tab.id === homeTab.value?.id
 
     if (!isHomeTab && !isTabInTabs(tab.id, tabs.value)) {
-      tabs.value.push(tab)
+      insertTab(tabs.value, tab)
     }
 
     if (active) {
@@ -358,5 +374,6 @@ export const useTabStore = defineStore(SetupStoreId.Tab, () => {
     updateTabsByLocale,
     getTabIdByRoute,
     cacheTabs,
+    resetTabs,
   }
 })

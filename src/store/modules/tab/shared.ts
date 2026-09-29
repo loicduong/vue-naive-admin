@@ -1,4 +1,4 @@
-import type { Router } from 'vue-router'
+import type { RouteRecordRaw, Router } from 'vue-router'
 import { $t } from '@/locales'
 import { getRoutePath } from '@/router/routes/builtin'
 
@@ -164,17 +164,53 @@ export function filterTabsByIds(tabIds: string[], tabs: App.Global.Tab[]) {
 }
 
 /**
- * extract tabs by all routes
+ * Collect the names of routes and their nested children
  *
- * @param router
+ * @param routes
+ */
+export function collectRouteNames(routes: RouteRecordRaw[]): string[] {
+  return routes.flatMap(route => [
+    ...(route.name ? [String(route.name)] : []),
+    ...collectRouteNames(route.children || []),
+  ])
+}
+
+/**
+ * Extract tabs whose route is one of the given route names
+ *
+ * @param routeNames Names of the routes the current user can access
  * @param tabs
  */
-export function extractTabsByAllRoutes(router: Router, tabs: App.Global.Tab[]) {
-  const routes = router.getRoutes()
-
-  const routeNames = routes.map(route => route.name)
-
+export function extractTabsByRouteNames(routeNames: string[], tabs: App.Global.Tab[]) {
   return tabs.filter(tab => routeNames.includes(tab.routeKey))
+}
+
+/**
+ * Insert a tab, keeping fixed tabs (ordered by fixedIndex) before the other tabs
+ *
+ * @param tabs
+ * @param tab
+ */
+export function insertTab(tabs: App.Global.Tab[], tab: App.Global.Tab) {
+  if (!isFixedTab(tab)) {
+    tabs.push(tab)
+    return
+  }
+
+  const fixedTabs = getFixedTabs(tabs)
+  const index = fixedTabs.filter(t => t.fixedIndex! <= tab.fixedIndex!).length
+
+  tabs.splice(index, 0, tab)
+}
+
+/**
+ * Whether the tabs should be reset because a different user logged in
+ *
+ * @param lastUserId User id of the previous session
+ * @param currentUserId User id of the current session
+ */
+export function shouldResetTabs(lastUserId: string | null | undefined, currentUserId: string) {
+  return !lastUserId || lastUserId !== currentUserId
 }
 
 /**
@@ -217,7 +253,7 @@ export function reorderFixedTabs(tabs: App.Global.Tab[]) {
 function updateTabsLabel(tabs: App.Global.Tab[]) {
   const updated = tabs.map(tab => ({
     ...tab,
-    label: tab.newLabel || tab.oldLabel || tab.label,
+    label: tab.newLabel || tab.label,
   }))
 
   return updated

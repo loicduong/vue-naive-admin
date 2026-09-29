@@ -7,6 +7,7 @@ import { createStaticRoutes } from '@/router/routes'
 import { getRouteName } from '@/router/routes/builtin'
 import { useAuthStore } from '../auth'
 import { useTabStore } from '../tab'
+import { collectRouteNames } from '../tab/shared'
 import {
   filterAuthRoutesByRoles,
   getBreadcrumbsByRoute,
@@ -53,6 +54,9 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
 
     authRoutes.value = Array.from(authRoutesMap.values())
   }
+
+  /** Names of the routes the current user can access */
+  const allowedRouteNames = computed(() => collectRouteNames([...constantRoutes.value, ...authRoutes.value]))
 
   /** Global menus */
   const menus = ref<App.Global.Menu[]>([])
@@ -204,6 +208,7 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
   }
 
   return {
+    allowedRouteNames,
     breadcrumbs,
     cacheRoutes,
     excludeCacheRoutes,

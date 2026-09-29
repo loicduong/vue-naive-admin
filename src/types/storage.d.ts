@@ -37,5 +37,7 @@ declare namespace StorageType {
     }
     /** The global tabs */
     globalTabs: App.Global.Tab[]
+    /** The user id of the previous login session */
+    lastLoginUserId: string
   }
 }
