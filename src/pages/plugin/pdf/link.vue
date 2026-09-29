@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useLoading } from '@sa/hooks'
+import useLoading from '@/hooks/common/use-loading'
 import VuePdfEmbed from 'vue-pdf-embed'
 
 definePage({

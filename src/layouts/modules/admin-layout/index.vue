@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { AdminLayoutProps } from '../../types'
+import type { AdminLayoutProps } from './types'
 import { computed } from 'vue'
 import style from './index.module.css'
 import { createLayoutCssVars, LAYOUT_MAX_Z_INDEX, LAYOUT_SCROLL_EL_ID } from './shared'

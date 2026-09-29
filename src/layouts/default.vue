@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { LayoutMode } from '@sa/materials'
-import { AdminLayout, LAYOUT_SCROLL_EL_ID } from '@sa/materials'
+import type { LayoutMode } from './modules/admin-layout/types'
+import AdminLayout, { LAYOUT_SCROLL_EL_ID } from './modules/admin-layout'
 import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
 import GlobalContent from './modules/global-content/index.vue'

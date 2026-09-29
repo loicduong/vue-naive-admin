@@ -92,7 +92,7 @@ pnpm update-pkg
 ## Features
 
 - Cutting-edge technology application: using the latest popular technology stack such as Vue 3, Vite+, TypeScript, Pinia and UnoCSS.
-- Clear project architecture: using pnpm monorepo architecture, clear structure, elegant and easy to understand.
+- Clear project architecture: single-package structure, clear, elegant and easy to understand.
 - Strict code specifications: powered by [Vite+](https://viteplus.dev/) (Oxlint + Oxfmt) with staged-file checks on git hooks to ensure the code is standardized.
 - TypeScript: support strict type checking to improve code maintainability.
 - Rich theme configuration: built-in a variety of theme configurations, perfectly integrated with UnoCSS.

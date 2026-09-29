@@ -1,5 +1,5 @@
 import type { GlobalThemeOverrides } from 'naive-ui'
-import { addColorAlpha, getColorPalette, getPaletteColorByNumber, getRgb } from '@sa/color'
+import { addColorAlpha, getColorPalette, getPaletteColorByNumber, getRgb } from '@/utils/color'
 import { defu } from 'defu'
 import { DARK_CLASS } from '@/constants/app'
 import { overrideThemeSettings, themeSettings } from '@/theme/settings'

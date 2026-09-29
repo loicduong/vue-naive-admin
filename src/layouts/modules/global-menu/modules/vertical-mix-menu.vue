@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useBoolean } from '@sa/hooks'
-import { SimpleScrollbar } from '@sa/materials'
+import useBoolean from '@/hooks/common/use-boolean'
+import SimpleScrollbar from '@/components/common/simple-scrollbar.vue'
 import { GLOBAL_SIDER_MENU_ID } from '@/constants/app'
 import { useRouterPush } from '@/hooks/common/router'
 import { $t } from '@/locales'

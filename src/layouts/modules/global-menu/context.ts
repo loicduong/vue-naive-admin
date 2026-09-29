@@ -1,4 +1,4 @@
-import { useContext } from '@sa/hooks'
+import useContext from '@/hooks/common/use-context'
 import { computed, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useRouterPush } from '@/hooks/common/router'

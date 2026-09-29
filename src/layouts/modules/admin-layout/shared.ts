@@ -1,4 +1,4 @@
-import type { AdminLayoutProps, LayoutCssVars, LayoutCssVarsProps } from '../../types'
+import type { AdminLayoutProps, LayoutCssVars, LayoutCssVarsProps } from './types'
 
 /** The id of the scroll element of the layout */
 export const LAYOUT_SCROLL_EL_ID = '__SCROLL_EL_ID__'

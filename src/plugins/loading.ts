@@ -1,4 +1,4 @@
-import { getRgb } from '@sa/color'
+import { getRgb } from '@/utils/color'
 // @unocss-include
 import systemLogo from '@/assets/svg-icon/logo.svg?raw'
 import { DARK_CLASS } from '@/constants/app'

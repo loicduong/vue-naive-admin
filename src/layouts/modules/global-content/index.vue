@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LAYOUT_SCROLL_EL_ID } from '@sa/materials'
+import { LAYOUT_SCROLL_EL_ID } from '../admin-layout'
 import { useAppStore } from '@/store/modules/app'
 import { useRouteStore } from '@/store/modules/route'
 import { useThemeStore } from '@/store/modules/theme'

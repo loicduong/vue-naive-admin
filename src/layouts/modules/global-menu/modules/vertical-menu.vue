@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SimpleScrollbar } from '@sa/materials'
+import SimpleScrollbar from '@/components/common/simple-scrollbar.vue'
 import { GLOBAL_SIDER_MENU_ID } from '@/constants/app'
 import { useRouterPush } from '@/hooks/common/router'
 import { useAppStore } from '@/store/modules/app'

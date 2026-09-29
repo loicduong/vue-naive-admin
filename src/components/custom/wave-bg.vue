@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { getPaletteColorByNumber } from '@sa/color'
+import { getPaletteColorByNumber } from '@/utils/color'
 
 defineOptions({ name: 'WaveBg' })
 

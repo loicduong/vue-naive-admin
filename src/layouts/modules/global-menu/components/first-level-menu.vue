@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { transformColorWithOpacity } from '@sa/color'
-import { SimpleScrollbar } from '@sa/materials'
+import { transformColorWithOpacity } from '@/utils/color'
+import SimpleScrollbar from '@/components/common/simple-scrollbar.vue'
 
 defineOptions({
   name: 'FirstLevelMenu',

@@ -27,7 +27,7 @@ declare namespace UnionKey {
    * - wrapper: the wrapper component's root element overflow
    * - content: the content component overflow
    */
-  type ThemeScrollMode = import('@sa/materials').LayoutScrollMode
+  type ThemeScrollMode = import('@/layouts/modules/admin-layout/types').LayoutScrollMode
 
   /** Page animate mode */
   type ThemePageAnimateMode = 'fade' | 'fade-slide' | 'fade-bottom' | 'fade-scale' | 'zoom-fade' | 'zoom-out' | 'none'
