@@ -1,6 +1,6 @@
 const local: App.I18n.Schema = {
   system: {
-    title: 'VueNaiveAdmin',
+    title: 'NaiveAgenticAdmin',
     updateTitle: 'Thông báo cập nhật phiên bản hệ thống',
     updateContent: 'Phát hiện phiên bản mới của hệ thống, bạn có muốn làm mới trang ngay bây giờ không?',
     updateConfirm: 'Làm mới ngay',
@@ -277,17 +277,17 @@ const local: App.I18n.Schema = {
       projectNews: {
         title: 'Tin tức dự án',
         moreNews: 'Xem thêm tin tức',
-        desc1: 'Loic Duong đã tạo dự án mã nguồn mở vue-naive-admin vào ngày 28 tháng 5 năm 2024!',
-        desc2: 'Loic Duong đã gửi một lỗi cho vue-naive-admin, thanh tab đa thẻ không tự động điều chỉnh.',
-        desc3: 'Loic Duong đang chuẩn bị cho việc phát hành của vue-naive-admin!',
-        desc4: 'Loic Duong vừa viết một số tài liệu giới thiệu dự án cho vue-naive-admin!',
-        desc5: 'Loic Duong vừa viết một số nội dung tạm thời cho trang bàn làm việc của vue-naive-admin!',
+        desc1: 'Loic Duong đã tạo dự án mã nguồn mở naive-agentic-admin vào ngày 28 tháng 5 năm 2024!',
+        desc2: 'Loic Duong đã gửi một lỗi cho naive-agentic-admin, thanh tab đa thẻ không tự động điều chỉnh.',
+        desc3: 'Loic Duong đang chuẩn bị cho việc phát hành của naive-agentic-admin!',
+        desc4: 'Loic Duong vừa viết một số tài liệu giới thiệu dự án cho naive-agentic-admin!',
+        desc5: 'Loic Duong vừa viết một số nội dung tạm thời cho trang bàn làm việc của naive-agentic-admin!',
       },
       creativity: 'Sáng tạo',
     },
     about: {
       title: 'Giới thiệu',
-      introduction: `VueNaiveAdmin là một mẫu quản trị thanh lịch và mạnh mẽ, dựa trên công nghệ front-end mới nhất, bao gồm Vue 3, Vite 6, TypeScript, Pinia và UnoCSS. Nó có cấu hình chủ đề phong phú và các thành phần tích hợp sẵn, các quy định mã nghiêm ngặt và một hệ thống định tuyến tệp tự động. Ngoài ra, nó cũng sử dụng giải pháp dữ liệu giả trực tuyến dựa trên ApiFox. VueNaiveAdmin cung cấp cho bạn một giải pháp quản trị một điểm dừng, không cần cấu hình thêm, và sẵn sàng sử dụng. Nó cũng là một phương pháp tốt nhất để học các công nghệ tiên tiến nhanh chóng.`,
+      introduction: `NaiveAgenticAdmin là một mẫu quản trị thanh lịch và mạnh mẽ, dựa trên công nghệ front-end mới nhất, bao gồm Vue 3, Vite 6, TypeScript, Pinia và UnoCSS. Nó có cấu hình chủ đề phong phú và các thành phần tích hợp sẵn, các quy định mã nghiêm ngặt và một hệ thống định tuyến tệp tự động. Ngoài ra, nó cũng sử dụng giải pháp dữ liệu giả trực tuyến dựa trên ApiFox. NaiveAgenticAdmin cung cấp cho bạn một giải pháp quản trị một điểm dừng, không cần cấu hình thêm, và sẵn sàng sử dụng. Nó cũng là một phương pháp tốt nhất để học các công nghệ tiên tiến nhanh chóng.`,
       projectInfo: {
         title: 'Thông tin dự án',
         version: 'Phiên bản',
