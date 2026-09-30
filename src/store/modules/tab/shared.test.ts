@@ -6,6 +6,7 @@ import {
   findTabByRouteName,
   getAllTabs,
   getFixedTabIds,
+  getNearestSurvivingTab,
   getNextActiveTab,
   getTabIdByRoute,
   insertTab,
@@ -257,5 +258,26 @@ describe('isDifferentUser', () => {
 
   it('is false for the same user', () => {
     expect(isDifferentUser('2', '2')).toBe(false)
+  })
+})
+
+describe('getNearestSurvivingTab', () => {
+  const home = tab('/home')
+  const tabs = [tab('/p', { fixedIndex: 0 }), tab('/a'), tab('/b'), tab('/c')]
+
+  it('picks the nearest surviving tab to the right of the removed active tab', () => {
+    expect(getNearestSurvivingTab(tabs, '/a', ['/a'], home)?.id).toBe('/b')
+  })
+
+  it('does not jump to an unrelated pinned tab when a right neighbour survives', () => {
+    expect(getNearestSurvivingTab(tabs, '/a', ['/a', '/c'], home)?.id).toBe('/b')
+  })
+
+  it('falls back to the nearest surviving tab on the left', () => {
+    expect(getNearestSurvivingTab(tabs, '/c', ['/b', '/c'], home)?.id).toBe('/a')
+  })
+
+  it('falls back to home when nothing survives', () => {
+    expect(getNearestSurvivingTab([tab('/a')], '/a', ['/a'], home)?.id).toBe('/home')
   })
 })

@@ -315,6 +315,31 @@ export function findTabByRouteName(name: App.Global.RouteKey, tabs: App.Global.T
 }
 
 /**
+ * Get the tab to activate after removing several tabs, including the active one
+ *
+ * The nearest surviving tab on the right first, then on the left, then home
+ *
+ * @param tabs Tabs before removal
+ * @param activeTabId Id of the active tab
+ * @param removedTabIds Ids of the removed tabs
+ * @param homeTab Home tab
+ */
+export function getNearestSurvivingTab(
+  tabs: App.Global.Tab[],
+  activeTabId: string,
+  removedTabIds: string[],
+  homeTab?: App.Global.Tab,
+) {
+  const activeIndex = tabs.findIndex(tab => tab.id === activeTabId)
+  const isSurviving = (tab: App.Global.Tab) => !removedTabIds.includes(tab.id)
+
+  const right = tabs.slice(activeIndex + 1).find(isSurviving)
+  const left = tabs.slice(0, Math.max(activeIndex, 0)).reverse().find(isSurviving)
+
+  return right || left || homeTab
+}
+
+/**
  * Get the tab to activate after removing a tab
  *
  * Right neighbour first, then left neighbour, then home

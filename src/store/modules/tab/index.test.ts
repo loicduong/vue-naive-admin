@@ -152,6 +152,21 @@ describe('tab store', () => {
     expect(tabStore.tabs.map(t => t.id)).toEqual(['/home', '/a'])
   })
 
+  it('"Close Left" on a tab right of the active one activates that tab, not the last one', async () => {
+    const tabStore = useTabStore()
+    tabStore.initHomeTab()
+    tabStore.initTabStore(route('/b'))
+    tabStore.addTab(route('/c'))
+    tabStore.addTab(route('/a'))
+    // order: /b, /c, /a — make /b active again
+    tabStore.addTab(route('/b'))
+
+    await tabStore.clearLeftTabs('/c')
+
+    expect(push).toHaveBeenLastCalledWith('/c')
+    expect(tabStore.activeTabId).toBe('/c')
+  })
+
   it('resetTabs drops every tab, including pinned ones, and the stored snapshot', () => {
     storage.set('globalTabs', [storedTab('/a')])
 

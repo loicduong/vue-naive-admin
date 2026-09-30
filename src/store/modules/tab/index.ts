@@ -14,6 +14,7 @@ import {
   getAllTabs,
   getDefaultHomeTab,
   getFixedTabIds,
+  getNearestSurvivingTab,
   getNextActiveTab,
   getTabByRoute,
   getTabIdByRoute,
@@ -167,7 +168,7 @@ export const useTabStore = defineStore(SetupStoreId.Tab, () => {
     const updatedTabs = filterTabsByIds(removedTabsIds, tabs.value)
 
     if (isRemoveActiveTab) {
-      const activeTabCandidate = updatedTabs[updatedTabs.length - 1] || homeTab.value
+      const activeTabCandidate = getNearestSurvivingTab(tabs.value, activeTabId.value, removedTabsIds, homeTab.value)
 
       // leave the active tab first, keep every tab when a route guard cancels the navigation
       if (activeTabCandidate && !(await switchRouteByTab(activeTabCandidate))) return
