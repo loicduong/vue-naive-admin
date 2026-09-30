@@ -9,7 +9,7 @@ import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
 import { useRouteStore } from '@/store/modules/route'
 import IconUilSearch from '~icons/uil/search'
-import { filterSearchMenus, moveActiveIndex } from './shared'
+import { filterSearchMenus, getSearchKeyAction, moveActiveIndex } from './shared'
 
 defineOptions({
   name: 'SearchModal',
@@ -57,10 +57,12 @@ function select(menu?: App.Global.Menu) {
 }
 
 function handleKeydown(e: KeyboardEvent) {
-  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+  const action = getSearchKeyAction(e)
+
+  if (action === 'up' || action === 'down') {
     e.preventDefault()
-    move(e.key === 'ArrowDown' ? 1 : -1)
-  } else if (e.key === 'Enter') {
+    move(action === 'down' ? 1 : -1)
+  } else if (action === 'select') {
     e.preventDefault()
     select(results.value[activeIndex.value])
   }
@@ -76,7 +78,7 @@ watch(visible, value => {
 
 // NModal's own close-on-esc relies on its focus trap, which does not fire here; close on Esc while open
 useEventListener(window, 'keydown', (e: KeyboardEvent) => {
-  if (visible.value && e.key === 'Escape') {
+  if (visible.value && getSearchKeyAction(e) === 'close') {
     visible.value = false
   }
 })

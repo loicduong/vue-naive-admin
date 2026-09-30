@@ -44,3 +44,27 @@ export function moveActiveIndex(index: number, length: number, step: 1 | -1) {
 
   return (index + step + length) % length
 }
+
+/** What a key press does in the search */
+export type SearchKeyAction = 'up' | 'down' | 'select' | 'close'
+
+/**
+ * Map a key press to a search action
+ *
+ * Keys pressed while an IME composition is active belong to the input method (Enter confirms, Esc cancels the
+ * composition), so they are ignored
+ *
+ * @param event
+ */
+export function getSearchKeyAction(event: Pick<KeyboardEvent, 'key' | 'isComposing'>): SearchKeyAction | null {
+  if (event.isComposing) return null
+
+  const actions: Record<string, SearchKeyAction> = {
+    ArrowUp: 'up',
+    ArrowDown: 'down',
+    Enter: 'select',
+    Escape: 'close',
+  }
+
+  return actions[event.key] ?? null
+}

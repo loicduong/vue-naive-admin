@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vite-plus/test'
-import { filterSearchMenus, moveActiveIndex } from './shared'
+import { filterSearchMenus, getSearchKeyAction, moveActiveIndex } from './shared'
 
 // nested menus carry a relative routePath and the full path as routeKey (route name == path)
 function menu(routeKey: string, title: string) {
@@ -47,5 +47,24 @@ describe('moveActiveIndex', () => {
 
   it('returns -1 when there are no results', () => {
     expect(moveActiveIndex(0, 0, 1)).toBe(-1)
+  })
+})
+
+describe('getSearchKeyAction', () => {
+  it('maps navigation keys to actions', () => {
+    expect(getSearchKeyAction({ key: 'ArrowDown', isComposing: false })).toBe('down')
+    expect(getSearchKeyAction({ key: 'ArrowUp', isComposing: false })).toBe('up')
+    expect(getSearchKeyAction({ key: 'Enter', isComposing: false })).toBe('select')
+    expect(getSearchKeyAction({ key: 'Escape', isComposing: false })).toBe('close')
+  })
+
+  it('ignores keys while an IME composition is active (Enter confirms, Esc cancels the composition)', () => {
+    expect(getSearchKeyAction({ key: 'Enter', isComposing: true })).toBeNull()
+    expect(getSearchKeyAction({ key: 'Escape', isComposing: true })).toBeNull()
+    expect(getSearchKeyAction({ key: 'ArrowDown', isComposing: true })).toBeNull()
+  })
+
+  it('ignores other keys', () => {
+    expect(getSearchKeyAction({ key: 'a', isComposing: false })).toBeNull()
   })
 })
