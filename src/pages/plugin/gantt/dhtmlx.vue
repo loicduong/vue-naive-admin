@@ -3,6 +3,8 @@ import type { GanttConfigOptions, ZoomLevel } from 'dhtmlx-gantt'
 import { gantt } from 'dhtmlx-gantt'
 import { ganttTasks } from '@/components/modules/plugin/gantt/dhtmlx/data'
 import 'dhtmlx-gantt/codebase/dhtmlxgantt.css'
+import { onMounted, shallowRef } from 'vue'
+import { NCard, NTab, NTabs } from 'naive-ui'
 
 definePage({
   meta: {

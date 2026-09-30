@@ -8,6 +8,13 @@ import { loginModuleRecord } from '@/constants/app'
 import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
+import { computed } from 'vue'
+import type { Component } from 'vue'
+import { NCard } from 'naive-ui'
+import WaveBg from '@/components/custom/wave-bg.vue'
+import SystemLogo from '@/components/common/system-logo.vue'
+import ThemeSchemaSwitch from '@/components/common/theme-schema-switch.vue'
+import LangSwitch from '@/components/common/lang-switch.vue'
 
 interface Props {
   /** The login module */

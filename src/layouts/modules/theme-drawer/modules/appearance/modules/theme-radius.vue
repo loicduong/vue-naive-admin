@@ -2,6 +2,7 @@
 import { $t } from '@/locales'
 import { useThemeStore } from '@/store/modules/theme'
 import SettingItem from '../../../components/setting-item.vue'
+import { NDivider, NInputNumber } from 'naive-ui'
 
 defineOptions({
   name: 'ThemeRadius',

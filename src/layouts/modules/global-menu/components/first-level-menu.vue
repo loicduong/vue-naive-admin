@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { transformColorWithOpacity } from '@/utils/color'
 import SimpleScrollbar from '@/components/common/simple-scrollbar.vue'
+import { createReusableTemplate } from '@vueuse/core'
+import { computed } from 'vue'
+import MenuToggler from '@/components/common/menu-toggler.vue'
 
 defineOptions({
   name: 'FirstLevelMenu',

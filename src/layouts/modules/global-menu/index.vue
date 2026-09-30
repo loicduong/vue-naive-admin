@@ -3,6 +3,8 @@ import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
 import VerticalMenu from './modules/vertical-menu.vue'
 import VerticalMixMenu from './modules/vertical-mix-menu.vue'
+import { computed } from 'vue'
+import type { Component } from 'vue'
 
 defineOptions({
   name: 'GlobalMenu',

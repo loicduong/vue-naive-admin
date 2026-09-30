@@ -23,6 +23,7 @@ import {
   updateTabByI18nKey,
   updateTabsByI18nKey,
 } from './shared'
+import { computed, ref } from 'vue'
 
 export const useTabStore = defineStore(SetupStoreId.Tab, () => {
   const routeStore = useRouteStore()

@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import SignaturePad from 'signature_pad'
+import { onMounted, ref, useTemplateRef } from 'vue'
+import { useEventListener } from '@vueuse/core'
+import { NCard } from 'naive-ui'
+import GithubLink from '@/components/custom/github-link.vue'
+import ButtonIcon from '@/components/custom/button-icon.vue'
+import IconCharmDownload from '~icons/charm/download'
+import IconCharmEraser from '~icons/charm/eraser'
 
 definePage({ meta: { icon: 'ic:round-draw' } })
 
@@ -48,10 +55,10 @@ const handleClear = () => signature.value?.clear()
         <GithubLink link="https://github.com/szimek/signature_pad" />
         <div class="flex-y-center justify-end gap-12px">
           <ButtonIcon tooltip-content="Download" @click="handleSave">
-            <icon-charm:download />
+            <icon-charm-download />
           </ButtonIcon>
           <ButtonIcon tooltip-content="Clear" @click="handleClear">
-            <icon-charm:eraser />
+            <icon-charm-eraser />
           </ButtonIcon>
         </div>
         <canvas ref="canvas" class="h-full w-full cursor-crosshair" />

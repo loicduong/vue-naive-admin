@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { BaseEdge, EdgeLabelRenderer, getSmoothStepPath, Position, useNodesData, useVueFlow } from '@vue-flow/core'
 import { executeTransition, TransitionPresets } from '@vueuse/core'
+import { computed, nextTick, ref, toRef, watch } from 'vue'
 
 interface Props {
   id: string

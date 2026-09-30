@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import LookForward from '@/components/custom/look-forward.vue'
+
 definePage({
   meta: {
     icon: 'material-symbols:filter-list-off',

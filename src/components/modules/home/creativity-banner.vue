@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { $t } from '@/locales'
+import { NCard } from 'naive-ui'
+import IconLocalBanner from '~icons/local/banner'
 
 defineOptions({
   name: 'CreativityBanner',

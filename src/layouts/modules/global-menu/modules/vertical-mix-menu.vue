@@ -10,6 +10,11 @@ import { useThemeStore } from '@/store/modules/theme'
 import GlobalLogo from '../../global-logo/index.vue'
 import FirstLevelMenu from '../components/first-level-menu.vue'
 import { useMenu, useMixMenuContext } from '../context'
+import { useRoute } from 'vue-router'
+import { computed, ref, watch } from 'vue'
+import { NMenu } from 'naive-ui'
+import DarkModeContainer from '@/components/common/dark-mode-container.vue'
+import PinToggler from '@/components/common/pin-toggler.vue'
 
 defineOptions({
   name: 'VerticalMixMenu',

@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { $t } from '@/locales'
+import { computed } from 'vue'
+import { NCard, NList, NListItem, NThing } from 'naive-ui'
+import UserAvatar from '@/components/custom/user-avatar.vue'
 
 defineOptions({
   name: 'ProjectNews',

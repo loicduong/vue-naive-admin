@@ -2,6 +2,10 @@
 import type { Options } from 'typeit'
 import type { El } from 'typeit/dist/types'
 import TypeIt from 'typeit'
+import { onMounted, shallowRef } from 'vue'
+import { NCard, NDivider, NSpace } from 'naive-ui'
+import GithubLink from '@/components/custom/github-link.vue'
+import WebSiteLink from '@/components/custom/web-site-link.vue'
 
 definePage({
   meta: {

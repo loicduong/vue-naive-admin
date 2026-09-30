@@ -5,6 +5,8 @@ import { getEnvVariable } from '@/utils/env'
 import { naiveDateLocales, naiveLocales } from './locales/naive'
 import { useAppStore } from './store/modules/app'
 import { useThemeStore } from './store/modules/theme'
+import { computed } from 'vue'
+import AppProvider from '@/components/common/app-provider.vue'
 
 defineOptions({
   name: 'App',

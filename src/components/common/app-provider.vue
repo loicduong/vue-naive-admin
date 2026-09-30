@@ -1,6 +1,15 @@
 <script setup lang="ts">
-import { useDialog, useLoadingBar, useMessage, useNotification } from 'naive-ui'
-import { createTextVNode } from 'vue'
+import {
+  useDialog,
+  useLoadingBar,
+  useMessage,
+  useNotification,
+  NLoadingBarProvider,
+  NDialogProvider,
+  NNotificationProvider,
+  NMessageProvider,
+} from 'naive-ui'
+import { createTextVNode, defineComponent } from 'vue'
 
 defineOptions({ name: 'AppProvider' })
 

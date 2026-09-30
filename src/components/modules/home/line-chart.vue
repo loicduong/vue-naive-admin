@@ -4,6 +4,8 @@ import { useEcharts } from '@/hooks/common/echarts'
 import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
+import { computed, watch } from 'vue'
+import { NCard } from 'naive-ui'
 
 defineOptions({ name: 'LineChart' })
 

@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+import { computed, ref } from 'vue'
+import { NEmpty, NInput, NPopover } from 'naive-ui'
+import SvgIcon from '@/components/custom/svg-icon.vue'
+
 defineOptions({ name: 'CustomIconSelect' })
 
 const props = withDefaults(defineProps<Props>(), {

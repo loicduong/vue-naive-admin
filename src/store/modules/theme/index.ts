@@ -2,6 +2,9 @@ import { defineStore } from 'pinia'
 import { SetupStoreId } from '@/constants/enum'
 import { localStg } from '@/utils/storage'
 import { addThemeVarsToGlobal, createThemeToken, getNaiveTheme, initThemeSettings, toggleCssDarkMode } from './shared'
+import { computed, effectScope, onScopeDispose, ref, toRefs, watch } from 'vue'
+import type { Ref } from 'vue'
+import { useEventListener, usePreferredColorScheme } from '@vueuse/core'
 
 /** Theme store */
 export const useThemeStore = defineStore(SetupStoreId.Theme, () => {

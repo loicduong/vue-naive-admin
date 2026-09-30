@@ -10,6 +10,8 @@ import { useRunProcess } from '@/components/modules/plugin/flow/vue-flow/run-pro
 import { useShuffle } from '@/components/modules/plugin/flow/vue-flow/shuffle'
 import '@vue-flow/core/dist/style.css'
 import '@vue-flow/core/dist/theme-default.css'
+import { nextTick, ref, shallowRef } from 'vue'
+import { NCard } from 'naive-ui'
 
 definePage({
   meta: {

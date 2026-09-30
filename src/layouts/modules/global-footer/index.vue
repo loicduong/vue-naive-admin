@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import DarkModeContainer from '@/components/common/dark-mode-container.vue'
+
 defineOptions({
   name: 'GlobalFooter',
 })

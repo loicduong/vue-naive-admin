@@ -1,5 +1,5 @@
 <script setup lang="tsx">
-import { NButton, NPopconfirm, NTag } from 'naive-ui'
+import { NButton, NPopconfirm, NTag, NCard, NDataTable } from 'naive-ui'
 import { reactive } from 'vue'
 import RoleOperateDrawer from '@/components/modules/manage/role/role-operate-drawer.vue'
 import RoleSearch from '@/components/modules/manage/role/role-search.vue'
@@ -8,6 +8,7 @@ import { defaultTransform, useNaivePaginatedTable, useTableOperate } from '@/hoo
 import { $t } from '@/locales'
 import { fetchGetRoleList } from '@/service/api'
 import { useAppStore } from '@/store/modules/app'
+import TableHeaderOperation from '@/components/advanced/table-header-operation.vue'
 
 const appStore = useAppStore()
 

@@ -2,6 +2,8 @@
 import { themeSchemaRecord } from '@/constants/app'
 import { $t } from '@/locales'
 import { useThemeStore } from '@/store/modules/theme'
+import { NDivider, NTab, NTabs } from 'naive-ui'
+import SvgIcon from '@/components/custom/svg-icon.vue'
 
 defineOptions({
   name: 'ThemeSchema',

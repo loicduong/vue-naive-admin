@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import type { PopoverPlacement } from 'naive-ui'
 import { computed, useSlots } from 'vue'
+import { NTooltip } from 'naive-ui'
+import SvgIcon from '@/components/custom/svg-icon.vue'
 
 defineOptions({ name: 'IconTooltip' })
 

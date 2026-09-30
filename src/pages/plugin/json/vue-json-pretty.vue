@@ -2,6 +2,8 @@
 import { reactive, watch } from 'vue'
 import VueJsonPretty from 'vue-json-pretty'
 import 'vue-json-pretty/lib/styles.css'
+import { NCard } from 'naive-ui'
+import GithubLink from '@/components/custom/github-link.vue'
 
 definePage({ meta: { icon: 'mdi:code-json' } })
 

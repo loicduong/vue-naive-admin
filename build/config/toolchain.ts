@@ -7,14 +7,7 @@ export const fmt: UserConfig['fmt'] = {
   singleQuote: true,
   trailingComma: 'all',
   arrowParens: 'avoid',
-  ignorePatterns: [
-    '.claude',
-    'CHANGELOG.md',
-    'pnpm-lock.yaml',
-    'src/types/auto-imports.d.ts',
-    'src/types/components.d.ts',
-    'src/types/typed-router.d.ts',
-  ],
+  ignorePatterns: ['.claude', 'CHANGELOG.md', 'pnpm-lock.yaml', 'src/types/typed-router.d.ts'],
 }
 
 /** Oxlint rules, migrated from @antfu/eslint-config via `vp migrate` */
@@ -41,8 +34,6 @@ export const lint: UserConfig['lint'] = {
     '**/.claude',
     '**/public',
     '**/*.min.*',
-    'src/types/auto-imports.d.ts',
-    'src/types/components.d.ts',
     'src/types/typed-router.d.ts',
   ],
   rules: {

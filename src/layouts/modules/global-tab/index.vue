@@ -3,6 +3,13 @@ import { useAppStore } from '@/store/modules/app'
 import { useTabStore } from '@/store/modules/tab'
 import { useThemeStore } from '@/store/modules/theme'
 import ContextMenu from './context-menu.vue'
+import { useRoute } from 'vue-router'
+import { reactive, watch } from 'vue'
+import { NTab, NTabs } from 'naive-ui'
+import DarkModeContainer from '@/components/common/dark-mode-container.vue'
+import SvgIcon from '@/components/custom/svg-icon.vue'
+import ReloadButton from '@/components/common/reload-button.vue'
+import FullScreen from '@/components/common/full-screen.vue'
 
 defineOptions({
   name: 'GlobalTab',

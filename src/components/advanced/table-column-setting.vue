@@ -1,6 +1,13 @@
 <script setup lang="ts" generic="T extends Record<string, unknown>, K = never">
 import { VueDraggable } from 'vue-draggable-plus'
 import { $t } from '@/locales'
+import { computed } from 'vue'
+import { NButton, NCheckbox, NDivider, NPopover } from 'naive-ui'
+import IconAntDesignSettingOutlined from '~icons/ant-design/setting-outlined'
+import IconMdiDrag from '~icons/mdi/drag'
+import ButtonIcon from '@/components/custom/button-icon.vue'
+import IconOcticonPin16 from '~icons/octicon/pin16'
+import IconOcticonPinSlash16 from '~icons/octicon/pin-slash16'
 
 defineOptions({
   name: 'TableColumnSetting',

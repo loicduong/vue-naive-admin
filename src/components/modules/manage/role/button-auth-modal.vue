@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { $t } from '@/locales'
+import { computed, shallowRef } from 'vue'
+import { NButton, NModal, NSpace, NTree } from 'naive-ui'
 
 defineOptions({
   name: 'ButtonAuthModal',

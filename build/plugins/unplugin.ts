@@ -1,12 +1,8 @@
 import type { PluginOption } from 'vite-plus'
 import path from 'node:path'
 import process from 'node:process'
-import AutoImport from 'unplugin-auto-import/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
-import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
-import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
-import Components from 'unplugin-vue-components/vite'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons-ng'
 
 export function setupUnplugin(viteEnv: Env.ImportMeta) {
@@ -27,20 +23,6 @@ export function setupUnplugin(viteEnv: Env.ImportMeta) {
       },
       scale: 1,
       defaultClass: 'inline-block',
-    }),
-    AutoImport({
-      dts: 'src/types/auto-imports.d.ts',
-      imports: ['@vueuse/core', 'vue-router', 'vue'],
-      dirs: ['src/hooks', 'src/store'],
-    }),
-    Components({
-      dts: 'src/types/components.d.ts',
-      dtsTsx: false,
-      types: [{ from: 'vue-router', names: ['RouterLink', 'RouterView'] }],
-      resolvers: [
-        NaiveUiResolver(),
-        IconsResolver({ customCollections: [collectionName], componentPrefix: VITE_ICON_PREFIX }),
-      ],
     }),
     createSvgIconsPlugin({
       iconDirs: [localIconPath],

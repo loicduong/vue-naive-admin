@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { $t } from '@/locales'
+import { computed } from 'vue'
+import { NDropdown } from 'naive-ui'
+import ButtonIcon from '@/components/custom/button-icon.vue'
+import SvgIcon from '@/components/custom/svg-icon.vue'
 
 defineOptions({
   name: 'LangSwitch',

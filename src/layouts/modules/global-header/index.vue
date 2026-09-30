@@ -6,6 +6,11 @@ import GlobalBreadcrumb from '../global-breadcrumb/index.vue'
 import GlobalLogo from '../global-logo/index.vue'
 import ThemeButton from './components/theme-button.vue'
 import UserAvatar from './components/user-avatar.vue'
+import { computed } from 'vue'
+import DarkModeContainer from '@/components/common/dark-mode-container.vue'
+import MenuToggler from '@/components/common/menu-toggler.vue'
+import LangSwitch from '@/components/common/lang-switch.vue'
+import ThemeSchemaSwitch from '@/components/common/theme-schema-switch.vue'
 
 defineOptions({
   name: 'GlobalHeader',

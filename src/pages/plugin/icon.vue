@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import { icons } from '@/components/modules/plugin/icon/icons'
+import { ref } from 'vue'
+import { NCard } from 'naive-ui'
+import SvgIcon from '@/components/custom/svg-icon.vue'
+import CustomIconSelect from '@/components/custom/custom-icon-select.vue'
+import WebSiteLink from '@/components/custom/web-site-link.vue'
+import IconLocalActivity from '~icons/local/activity'
+import IconLocalCast from '~icons/local/cast'
 
 definePage({
   meta: {

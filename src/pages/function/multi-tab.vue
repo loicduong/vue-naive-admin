@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { useRouterPush } from '@/hooks/common/router'
 import { $t } from '@/locales'
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
+import { NButton } from 'naive-ui'
+import LookForward from '@/components/custom/look-forward.vue'
 
 definePage({
   meta: {

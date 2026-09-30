@@ -1,5 +1,5 @@
 <script setup lang="tsx">
-import { NButton, NTag } from 'naive-ui'
+import { NButton, NTag, NCard, NSpace, NDataTable } from 'naive-ui'
 import { reactive } from 'vue'
 import { utils, writeFile } from 'xlsx'
 import { enableStatusRecord, userGenderRecord } from '@/constants/business'
@@ -7,6 +7,7 @@ import { isTableColumnHasKey, useNaiveTable } from '@/hooks/common/table'
 import { $t } from '@/locales'
 import { fetchGetUserList } from '@/service/api'
 import { useAppStore } from '@/store/modules/app'
+import IconFileIconsMicrosoftExcel from '~icons/file-icons/microsoft-excel'
 
 const appStore = useAppStore()
 
@@ -171,7 +172,7 @@ function isTableColumnHasTitle<T>(column: NaiveUI.TableColumn<T>): column is Nai
         <NSpace align="end" wrap justify="end" class="lt-sm:w-200px">
           <NButton size="small" ghost type="primary" @click="exportExcel">
             <template #icon>
-              <icon-file-icons:microsoft-excel class="text-icon" />
+              <icon-file-icons-microsoft-excel class="text-icon" />
             </template>
             导出excel
           </NButton>

@@ -10,6 +10,8 @@ import { useTabStore } from '../tab'
 import { isDifferentUser, shouldResetTabs } from '../tab/shared'
 import { useThemeStore } from '../theme'
 import { clearAuthStorage, getToken } from './shared'
+import { useRoute } from 'vue-router'
+import { computed, reactive, ref } from 'vue'
 
 export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
   useThemeStore()

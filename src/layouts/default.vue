@@ -10,6 +10,7 @@ import { provideMixMenuContext } from './modules/global-menu/context'
 import GlobalSider from './modules/global-sider/index.vue'
 import GlobalTab from './modules/global-tab/index.vue'
 import ThemeDrawer from './modules/theme-drawer/index.vue'
+import { computed, defineAsyncComponent } from 'vue'
 
 defineOptions({
   name: 'BaseLayout',

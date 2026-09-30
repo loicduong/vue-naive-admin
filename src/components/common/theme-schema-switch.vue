@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { PopoverPlacement } from 'naive-ui'
 import { $t } from '@/locales'
+import { computed } from 'vue'
+import ButtonIcon from '@/components/custom/button-icon.vue'
 
 defineOptions({ name: 'ThemeSchemaSwitch' })
 

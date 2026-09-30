@@ -3,6 +3,8 @@ import { GLOBAL_SIDER_MENU_ID } from '@/constants/app'
 import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
 import GlobalLogo from '../global-logo/index.vue'
+import { computed } from 'vue'
+import DarkModeContainer from '@/components/common/dark-mode-container.vue'
 
 defineOptions({
   name: 'GlobalSider',

@@ -6,6 +6,8 @@ import LineChart from '@/components/modules/home/line-chart.vue'
 import PieChart from '@/components/modules/home/pie-chart.vue'
 import ProjectNews from '@/components/modules/home/project-news.vue'
 import { useAppStore } from '@/store/modules/app'
+import { computed } from 'vue'
+import { NCard, NGi, NGrid, NSpace } from 'naive-ui'
 
 definePage({
   meta: {

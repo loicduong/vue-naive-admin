@@ -25,6 +25,9 @@ import {
   pivotChartRows,
 } from '@/components/modules/plugin/tables/vtable/data'
 import { useThemeStore } from '@/store/modules/theme'
+import { computed, onMounted, ref } from 'vue'
+import { NCard, NSpace } from 'naive-ui'
+import WebSiteLink from '@/components/custom/web-site-link.vue'
 
 definePage({
   meta: {

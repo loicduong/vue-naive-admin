@@ -2,6 +2,7 @@
 import { computed, shallowRef, watch } from 'vue'
 import { $t } from '@/locales'
 import { fetchGetAllPages, fetchGetMenuTree } from '@/service/api'
+import { NButton, NModal, NSelect, NSpace, NTree } from 'naive-ui'
 
 defineOptions({
   name: 'MenuAuthModal',

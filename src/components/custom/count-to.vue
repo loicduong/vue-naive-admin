@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { TransitionPresets } from '@vueuse/core'
+import { TransitionPresets, useTransition } from '@vueuse/core'
+import { computed, nextTick, ref, watch } from 'vue'
 
 defineOptions({
   name: 'CountTo',

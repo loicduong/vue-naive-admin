@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { useRouterPush } from '@/hooks/common/router'
 import { $t } from '@/locales'
+import { computed } from 'vue'
+import { NButton } from 'naive-ui'
+import SvgIcon from '@/components/custom/svg-icon.vue'
 
 defineOptions({ name: 'ExceptionBase' })
 

@@ -9,6 +9,8 @@ import {
   radarOptions,
 } from '@/components/modules/plugin/charts/echarts/data'
 import { useEcharts } from '@/hooks/common/echarts'
+import { onUnmounted } from 'vue'
+import { NCard, NSpace } from 'naive-ui'
 
 definePage({
   meta: {
