@@ -21,6 +21,19 @@ export function shouldSwitchTabOnPointerDown(event: Pick<PointerEvent, 'button' 
   return isPrimaryPointer(event) && event.pointerType !== 'touch'
 }
 
+/** Max pointer movement (px) for a touch to still count as a tap rather than a swipe */
+const TAP_MOVE_TOLERANCE = 10
+
+/**
+ * Whether a touch that started at `start` and ended at `end` is a tap (not a swipe)
+ *
+ * @param start
+ * @param end
+ */
+export function isTapGesture(start: { x: number; y: number }, end: { x: number; y: number }) {
+  return Math.abs(end.x - start.x) <= TAP_MOVE_TOLERANCE && Math.abs(end.y - start.y) <= TAP_MOVE_TOLERANCE
+}
+
 /** The active color of the tab */
 export const ACTIVE_COLOR = '#1890ff'
 

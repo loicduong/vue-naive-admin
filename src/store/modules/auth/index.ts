@@ -7,7 +7,7 @@ import { fetchGetUserInfo, fetchLogin } from '@/service/api'
 import { localStg } from '@/utils/storage'
 import { useRouteStore } from '../route'
 import { useTabStore } from '../tab'
-import { shouldResetTabs } from '../tab/shared'
+import { isDifferentUser, shouldResetTabs } from '../tab/shared'
 import { useThemeStore } from '../theme'
 import { clearAuthStorage, getToken } from './shared'
 
@@ -63,22 +63,22 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
   }
 
   /**
-   * Clear all tabs when the logged in user differs from the previous one
+   * Clear all tabs unless the same user logs in again
    *
-   * @returns Whether the tabs were cleared
+   * @returns Whether a known, different user logged in (their redirect must not be reused)
    */
   function checkTabClear() {
     if (!userInfo.userId) return false
 
-    const isClear = shouldResetTabs(localStg.get('lastLoginUserId'), userInfo.userId)
+    const lastLoginUserId = localStg.get('lastLoginUserId')
 
-    if (isClear) {
+    if (shouldResetTabs(lastLoginUserId, userInfo.userId)) {
       tabStore.resetTabs()
     }
 
     localStg.remove('lastLoginUserId')
 
-    return isClear
+    return isDifferentUser(lastLoginUserId, userInfo.userId)
   }
 
   /**
@@ -98,9 +98,9 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
 
       if (pass) {
         // a different user must not be redirected to the previous user's page
-        const isClear = checkTabClear()
+        const isOtherUser = checkTabClear()
 
-        await redirectFromLogin(redirect && !isClear)
+        await redirectFromLogin(redirect && !isOtherUser)
 
         window.$notification?.success({
           title: $t('page.login.common.loginSuccess'),

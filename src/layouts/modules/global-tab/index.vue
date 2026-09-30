@@ -8,7 +8,7 @@ import { useThemeStore } from '@/store/modules/theme'
 import { isPC } from '@/utils/agent'
 import ContextMenu from './context-menu.vue'
 import PageTab from './page-tab/index.vue'
-import { shouldSwitchTabOnPointerDown } from './page-tab/shared'
+import { isTapGesture, shouldSwitchTabOnPointerDown } from './page-tab/shared'
 
 defineOptions({
   name: 'GlobalTab',
@@ -110,22 +110,30 @@ function handleMousedown(e: MouseEvent, tab: App.Global.Tab) {
   handleCloseTab(tab)
 }
 
-/** The pointer type of the last press on a tab */
-let lastPointerType = ''
+/** Where the current touch on a tab started */
+let touchStart: { x: number; y: number } | null = null
 
 function switchTab(e: PointerEvent, tab: App.Global.Tab) {
-  lastPointerType = e.pointerType
+  if (e.pointerType === 'touch') {
+    touchStart = { x: e.clientX, y: e.clientY }
+    return
+  }
 
   if (!shouldSwitchTabOnPointerDown(e)) return
 
   tabStore.switchRouteByTab(tab)
 }
 
-// a touch press may start a swipe, the click only fires for a tap that did not scroll the tab bar
-function handleTabClick(tab: App.Global.Tab) {
-  if (lastPointerType !== 'touch') return
+// a touch may start a swipe of the tab bar, so switch only when it ends as a tap (independent of the device type)
+function handleTabPointerUp(e: PointerEvent, tab: App.Global.Tab) {
+  if (e.pointerType !== 'touch' || !touchStart) return
 
-  tabStore.switchRouteByTab(tab)
+  const isTap = isTapGesture(touchStart, { x: e.clientX, y: e.clientY })
+  touchStart = null
+
+  if (isTap) {
+    tabStore.switchRouteByTab(tab)
+  }
 }
 
 async function refresh() {
@@ -229,7 +237,7 @@ init()
             :active-color="themeStore.themeColor"
             :closable="!tabStore.isTabRetain(tab.id)"
             @pointerdown="switchTab($event, tab)"
-            @click="handleTabClick(tab)"
+            @pointerup="handleTabPointerUp($event, tab)"
             @mousedown="handleMousedown($event, tab)"
             @close="handleCloseTab(tab)"
             @contextmenu="handleContextMenu($event, tab.id)"

@@ -9,6 +9,7 @@ import {
   getNextActiveTab,
   getTabIdByRoute,
   insertTab,
+  isDifferentUser,
   reorderFixedTabs,
   shouldResetTabs,
   updateTabsByI18nKey,
@@ -242,5 +243,19 @@ describe('getNextActiveTab', () => {
 
   it('falls back to home when it was the only tab', () => {
     expect(getNextActiveTab([tab('/a')], 0, home)?.id).toBe('/home')
+  })
+})
+
+describe('isDifferentUser', () => {
+  it('is true only when a known previous user differs', () => {
+    expect(isDifferentUser('1', '2')).toBe(true)
+  })
+
+  it('is false on a first login without a recorded previous user, so the redirect is kept', () => {
+    expect(isDifferentUser(null, '2')).toBe(false)
+  })
+
+  it('is false for the same user', () => {
+    expect(isDifferentUser('2', '2')).toBe(false)
   })
 })

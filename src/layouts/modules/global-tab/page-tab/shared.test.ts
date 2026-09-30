@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vite-plus/test'
-import { isPrimaryPointer, shouldSwitchTabOnPointerDown } from './shared'
+import { isPrimaryPointer, isTapGesture, shouldSwitchTabOnPointerDown } from './shared'
 
 describe('shouldSwitchTabOnPointerDown', () => {
   it('switches on a primary mouse press', () => {
@@ -24,5 +24,19 @@ describe('isPrimaryPointer', () => {
   it('rejects middle and right clicks, so the close icon does not swallow them', () => {
     expect(isPrimaryPointer({ button: 1 })).toBe(false)
     expect(isPrimaryPointer({ button: 2 })).toBe(false)
+  })
+})
+
+describe('isTapGesture', () => {
+  it('treats a press released in place as a tap', () => {
+    expect(isTapGesture({ x: 100, y: 20 }, { x: 103, y: 22 })).toBe(true)
+  })
+
+  it('treats a horizontal swipe as a scroll, not a tap', () => {
+    expect(isTapGesture({ x: 100, y: 20 }, { x: 160, y: 20 })).toBe(false)
+  })
+
+  it('treats a vertical move as a scroll, not a tap', () => {
+    expect(isTapGesture({ x: 100, y: 20 }, { x: 100, y: 50 })).toBe(false)
   })
 })

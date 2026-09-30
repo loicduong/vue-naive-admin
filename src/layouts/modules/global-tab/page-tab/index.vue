@@ -4,7 +4,7 @@ import type { PageTabMode, PageTabProps } from './types'
 import ButtonTab from './button-tab.vue'
 import ChromeTab from './chrome-tab.vue'
 import style from './index.module.css'
-import { ACTIVE_COLOR, createTabCssVars, isPrimaryPointer } from './shared'
+import { ACTIVE_COLOR, createTabCssVars, isPrimaryPointer, isTapGesture } from './shared'
 import SliderTab from './slider-tab.vue'
 import SvgClose from './svg-close.vue'
 
@@ -54,9 +54,32 @@ const bindProps = computed(() => {
   return rest
 })
 
+/** Where the current touch on the close icon started */
+let closeTouchStart: { x: number; y: number } | null = null
+
 function handleClose(event: PointerEvent) {
   // right and middle clicks on the close icon belong to the context menu and the middle-click setting
   if (!isPrimaryPointer(event)) return
+
+  // a touch may start a swipe of the tab bar, close only when it ends as a tap
+  if (event.pointerType === 'touch') {
+    closeTouchStart = { x: event.clientX, y: event.clientY }
+    return
+  }
+
+  // do not let the tab itself switch to the route being closed
+  event.stopPropagation()
+
+  emit('close')
+}
+
+function handleCloseTouchEnd(event: PointerEvent) {
+  if (event.pointerType !== 'touch' || !closeTouchStart) return
+
+  const isTap = isTapGesture(closeTouchStart, { x: event.clientX, y: event.clientY })
+  closeTouchStart = null
+
+  if (!isTap) return
 
   // do not let the tab itself switch to the route being closed
   event.stopPropagation()
@@ -73,7 +96,12 @@ function handleClose(event: PointerEvent) {
     <slot />
     <template #suffix>
       <slot name="suffix">
-        <SvgClose v-if="closable" :class="[style['svg-close']]" @pointerdown="handleClose" />
+        <SvgClose
+          v-if="closable"
+          :class="[style['svg-close']]"
+          @pointerdown="handleClose"
+          @pointerup="handleCloseTouchEnd"
+        />
       </slot>
     </template>
   </component>

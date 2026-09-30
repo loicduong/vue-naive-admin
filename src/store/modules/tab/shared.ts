@@ -223,6 +223,18 @@ export function shouldResetTabs(lastUserId: string | null | undefined, currentUs
 }
 
 /**
+ * Whether a known previous user differs from the current one
+ *
+ * Unlike `shouldResetTabs`, an unknown previous user (e.g. a first login) is not treated as different
+ *
+ * @param lastUserId User id of the previous session
+ * @param currentUserId User id of the current session
+ */
+export function isDifferentUser(lastUserId: string | null | undefined, currentUserId: string) {
+  return Boolean(lastUserId) && lastUserId !== currentUserId
+}
+
+/**
  * Get fixed tabs
  *
  * @param tabs
