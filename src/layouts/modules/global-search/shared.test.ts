@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vite-plus/test'
-import { filterSearchMenus, getSearchKeyAction, moveActiveIndex } from './shared'
+import { filterSearchMenus, getMenuTarget, getSearchKeyAction, moveActiveIndex } from './shared'
 
 // nested menus carry a relative routePath and the full path as routeKey (route name == path)
 function menu(routeKey: string, title: string) {
@@ -66,5 +66,17 @@ describe('getSearchKeyAction', () => {
 
   it('ignores other keys', () => {
     expect(getSearchKeyAction({ key: 'a', isComposing: false })).toBeNull()
+  })
+})
+
+describe('getMenuTarget', () => {
+  it('opens the external url for a menu with href', () => {
+    const vue = { ...menu('/document/vue', 'Vue'), href: 'https://vuejs.org/' } as App.Global.Menu
+
+    expect(getMenuTarget(vue)).toEqual({ type: 'href', href: 'https://vuejs.org/' })
+  })
+
+  it('navigates by route key otherwise', () => {
+    expect(getMenuTarget(menu('/manage/user', 'User'))).toEqual({ type: 'route', routeKey: '/manage/user' })
   })
 })

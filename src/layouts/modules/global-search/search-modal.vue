@@ -9,7 +9,7 @@ import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
 import { useRouteStore } from '@/store/modules/route'
 import IconUilSearch from '~icons/uil/search'
-import { filterSearchMenus, getSearchKeyAction, moveActiveIndex } from './shared'
+import { filterSearchMenus, getMenuTarget, getSearchKeyAction, moveActiveIndex } from './shared'
 
 defineOptions({
   name: 'SearchModal',
@@ -53,7 +53,16 @@ function select(menu?: App.Global.Menu) {
   if (!menu) return
 
   visible.value = false
-  routerPushByKeyWithMetaQuery(menu.routeKey)
+
+  const target = getMenuTarget(menu)
+
+  // open external links right away, while the key press / click still counts as a user action for popup blockers
+  if (target.type === 'href') {
+    window.open(target.href, '_blank')
+    return
+  }
+
+  routerPushByKeyWithMetaQuery(target.routeKey)
 }
 
 function handleKeydown(e: KeyboardEvent) {

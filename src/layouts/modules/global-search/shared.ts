@@ -68,3 +68,17 @@ export function getSearchKeyAction(event: Pick<KeyboardEvent, 'key' | 'isComposi
 
   return actions[event.key] ?? null
 }
+
+/** Where selecting a menu should go */
+export type MenuTarget = { type: 'href'; href: string } | { type: 'route'; routeKey: App.Global.RouteKey }
+
+/**
+ * Get where selecting a menu should go: its external link, or its route
+ *
+ * @param menu
+ */
+export function getMenuTarget(menu: App.Global.Menu): MenuTarget {
+  if (menu.href) return { type: 'href', href: menu.href }
+
+  return { type: 'route', routeKey: menu.routeKey }
+}
