@@ -5,7 +5,16 @@ import { createViteProxy, fmt, getBuildInfo, include, lint, staged } from './bui
 import { setupVitePlugins } from './build/plugins'
 
 export default defineConfig(configEnv => {
-  const viteEnv = loadEnv(configEnv.mode, process.cwd()) as unknown as Env.ImportMeta
+  const modeEnv = loadEnv(configEnv.mode, process.cwd())
+
+  // fall back to .env.example for variables missing from the local env files (e.g. CI without a .env),
+  // set on process.env so vite also exposes them to import.meta.env
+  const exampleEnv = loadEnv('example', process.cwd())
+  for (const [key, value] of Object.entries(exampleEnv)) {
+    if (!(key in modeEnv)) process.env[key] = value
+  }
+
+  const viteEnv = { ...exampleEnv, ...modeEnv } as unknown as Env.ImportMeta
 
   const { desc, time, version } = getBuildInfo()
 
