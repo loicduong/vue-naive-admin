@@ -13,6 +13,9 @@ const { baseURL, otherBaseURL } = getServiceBaseURL(import.meta.env, isHttpProxy
 export const request = createFlatRequest(
   {
     baseURL,
+    headers: {
+      apidogToken: 'tCN7Otfze6DhYnCa4vH6hyTgmarhFr7c',
+    },
   },
   {
     defaultState: {
