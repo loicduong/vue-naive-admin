@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/loicduong/naive-agentic-admin/compare/v1.1.1...v1.2.0) (2026-09-30)
+
+
+### Features
+
+* add global menu search (Ctrl+K) ([#67](https://github.com/loicduong/naive-agentic-admin/issues/67)) ([b43175b](https://github.com/loicduong/naive-agentic-admin/commit/b43175b3f28872b691af3a63d3326b15115a8cc3))
+
 ## [1.1.1](https://github.com/loicduong/naive-agentic-admin/compare/v1.1.0...v1.1.1) (2026-09-30)
 
 
