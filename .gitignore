@@ -37,3 +37,7 @@ yarn.lock
 vite.config.ts.timestamp-*
 
 .agents
+
+.env
+.env.*
+!.env.example
