@@ -114,12 +114,6 @@ const local: App.I18n.Schema = {
         cache: 'Tag Bar Info Cache',
         cacheTip: 'Keep the tab bar information after leaving the page',
         height: 'Tab Height',
-        mode: {
-          title: 'Tab Mode',
-          slider: 'Slider',
-          chrome: 'Chrome',
-          button: 'Button',
-        },
         closeByMiddleClick: 'Close Tab by Middle Click',
         closeByMiddleClickTip: 'Enable closing tabs by clicking with the middle mouse button',
       },

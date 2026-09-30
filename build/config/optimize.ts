@@ -1,6 +1,5 @@
 export const include = [
   '@antv/g6',
-  '@better-scroll/core',
   '@visactor/vchart',
   '@visactor/vtable-editors',
   '@visactor/vtable-gantt',

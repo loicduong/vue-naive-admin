@@ -113,12 +113,6 @@ const local: App.I18n.Schema = {
         cache: 'Lưu trữ thông tin tab',
         cacheTip: 'Giữ lại thanh tab sau khi rời trang',
         height: 'Chiều cao tab',
-        mode: {
-          title: 'Kiểu tab',
-          slider: 'Kiểu trượt',
-          chrome: 'Kiểu Chrome',
-          button: 'Kiểu nút',
-        },
         closeByMiddleClick: 'Đóng tab bằng chuột giữa',
         closeByMiddleClickTip: 'Cho phép đóng tab bằng cách nhấn chuột giữa',
       },

@@ -1,14 +1,8 @@
 <script setup lang="ts">
-import { useElementBounding } from '@vueuse/core'
-import BetterScroll from '@/components/custom/better-scroll.vue'
-import { GLOBAL_TAB_WHEEL_SPEED_RATIO } from '@/constants/app'
 import { useAppStore } from '@/store/modules/app'
 import { useTabStore } from '@/store/modules/tab'
 import { useThemeStore } from '@/store/modules/theme'
-import { isPC } from '@/utils/agent'
 import ContextMenu from './context-menu.vue'
-import PageTab from './page-tab/index.vue'
-import { isTapGesture, shouldSwitchTabOnPointerDown } from './page-tab/shared'
 
 defineOptions({
   name: 'GlobalTab',
@@ -19,67 +13,7 @@ const appStore = useAppStore()
 const themeStore = useThemeStore()
 const tabStore = useTabStore()
 
-const bsWrapper = ref<HTMLElement>()
-const { width: bsWrapperWidth, left: bsWrapperLeft } = useElementBounding(bsWrapper)
-const bsScroll = ref<InstanceType<typeof BetterScroll>>()
-const tabRef = ref<HTMLElement>()
-const isPCFlag = isPC()
-
-const TAB_DATA_ID = 'data-tab-id'
 const MIDDLE_MOUSE_BUTTON = 1
-
-type TabNamedNodeMap = NamedNodeMap & {
-  [TAB_DATA_ID]: Attr
-}
-
-async function scrollToActiveTab() {
-  await nextTick()
-  if (!tabRef.value) return
-
-  const { children } = tabRef.value
-
-  for (let i = 0; i < children.length; i += 1) {
-    const child = children[i]
-
-    const { value: tabId } = (child.attributes as TabNamedNodeMap)[TAB_DATA_ID]
-
-    if (tabId === tabStore.activeTabId) {
-      const { left, width } = child.getBoundingClientRect()
-      const clientX = left + width / 2
-
-      setTimeout(() => {
-        scrollByClientX(clientX)
-      }, 50)
-
-      break
-    }
-  }
-}
-
-function scrollByClientX(clientX: number) {
-  const currentX = clientX - bsWrapperLeft.value
-  const deltaX = currentX - bsWrapperWidth.value / 2
-
-  if (bsScroll.value?.instance) {
-    const { maxScrollX, x: leftX, scrollBy } = bsScroll.value.instance
-
-    const rightX = maxScrollX - leftX
-    const update = deltaX > 0 ? Math.max(-deltaX, rightX) : Math.min(-deltaX, -leftX)
-
-    scrollBy(update, 0, 300)
-  }
-}
-
-// Convert vertical wheel delta into horizontal tab scroll
-function handleWheel(e: WheelEvent) {
-  const bs = bsScroll.value?.instance
-  if (!bs) return
-  // Do not intercept when there is no horizontal scroll space, keep native vertical scrolling
-  if (bs.maxScrollX === 0) return
-  e.preventDefault()
-  // deltaY > 0 (scroll down) -> tabs slide left; deltaY < 0 (scroll up) -> tabs slide right
-  bs.scrollBy(-e.deltaY * GLOBAL_TAB_WHEEL_SPEED_RATIO, 0, 0)
-}
 
 function getContextMenuDisabledKeys(tabId: string) {
   const disabledKeys: App.Global.DropdownKey[] = []
@@ -92,8 +26,15 @@ function getContextMenuDisabledKeys(tabId: string) {
   return disabledKeys
 }
 
-function handleCloseTab(tab: App.Global.Tab) {
-  tabStore.removeTab(tab.id)
+function handleUpdateValue(tabId: string) {
+  const tab = tabStore.tabs.find(item => item.id === tabId)
+  if (!tab) return
+
+  tabStore.switchRouteByTab(tab)
+}
+
+function handleCloseTab(tabId: string) {
+  tabStore.removeTab(tabId)
 }
 
 function handleMousedown(e: MouseEvent, tab: App.Global.Tab) {
@@ -107,33 +48,7 @@ function handleMousedown(e: MouseEvent, tab: App.Global.Tab) {
   }
 
   e.preventDefault()
-  handleCloseTab(tab)
-}
-
-/** Where the current touch on a tab started */
-let touchStart: { x: number; y: number } | null = null
-
-function switchTab(e: PointerEvent, tab: App.Global.Tab) {
-  if (e.pointerType === 'touch') {
-    touchStart = { x: e.clientX, y: e.clientY }
-    return
-  }
-
-  if (!shouldSwitchTabOnPointerDown(e)) return
-
-  tabStore.switchRouteByTab(tab)
-}
-
-// a touch may start a swipe of the tab bar, so switch only when it ends as a tap (independent of the device type)
-function handleTabPointerUp(e: PointerEvent, tab: App.Global.Tab) {
-  if (e.pointerType !== 'touch' || !touchStart) return
-
-  const isTap = isTapGesture(touchStart, { x: e.clientX, y: e.clientY })
-  touchStart = null
-
-  if (isTap) {
-    tabStore.switchRouteByTab(tab)
-  }
+  handleCloseTab(tab.id)
 }
 
 async function refresh() {
@@ -188,12 +103,15 @@ async function handleContextMenu(e: MouseEvent, tabId: string) {
   }, DURATION)
 }
 
-function init() {
-  tabStore.initTabStore(route)
+function getTabProps(tab: App.Global.Tab) {
+  return {
+    onMousedown: (e: MouseEvent) => handleMousedown(e, tab),
+    onContextmenu: (e: MouseEvent) => handleContextMenu(e, tab.id),
+  }
 }
 
-function removeFocus() {
-  ;(document.activeElement as HTMLElement)?.blur()
+function init() {
+  tabStore.initTabStore(route)
 }
 
 // watch
@@ -203,53 +121,34 @@ watch(
     tabStore.addTab(route)
   },
 )
-watch(
-  () => tabStore.activeTabId,
-  () => {
-    scrollToActiveTab()
-  },
-)
 
 // init
 init()
 </script>
 
 <template>
-  <DarkModeContainer class="size-full flex-y-center px-16px shadow-tab">
-    <div ref="bsWrapper" class="h-full flex-1-hidden" @wheel="handleWheel">
-      <BetterScroll ref="bsScroll" :options="{ scrollX: true, scrollY: false, click: !isPCFlag }" @click="removeFocus">
-        <div
-          ref="tabRef"
-          class="h-full flex pr-18px"
-          :class="[
-            themeStore.tab.mode === 'chrome' || themeStore.tab.mode === 'slider'
-              ? 'items-end'
-              : 'items-center gap-12px',
-          ]"
-        >
-          <PageTab
-            v-for="tab in tabStore.tabs"
-            :key="tab.id"
-            :[TAB_DATA_ID]="tab.id"
-            :mode="themeStore.tab.mode"
-            :dark-mode="themeStore.darkMode"
-            :active="tab.id === tabStore.activeTabId"
-            :active-color="themeStore.themeColor"
-            :closable="!tabStore.isTabRetain(tab.id)"
-            @pointerdown="switchTab($event, tab)"
-            @pointerup="handleTabPointerUp($event, tab)"
-            @mousedown="handleMousedown($event, tab)"
-            @close="handleCloseTab(tab)"
-            @contextmenu="handleContextMenu($event, tab.id)"
-          >
-            <template #prefix>
-              <SvgIcon :icon="tab.icon" :local-icon="tab.localIcon" class="inline-block align-text-bottom text-16px" />
-            </template>
-            <div class="max-w-240px ellipsis-text">{{ tab.label }}</div>
-          </PageTab>
+  <DarkModeContainer class="size-full flex-y-center gap-8px px-16px shadow-tab">
+    <NTabs
+      type="card"
+      center-active-tab
+      class="flex-1-hidden"
+      :value="tabStore.activeTabId"
+      @update:value="handleUpdateValue"
+      @close="handleCloseTab"
+    >
+      <NTab
+        v-for="tab in tabStore.tabs"
+        :key="tab.id"
+        :name="tab.id"
+        :closable="!tabStore.isTabRetain(tab.id)"
+        :tab-props="getTabProps(tab)"
+      >
+        <div class="flex-y-center gap-6px">
+          <SvgIcon :icon="tab.icon" :local-icon="tab.localIcon" class="text-16px" />
+          <span class="max-w-240px ellipsis-text">{{ tab.label }}</span>
         </div>
-      </BetterScroll>
-    </div>
+      </NTab>
+    </NTabs>
     <ReloadButton :loading="!appStore.reloadFlag" @click="refresh" />
     <FullScreen :full="appStore.fullContent" @click="appStore.toggleFullContent" />
   </DarkModeContainer>

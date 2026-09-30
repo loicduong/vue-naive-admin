@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { themeTabModeOptions } from '@/constants/app'
 import { $t } from '@/locales'
 import { useThemeStore } from '@/store/modules/theme'
-import { translateOptions } from '@/utils/common'
 import SettingItem from '../../../components/setting-item.vue'
 
 defineOptions({
@@ -27,15 +25,7 @@ const themeStore = useThemeStore()
     <SettingItem v-if="themeStore.tab.visible" key="3" :label="$t('theme.layout.tab.height')">
       <NInputNumber v-model:value="themeStore.tab.height" size="small" :step="1" class="w-120px" />
     </SettingItem>
-    <SettingItem v-if="themeStore.tab.visible" key="4" :label="$t('theme.layout.tab.mode.title')">
-      <NSelect
-        v-model:value="themeStore.tab.mode"
-        :options="translateOptions(themeTabModeOptions)"
-        size="small"
-        class="w-120px"
-      />
-    </SettingItem>
-    <SettingItem v-if="themeStore.tab.visible" key="5" :label="$t('theme.layout.tab.closeByMiddleClick')">
+    <SettingItem v-if="themeStore.tab.visible" key="4" :label="$t('theme.layout.tab.closeByMiddleClick')">
       <template #suffix>
         <IconTooltip :desc="$t('theme.layout.tab.closeByMiddleClickTip')" />
       </template>

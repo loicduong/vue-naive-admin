@@ -14,7 +14,6 @@ declare module 'vue' {
     AnimationEdge: typeof import('./../components/modules/plugin/flow/vue-flow/animation-edge.vue')['default']
     AntvFlow: typeof import('./../components/modules/plugin/charts/antv/antv-flow.vue')['default']
     AppProvider: typeof import('./../components/common/app-provider.vue')['default']
-    BetterScroll: typeof import('./../components/custom/better-scroll.vue')['default']
     ButtonAuthModal: typeof import('./../components/modules/manage/role/button-auth-modal.vue')['default']
     ButtonIcon: typeof import('./../components/custom/button-icon.vue')['default']
     CardData: typeof import('./../components/modules/home/card-data.vue')['default']

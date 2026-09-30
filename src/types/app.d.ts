@@ -57,8 +57,6 @@ declare namespace App {
         cache: boolean
         /** Tab height */
         height: number
-        /** Tab mode */
-        mode: UnionKey.ThemeTabMode
         /** Whether to close tab by middle click */
         closeTabByMiddleClick: boolean
       }
@@ -369,7 +367,6 @@ declare namespace App {
             cache: string
             cacheTip: string
             height: string
-            mode: { title: string } & Record<UnionKey.ThemeTabMode, string>
             closeByMiddleClick: string
             closeByMiddleClickTip: string
           }
