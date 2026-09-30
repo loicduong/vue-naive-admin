@@ -8,8 +8,8 @@ export function setupPwaPlugin() {
       maximumFileSizeToCacheInBytes: 3000000,
     },
     manifest: {
-      name: 'Vue Naive Admin',
-      short_name: 'Vue Naive Admin',
+      name: 'Naive Agentic Admin',
+      short_name: 'Naive Agentic Admin',
       theme_color: '#ffffff',
       icons: [
         {

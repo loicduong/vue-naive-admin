@@ -1,6 +1,6 @@
 # Contributing
 
-We warmly welcome and appreciate all forms of contributions. If you have any ideas or suggestions, please feel free to share them by submitting [pull requests](https://github.com/loicduong/vue-naive-admin/pulls) or creating GitHub [issue](https://github.com/loicduong/vue-naive-admin/issues/new).
+We warmly welcome and appreciate all forms of contributions. If you have any ideas or suggestions, please feel free to share them by submitting [pull requests](https://github.com/loicduong/naive-agentic-admin/pulls) or creating GitHub [issue](https://github.com/loicduong/naive-agentic-admin/issues/new).
 
 ## Git Commit Guidelines
 

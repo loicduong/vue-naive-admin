@@ -1,4 +1,4 @@
-# Vue Naive Admin
+# Naive Agentic Admin
 
 ![image](./public/favicon.svg)
 
@@ -6,7 +6,7 @@
 
 A fresh and elegant admin template, based on Vue 3, Vite+, TypeScript, Naive UI and UnoCSS.
 
-`VueNaiveAdmin` is a clean, elegant, beautiful and powerful admin template, based on the latest front-end technology stack, including Vue 3, Vite+, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on ApiFox. `VueNaiveAdmin` provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly.
+`NaiveAgenticAdmin` is a clean, elegant, beautiful and powerful admin template, based on the latest front-end technology stack, including Vue 3, Vite+, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on ApiFox. `NaiveAgenticAdmin` provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly.
 
 ## Table of Contents
 
@@ -28,7 +28,7 @@ Make sure your environment meets the following requirements:
 
 ```bash
 # Clone project
-git clone https://github.com/loicduong/vue-naive-admin.git
+git clone https://github.com/loicduong/naive-agentic-admin.git
 
 # Install dependencies
 pnpm i

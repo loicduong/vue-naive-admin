@@ -1,6 +1,6 @@
 const local: App.I18n.Schema = {
   system: {
-    title: 'VueNaiveAdmin',
+    title: 'NaiveAgenticAdmin',
     updateTitle: 'System Version Update Notification',
     updateContent: 'A new version of the system has been detected. Do you want to refresh the page immediately?',
     updateConfirm: 'Refresh immediately',
@@ -278,17 +278,17 @@ const local: App.I18n.Schema = {
       projectNews: {
         title: 'Project News',
         moreNews: 'More News',
-        desc1: 'Loic Duong created the open source project vue-naive-admin on May 28, 2024!',
-        desc2: 'Loic Duong submitted a bug to vue-naive-admin, the multi-tab bar will not adapt.',
-        desc3: 'Loic Duong is ready to do sufficient preparation for the release of vue-naive-admin!',
-        desc4: 'Loic Duong is busy writing project documentation for vue-naive-admin!',
+        desc1: 'Loic Duong created the open source project naive-agentic-admin on May 28, 2024!',
+        desc2: 'Loic Duong submitted a bug to naive-agentic-admin, the multi-tab bar will not adapt.',
+        desc3: 'Loic Duong is ready to do sufficient preparation for the release of naive-agentic-admin!',
+        desc4: 'Loic Duong is busy writing project documentation for naive-agentic-admin!',
         desc5: 'Loic Duong just wrote some of the workbench pages casually, and it was enough to see!',
       },
       creativity: 'Creativity',
     },
     about: {
       title: 'About',
-      introduction: `VueNaiveAdmin is an elegant and powerful admin template, based on the latest front-end technology stack, including Vue 3, Vite 6, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on ApiFox. VueNaiveAdmin provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly.`,
+      introduction: `NaiveAgenticAdmin is an elegant and powerful admin template, based on the latest front-end technology stack, including Vue 3, Vite 6, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on ApiFox. NaiveAgenticAdmin provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly.`,
       projectInfo: {
         title: 'Project Info',
         version: 'Version',

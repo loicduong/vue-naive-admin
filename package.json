@@ -1,5 +1,5 @@
 {
-  "name": "vue-naive-admin",
+  "name": "naive-agentic-admin",
   "version": "1.1.0",
   "description": "A fresh and elegant admin template, based on Vue 3, Vite+, TypeScript, Naive UI and UnoCSS.",
   "keywords": [
@@ -9,9 +9,9 @@
     "vite-plus",
     "vue 3"
   ],
-  "homepage": "https://github.com/loicduong/vue-naive-admin",
+  "homepage": "https://github.com/loicduong/naive-agentic-admin",
   "bugs": {
-    "url": "https://github.com/loicduong/vue-naive-admin/issues"
+    "url": "https://github.com/loicduong/naive-agentic-admin/issues"
   },
   "license": "MIT",
   "author": {
@@ -20,7 +20,7 @@
     "url": "https://github.com/loicduong"
   },
   "repository": {
-    "url": "https://github.com/loicduong/vue-naive-admin.git"
+    "url": "https://github.com/loicduong/naive-agentic-admin.git"
   },
   "type": "module",
   "scripts": {

@@ -19,7 +19,7 @@ function init() {
   if (!textRef.value) return
 
   const options: Options = {
-    strings: 'VueNaiveAdmin is a fresh, elegant, visually appealing, and powerful backend management template.',
+    strings: 'NaiveAgenticAdmin is a fresh, elegant, visually appealing, and powerful backend management template.',
     lifeLike: true,
     speed: 120,
     loop: true,
