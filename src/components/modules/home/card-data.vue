@@ -82,11 +82,11 @@ function getGradientColor(color: CardData['color']) {
 </script>
 
 <template>
-  <NCard :bordered="false" size="small" class="card-wrapper">
+  <NCard :bordered="false" size="small" class="rounded-lg shadow-xs">
     <!-- define component start: GradientBg -->
     <DefineGradientBg v-slot="{ $slots, gradientColor }">
       <div
-        class="px-16px pb-4px pt-8px text-white"
+        class="px-4 pb-1 pt-2 text-white"
         :style="{ backgroundImage: gradientColor, borderRadius: `${themeStore.themeRadius}px` }"
       >
         <component :is="$slots.default" />
@@ -97,16 +97,16 @@ function getGradientColor(color: CardData['color']) {
     <NGrid cols="s:1 m:2 l:4" responsive="screen" :x-gap="16" :y-gap="16">
       <NGi v-for="item in cardData" :key="item.key">
         <GradientBg :gradient-color="getGradientColor(item.color)" class="flex-1">
-          <h3 class="text-16px">
+          <h3 class="text-[16px]">
             {{ item.title }}
           </h3>
-          <div class="flex justify-between pt-12px">
-            <SvgIcon :icon="item.icon" class="text-32px" />
+          <div class="flex justify-between pt-3">
+            <SvgIcon :icon="item.icon" class="text-[32px]" />
             <CountTo
               :prefix="item.unit"
               :start-value="1"
               :end-value="item.value"
-              class="text-30px text-white dark:text-dark"
+              class="text-[30px] text-white dark:text-[#222]"
             />
           </div>
         </GradientBg>

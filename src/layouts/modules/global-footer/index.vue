@@ -7,7 +7,7 @@ defineOptions({
 </script>
 
 <template>
-  <DarkModeContainer class="h-full flex-center">
+  <DarkModeContainer class="h-full flex items-center justify-center">
     <a
       href="https://github.com/loicduong/naive-agentic-admin/blob/main/LICENSE"
       target="_blank"

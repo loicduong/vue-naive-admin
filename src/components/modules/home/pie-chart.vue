@@ -110,8 +110,8 @@ init()
 </script>
 
 <template>
-  <NCard :bordered="false" class="card-wrapper">
-    <div ref="domRef" class="h-360px overflow-hidden" />
+  <NCard :bordered="false" class="rounded-lg shadow-xs">
+    <div ref="domRef" class="h-90 overflow-hidden" />
   </NCard>
 </template>
 

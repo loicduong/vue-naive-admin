@@ -242,7 +242,7 @@ onMounted(() => {
 <template>
   <div class="h-full">
     <NSpace vertical :size="16">
-      <NCard title="List Table" :bordered="false" class="h-full w-2/3 card-wrapper">
+      <NCard title="List Table" :bordered="false" class="h-full w-2/3 rounded-lg shadow-xs">
         <ListTable ref="listTableRef" :options="listOptions" :records="listRecords" height="400px">
           <ListColumn field="Order ID" title="Order ID" width="auto" />
           <ListColumn field="Customer ID" title="Customer ID" width="auto" />
@@ -258,7 +258,7 @@ onMounted(() => {
         </ListTable>
       </NCard>
 
-      <NCard title="Group Table" :bordered="false" class="h-full w-2/3 card-wrapper">
+      <NCard title="Group Table" :bordered="false" class="h-full w-2/3 rounded-lg shadow-xs">
         <ListTable ref="groupTableRef" :options="groupOptions" :records="groupRecords" height="400px">
           <ListColumn field="Order ID" title="Order ID" width="auto" />
           <ListColumn field="Customer ID" title="Customer ID" width="auto" />
@@ -274,7 +274,7 @@ onMounted(() => {
         </ListTable>
       </NCard>
 
-      <NCard title="Pivot Table" :bordered="false" class="h-full w-2/3 card-wrapper">
+      <NCard title="Pivot Table" :bordered="false" class="h-full w-2/3 rounded-lg shadow-xs">
         <PivotTable ref="pivotTableRef" :options="pivotTableOptions" :records="pivotTableRecords" height="400px">
           <PivotColumnDimension
             title="Category"
@@ -306,7 +306,7 @@ onMounted(() => {
         </PivotTable>
       </NCard>
 
-      <NCard title="Pivot Chart" :bordered="false" class="h-full w-2/3 card-wrapper">
+      <NCard title="Pivot Chart" :bordered="false" class="h-full w-2/3 rounded-lg shadow-xs">
         <PivotChart
           ref="pivotChartRef"
           :options="pivotChartOptions"
@@ -316,7 +316,7 @@ onMounted(() => {
         />
       </NCard>
 
-      <NCard title="Custom Component" :bordered="false" class="h-full w-2/3 card-wrapper">
+      <NCard title="Custom Component" :bordered="false" class="h-full w-2/3 rounded-lg shadow-xs">
         <ListTable
           ref="customLayoutListTableRef"
           :options="customLayoutListTableOptions"
@@ -414,7 +414,7 @@ onMounted(() => {
         </ListTable>
       </NCard>
 
-      <NCard :bordered="false" class="h-full w-2/3 card-wrapper">
+      <NCard :bordered="false" class="h-full w-2/3 rounded-lg shadow-xs">
         <WebSiteLink label="More VTable Demos: " link="https://www.visactor.com/vtable/example" />
       </NCard>
     </NSpace>

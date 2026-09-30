@@ -55,11 +55,16 @@ async function handleDownload() {
 
 <template>
   <div class="overflow-hidden">
-    <NCard title="PDF Link Preview" :bordered="false" class="h-full card-wrapper" content-class="overflow-hidden">
-      <div class="h-full flex-col-stretch">
+    <NCard
+      title="PDF Link Preview"
+      :bordered="false"
+      class="h-full rounded-lg shadow-xs"
+      content-class="overflow-hidden"
+    >
+      <div class="h-full flex flex-col items-stretch">
         <GithubLink link="https://github.com/hrynko/vue-pdf-embed" />
         <WebSiteLink label="Document address: " link="https://www.npmjs.com/package/vue-pdf-embed" />
-        <div class="flex-y-center justify-end gap-12px">
+        <div class="flex items-center justify-end gap-3">
           <NCheckbox v-model:checked="showAllPages" @update:checked="showAllPagesChange"> Show all pages </NCheckbox>
           <ButtonIcon tooltip-content="Rotate 90 degrees" @click="handleRotate">
             <icon-material-symbols-light-rotate-90-degrees-ccw-outline-rounded />
@@ -71,8 +76,8 @@ async function handleDownload() {
             <icon-charm-download />
           </ButtonIcon>
         </div>
-        <NScrollbar class="flex-1-hidden">
-          <NSkeleton v-if="loading" size="small" class="mt-12px" text :repeat="12" />
+        <NScrollbar class="flex-1 overflow-hidden">
+          <NSkeleton v-if="loading" size="small" class="mt-3" text :repeat="12" />
           <VuePdfEmbed
             ref="pdfRef"
             class="container overflow-auto"
@@ -83,8 +88,8 @@ async function handleDownload() {
             @rendered="onPdfRendered"
           />
         </NScrollbar>
-        <div class="flex-y-center justify-between">
-          <div v-if="showAllPages" class="text-18px font-medium">Total {{ pageCount }} pages</div>
+        <div class="flex items-center justify-between">
+          <div v-if="showAllPages" class="text-[18px] font-medium">Total {{ pageCount }} pages</div>
           <NPagination v-else v-model:page="currentPage" :page-count="pageCount" :page-size="1" />
         </div>
       </div>

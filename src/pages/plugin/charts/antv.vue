@@ -60,7 +60,7 @@ onMounted(() => {
 
 <template>
   <div class="h-full">
-    <NCard title="AntV G6 Next" :bordered="false" class="h-full card-wrapper">
+    <NCard title="AntV G6 Next" :bordered="false" class="h-full rounded-lg shadow-xs">
       <AntvFlow ref="antvFlowRef" :data="flowData" :selected="selectedNode" :behaviors="behaviors" />
       <NDivider />
       <NFlex>

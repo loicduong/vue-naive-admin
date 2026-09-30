@@ -5,7 +5,7 @@ import VueDevtools from 'vite-plugin-vue-devtools'
 import { setupHtmlPlugin } from './html'
 import { setupPwaPlugin } from './pwa'
 import { setupRouter } from './router'
-import { setupUnocss } from './unocss'
+import { setupTailwindcss } from './tailwindcss'
 import { setupUnplugin } from './unplugin'
 
 export function setupVitePlugins(viteEnv: Env.ImportMeta, buildTime: string, buildVersion: string) {
@@ -14,7 +14,7 @@ export function setupVitePlugins(viteEnv: Env.ImportMeta, buildTime: string, bui
     vue(),
     vueJsx(),
     VueDevtools(),
-    setupUnocss(viteEnv),
+    setupTailwindcss(),
     ...setupUnplugin(viteEnv),
     setupHtmlPlugin(buildTime, buildVersion),
     setupPwaPlugin(),

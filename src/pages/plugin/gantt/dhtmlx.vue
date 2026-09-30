@@ -183,30 +183,23 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="overflow-hidden lt-sm:overflow-auto">
+  <div class="overflow-hidden max-sm:overflow-auto">
     <NCard
       title="Gantt chart demo"
       :bordered="false"
       size="small"
       content-class="overflow-y-hidden overflow-x-auto"
-      class="h-full card-wrapper"
+      class="h-full rounded-lg shadow-xs"
     >
       <template #header-extra>
-        <NTabs
-          :value="timeType"
-          type="segment"
-          animated
-          size="small"
-          class="relative w-320px"
-          @update:value="changeTime"
-        >
+        <NTabs :value="timeType" type="segment" animated size="small" class="relative w-80" @update:value="changeTime">
           <NTab v-for="item in data" :key="item.code" :name="item.code">
             {{ item.name }}
           </NTab>
         </NTabs>
       </template>
 
-      <div ref="ganttRef" class="size-full min-w-800px" />
+      <div ref="ganttRef" class="size-full min-w-200" />
     </NCard>
   </div>
 </template>

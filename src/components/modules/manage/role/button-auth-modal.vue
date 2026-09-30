@@ -66,7 +66,7 @@ init()
 </script>
 
 <template>
-  <NModal v-model:show="visible" :title="title" preset="card" class="w-480px">
+  <NModal v-model:show="visible" :title="title" preset="card" class="w-120">
     <NTree
       v-model:checked-keys="checks"
       :data="tree"
@@ -75,14 +75,14 @@ init()
       checkable
       expand-on-click
       virtual-scroll
-      class="h-280px"
+      class="h-70"
     />
     <template #footer>
       <NSpace justify="end">
-        <NButton size="small" class="mt-16px" @click="closeModal">
+        <NButton size="small" class="mt-4" @click="closeModal">
           {{ $t('common.cancel') }}
         </NButton>
-        <NButton type="primary" size="small" class="mt-16px" @click="handleSubmit">
+        <NButton type="primary" size="small" class="mt-4" @click="handleSubmit">
           {{ $t('common.confirm') }}
         </NButton>
       </NSpace>

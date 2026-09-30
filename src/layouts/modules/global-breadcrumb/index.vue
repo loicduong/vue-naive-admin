@@ -23,8 +23,8 @@ const handleClickMenu = (key: App.Global.RouteKey) => routerPushByKey(key)
 <template>
   <NBreadcrumb v-if="themeStore.header.breadcrumb.visible">
     <DefineBreadcrumbContent v-slot="{ breadcrumb }">
-      <div class="i-flex-y-center align-middle">
-        <component :is="breadcrumb.icon" v-if="themeStore.header.breadcrumb.showIcon" class="mr-4px text-icon" />
+      <div class="inline-flex items-center align-middle">
+        <component :is="breadcrumb.icon" v-if="themeStore.header.breadcrumb.showIcon" class="mr-1 text-icon" />
         <template v-if="typeof breadcrumb.label === 'string'">
           {{ breadcrumb.label }}
         </template>

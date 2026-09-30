@@ -31,7 +31,7 @@ async function handleCopy() {
 
 <template>
   <div class="h-full">
-    <NCard title="Text Copy" :bordered="false" class="h-full card-wrapper">
+    <NCard title="Text Copy" :bordered="false" class="h-full rounded-lg shadow-xs">
       <NInputGroup>
         <NInput v-model:value="source" placeholder="Please enter the content to be copied" />
         <NButton type="primary" @click="handleCopy"> Copy </NButton>

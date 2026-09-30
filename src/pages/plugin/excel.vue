@@ -166,10 +166,10 @@ function isTableColumnHasTitle<T>(column: NaiveUI.TableColumn<T>): column is Nai
 </script>
 
 <template>
-  <div class="min-h-500px flex-col-stretch gap-16px overflow-hidden lt-sm:overflow-auto">
-    <NCard title="Excel导出" :bordered="false" size="small" class="card-wrapper sm:flex-1-hidden">
+  <div class="min-h-125 flex flex-col items-stretch gap-4 overflow-hidden max-sm:overflow-auto">
+    <NCard title="Excel导出" :bordered="false" size="small" class="rounded-lg shadow-xs sm:flex-1 sm:overflow-hidden">
       <template #header-extra>
-        <NSpace align="end" wrap justify="end" class="lt-sm:w-200px">
+        <NSpace align="end" wrap justify="end" class="max-sm:w-50">
           <NButton size="small" ghost type="primary" @click="exportExcel">
             <template #icon>
               <icon-file-icons-microsoft-excel class="text-icon" />

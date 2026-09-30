@@ -79,7 +79,7 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       Record<never, never>,
       | '/document/naive'
-      | '/document/unocss'
+      | '/document/tailwindcss'
       | '/document/vite'
       | '/document/vue'
     >,
@@ -90,9 +90,9 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/document/unocss': RouteRecordInfo<
-      '/document/unocss',
-      '/document/unocss',
+    '/document/tailwindcss': RouteRecordInfo<
+      '/document/tailwindcss',
+      '/document/tailwindcss',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -574,7 +574,7 @@ declare module 'vue-router/auto-routes' {
       routes:
         | '/document'
         | '/document/naive'
-        | '/document/unocss'
+        | '/document/tailwindcss'
         | '/document/vite'
         | '/document/vue'
       views:
@@ -590,9 +590,9 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
-    'src/pages/document/unocss.vue': {
+    'src/pages/document/tailwindcss.vue': {
       routes:
-        | '/document/unocss'
+        | '/document/tailwindcss'
       views:
         | never
       pathParamNames:

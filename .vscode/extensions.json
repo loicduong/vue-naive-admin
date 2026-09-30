@@ -1,15 +1,9 @@
 {
   "recommendations": [
-    "afzalsayed96.icones",
-    "antfu.iconify",
-    "antfu.unocss",
-    "VoidZero.vite-plus-extension-pack",
-    "editorconfig.editorconfig",
-    "formulahendry.auto-complete-tag",
-    "mikestead.dotenv",
-    "naumovs.color-highlight",
-    "sdras.vue-vscode-snippets",
     "vue.volar",
-    "whtouche.vscode-js-console-utils"
+    "VoidZero.vite-plus-extension-pack",
+    "bradlc.vscode-tailwindcss",
+    "antfu.iconify",
+    "editorconfig.editorconfig"
   ]
 }

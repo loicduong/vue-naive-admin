@@ -1,5 +1,4 @@
 import { getRgb } from '@/utils/color'
-// @unocss-include
 import systemLogo from '@/assets/svg-icon/logo.svg?raw'
 import { DARK_CLASS } from '@/constants/app'
 import { $t } from '@/locales'
@@ -21,28 +20,28 @@ export function setupLoading() {
 
   const loadingClasses = [
     'left-0 top-0',
-    'left-0 bottom-0 animate-delay-500',
-    'right-0 top-0 animate-delay-1000',
-    'right-0 bottom-0 animate-delay-1500',
+    'left-0 bottom-0 [animation-delay:500ms]',
+    'right-0 top-0 [animation-delay:1000ms]',
+    'right-0 bottom-0 [animation-delay:1500ms]',
   ]
 
-  const logoWithClass = systemLogo.replace('<svg', `<svg class="size-128px text-primary"`)
+  const logoWithClass = systemLogo.replace('<svg', `<svg class="size-32 text-primary"`)
 
   const dot = loadingClasses
     .map(item => {
-      return `<div class="absolute w-16px h-16px bg-primary rounded-8px animate-pulse ${item}"></div>`
+      return `<div class="absolute w-4 h-4 bg-primary rounded-lg animate-pulse ${item}"></div>`
     })
     .join('\n')
 
   const loading = `
-    <div class="fixed-center flex-col bg-layout" style="${primaryColor}">
+    <div class="fixed left-0 top-0 flex items-center justify-center size-full flex-col bg-layout" style="${primaryColor}">
       ${logoWithClass}
-      <div class="w-56px h-56px my-36px">
+      <div class="w-14 h-14 my-9">
         <div class="relative h-full animate-spin">
           ${dot}
         </div>
       </div>
-      <h2 class="text-28px font-500 text-primary">${$t('system.title')}</h2>
+      <h2 class="text-[28px] font-medium text-primary">${$t('system.title')}</h2>
     </div>
   `
 

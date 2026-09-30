@@ -37,13 +37,13 @@ onMounted(() => {
 
 <template>
   <div>
-    <NCard title="Typewriter Plugin" :bordered="false" class="h-full card-wrapper">
+    <NCard title="Typewriter Plugin" :bordered="false" class="h-full rounded-lg shadow-xs">
       <NSpace :vertical="true">
         <GithubLink link="https://github.com/alexmacarthur/typeit" />
         <WebSiteLink label="Document address: " link="https://www.typeitjs.com/docs/vanilla/usage/" />
       </NSpace>
       <NDivider title-placement="left"> Basic Example </NDivider>
-      <span ref="textRef" class="text-18px" />
+      <span ref="textRef" class="text-[18px]" />
     </NCard>
   </div>
 </template>

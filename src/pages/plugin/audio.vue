@@ -82,12 +82,17 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="overflow-hidden">
-    <NCard title="Audio Visualization" :bordered="false" class="h-full card-wrapper" content-class="overflow-hidden">
-      <div class="h-full flex-col-stretch">
+    <NCard
+      title="Audio Visualization"
+      :bordered="false"
+      class="h-full rounded-lg shadow-xs"
+      content-class="overflow-hidden"
+    >
+      <div class="h-full flex flex-col items-stretch">
         <GithubLink link="https://github.com/katspaugh/wavesurfer.js" />
-        <NScrollbar class="flex-1-hidden">
+        <NScrollbar class="flex-1 overflow-hidden">
           <NSpin :show="loading">
-            <div class="w-8/12 !m-auto !mt-[20px]">
+            <div class="w-8/12 m-auto! mt-[20px]!">
               <div ref="wavesurferRef" />
               <div v-show="totalTime" class="flex justify-between">
                 <span class="text-[#81888f]">00:00</span>

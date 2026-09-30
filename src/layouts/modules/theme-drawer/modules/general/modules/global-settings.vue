@@ -12,7 +12,7 @@ const themeStore = useThemeStore()
 </script>
 
 <template>
-  <div class="flex-col-stretch gap-16px">
+  <div class="flex flex-col items-stretch gap-4">
     <SettingItem :label="$t('theme.general.multilingual.visible')">
       <NSwitch v-model:value="themeStore.header.multilingual.visible" />
     </SettingItem>
@@ -20,18 +20,20 @@ const themeStore = useThemeStore()
 </template>
 
 <style scoped>
+@reference "@/assets/css/tailwind.css";
+
 .setting-list-move,
 .setting-list-enter-active,
 .setting-list-leave-active {
-  --uno: transition-all-300;
+  @apply transition-all duration-300;
 }
 
 .setting-list-enter-from,
 .setting-list-leave-to {
-  --uno: opacity-0 -translate-x-30px;
+  @apply opacity-0 -translate-x-7.5;
 }
 
 .setting-list-leave-active {
-  --uno: absolute;
+  @apply absolute;
 }
 </style>

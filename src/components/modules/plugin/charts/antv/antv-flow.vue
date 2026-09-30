@@ -108,17 +108,17 @@ defineExpose({ selectNode, graph: graphRef })
           <icon-gg-ratio />
         </NButton>
       </NButtonGroup>
-      <div class="flex-center gap-12px">
+      <div class="flex items-center justify-center gap-3">
         <NPopover placement="bottom-end" :animated="false">
           <template #trigger>
             <NButton size="small" class="bg-white!">
               <icon-fe-question />
             </NButton>
           </template>
-          <div class="flex-col gap-8px">
-            <div span="2" class="text-12px font-bold">Node Legend</div>
-            <NGrid :cols="2" :y-gap="8" class="w-180px!">
-              <NGi v-for="(config, status) in nodeStatus" :key="status" class="flex-center">
+          <div class="flex flex-col gap-2">
+            <div span="2" class="text-[12px] font-bold">Node Legend</div>
+            <NGrid :cols="2" :y-gap="8" class="w-45!">
+              <NGi v-for="(config, status) in nodeStatus" :key="status" class="flex items-center justify-center">
                 <NTag size="small" round :bordered="false">
                   <template #icon>
                     <icon-f7-flag-circle-fill v-if="status === 'MILESTONE'" :style="{ color: config.color }" />

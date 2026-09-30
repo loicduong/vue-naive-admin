@@ -19,7 +19,7 @@ const isWrapperScrollMode = computed(() => themeStore.layout.scrollMode === 'wra
 
 <template>
   <NDivider>{{ $t('theme.layout.content.title') }}</NDivider>
-  <TransitionGroup tag="div" name="setting-list" class="flex-col-stretch gap-12px">
+  <TransitionGroup tag="div" name="setting-list" class="flex flex-col items-stretch gap-3">
     <SettingItem key="1" :label="$t('theme.layout.content.scrollMode.title')">
       <template #suffix>
         <IconTooltip :desc="$t('theme.layout.content.scrollMode.tip')" />
@@ -28,7 +28,7 @@ const isWrapperScrollMode = computed(() => themeStore.layout.scrollMode === 'wra
         v-model:value="themeStore.layout.scrollMode"
         :options="translateOptions(themeScrollModeOptions)"
         size="small"
-        class="w-120px"
+        class="w-30"
       />
     </SettingItem>
     <SettingItem key="2" :label="$t('theme.layout.content.page.animate')">
@@ -39,7 +39,7 @@ const isWrapperScrollMode = computed(() => themeStore.layout.scrollMode === 'wra
         v-model:value="themeStore.page.animateMode"
         :options="translateOptions(themePageAnimationModeOptions)"
         size="small"
-        class="w-120px"
+        class="w-30"
       />
     </SettingItem>
     <SettingItem v-if="isWrapperScrollMode" key="4" :label="$t('theme.layout.content.fixedHeader')">
@@ -49,18 +49,20 @@ const isWrapperScrollMode = computed(() => themeStore.layout.scrollMode === 'wra
 </template>
 
 <style scoped>
+@reference "@/assets/css/tailwind.css";
+
 .setting-list-move,
 .setting-list-enter-active,
 .setting-list-leave-active {
-  --uno: transition-all-300;
+  @apply transition-all duration-300;
 }
 
 .setting-list-enter-from,
 .setting-list-leave-to {
-  --uno: opacity-0 -translate-x-30px;
+  @apply opacity-0 -translate-x-7.5;
 }
 
 .setting-list-leave-active {
-  --uno: absolute;
+  @apply absolute;
 }
 </style>

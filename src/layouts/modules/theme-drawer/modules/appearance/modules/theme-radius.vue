@@ -13,9 +13,9 @@ const themeStore = useThemeStore()
 
 <template>
   <NDivider>{{ $t('theme.appearance.themeRadius.title') }}</NDivider>
-  <TransitionGroup tag="div" name="setting-list" class="flex-col-stretch gap-12px">
+  <TransitionGroup tag="div" name="setting-list" class="flex flex-col items-stretch gap-3">
     <SettingItem key="1" :label="$t('theme.appearance.themeRadius.title')">
-      <NInputNumber v-model:value="themeStore.themeRadius" size="small" :step="1" :min="0" :max="16" class="w-120px" />
+      <NInputNumber v-model:value="themeStore.themeRadius" size="small" :step="1" :min="0" :max="16" class="w-30" />
     </SettingItem>
   </TransitionGroup>
 </template>

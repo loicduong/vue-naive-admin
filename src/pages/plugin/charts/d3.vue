@@ -47,10 +47,10 @@ onMounted(() => {
 
 <template>
   <div class="h-full">
-    <NCard title="D3 Chart" :bordered="false" class="h-full card-wrapper">
-      <div class="h-full flex-col-stretch">
+    <NCard title="D3 Chart" :bordered="false" class="h-full rounded-lg shadow-xs">
+      <div class="h-full flex flex-col items-stretch">
         <GithubLink link="https://github.com/d3/d3" class="mb-4" />
-        <div ref="container" class="h-full flex-col-stretch" @mousemove="handleMousemove">
+        <div ref="container" class="h-full flex flex-col items-stretch" @mousemove="handleMousemove">
           <svg :width="width" :height="height">
             <path fill="none" stroke="currentColor" strokeWidth="1.5" :d="line(data) ?? ''" />
             <g fill="white" stroke="currentColor" strokeWidth="1.5">

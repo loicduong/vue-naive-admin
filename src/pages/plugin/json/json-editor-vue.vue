@@ -53,7 +53,7 @@ const data = reactive<JsonData>({
       :bordered="false"
       size="small"
       content-class="overflow-y-hidden overflow-x-auto"
-      class="h-full card-wrapper"
+      class="h-full rounded-lg shadow-xs"
     >
       <GithubLink link="https://github.com/cloydlau/json-editor-vue" class="mb-4" />
       <div class="mb-4 flex gap-2">

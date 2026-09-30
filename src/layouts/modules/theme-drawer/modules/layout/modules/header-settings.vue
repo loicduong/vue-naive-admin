@@ -13,9 +13,9 @@ const themeStore = useThemeStore()
 
 <template>
   <NDivider>{{ $t('theme.layout.header.title') }}</NDivider>
-  <TransitionGroup tag="div" name="setting-list" class="flex-col-stretch gap-12px">
+  <TransitionGroup tag="div" name="setting-list" class="flex flex-col items-stretch gap-3">
     <SettingItem key="1" :label="$t('theme.layout.header.height')">
-      <NInputNumber v-model:value="themeStore.header.height" size="small" :step="1" class="w-120px" />
+      <NInputNumber v-model:value="themeStore.header.height" size="small" :step="1" class="w-30" />
     </SettingItem>
     <SettingItem key="2" :label="$t('theme.layout.header.breadcrumb.visible')">
       <NSwitch v-model:value="themeStore.header.breadcrumb.visible" />
@@ -31,18 +31,20 @@ const themeStore = useThemeStore()
 </template>
 
 <style scoped>
+@reference "@/assets/css/tailwind.css";
+
 .setting-list-move,
 .setting-list-enter-active,
 .setting-list-leave-active {
-  --uno: transition-all-300;
+  @apply transition-all duration-300;
 }
 
 .setting-list-enter-from,
 .setting-list-leave-to {
-  --uno: opacity-0 -translate-x-30px;
+  @apply opacity-0 -translate-x-7.5;
 }
 
 .setting-list-leave-active {
-  --uno: absolute;
+  @apply absolute;
 }
 </style>

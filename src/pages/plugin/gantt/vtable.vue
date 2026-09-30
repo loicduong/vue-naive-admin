@@ -788,17 +788,17 @@ onUnmounted(() => {
 
 <template>
   <NSpace vertical :size="16">
-    <NCard :bordered="false" title="VTableGantt" class="h-full card-wrapper">
+    <NCard :bordered="false" title="VTableGantt" class="h-full rounded-lg shadow-xs">
       <WebSiteLink label="More Demos: " link="https://www.visactor.com/vtable/example" />
     </NCard>
-    <NCard :bordered="false" class="h-full card-wrapper">
-      <div ref="basicGanttDomRef" class="relative h-400px" />
+    <NCard :bordered="false" class="h-full rounded-lg shadow-xs">
+      <div ref="basicGanttDomRef" class="relative h-100" />
     </NCard>
-    <NCard :bordered="false" class="h-full card-wrapper">
-      <div ref="linkGanttDomRef" class="relative h-400px" />
+    <NCard :bordered="false" class="h-full rounded-lg shadow-xs">
+      <div ref="linkGanttDomRef" class="relative h-100" />
     </NCard>
-    <NCard :bordered="false" class="h-full card-wrapper">
-      <div ref="customGanttDomRef" class="relative h-400px" />
+    <NCard :bordered="false" class="h-full rounded-lg shadow-xs">
+      <div ref="customGanttDomRef" class="relative h-100" />
     </NCard>
   </NSpace>
 </template>

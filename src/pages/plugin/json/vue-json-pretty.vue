@@ -72,7 +72,7 @@ watch(
       :bordered="false"
       size="small"
       content-class="overflow-y-hidden overflow-x-auto"
-      class="h-full card-wrapper"
+      class="h-full rounded-lg shadow-xs"
     >
       <GithubLink link="https://github.com/leezng/vue-json-pretty" class="mb-4" />
       <VueJsonPretty

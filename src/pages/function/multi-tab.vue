@@ -28,7 +28,7 @@ const routeQuery = computed(() => JSON.stringify(route.query))
         <NButton @click="routerPushByKey('/function/tab')">
           {{ $t('page.function.multiTab.backTab') }}
         </NButton>
-        <div class="py-24px">{{ $t('page.function.multiTab.routeParam') }}: {{ routeQuery }}</div>
+        <div class="py-6">{{ $t('page.function.multiTab.routeParam') }}: {{ routeQuery }}</div>
       </div>
     </LookForward>
   </div>

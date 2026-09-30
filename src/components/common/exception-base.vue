@@ -34,8 +34,8 @@ const icon = computed(() => iconMap[props.type])
 </script>
 
 <template>
-  <div class="size-full min-h-520px flex-col-center gap-24px overflow-hidden">
-    <div class="flex text-400px text-primary">
+  <div class="size-full min-h-130 flex flex-col items-center justify-center gap-6 overflow-hidden">
+    <div class="flex text-[400px] text-primary">
       <SvgIcon :local-icon="icon" />
     </div>
     <NButton type="primary" @click="routerPushByKey('/')">

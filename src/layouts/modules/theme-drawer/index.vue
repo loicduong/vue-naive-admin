@@ -31,13 +31,13 @@ const drawerWidth = computed(() => {
 <template>
   <NDrawer v-model:show="appStore.themeDrawerVisible" display-directive="show" :width="drawerWidth">
     <NDrawerContent :title="$t('theme.themeDrawerTitle')" :native-scrollbar="false" closable>
-      <NTabs v-model:value="activeTab" type="segment" size="medium" class="mb-16px">
+      <NTabs v-model:value="activeTab" type="segment" size="medium" class="mb-4">
         <NTab name="appearance" :tab="$t('theme.tabs.appearance')" />
         <NTab name="layout" :tab="$t('theme.tabs.layout')" />
         <NTab name="general" :tab="$t('theme.tabs.general')" />
       </NTabs>
 
-      <div class="min-h-400px">
+      <div class="min-h-100">
         <KeepAlive>
           <AppearanceSettings v-if="activeTab === 'appearance'" />
           <LayoutSettings v-else-if="activeTab === 'layout'" />

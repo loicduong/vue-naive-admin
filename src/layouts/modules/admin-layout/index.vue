@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<AdminLayoutProps>(), {
   mode: 'vertical',
   scrollMode: 'content',
   scrollElId: LAYOUT_SCROLL_EL_ID,
-  commonClass: 'transition-all-300',
+  commonClass: 'transition-all duration-300',
   fixedTop: true,
   maxZIndex: LAYOUT_MAX_Z_INDEX,
   headerVisible: true,

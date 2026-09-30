@@ -103,10 +103,10 @@ watch(visible, val => {
 </script>
 
 <template>
-  <NModal v-model:show="visible" :title="title" preset="card" class="w-480px">
-    <div class="flex-y-center gap-16px pb-12px">
+  <NModal v-model:show="visible" :title="title" preset="card" class="w-120">
+    <div class="flex items-center gap-4 pb-3">
       <div>{{ $t('page.manage.menu.home') }}</div>
-      <NSelect :value="home" :options="pageSelectOptions" size="small" class="w-160px" @update:value="updateHome" />
+      <NSelect :value="home" :options="pageSelectOptions" size="small" class="w-40" @update:value="updateHome" />
     </div>
     <NTree
       v-model:checked-keys="checks"
@@ -116,14 +116,14 @@ watch(visible, val => {
       expand-on-click
       virtual-scroll
       block-line
-      class="h-280px"
+      class="h-70"
     />
     <template #footer>
       <NSpace justify="end">
-        <NButton size="small" class="mt-16px" @click="closeModal">
+        <NButton size="small" class="mt-4" @click="closeModal">
           {{ $t('common.cancel') }}
         </NButton>
-        <NButton type="primary" size="small" class="mt-16px" @click="handleSubmit">
+        <NButton type="primary" size="small" class="mt-4" @click="handleSubmit">
           {{ $t('common.confirm') }}
         </NButton>
       </NSpace>

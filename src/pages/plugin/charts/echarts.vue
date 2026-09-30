@@ -71,26 +71,26 @@ onUnmounted(() => {
 
 <template>
   <NSpace vertical :size="16">
-    <NCard :bordered="false" class="card-wrapper">
-      <div ref="pieRef" class="h-400px" />
+    <NCard :bordered="false" class="rounded-lg shadow-xs">
+      <div ref="pieRef" class="h-100" />
     </NCard>
-    <NCard :bordered="false" class="card-wrapper">
-      <div ref="lineRef" class="h-400px" />
+    <NCard :bordered="false" class="rounded-lg shadow-xs">
+      <div ref="lineRef" class="h-100" />
     </NCard>
-    <NCard :bordered="false" class="card-wrapper">
-      <div ref="barRef" class="h-400px" />
+    <NCard :bordered="false" class="rounded-lg shadow-xs">
+      <div ref="barRef" class="h-100" />
     </NCard>
-    <NCard :bordered="false" class="card-wrapper">
-      <div ref="radarRef" class="h-400px" />
+    <NCard :bordered="false" class="rounded-lg shadow-xs">
+      <div ref="radarRef" class="h-100" />
     </NCard>
-    <NCard :bordered="false" class="card-wrapper">
-      <div ref="scatterRef" class="h-600px" />
+    <NCard :bordered="false" class="rounded-lg shadow-xs">
+      <div ref="scatterRef" class="h-150" />
     </NCard>
-    <NCard :bordered="false" class="card-wrapper">
-      <div ref="pictorialBarRef" class="h-600px" />
+    <NCard :bordered="false" class="rounded-lg shadow-xs">
+      <div ref="pictorialBarRef" class="h-150" />
     </NCard>
-    <NCard :bordered="false" class="card-wrapper">
-      <div ref="gaugeRef" class="h-640px" />
+    <NCard :bordered="false" class="rounded-lg shadow-xs">
+      <div ref="gaugeRef" class="h-160" />
     </NCard>
   </NSpace>
 </template>
