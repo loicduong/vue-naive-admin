@@ -6,7 +6,7 @@
 
 A fresh and elegant admin template, based on Vue 3, Vite+, TypeScript, Naive UI and UnoCSS, built to work well with AI coding agents.
 
-`NaiveAgenticAdmin` is a clean, elegant, beautiful and powerful admin template, based on the latest front-end technology stack, including Vue 3, Vite+, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on ApiFox. `NaiveAgenticAdmin` provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly, and it ships with agent instructions and skills so AI coding agents can work on it productively from day one.
+`NaiveAgenticAdmin` is a clean, elegant, beautiful and powerful admin template, based on the latest front-end technology stack, including Vue 3, Vite+, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on Apidog. `NaiveAgenticAdmin` provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly, and it ships with agent instructions and skills so AI coding agents can work on it productively from day one.
 
 ## Table of Contents
 

@@ -14,7 +14,7 @@ export const request = createFlatRequest(
   {
     baseURL,
     headers: {
-      apifoxToken: 'XL299LiMEDZ0H5h3A29PxwQXdMJqWyY2',
+      apidogToken: 'tCN7Otfze6DhYnCa4vH6hyTgmarhFr7c',
     },
   },
   {

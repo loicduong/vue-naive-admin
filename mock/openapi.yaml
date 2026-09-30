@@ -1,0 +1,640 @@
+openapi: 3.0.3
+info:
+  title: NaiveAgenticAdmin Mock API
+  version: 1.0.0
+  description: |
+    Mock API for NaiveAgenticAdmin, generated from `src/service/api` and `src/types/api`.
+    Import this file into Apidog (Settings → Import Data → OpenAPI/Swagger).
+
+    Every response is wrapped as `{ code, msg, data }` (see `App.Service.Response`).
+
+    Role-based login: `/auth/login` and `/auth/getUserInfo` have one example per
+    account (Super, Admin, User). Apidog does not pick an example from the request
+    by itself, so add a Mock Expectation for each account after importing:
+
+    | Endpoint              | Condition                                       | Returns example |
+    | --------------------- | ----------------------------------------------- | --------------- |
+    | POST /auth/login      | body `userName` = `Super` / `Admin` / `User`    | super / admin / user |
+    | GET /auth/getUserInfo | header `Authorization` = `Bearer mock-token-<x>` | super / admin / user |
+tags:
+  - name: auth
+  - name: systemManage
+security:
+  - bearerAuth: []
+paths:
+  /auth/login:
+    post:
+      tags: [auth]
+      summary: Login
+      operationId: fetchLogin
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [userName, password]
+              properties:
+                userName:
+                  type: string
+                  example: Super
+                password:
+                  type: string
+                  example: '123456'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/ResponseBase'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/LoginToken'
+              examples:
+                admin:
+                  summary: 'userName = Admin'
+                  value:
+                    code: '0000'
+                    msg: 'success'
+                    data:
+                      token: mock-token-admin
+                      refreshToken: mock-refresh-token-admin
+                super:
+                  summary: 'userName = Super'
+                  value:
+                    code: '0000'
+                    msg: 'success'
+                    data:
+                      token: mock-token-super
+                      refreshToken: mock-refresh-token-super
+                user:
+                  summary: 'userName = User'
+                  value:
+                    code: '0000'
+                    msg: 'success'
+                    data:
+                      token: mock-token-user
+                      refreshToken: mock-refresh-token-user
+
+  /auth/getUserInfo:
+    get:
+      tags: [auth]
+      summary: Get user info
+      operationId: fetchGetUserInfo
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/ResponseBase'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/UserInfo'
+              examples:
+                admin:
+                  summary: 'Authorization = Bearer mock-token-admin'
+                  value:
+                    code: '0000'
+                    msg: 'success'
+                    data:
+                      userId: '1'
+                      userName: Admin
+                      roles: [R_ADMIN]
+                      buttons: [B_CODE1, B_CODE2]
+                super:
+                  summary: 'Authorization = Bearer mock-token-super'
+                  value:
+                    code: '0000'
+                    msg: 'success'
+                    data:
+                      userId: '0'
+                      userName: Super
+                      roles: [R_SUPER]
+                      buttons: [B_CODE1, B_CODE2, B_CODE3]
+                user:
+                  summary: 'Authorization = Bearer mock-token-user'
+                  value:
+                    code: '0000'
+                    msg: 'success'
+                    data:
+                      userId: '2'
+                      userName: User
+                      roles: [R_USER]
+                      buttons: [B_CODE1]
+
+  /systemManage/getRoleList:
+    get:
+      tags: [systemManage]
+      summary: Get role list (paginated)
+      operationId: fetchGetRoleList
+      parameters:
+        - $ref: '#/components/parameters/current'
+        - $ref: '#/components/parameters/size'
+        - { name: roleName, in: query, schema: { type: string } }
+        - { name: roleCode, in: query, schema: { type: string } }
+        - $ref: '#/components/parameters/status'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/ResponseBase'
+                  - type: object
+                    properties:
+                      data:
+                        allOf:
+                          - $ref: '#/components/schemas/Pagination'
+                          - type: object
+                            properties:
+                              records:
+                                type: array
+                                items:
+                                  $ref: '#/components/schemas/Role'
+              example:
+                code: '0000'
+                msg: 'success'
+                data:
+                  current: 1
+                  size: 10
+                  total: 3
+                  records:
+                    - {
+                        id: 1,
+                        roleName: Super Admin,
+                        roleCode: R_SUPER,
+                        roleDesc: Super administrator,
+                        status: '1',
+                        createBy: admin,
+                        createTime: '2024-01-01 10:00:00',
+                        updateBy: admin,
+                        updateTime: '2024-01-01 10:00:00',
+                      }
+                    - {
+                        id: 2,
+                        roleName: Admin,
+                        roleCode: R_ADMIN,
+                        roleDesc: Administrator,
+                        status: '1',
+                        createBy: admin,
+                        createTime: '2024-01-01 10:00:00',
+                        updateBy: admin,
+                        updateTime: '2024-01-01 10:00:00',
+                      }
+                    - {
+                        id: 3,
+                        roleName: User,
+                        roleCode: R_USER,
+                        roleDesc: Normal user,
+                        status: '2',
+                        createBy: admin,
+                        createTime: '2024-01-01 10:00:00',
+                        updateBy: admin,
+                        updateTime: '2024-01-01 10:00:00',
+                      }
+
+  /systemManage/getAllRoles:
+    get:
+      tags: [systemManage]
+      summary: Get all enabled roles
+      operationId: fetchGetAllRoles
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/ResponseBase'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/AllRole'
+              example:
+                code: '0000'
+                msg: 'success'
+                data:
+                  - { id: 1, roleName: Super Admin, roleCode: R_SUPER }
+                  - { id: 2, roleName: Admin, roleCode: R_ADMIN }
+                  - { id: 3, roleName: User, roleCode: R_USER }
+
+  /systemManage/getUserList:
+    get:
+      tags: [systemManage]
+      summary: Get user list (paginated)
+      operationId: fetchGetUserList
+      parameters:
+        - $ref: '#/components/parameters/current'
+        - $ref: '#/components/parameters/size'
+        - { name: userName, in: query, schema: { type: string } }
+        - { name: userGender, in: query, schema: { $ref: '#/components/schemas/UserGender' } }
+        - { name: nickName, in: query, schema: { type: string } }
+        - { name: userPhone, in: query, schema: { type: string } }
+        - { name: userEmail, in: query, schema: { type: string } }
+        - $ref: '#/components/parameters/status'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/ResponseBase'
+                  - type: object
+                    properties:
+                      data:
+                        allOf:
+                          - $ref: '#/components/schemas/Pagination'
+                          - type: object
+                            properties:
+                              records:
+                                type: array
+                                items:
+                                  $ref: '#/components/schemas/User'
+              example:
+                code: '0000'
+                msg: 'success'
+                data:
+                  current: 1
+                  size: 10
+                  total: 2
+                  records:
+                    - {
+                        id: 1,
+                        userName: Super,
+                        userGender: '1',
+                        nickName: Super,
+                        userPhone: '0912345678',
+                        userEmail: super@example.com,
+                        userRoles: [R_SUPER],
+                        status: '1',
+                        createBy: admin,
+                        createTime: '2024-01-01 10:00:00',
+                        updateBy: admin,
+                        updateTime: '2024-01-01 10:00:00',
+                      }
+                    - {
+                        id: 2,
+                        userName: User,
+                        userGender: '2',
+                        nickName: Jane,
+                        userPhone: '0987654321',
+                        userEmail: user@example.com,
+                        userRoles: [R_USER],
+                        status: '1',
+                        createBy: admin,
+                        createTime: '2024-01-02 10:00:00',
+                        updateBy: admin,
+                        updateTime: '2024-01-02 10:00:00',
+                      }
+
+  /systemManage/getMenuList/v2:
+    get:
+      tags: [systemManage]
+      summary: Get menu list (tree, paginated)
+      operationId: fetchGetMenuList
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/ResponseBase'
+                  - type: object
+                    properties:
+                      data:
+                        allOf:
+                          - $ref: '#/components/schemas/Pagination'
+                          - type: object
+                            properties:
+                              records:
+                                type: array
+                                items:
+                                  $ref: '#/components/schemas/Menu'
+              example:
+                code: '0000'
+                msg: 'success'
+                data:
+                  current: 1
+                  size: 10
+                  total: 2
+                  records:
+                    - {
+                        id: 1,
+                        parentId: 0,
+                        menuType: '2',
+                        menuName: home,
+                        routeName: home,
+                        routePath: /home,
+                        component: 'layout.base$view.home',
+                        icon: 'mdi:monitor-dashboard',
+                        iconType: '1',
+                        i18nKey: route.home,
+                        order: 1,
+                        status: '1',
+                        buttons: [],
+                        children: [],
+                        createBy: admin,
+                        createTime: '2024-01-01 10:00:00',
+                        updateBy: admin,
+                        updateTime: '2024-01-01 10:00:00',
+                      }
+                    - id: 2
+                      parentId: 0
+                      menuType: '1'
+                      menuName: manage
+                      routeName: manage
+                      routePath: /manage
+                      component: layout.base
+                      icon: 'carbon:cloud-service-management'
+                      iconType: '1'
+                      i18nKey: route.manage
+                      order: 2
+                      status: '1'
+                      createBy: admin
+                      createTime: '2024-01-01 10:00:00'
+                      updateBy: admin
+                      updateTime: '2024-01-01 10:00:00'
+                      buttons: []
+                      children:
+                        - {
+                            id: 3,
+                            parentId: 2,
+                            menuType: '2',
+                            menuName: manage_user,
+                            routeName: manage_user,
+                            routePath: /manage/user,
+                            component: view.manage_user,
+                            icon: 'ic:round-manage-accounts',
+                            iconType: '1',
+                            i18nKey: route.manage_user,
+                            order: 1,
+                            status: '1',
+                            buttons: [{ code: B_CODE1, desc: Add user }],
+                            children: [],
+                            createBy: admin,
+                            createTime: '2024-01-01 10:00:00',
+                            updateBy: admin,
+                            updateTime: '2024-01-01 10:00:00',
+                          }
+                        - {
+                            id: 4,
+                            parentId: 2,
+                            menuType: '2',
+                            menuName: manage_role,
+                            routeName: manage_role,
+                            routePath: /manage/role,
+                            component: view.manage_role,
+                            icon: 'carbon:user-role',
+                            iconType: '1',
+                            i18nKey: route.manage_role,
+                            order: 2,
+                            status: '1',
+                            buttons: [],
+                            children: [],
+                            createBy: admin,
+                            createTime: '2024-01-01 10:00:00',
+                            updateBy: admin,
+                            updateTime: '2024-01-01 10:00:00',
+                          }
+
+  /systemManage/getAllPages:
+    get:
+      tags: [systemManage]
+      summary: Get all page route names
+      operationId: fetchGetAllPages
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/ResponseBase'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: string
+              example:
+                code: '0000'
+                msg: 'success'
+                data: [home, about, user-center, manage_user, manage_role, manage_user-detail]
+
+  /systemManage/getMenuTree:
+    get:
+      tags: [systemManage]
+      summary: Get menu tree
+      operationId: fetchGetMenuTree
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/ResponseBase'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/MenuTree'
+              example:
+                code: '0000'
+                msg: 'success'
+                data:
+                  - { id: 1, label: home, pId: 0, children: [] }
+                  - id: 2
+                    label: manage
+                    pId: 0
+                    children:
+                      - { id: 3, label: manage_user, pId: 2, children: [] }
+                      - { id: 4, label: manage_role, pId: 2, children: [] }
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+
+  parameters:
+    current:
+      name: current
+      in: query
+      schema: { type: integer, default: 1 }
+    size:
+      name: size
+      in: query
+      schema: { type: integer, default: 10 }
+    status:
+      name: status
+      in: query
+      schema: { $ref: '#/components/schemas/EnableStatus' }
+
+  schemas:
+    ResponseBase:
+      type: object
+      required: [code, msg, data]
+      properties:
+        code: { type: string, example: '0000' }
+        msg: { type: string, example: success }
+
+    Pagination:
+      type: object
+      required: [current, size, total, records]
+      properties:
+        current: { type: integer, example: 1 }
+        size: { type: integer, example: 10 }
+        total: { type: integer, example: 100 }
+
+    EnableStatus:
+      type: string
+      description: '"1" enabled, "2" disabled'
+      enum: ['1', '2']
+
+    UserGender:
+      type: string
+      description: '"1" male, "2" female'
+      enum: ['1', '2']
+
+    CommonRecord:
+      type: object
+      required: [id, createBy, createTime, updateBy, updateTime, status]
+      properties:
+        id: { type: integer }
+        createBy: { type: string }
+        createTime: { type: string, example: '2024-01-01 10:00:00' }
+        updateBy: { type: string }
+        updateTime: { type: string, example: '2024-01-01 10:00:00' }
+        status:
+          allOf:
+            - $ref: '#/components/schemas/EnableStatus'
+          nullable: true
+
+    LoginToken:
+      type: object
+      required: [token, refreshToken]
+      properties:
+        token: { type: string }
+        refreshToken: { type: string }
+
+    UserInfo:
+      type: object
+      required: [userId, userName, roles, buttons]
+      properties:
+        userId: { type: string }
+        userName: { type: string }
+        roles:
+          type: array
+          items: { type: string, enum: [R_SUPER, R_ADMIN, R_USER] }
+        buttons:
+          type: array
+          items: { type: string }
+
+    Role:
+      allOf:
+        - $ref: '#/components/schemas/CommonRecord'
+        - type: object
+          required: [roleName, roleCode, roleDesc]
+          properties:
+            roleName: { type: string }
+            roleCode: { type: string }
+            roleDesc: { type: string }
+
+    AllRole:
+      type: object
+      required: [id, roleName, roleCode]
+      properties:
+        id: { type: integer }
+        roleName: { type: string }
+        roleCode: { type: string }
+
+    User:
+      allOf:
+        - $ref: '#/components/schemas/CommonRecord'
+        - type: object
+          required: [userName, userGender, nickName, userPhone, userEmail, userRoles]
+          properties:
+            userName: { type: string }
+            userGender:
+              allOf:
+                - $ref: '#/components/schemas/UserGender'
+              nullable: true
+            nickName: { type: string }
+            userPhone: { type: string }
+            userEmail: { type: string, format: email }
+            userRoles:
+              type: array
+              items: { type: string }
+
+    MenuButton:
+      type: object
+      required: [code, desc]
+      properties:
+        code: { type: string }
+        desc: { type: string }
+
+    Menu:
+      allOf:
+        - $ref: '#/components/schemas/CommonRecord'
+        - type: object
+          required: [parentId, menuType, menuName, routeName, routePath, icon, iconType]
+          properties:
+            parentId: { type: integer }
+            menuType:
+              type: string
+              description: '"1" directory, "2" menu'
+              enum: ['1', '2']
+            menuName: { type: string }
+            routeName: { type: string }
+            routePath: { type: string }
+            component: { type: string }
+            icon: { type: string }
+            iconType:
+              type: string
+              description: '"1" iconify icon, "2" local icon'
+              enum: ['1', '2']
+            i18nKey: { type: string }
+            keepAlive: { type: boolean }
+            constant: { type: boolean }
+            order: { type: integer }
+            href: { type: string }
+            hideInMenu: { type: boolean }
+            activeMenu: { type: string }
+            multiTab: { type: boolean }
+            fixedIndexInTab: { type: integer }
+            buttons:
+              type: array
+              nullable: true
+              items:
+                $ref: '#/components/schemas/MenuButton'
+            children:
+              type: array
+              nullable: true
+              items:
+                $ref: '#/components/schemas/Menu'
+
+    MenuTree:
+      type: object
+      required: [id, label, pId]
+      properties:
+        id: { type: integer }
+        label: { type: string }
+        pId: { type: integer }
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/MenuTree'
