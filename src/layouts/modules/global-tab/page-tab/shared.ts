@@ -1,6 +1,15 @@
 import type { PageTabCssVars, PageTabCssVarsProps } from './types'
 import { addColorAlpha, transformColorWithOpacity } from '@/utils/color'
 
+/**
+ * Whether a pointer event comes from the primary button (left mouse button, touch or pen contact)
+ *
+ * @param event
+ */
+export function isPrimaryPointer(event: Pick<PointerEvent, 'button'>) {
+  return event.button === 0
+}
+
 /** The active color of the tab */
 export const ACTIVE_COLOR = '#1890ff'
 

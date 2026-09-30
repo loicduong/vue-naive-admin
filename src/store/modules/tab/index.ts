@@ -189,8 +189,9 @@ export const useTabStore = defineStore(SetupStoreId.Tab, () => {
   async function replaceTab(key: App.Global.RouteKey, options?: App.Global.RouterPushOptions) {
     const oldTabId = activeTabId.value
 
-    // push new route
-    await routerPushByKey(key, options)
+    // push new route, keep the old tab if the navigation failed (cancelled by a guard or duplicated)
+    const fail = await routerPushByKey(key, options)
+    if (fail) return
 
     // remove old tab (exclude fixed tab)
     if (!isTabRetain(oldTabId)) {

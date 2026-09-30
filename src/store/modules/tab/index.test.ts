@@ -4,6 +4,8 @@ import { useTabStore } from './index'
 
 const storage = new Map<string, unknown>()
 
+const pushByKey = vi.hoisted(() => vi.fn<(...args: unknown[]) => Promise<unknown>>(async () => undefined))
+
 vi.stubGlobal('window', {})
 
 vi.mock('@vueuse/core', () => ({ useEventListener: vi.fn() }))
@@ -17,7 +19,7 @@ vi.mock('@/router', () => ({
 }))
 
 vi.mock('@/hooks/common/router', () => ({
-  useRouterPush: () => ({ routerPush: vi.fn(async () => undefined), routerPushByKey: vi.fn(async () => undefined) }),
+  useRouterPush: () => ({ routerPush: vi.fn(async () => undefined), routerPushByKey: pushByKey }),
 }))
 
 vi.mock('@/utils/storage', () => ({
@@ -76,6 +78,32 @@ describe('tab store', () => {
     tabStore.addTab({ ...route('/a'), fullPath: '/a?page=2' } as App.Global.TabRoute)
 
     expect(tabStore.tabs.find(t => t.id === '/a')?.fullPath).toBe('/a?page=2')
+  })
+
+  it('keeps the current tab when the replacement navigation fails', async () => {
+    const tabStore = useTabStore()
+    tabStore.initHomeTab()
+    tabStore.initTabStore(route('/a'))
+
+    pushByKey.mockResolvedValueOnce({ type: 4, from: {}, to: {} })
+
+    await tabStore.replaceTab('/b' as App.Global.RouteKey)
+
+    expect(tabStore.tabs.map(t => t.id)).toEqual(['/home', '/a'])
+  })
+
+  it('removes the replaced tab when the navigation succeeds', async () => {
+    const tabStore = useTabStore()
+    tabStore.initHomeTab()
+    tabStore.initTabStore(route('/a'))
+
+    pushByKey.mockImplementationOnce(async () => {
+      tabStore.addTab(route('/b'))
+    })
+
+    await tabStore.replaceTab('/b' as App.Global.RouteKey)
+
+    expect(tabStore.tabs.map(t => t.id)).toEqual(['/home', '/b'])
   })
 
   it('resetTabs drops every tab, including pinned ones, and the stored snapshot', () => {
