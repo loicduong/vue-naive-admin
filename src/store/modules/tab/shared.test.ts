@@ -207,9 +207,22 @@ describe('updateTabsByI18nKey', () => {
   })
 })
 
+describe('findTabByRouteName (dynamic routes)', () => {
+  it('finds a tab of a dynamic route by its route key', () => {
+    const detail = tab('/manage/user-detail/42', { routeKey: '/manage/user-detail.[id]' as App.Global.RouteKey })
+
+    expect(findTabByRouteName('/manage/user-detail.[id]' as App.Global.RouteKey, [detail])?.id).toBe(
+      '/manage/user-detail/42',
+    )
+  })
+})
+
 describe('findTabByRouteName', () => {
   it('finds a plain tab and a multiTab variant', () => {
-    const tabs = [tab('/about'), tab('/function/multi-tab?a=1')]
+    const tabs = [
+      tab('/about'),
+      tab('/function/multi-tab?a=1', { routeKey: '/function/multi-tab' as App.Global.RouteKey }),
+    ]
 
     expect(findTabByRouteName('/about' as App.Global.RouteKey, tabs)?.id).toBe('/about')
     expect(findTabByRouteName('/function/multi-tab' as App.Global.RouteKey, tabs)?.id).toBe('/function/multi-tab?a=1')

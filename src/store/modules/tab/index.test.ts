@@ -4,7 +4,11 @@ import { useTabStore } from './index'
 
 const storage = new Map<string, unknown>()
 
-const pushByKey = vi.hoisted(() => vi.fn<(...args: unknown[]) => Promise<unknown>>(async () => undefined))
+const { push, pushByKey, currentRoute } = vi.hoisted(() => ({
+  push: vi.fn<(...args: unknown[]) => Promise<unknown>>(async () => undefined),
+  pushByKey: vi.fn<(...args: unknown[]) => Promise<unknown>>(async () => undefined),
+  currentRoute: { value: { name: '/home', path: '/home', query: {}, meta: {} } as Record<string, unknown> },
+}))
 
 vi.stubGlobal('window', {})
 
@@ -15,11 +19,11 @@ vi.mock('@/locales', () => ({ $t: (key: string) => key }))
 vi.mock('@/router/routes/builtin', () => ({ getRoutePath: (name: string) => name }))
 
 vi.mock('@/router', () => ({
-  router: { getRoutes: () => [{ name: '/home', path: '/home', meta: {} }] },
+  router: { getRoutes: () => [{ name: '/home', path: '/home', meta: {} }], currentRoute },
 }))
 
 vi.mock('@/hooks/common/router', () => ({
-  useRouterPush: () => ({ routerPush: vi.fn(async () => undefined), routerPushByKey: pushByKey }),
+  useRouterPush: () => ({ routerPush: push, routerPushByKey: pushByKey }),
 }))
 
 vi.mock('@/utils/storage', () => ({
@@ -104,6 +108,48 @@ describe('tab store', () => {
     await tabStore.replaceTab('/b' as App.Global.RouteKey)
 
     expect(tabStore.tabs.map(t => t.id)).toEqual(['/home', '/b'])
+  })
+
+  it('keeps the active tab when navigating away from it is cancelled', async () => {
+    const tabStore = useTabStore()
+    tabStore.initHomeTab()
+    tabStore.initTabStore(route('/a'))
+    tabStore.addTab(route('/b'))
+
+    push.mockResolvedValueOnce({ type: 4, from: {}, to: {} })
+
+    await tabStore.removeTab('/b')
+
+    expect(tabStore.tabs.map(t => t.id)).toEqual(['/home', '/a', '/b'])
+    expect(tabStore.activeTabId).toBe('/b')
+  })
+
+  it('keeps all tabs when a bulk close cannot leave the active tab', async () => {
+    const tabStore = useTabStore()
+    tabStore.initHomeTab()
+    tabStore.initTabStore(route('/a'))
+    tabStore.addTab(route('/b'))
+
+    push.mockResolvedValueOnce({ type: 4, from: {}, to: {} })
+
+    await tabStore.clearTabs()
+
+    expect(tabStore.tabs.map(t => t.id)).toEqual(['/home', '/a', '/b'])
+  })
+
+  it('keeps the tab when replaceTab lands on the same tab id', async () => {
+    const tabStore = useTabStore()
+    tabStore.initHomeTab()
+    tabStore.initTabStore(route('/a'))
+
+    pushByKey.mockImplementationOnce(async () => {
+      currentRoute.value = { name: '/a', path: '/a', fullPath: '/a?page=2', query: { page: '2' }, meta: {} }
+      tabStore.addTab({ ...route('/a'), fullPath: '/a?page=2' } as App.Global.TabRoute)
+    })
+
+    await tabStore.replaceTab('/a' as App.Global.RouteKey, { query: { page: '2' } })
+
+    expect(tabStore.tabs.map(t => t.id)).toEqual(['/home', '/a'])
   })
 
   it('resetTabs drops every tab, including pinned ones, and the stored snapshot', () => {

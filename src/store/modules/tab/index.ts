@@ -8,6 +8,7 @@ import { localStg } from '@/utils/storage'
 import { useThemeStore } from '../theme'
 import {
   extractTabsByRouteNames,
+  filterTabsById,
   filterTabsByIds,
   findTabByRouteName,
   getAllTabs,
@@ -118,15 +119,15 @@ export const useTabStore = defineStore(SetupStoreId.Tab, () => {
     if (removeTabIndex === -1) return
 
     const removedTabRouteKey = tabs.value[removeTabIndex].routeKey
-    const isRemoveActiveTab = activeTabId.value === tabId
 
-    const nextTab = getNextActiveTab(tabs.value, removeTabIndex, homeTab.value)
+    if (activeTabId.value === tabId) {
+      const nextTab = getNextActiveTab(tabs.value, removeTabIndex, homeTab.value)
 
-    tabs.value.splice(removeTabIndex, 1)
-
-    if (isRemoveActiveTab && nextTab) {
-      await switchRouteByTab(nextTab)
+      // leave the tab first, keep it when a route guard cancels the navigation
+      if (nextTab && !(await switchRouteByTab(nextTab))) return
     }
+
+    tabs.value = filterTabsById(tabId, tabs.value)
 
     await routeStore.resetRouteCache(removedTabRouteKey)
   }
@@ -168,9 +169,8 @@ export const useTabStore = defineStore(SetupStoreId.Tab, () => {
     if (isRemoveActiveTab) {
       const activeTabCandidate = updatedTabs[updatedTabs.length - 1] || homeTab.value
 
-      if (activeTabCandidate) {
-        await switchRouteByTab(activeTabCandidate)
-      }
+      // leave the active tab first, keep every tab when a route guard cancels the navigation
+      if (activeTabCandidate && !(await switchRouteByTab(activeTabCandidate))) return
     }
 
     tabs.value = updatedTabs
@@ -193,6 +193,9 @@ export const useTabStore = defineStore(SetupStoreId.Tab, () => {
     const fail = await routerPushByKey(key, options)
     if (fail) return
 
+    // the same tab revisited with another query keeps its id, so there is nothing to replace
+    if (getTabIdByRoute(router.currentRoute.value as App.Global.TabRoute) === oldTabId) return
+
     // remove old tab (exclude fixed tab)
     if (!isTabRetain(oldTabId)) {
       await removeTab(oldTabId)
@@ -206,9 +209,11 @@ export const useTabStore = defineStore(SetupStoreId.Tab, () => {
    */
   async function switchRouteByTab(tab: App.Global.Tab) {
     const fail = await routerPush(tab.fullPath)
-    if (!fail) {
-      setActiveTabId(tab.id)
-    }
+    if (fail) return false
+
+    setActiveTabId(tab.id)
+
+    return true
   }
 
   /**

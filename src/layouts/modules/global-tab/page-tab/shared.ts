@@ -10,6 +10,17 @@ export function isPrimaryPointer(event: Pick<PointerEvent, 'button'>) {
   return event.button === 0
 }
 
+/**
+ * Whether pressing a tab should switch to it right away
+ *
+ * Touch presses may start a swipe of the tab bar, so they switch on the (scroll-aware) click instead
+ *
+ * @param event
+ */
+export function shouldSwitchTabOnPointerDown(event: Pick<PointerEvent, 'button' | 'pointerType'>) {
+  return isPrimaryPointer(event) && event.pointerType !== 'touch'
+}
+
 /** The active color of the tab */
 export const ACTIVE_COLOR = '#1890ff'
 

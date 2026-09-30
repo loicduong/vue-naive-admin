@@ -8,6 +8,7 @@ import { useThemeStore } from '@/store/modules/theme'
 import { isPC } from '@/utils/agent'
 import ContextMenu from './context-menu.vue'
 import PageTab from './page-tab/index.vue'
+import { shouldSwitchTabOnPointerDown } from './page-tab/shared'
 
 defineOptions({
   name: 'GlobalTab',
@@ -26,7 +27,6 @@ const isPCFlag = isPC()
 
 const TAB_DATA_ID = 'data-tab-id'
 const MIDDLE_MOUSE_BUTTON = 1
-const RIGHT_MOUSE_BUTTON = 2
 
 type TabNamedNodeMap = NamedNodeMap & {
   [TAB_DATA_ID]: Attr
@@ -110,8 +110,20 @@ function handleMousedown(e: MouseEvent, tab: App.Global.Tab) {
   handleCloseTab(tab)
 }
 
-function switchTab(e: MouseEvent, tab: App.Global.Tab) {
-  if ([MIDDLE_MOUSE_BUTTON, RIGHT_MOUSE_BUTTON].includes(e.button)) return
+/** The pointer type of the last press on a tab */
+let lastPointerType = ''
+
+function switchTab(e: PointerEvent, tab: App.Global.Tab) {
+  lastPointerType = e.pointerType
+
+  if (!shouldSwitchTabOnPointerDown(e)) return
+
+  tabStore.switchRouteByTab(tab)
+}
+
+// a touch press may start a swipe, the click only fires for a tap that did not scroll the tab bar
+function handleTabClick(tab: App.Global.Tab) {
+  if (lastPointerType !== 'touch') return
 
   tabStore.switchRouteByTab(tab)
 }
@@ -217,6 +229,7 @@ init()
             :active-color="themeStore.themeColor"
             :closable="!tabStore.isTabRetain(tab.id)"
             @pointerdown="switchTab($event, tab)"
+            @click="handleTabClick(tab)"
             @mousedown="handleMousedown($event, tab)"
             @close="handleCloseTab(tab)"
             @contextmenu="handleContextMenu($event, tab.id)"

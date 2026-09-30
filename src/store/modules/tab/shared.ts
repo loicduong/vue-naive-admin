@@ -298,12 +298,8 @@ export function updateTabsByI18nKey(tabs: App.Global.Tab[]) {
  * @param tabs
  */
 export function findTabByRouteName(name: App.Global.RouteKey, tabs: App.Global.Tab[]) {
-  const routePath = getRoutePath(name)
-
-  const tabId = routePath
-  const multiTabId = `${routePath}?`
-
-  return tabs.find(tab => tab.id === tabId || tab.id.startsWith(multiTabId))
+  // match the stored route key: tab ids hold resolved paths (dynamic params, multiTab query)
+  return tabs.find(tab => tab.routeKey === name)
 }
 
 /**
