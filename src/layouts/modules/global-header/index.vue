@@ -33,14 +33,14 @@ const isAuthRouteVisible = computed(() => import.meta.env.VITE_AUTH_ROUTE_VISIBL
 </script>
 
 <template>
-  <DarkModeContainer class="h-full flex-y-center px-3 shadow-header">
+  <DarkModeContainer class="h-full flex items-center px-3 shadow-header">
     <GlobalLogo v-if="showLogo" class="h-full" :style="{ width: `${themeStore.sider.width}px` }" />
     <MenuToggler v-if="showMenuToggler" :collapsed="appStore.siderCollapse" @click="appStore.toggleSiderCollapse" />
-    <div v-if="showMenu" :id="GLOBAL_HEADER_MENU_ID" class="h-full flex-y-center flex-1-hidden" />
-    <div v-else class="h-full flex-y-center flex-1-hidden">
+    <div v-if="showMenu" :id="GLOBAL_HEADER_MENU_ID" class="h-full flex items-center flex-1 overflow-hidden" />
+    <div v-else class="h-full flex items-center flex-1 overflow-hidden">
       <GlobalBreadcrumb v-if="!appStore.isMobile" class="ml-3" />
     </div>
-    <div class="h-full flex-y-center justify-end">
+    <div class="h-full flex items-center justify-end">
       <LangSwitch
         v-if="themeStore.header.multilingual.visible"
         :lang="appStore.locale"

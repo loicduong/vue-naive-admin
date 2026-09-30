@@ -14,7 +14,7 @@ const themeStore = useThemeStore()
 
 <template>
   <NDivider>{{ $t('theme.layout.tab.title') }}</NDivider>
-  <TransitionGroup tag="div" name="setting-list" class="flex-col-stretch gap-3">
+  <TransitionGroup tag="div" name="setting-list" class="flex flex-col items-stretch gap-3">
     <SettingItem key="1" :label="$t('theme.layout.tab.visible')">
       <NSwitch v-model:value="themeStore.tab.visible" />
     </SettingItem>

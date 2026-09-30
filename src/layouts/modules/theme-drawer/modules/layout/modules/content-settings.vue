@@ -19,7 +19,7 @@ const isWrapperScrollMode = computed(() => themeStore.layout.scrollMode === 'wra
 
 <template>
   <NDivider>{{ $t('theme.layout.content.title') }}</NDivider>
-  <TransitionGroup tag="div" name="setting-list" class="flex-col-stretch gap-3">
+  <TransitionGroup tag="div" name="setting-list" class="flex flex-col items-stretch gap-3">
     <SettingItem key="1" :label="$t('theme.layout.content.scrollMode.title')">
       <template #suffix>
         <IconTooltip :desc="$t('theme.layout.content.scrollMode.tip')" />

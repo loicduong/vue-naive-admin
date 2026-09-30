@@ -29,7 +29,7 @@ function search() {
 </script>
 
 <template>
-  <NCard :bordered="false" size="small" class="card-wrapper">
+  <NCard :bordered="false" size="small" class="rounded-lg shadow-xs">
     <NCollapse :default-expanded-names="['role-search']">
       <NCollapseItem :title="$t('common.search')" name="role-search">
         <NForm :model="model" label-placement="left" :label-width="80">

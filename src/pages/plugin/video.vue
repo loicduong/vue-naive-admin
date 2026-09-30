@@ -37,8 +37,8 @@ onUnmounted(() => {
 
 <template>
   <div>
-    <NCard title="Video player plugin" :bordered="false" class="h-full card-wrapper">
-      <div class="flex-center">
+    <NCard title="Video player plugin" :bordered="false" class="h-full rounded-lg shadow-xs">
+      <div class="flex items-center justify-center">
         <div ref="domRef" class="h-auto w-full shadow-md" />
       </div>
     </NCard>

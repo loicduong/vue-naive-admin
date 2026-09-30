@@ -15,11 +15,11 @@ const themeStore = useThemeStore()
 
 const isVerticalMix = computed(() => themeStore.layout.mode === 'vertical-mix')
 const showLogo = computed(() => !isVerticalMix.value)
-const menuWrapperClass = computed(() => (showLogo.value ? 'flex-1-hidden' : 'h-full'))
+const menuWrapperClass = computed(() => (showLogo.value ? 'flex-1 overflow-hidden' : 'h-full'))
 </script>
 
 <template>
-  <DarkModeContainer class="size-full flex-col-stretch shadow-sider">
+  <DarkModeContainer class="size-full flex flex-col items-stretch shadow-sider">
     <GlobalLogo
       v-if="showLogo"
       :show-title="!appStore.siderCollapse"

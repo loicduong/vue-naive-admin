@@ -46,7 +46,7 @@ async function search() {
 </script>
 
 <template>
-  <NCard :bordered="false" size="small" class="card-wrapper">
+  <NCard :bordered="false" size="small" class="rounded-lg shadow-xs">
     <NCollapse>
       <NCollapseItem :title="$t('common.search')" name="user-search">
         <NForm ref="formRef" :model="model" :rules="rules" label-placement="left" :label-width="80">

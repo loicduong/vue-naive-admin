@@ -21,10 +21,10 @@ const localIcons = ['custom-icon', 'activity', 'at-sign', 'cast', 'chrome', 'cop
 
 <template>
   <div class="h-full">
-    <NCard title="Icon component example" :bordered="false" class="card-wrapper">
+    <NCard title="Icon component example" :bordered="false" class="rounded-lg shadow-xs">
       <div class="grid grid-cols-10">
         <template v-for="item in icons" :key="item">
-          <div class="mt-[5px] flex-x-center">
+          <div class="mt-[5px] flex justify-center">
             <SvgIcon :icon="item" class="text-[30px]" />
           </div>
         </template>
@@ -37,16 +37,16 @@ const localIcons = ['custom-icon', 'activity', 'at-sign', 'cast', 'chrome', 'cop
         <WebSiteLink label="Iconify address:" link="https://icones.js.org/" class="mt-2.5" />
       </template>
     </NCard>
-    <NCard title="Custom icon example" :bordered="false" class="mt-2.5 card-wrapper">
+    <NCard title="Custom icon example" :bordered="false" class="mt-2.5 rounded-lg shadow-xs">
       <div class="pb-3 text-[16px]">
         The SVG files in the src/assets/svg-icon folder can be directly rendered in the template using
         icon-local-{filename}, where icon-local is the VITE_ICON_LOCAL_PREFIX in the .env file.
       </div>
       <div class="grid grid-cols-10">
-        <div class="mt-[5px] flex-x-center">
+        <div class="mt-[5px] flex justify-center">
           <icon-local-activity class="text-[40px] text-success" />
         </div>
-        <div class="mt-[5px] flex-x-center">
+        <div class="mt-[5px] flex justify-center">
           <icon-local-cast class="text-[20px] text-error" />
         </div>
       </div>
@@ -55,7 +55,7 @@ const localIcons = ['custom-icon', 'activity', 'at-sign', 'cast', 'chrome', 'cop
         of meta.
       </div>
       <div class="grid grid-cols-10">
-        <div v-for="(fileName, index) in localIcons" :key="index" class="mt-[5px] flex-x-center">
+        <div v-for="(fileName, index) in localIcons" :key="index" class="mt-[5px] flex justify-center">
           <SvgIcon :local-icon="fileName" class="text-[30px] text-primary" />
         </div>
       </div>

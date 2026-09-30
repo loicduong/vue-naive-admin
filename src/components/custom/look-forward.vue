@@ -8,7 +8,7 @@ defineOptions({
 </script>
 
 <template>
-  <div class="size-full min-h-130 flex-col-center gap-6 overflow-hidden">
+  <div class="size-full min-h-130 flex flex-col items-center justify-center gap-6 overflow-hidden">
     <div class="flex text-[400px] text-primary">
       <SvgIcon local-icon="expectation" />
     </div>

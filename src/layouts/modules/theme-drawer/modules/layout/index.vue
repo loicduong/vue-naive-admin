@@ -12,7 +12,7 @@ defineOptions({
 </script>
 
 <template>
-  <div class="flex-col-stretch gap-4">
+  <div class="flex flex-col items-stretch gap-4">
     <LayoutMode />
     <HeaderSettings />
     <TabSettings />

@@ -13,7 +13,7 @@ const themeStore = useThemeStore()
 
 <template>
   <NDivider>{{ $t('theme.layout.header.title') }}</NDivider>
-  <TransitionGroup tag="div" name="setting-list" class="flex-col-stretch gap-3">
+  <TransitionGroup tag="div" name="setting-list" class="flex flex-col items-stretch gap-3">
     <SettingItem key="1" :label="$t('theme.layout.header.height')">
       <NInputNumber v-model:value="themeStore.header.height" size="small" :step="1" class="w-30" />
     </SettingItem>

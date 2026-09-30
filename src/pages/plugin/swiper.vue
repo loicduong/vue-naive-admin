@@ -96,7 +96,7 @@ const swiperExample: SwiperExample[] = [
 
 <template>
   <div>
-    <NCard title="Swiper plugin" :bordered="false" class="card-wrapper">
+    <NCard title="Swiper plugin" :bordered="false" class="rounded-lg shadow-xs">
       <NSpace :vertical="true">
         <GithubLink link="https://github.com/nolimits4web/swiper" />
         <WebSiteLink label="Vue 3 version documentation link: " link="https://swiperjs.com/vue" />
@@ -109,7 +109,9 @@ const swiperExample: SwiperExample[] = [
           </h3>
           <Swiper v-bind="item.options">
             <SwiperSlide v-for="i in 5" :key="i">
-              <div class="h-60 w-full flex-center border border-[#999] text-[18px] font-bold">Slide{{ i }}</div>
+              <div class="h-60 w-full flex items-center justify-center border border-[#999] text-[18px] font-bold">
+                Slide{{ i }}
+              </div>
             </SwiperSlide>
           </Swiper>
         </div>

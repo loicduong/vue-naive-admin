@@ -17,7 +17,7 @@ interface Props {
 </script>
 
 <template>
-  <RouterLink id="global-logo" to="/" class="w-full flex-center nowrap-hidden">
+  <RouterLink id="global-logo" to="/" class="w-full flex items-center justify-center overflow-hidden whitespace-nowrap">
     <SystemLogo class="text-[32px] text-primary" />
     <h2 v-show="showTitle" class="pl-2 text-[16px] text-primary font-bold transition duration-300 ease-in-out">
       {{ $t('system.title') }}

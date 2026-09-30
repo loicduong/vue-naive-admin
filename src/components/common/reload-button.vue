@@ -16,7 +16,7 @@ interface Props {
 
 <template>
   <ButtonIcon :tooltip-content="$t('icon.reload')">
-    <icon-ant-design-reload-outlined :class="{ 'animate-spin animate-duration-750': loading }" />
+    <icon-ant-design-reload-outlined :class="{ 'animate-spin [animation-duration:750ms]': loading }" />
   </ButtonIcon>
 </template>
 

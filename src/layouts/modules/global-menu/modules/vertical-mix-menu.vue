@@ -94,10 +94,10 @@ watch(
         :style="{ width: appStore.mixSiderFixed && hasChildMenus ? `${themeStore.sider.mixChildMenuWidth}px` : '0px' }"
       >
         <DarkModeContainer
-          class="absolute-lt h-full flex-col-stretch nowrap-hidden shadow-xs transition-all duration-300"
+          class="absolute left-0 top-0 h-full flex flex-col items-stretch overflow-hidden whitespace-nowrap shadow-xs transition-all duration-300"
           :style="{ width: showDrawer ? `${themeStore.sider.mixChildMenuWidth}px` : '0px' }"
         >
-          <header class="flex-y-center justify-between px-3" :style="{ height: `${themeStore.header.height}px` }">
+          <header class="flex items-center justify-between px-3" :style="{ height: `${themeStore.header.height}px` }">
             <h2 class="text-[16px] text-primary font-bold">
               {{ $t('system.title') }}
             </h2>

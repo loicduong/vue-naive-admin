@@ -58,7 +58,7 @@ function handleChangeMode(mode: UnionKey.ThemeLayoutMode) {
     <div
       v-for="(item, key) in layoutConfig"
       :key="key"
-      class="flex-col-center cursor-pointer"
+      class="flex flex-col items-center justify-center cursor-pointer"
       :class="[mode === key ? 'border-primary' : 'border-transparent']"
       @click="handleChangeMode(key)"
     >

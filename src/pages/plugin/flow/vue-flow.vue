@@ -64,7 +64,7 @@ async function layoutGraph(direction: string) {
 
 <template>
   <div class="overflow-hidden">
-    <NCard title="Vue Flow" :bordered="false" class="h-full card-wrapper" content-class="overflow-hidden">
+    <NCard title="Vue Flow" :bordered="false" class="h-full rounded-lg shadow-xs" content-class="overflow-hidden">
       <VueFlow :nodes="nodes" :edges="edges" @nodes-initialized="layoutGraph('LR')">
         <template #node-process="props">
           <ProcessNode

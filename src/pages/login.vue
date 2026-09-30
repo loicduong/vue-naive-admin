@@ -58,16 +58,19 @@ const bgColor = computed(() => {
 </script>
 
 <template>
-  <div class="relative size-full flex-center overflow-hidden" :style="{ backgroundColor: bgColor }">
+  <div
+    class="relative size-full flex items-center justify-center overflow-hidden"
+    :style="{ backgroundColor: bgColor }"
+  >
     <WaveBg :theme-color="bgThemeColor" />
     <NCard :bordered="false" class="relative z-4 w-auto rounded-xl">
       <div class="w-100 max-sm:w-75">
-        <header class="flex-y-center justify-between">
+        <header class="flex items-center justify-between">
           <SystemLogo class="text-[64px] text-primary max-sm:text-[48px]" />
           <h3 class="text-[28px] text-primary font-medium max-sm:text-[22px]">
             {{ $t('system.title') }}
           </h3>
-          <div class="i-flex-col">
+          <div class="inline-flex flex-col">
             <ThemeSchemaSwitch
               :theme-schema="themeStore.themeScheme"
               :show-tooltip="false"

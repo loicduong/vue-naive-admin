@@ -33,7 +33,7 @@ function resetTabLabel() {
       :bordered="false"
       size="small"
       segmented
-      class="card-wrapper"
+      class="rounded-lg shadow-xs"
     >
       <NDivider title-placement="left">
         {{ $t('page.function.tab.tabOperate.addTab') }}
@@ -69,7 +69,7 @@ function resetTabLabel() {
       :bordered="false"
       size="small"
       segmented
-      class="card-wrapper"
+      class="rounded-lg shadow-xs"
     >
       <NDivider title-placement="left">
         {{ $t('page.function.tab.tabTitle.changeTitle') }}

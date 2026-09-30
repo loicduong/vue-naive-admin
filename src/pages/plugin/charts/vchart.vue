@@ -29,28 +29,28 @@ const { domRef: liquidChartSmartInvertRef } = useVChart(() => liquidChartSmartIn
 
 <template>
   <NSpace vertical :size="16">
-    <NCard :bordered="false" title="VChart" class="h-full card-wrapper">
+    <NCard :bordered="false" title="VChart" class="h-full rounded-lg shadow-xs">
       <WebSiteLink label="More Demos: " link="https://www.visactor.com/vchart/example" />
     </NCard>
-    <NCard title="Stacked Dash Area Chart" :bordered="false" class="h-full card-wrapper">
+    <NCard title="Stacked Dash Area Chart" :bordered="false" class="h-full rounded-lg shadow-xs">
       <div ref="stackedDashAreaRef" class="h-100" />
     </NCard>
-    <NCard title="Bar Mark Point Chart" :bordered="false" class="h-full card-wrapper">
+    <NCard title="Bar Mark Point Chart" :bordered="false" class="h-full rounded-lg shadow-xs">
       <div ref="barMarkPointRef" class="h-100" />
     </NCard>
-    <NCard title="Histogram Different Bin Chart" :bordered="false" class="h-full card-wrapper">
+    <NCard title="Histogram Different Bin Chart" :bordered="false" class="h-full rounded-lg shadow-xs">
       <div ref="histogramDifferentBinRef" class="h-100" />
     </NCard>
-    <NCard title="Ranking Bar Chart" :bordered="false" class="h-full card-wrapper">
+    <NCard title="Ranking Bar Chart" :bordered="false" class="h-full rounded-lg shadow-xs">
       <div ref="rankingBarRef" class="h-100" />
     </NCard>
-    <NCard title="Circular Progress Tick Chart" :bordered="false" class="h-full card-wrapper">
+    <NCard title="Circular Progress Tick Chart" :bordered="false" class="h-full rounded-lg shadow-xs">
       <div ref="circularProgressTickRef" class="h-100" />
     </NCard>
-    <NCard title="Liquid Chart Smart Invert Chart" :bordered="false" class="h-full card-wrapper">
+    <NCard title="Liquid Chart Smart Invert Chart" :bordered="false" class="h-full rounded-lg shadow-xs">
       <div ref="liquidChartSmartInvertRef" class="h-100" />
     </NCard>
-    <NCard title="Shape Word Cloud Chart" :bordered="false" class="h-full card-wrapper">
+    <NCard title="Shape Word Cloud Chart" :bordered="false" class="h-full rounded-lg shadow-xs">
       <div ref="shapeWordCloudRef" class="h-100" />
     </NCard>
   </NSpace>

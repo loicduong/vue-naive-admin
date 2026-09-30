@@ -12,8 +12,8 @@ interface Props {
 </script>
 
 <template>
-  <div class="w-full flex-y-center justify-between">
-    <div class="flex-y-center">
+  <div class="w-full flex items-center justify-between">
+    <div class="flex items-center">
       <span class="pr-2 text-base-text">{{ label }}</span>
       <slot name="suffix" />
     </div>

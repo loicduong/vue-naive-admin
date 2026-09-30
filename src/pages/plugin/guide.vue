@@ -82,7 +82,7 @@ function onGuide() {
       :bordered="false"
       size="small"
       content-class="overflow-y-hidden overflow-x-auto"
-      class="h-full card-wrapper"
+      class="h-full rounded-lg shadow-xs"
     >
       <GithubLink link="https://github.com/usablica/intro.js" class="mb-4" />
       <NButton @click="onGuide"> Open Guide </NButton>

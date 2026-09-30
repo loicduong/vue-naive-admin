@@ -36,7 +36,7 @@ const swatches: string[] = [
 
 <template>
   <NDivider>{{ $t('theme.appearance.themeColor.title') }}</NDivider>
-  <div class="flex-col-stretch gap-3">
+  <div class="flex flex-col items-stretch gap-3">
     <SettingItem
       v-for="(_, key) in themeStore.themeColors"
       :key="key"

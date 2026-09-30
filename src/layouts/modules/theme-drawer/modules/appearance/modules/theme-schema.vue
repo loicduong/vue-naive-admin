@@ -24,8 +24,8 @@ function handleSegmentChange(value: string | number) {
 
 <template>
   <NDivider>{{ $t('theme.appearance.themeSchema.title') }}</NDivider>
-  <div class="flex-col-stretch gap-4">
-    <div class="i-flex-center">
+  <div class="flex flex-col items-stretch gap-4">
+    <div class="inline-flex items-center justify-center">
       <NTabs
         :key="themeStore.themeScheme"
         type="segment"

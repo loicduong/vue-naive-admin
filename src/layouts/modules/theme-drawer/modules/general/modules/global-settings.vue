@@ -12,7 +12,7 @@ const themeStore = useThemeStore()
 </script>
 
 <template>
-  <div class="flex-col-stretch gap-4">
+  <div class="flex flex-col items-stretch gap-4">
     <SettingItem :label="$t('theme.general.multilingual.visible')">
       <NSwitch v-model:value="themeStore.header.multilingual.visible" />
     </SettingItem>

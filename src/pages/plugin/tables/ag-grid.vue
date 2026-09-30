@@ -23,7 +23,7 @@ const colDefs = ref([{ field: 'make' }, { field: 'model' }, { field: 'price' }, 
 
 <template>
   <div class="h-full">
-    <NCard title="AG Grid Table" :bordered="false" class="h-full card-wrapper">
+    <NCard title="AG Grid Table" :bordered="false" class="h-full rounded-lg shadow-xs">
       <div class="h-full flex flex-col">
         <GithubLink link="https://github.com/ag-grid/ag-grid" class="mb-4" />
         <AgGridVue class="h-full w-full" :column-defs="colDefs" :row-data="rowData" :default-col-def="{ flex: 1 }" />

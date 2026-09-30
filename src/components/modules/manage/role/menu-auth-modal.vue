@@ -104,7 +104,7 @@ watch(visible, val => {
 
 <template>
   <NModal v-model:show="visible" :title="title" preset="card" class="w-120">
-    <div class="flex-y-center gap-4 pb-3">
+    <div class="flex items-center gap-4 pb-3">
       <div>{{ $t('page.manage.menu.home') }}</div>
       <NSelect :value="home" :options="pageSelectOptions" size="small" class="w-40" @update:value="updateHome" />
     </div>

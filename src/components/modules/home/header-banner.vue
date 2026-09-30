@@ -40,10 +40,10 @@ const statisticData = computed<StatisticData[]>(() => [
 </script>
 
 <template>
-  <NCard :bordered="false" class="card-wrapper">
+  <NCard :bordered="false" class="rounded-lg shadow-xs">
     <NGrid :x-gap="gap" :y-gap="16" responsive="screen" item-responsive>
       <NGi span="24 s:24 m:18">
-        <div class="flex-y-center">
+        <div class="flex items-center">
           <div class="size-18 shrink-0 overflow-hidden rounded-full">
             <img src="@/assets/imgs/user.jpg" class="size-full" />
           </div>

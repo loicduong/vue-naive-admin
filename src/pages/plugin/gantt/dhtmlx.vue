@@ -189,7 +189,7 @@ onMounted(() => {
       :bordered="false"
       size="small"
       content-class="overflow-y-hidden overflow-x-auto"
-      class="h-full card-wrapper"
+      class="h-full rounded-lg shadow-xs"
     >
       <template #header-extra>
         <NTabs :value="timeType" type="segment" animated size="small" class="relative w-80" @update:value="changeTime">

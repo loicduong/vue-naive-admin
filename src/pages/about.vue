@@ -60,10 +60,16 @@ const website = 'https://v-naive-admin.vercel.app'
 
 <template>
   <NSpace vertical :size="16">
-    <NCard :title="$t('page.about.title')" :bordered="false" size="small" segmented class="card-wrapper">
+    <NCard :title="$t('page.about.title')" :bordered="false" size="small" segmented class="rounded-lg shadow-xs">
       <p>{{ $t('page.about.introduction') }}</p>
     </NCard>
-    <NCard :title="$t('page.about.projectInfo.title')" :bordered="false" size="small" segmented class="card-wrapper">
+    <NCard
+      :title="$t('page.about.projectInfo.title')"
+      :bordered="false"
+      size="small"
+      segmented
+      class="rounded-lg shadow-xs"
+    >
       <NDescriptions label-placement="left" bordered size="small" :column="column">
         <NDescriptionsItem :label="$t('page.about.projectInfo.version')">
           <NTag type="primary">
@@ -97,7 +103,7 @@ const website = 'https://v-naive-admin.vercel.app'
         </NDescriptionsItem>
       </NDescriptions>
     </NCard>
-    <NCard :bordered="false" size="small" segmented class="card-wrapper">
+    <NCard :bordered="false" size="small" segmented class="rounded-lg shadow-xs">
       <template #header>
         <span class="mr-2">{{ $t('page.about.prdDep') }}</span>
         <NTag type="info" round :bordered="false" size="small">
@@ -120,7 +126,7 @@ const website = 'https://v-naive-admin.vercel.app'
         </NDescriptionsItem>
       </NDescriptions>
     </NCard>
-    <NCard :bordered="false" size="small" segmented class="card-wrapper">
+    <NCard :bordered="false" size="small" segmented class="rounded-lg shadow-xs">
       <template #header>
         <span class="mr-2">{{ $t('page.about.devDep') }}</span>
         <NTag type="info" round :bordered="false" size="small">

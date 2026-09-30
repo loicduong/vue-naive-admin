@@ -82,7 +82,7 @@ function getGradientColor(color: CardData['color']) {
 </script>
 
 <template>
-  <NCard :bordered="false" size="small" class="card-wrapper">
+  <NCard :bordered="false" size="small" class="rounded-lg shadow-xs">
     <!-- define component start: GradientBg -->
     <DefineGradientBg v-slot="{ $slots, gradientColor }">
       <div

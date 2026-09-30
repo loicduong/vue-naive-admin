@@ -76,7 +76,7 @@ function toggleSelectAll(checked: boolean) {
       </NButton>
     </template>
     <div>
-      <div class="h-9 flex-y-center rounded-sm pl-6.5 hover:bg-primary/20">
+      <div class="h-9 flex items-center rounded-sm pl-6.5 hover:bg-primary/20">
         <NCheckbox
           :checked="selectAllChecked"
           :indeterminate="selectAllIndeterminate"
@@ -92,10 +92,10 @@ function toggleSelectAll(checked: boolean) {
         <div
           v-for="item in columns"
           :key="item.key"
-          class="h-9 flex-y-center justify-between gap-1.5"
+          class="h-9 flex items-center justify-between gap-1.5"
           :class="{ hidden: !item.visible }"
         >
-          <div class="h-full flex-y-center flex-1 rounded-sm hover:bg-primary/20">
+          <div class="h-full flex items-center flex-1 rounded-sm hover:bg-primary/20">
             <icon-mdi-drag class="mr-2 h-full cursor-move text-icon" />
             <NCheckbox v-model:checked="item.checked" class="none_draggable flex-1">
               <template v-if="typeof item.title === 'function'">

@@ -17,7 +17,7 @@ const isMixLayoutMode = computed(() => layoutMode.value.includes('mix'))
 
 <template>
   <NDivider>{{ $t('theme.layout.sider.title') }}</NDivider>
-  <TransitionGroup tag="div" name="setting-list" class="flex-col-stretch gap-3">
+  <TransitionGroup tag="div" name="setting-list" class="flex flex-col items-stretch gap-3">
     <SettingItem v-if="layoutMode === 'vertical'" key="1" :label="$t('theme.layout.sider.width')">
       <NInputNumber v-model:value="themeStore.sider.width" size="small" :step="1" class="w-30" />
     </SettingItem>

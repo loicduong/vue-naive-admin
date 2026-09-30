@@ -8,7 +8,7 @@ defineOptions({
 </script>
 
 <template>
-  <div class="h-full flex-1-hidden">
+  <div class="h-full flex-1 overflow-hidden">
     <Simplebar class="h-full">
       <slot />
     </Simplebar>

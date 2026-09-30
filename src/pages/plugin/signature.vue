@@ -50,10 +50,10 @@ const handleClear = () => signature.value?.clear()
 
 <template>
   <div class="overflow-hidden">
-    <NCard title="Signature Pad" :bordered="false" class="h-full card-wrapper" content-class="overflow-hidden">
-      <div class="h-full flex-col-stretch">
+    <NCard title="Signature Pad" :bordered="false" class="h-full rounded-lg shadow-xs" content-class="overflow-hidden">
+      <div class="h-full flex flex-col items-stretch">
         <GithubLink link="https://github.com/szimek/signature_pad" />
-        <div class="flex-y-center justify-end gap-3">
+        <div class="flex items-center justify-end gap-3">
           <ButtonIcon tooltip-content="Download" @click="handleSave">
             <icon-charm-download />
           </ButtonIcon>

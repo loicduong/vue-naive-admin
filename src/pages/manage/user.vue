@@ -113,7 +113,7 @@ const { columns, columnChecks, data, getData, getDataByPage, loading, mobilePagi
       align: 'center',
       width: 130,
       render: row => (
-        <div class="flex-center gap-2">
+        <div class="flex items-center justify-center gap-2">
           <NButton type="primary" ghost size="small" onClick={() => edit(row.id)}>
             {$t('common.edit')}
           </NButton>
@@ -167,9 +167,14 @@ function edit(id: number) {
 </script>
 
 <template>
-  <div class="min-h-125 flex-col-stretch gap-4 overflow-hidden max-sm:overflow-auto">
+  <div class="min-h-125 flex flex-col items-stretch gap-4 overflow-hidden max-sm:overflow-auto">
     <UserSearch v-model:model="searchParams" @search="getDataByPage" />
-    <NCard :title="$t('page.manage.user.title')" :bordered="false" size="small" class="card-wrapper sm:flex-1-hidden">
+    <NCard
+      :title="$t('page.manage.user.title')"
+      :bordered="false"
+      size="small"
+      class="rounded-lg shadow-xs sm:flex-1 sm:overflow-hidden"
+    >
       <template #header-extra>
         <TableHeaderOperation
           v-model:columns="columnChecks"

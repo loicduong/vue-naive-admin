@@ -134,11 +134,11 @@ init()
 </script>
 
 <template>
-  <DarkModeContainer class="size-full flex-y-center gap-2 px-4 shadow-tab">
+  <DarkModeContainer class="size-full flex items-center gap-2 px-4 shadow-tab">
     <NTabs
       type="card"
       center-active-tab
-      class="flex-1-hidden"
+      class="flex-1 overflow-hidden"
       :value="tabStore.activeTabId"
       @update:value="handleUpdateValue"
       @close="handleCloseTab"
@@ -150,9 +150,9 @@ init()
         :closable="!tabStore.isTabRetain(tab.id)"
         :tab-props="getTabProps(tab)"
       >
-        <div class="flex-y-center gap-1.5">
+        <div class="flex items-center gap-1.5">
           <SvgIcon :icon="tab.icon" :local-icon="tab.localIcon" class="text-[16px]" />
-          <span class="max-w-60 ellipsis-text">{{ tab.label }}</span>
+          <span class="max-w-60 truncate">{{ tab.label }}</span>
         </div>
       </NTab>
     </NTabs>
