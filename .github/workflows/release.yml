@@ -35,6 +35,7 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VP_GIT_HOOKS: 0
         run: >
           pnpm dlx
           --package semantic-release
