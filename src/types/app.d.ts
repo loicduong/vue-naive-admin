@@ -307,6 +307,9 @@ declare namespace App {
         refresh: string
         reset: string
         search: string
+        searchClose: string
+        searchNavigate: string
+        searchSelect: string
         switch: string
         tip: string
         trigger: string
