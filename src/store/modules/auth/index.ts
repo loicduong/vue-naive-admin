@@ -6,6 +6,8 @@ import { $t } from '@/locales'
 import { fetchGetUserInfo, fetchLogin } from '@/service/api'
 import { localStg } from '@/utils/storage'
 import { useRouteStore } from '../route'
+import { useTabStore } from '../tab'
+import { isDifferentUser, shouldResetTabs } from '../tab/shared'
 import { useThemeStore } from '../theme'
 import { clearAuthStorage, getToken } from './shared'
 
@@ -14,6 +16,7 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
   const route = useRoute()
   const authStore = useAuthStore()
   const routeStore = useRouteStore()
+  const tabStore = useTabStore()
   const { toLogin, redirectFromLogin } = useRouterPush(false)
   const { loading: loginLoading, startLoading, endLoading } = useLoading()
 
@@ -38,6 +41,8 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
 
   /** Reset auth store */
   async function resetStore() {
+    recordUserId()
+
     clearAuthStorage()
 
     authStore.$reset()
@@ -46,7 +51,34 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
       await toLogin()
     }
 
+    tabStore.cacheTabs()
     routeStore.resetStore()
+  }
+
+  /** Record the user id of the current session, to compare with the next login */
+  function recordUserId() {
+    if (!userInfo.userId) return
+
+    localStg.set('lastLoginUserId', userInfo.userId)
+  }
+
+  /**
+   * Clear all tabs unless the same user logs in again
+   *
+   * @returns Whether a known, different user logged in (their redirect must not be reused)
+   */
+  function checkTabClear() {
+    if (!userInfo.userId) return false
+
+    const lastLoginUserId = localStg.get('lastLoginUserId')
+
+    if (shouldResetTabs(lastLoginUserId, userInfo.userId)) {
+      tabStore.resetTabs()
+    }
+
+    localStg.remove('lastLoginUserId')
+
+    return isDifferentUser(lastLoginUserId, userInfo.userId)
   }
 
   /**
@@ -65,7 +97,10 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
       const pass = await loginByToken(loginToken)
 
       if (pass) {
-        await redirectFromLogin(redirect)
+        // a different user must not be redirected to the previous user's page
+        const isOtherUser = checkTabClear()
+
+        await redirectFromLogin(redirect && !isOtherUser)
 
         window.$notification?.success({
           title: $t('page.login.common.loginSuccess'),

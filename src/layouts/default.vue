@@ -8,6 +8,7 @@ import GlobalFooter from './modules/global-footer/index.vue'
 import GlobalHeader from './modules/global-header/index.vue'
 import { provideMixMenuContext } from './modules/global-menu/context'
 import GlobalSider from './modules/global-sider/index.vue'
+import GlobalTab from './modules/global-tab/index.vue'
 import ThemeDrawer from './modules/theme-drawer/index.vue'
 
 defineOptions({
@@ -83,6 +84,8 @@ function getSiderAndCollapsedWidth(isCollapsed: boolean) {
     :full-content="appStore.fullContent"
     :fixed-top="themeStore.fixedHeader"
     :header-height="themeStore.header.height"
+    :tab-visible="themeStore.tab.visible"
+    :tab-height="themeStore.tab.height"
     :content-class="appStore.contentXScrollable ? 'overflow-x-hidden' : ''"
     :sider-width="siderWidth"
     :sider-collapsed-width="siderCollapsedWidth"
@@ -92,6 +95,9 @@ function getSiderAndCollapsedWidth(isCollapsed: boolean) {
   >
     <template #header>
       <GlobalHeader v-bind="headerProps" />
+    </template>
+    <template #tab>
+      <GlobalTab />
     </template>
     <template #sider>
       <GlobalSider />

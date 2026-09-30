@@ -107,6 +107,15 @@ const local: App.I18n.Schema = {
         height: 'Chiều cao footer',
         right: 'Footer phía bên phải',
       },
+      tab: {
+        title: 'Cài đặt tab',
+        visible: 'Hiển thị tab',
+        cache: 'Lưu trữ thông tin tab',
+        cacheTip: 'Giữ lại thanh tab sau khi rời trang',
+        height: 'Chiều cao tab',
+        closeByMiddleClick: 'Đóng tab bằng chuột giữa',
+        closeByMiddleClickTip: 'Cho phép đóng tab bằng cách nhấn chuột giữa',
+      },
       content: {
         title: 'Cài đặt vùng nội dung',
         scrollMode: {
@@ -128,7 +137,7 @@ const local: App.I18n.Schema = {
             none: 'Không có',
           },
         },
-        fixedHeader: 'Cố định tiêu đề',
+        fixedHeader: 'Cố định tiêu đề và tab',
       },
     },
     general: {
@@ -162,6 +171,8 @@ const local: App.I18n.Schema = {
     '/function/hide-child/one': 'Ẩn con',
     '/function/hide-child/two': 'Hai',
     '/function/hide-child/three': 'Ba',
+    '/function/multi-tab': 'Nhiều tab',
+    '/function/tab': 'Tab',
     '/plugin': 'Tiện ích',
     '/plugin/audio': 'Audio',
     '/plugin/copy': 'Sao chép',
@@ -289,6 +300,32 @@ const local: App.I18n.Schema = {
       prdDep: 'Phụ thuộc sản xuất',
       devDep: 'Phụ thuộc phát triển',
     },
+    function: {
+      tab: {
+        tabOperate: {
+          title: 'Thao tác tab',
+          addTab: 'Thêm tab',
+          addTabDesc: 'Đến trang about',
+          closeTab: 'Đóng tab',
+          closeCurrentTab: 'Đóng tab hiện tại',
+          closeAboutTab: 'Đóng tab "About"',
+          addMultiTab: 'Thêm nhiều tab',
+          addMultiTabDesc1: 'Đến trang MultiTab',
+          addMultiTabDesc2: 'Đến trang MultiTab (với tham số truy vấn)',
+        },
+        tabTitle: {
+          title: 'Tiêu đề tab',
+          changeTitle: 'Thay đổi tiêu đề',
+          change: 'Thay đổi',
+          resetTitle: 'Đặt lại tiêu đề',
+          reset: 'Đặt lại',
+        },
+      },
+      multiTab: {
+        routeParam: 'Tham số route',
+        backTab: 'Quay lại trang Tab',
+      },
+    },
     manage: {
       menu: {
         home: 'Trang chủ',
@@ -376,6 +413,8 @@ const local: App.I18n.Schema = {
     closeLeft: 'Đóng các tab bên trái',
     closeRight: 'Đóng các tab bên phải',
     closeAll: 'Đóng tất cả',
+    pin: 'Ghim',
+    unpin: 'Bỏ ghim',
   },
   icon: {
     themeConfig: 'Cấu hình chủ đề',
@@ -386,6 +425,8 @@ const local: App.I18n.Schema = {
     expand: 'Mở rộng menu',
     pin: 'Ghim',
     unpin: 'Bỏ ghim',
+    fullscreen: 'Toàn màn hình',
+    fullscreenExit: 'Thoát toàn màn hình',
   },
   datatable: {
     itemCount: 'Tổng {total} bản ghi',

@@ -29,9 +29,6 @@ importers:
       '@antv/g6':
         specifier: 5.1.1
         version: 5.1.1
-      '@better-scroll/core':
-        specifier: 2.5.1
-        version: 2.5.1
       '@iconify/vue':
         specifier: 5.0.3
         version: 5.0.3(vue@3.5.43(typescript@6.0.3))
@@ -966,12 +963,6 @@ packages:
   '@babel/types@7.29.8':
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
-
-  '@better-scroll/core@2.5.1':
-    resolution: {integrity: sha512-koKOuYA55dQ04FJRIVUpMGDr1hbCfWmfX0MGp1hKagkQSWSRpwblqACiwtggVauoj9aaJRJZ9hDsTM4weaavlg==}
-
-  '@better-scroll/shared-utils@2.5.1':
-    resolution: {integrity: sha512-AplkfSjXVYP9LZiD6JsKgmgQJ/mG4uuLmBuwLz8W5OsYc7AYTfN8kw6GqZ5OwCGoXkVhBGyd8NeC4xwYItp0aw==}
 
   '@blazediff/core@1.10.0':
     resolution: {integrity: sha512-AOQff0zgR7cGsZL+4E7hVkmujoPUpm0J9xzWGWZj5wCjd3gmxESXAPfKyuzs93VdpQNFhHlBhfOjrcZ+XTERtQ==}
@@ -7009,12 +7000,6 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
-
-  '@better-scroll/core@2.5.1':
-    dependencies:
-      '@better-scroll/shared-utils': 2.5.1
-
-  '@better-scroll/shared-utils@2.5.1': {}
 
   '@blazediff/core@1.10.0': {}
 

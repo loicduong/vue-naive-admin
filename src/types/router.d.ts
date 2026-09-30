@@ -44,6 +44,13 @@ declare module 'vue-router' {
     iconFontSize?: number
     /** Router order */
     order?: number | null
+    /**
+     * By default, the same route path will use one tab, even with different query, if set true, the route with
+     * different query will use different tabs
+     */
+    multiTab?: boolean | null
+    /** If set, the route will be fixed in tabs, and the value is the order of fixed tabs */
+    fixedIndexInTab?: number | null
     /** The outer link of the route */
     href?: string | null
     /** Whether to hide the route in the menu */

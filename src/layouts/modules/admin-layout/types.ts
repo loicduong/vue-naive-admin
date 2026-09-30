@@ -14,6 +14,28 @@ interface AdminLayoutHeaderConfig {
   headerHeight?: number
 }
 
+/** Tab config */
+interface AdminLayoutTabConfig {
+  /**
+   * Whether tab is visible
+   *
+   * @default true
+   */
+  tabVisible?: boolean
+  /**
+   * Tab class
+   *
+   * @default ''
+   */
+  tabClass?: string
+  /**
+   * Tab height
+   *
+   * @default 48px
+   */
+  tabHeight?: number
+}
+
 /** Sider config */
 interface AdminLayoutSiderConfig {
   /**
@@ -123,7 +145,12 @@ export type LayoutScrollMode = 'wrapper' | 'content'
 
 /** Admin layout props */
 export interface AdminLayoutProps
-  extends AdminLayoutHeaderConfig, AdminLayoutSiderConfig, AdminLayoutContentConfig, AdminLayoutFooterConfig {
+  extends
+    AdminLayoutHeaderConfig,
+    AdminLayoutTabConfig,
+    AdminLayoutSiderConfig,
+    AdminLayoutContentConfig,
+    AdminLayoutFooterConfig {
   /**
    * Layout mode
    *
@@ -168,7 +195,7 @@ export interface AdminLayoutProps
    */
   commonClass?: string
   /**
-   * Whether fix the header
+   * Whether fix the header and tab
    *
    * @default true
    */
@@ -176,7 +203,7 @@ export interface AdminLayoutProps
   /**
    * The max z-index of the layout
    *
-   * The z-index of Header,Sider and Footer will not exceed this value
+   * The z-index of Header,Tab,Sider and Footer will not exceed this value
    */
   maxZIndex?: number
 }
@@ -191,9 +218,10 @@ type Prefix = '--soy-'
 
 export type LayoutCssVarsProps = Pick<
   AdminLayoutProps,
-  'headerHeight' | 'siderWidth' | 'siderCollapsedWidth' | 'footerHeight'
+  'headerHeight' | 'tabHeight' | 'siderWidth' | 'siderCollapsedWidth' | 'footerHeight'
 > & {
   headerZIndex?: number
+  tabZIndex?: number
   siderZIndex?: number
   mobileSiderZIndex?: number
   footerZIndex?: number

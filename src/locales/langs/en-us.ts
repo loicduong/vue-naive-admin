@@ -108,6 +108,15 @@ const local: App.I18n.Schema = {
         height: 'Footer Height',
         right: 'Right Footer',
       },
+      tab: {
+        title: 'Tab Settings',
+        visible: 'Tab Visible',
+        cache: 'Tag Bar Info Cache',
+        cacheTip: 'Keep the tab bar information after leaving the page',
+        height: 'Tab Height',
+        closeByMiddleClick: 'Close Tab by Middle Click',
+        closeByMiddleClickTip: 'Enable closing tabs by clicking with the middle mouse button',
+      },
       content: {
         title: 'Content Area Settings',
         scrollMode: {
@@ -129,7 +138,7 @@ const local: App.I18n.Schema = {
             none: 'None',
           },
         },
-        fixedHeader: 'Fixed Header',
+        fixedHeader: 'Fixed Header And Tab',
       },
     },
     general: {
@@ -163,6 +172,8 @@ const local: App.I18n.Schema = {
     '/function/hide-child/one': 'Hide Child',
     '/function/hide-child/two': 'Two',
     '/function/hide-child/three': 'Three',
+    '/function/multi-tab': 'Multi Tab',
+    '/function/tab': 'Tab',
     '/plugin': 'Plugin',
     '/plugin/audio': 'Audio',
     '/plugin/copy': 'Copy',
@@ -290,6 +301,32 @@ const local: App.I18n.Schema = {
       prdDep: 'Production Dependencies',
       devDep: 'Development Dependencies',
     },
+    function: {
+      tab: {
+        tabOperate: {
+          title: 'Tab Operation',
+          addTab: 'Add Tab',
+          addTabDesc: 'To about page',
+          closeTab: 'Close Tab',
+          closeCurrentTab: 'Close Current Tab',
+          closeAboutTab: 'Close "About" Tab',
+          addMultiTab: 'Add Multi Tab',
+          addMultiTabDesc1: 'To MultiTab page',
+          addMultiTabDesc2: 'To MultiTab page(with query params)',
+        },
+        tabTitle: {
+          title: 'Tab Title',
+          changeTitle: 'Change Title',
+          change: 'Change',
+          resetTitle: 'Reset Title',
+          reset: 'Reset',
+        },
+      },
+      multiTab: {
+        routeParam: 'Route Param',
+        backTab: 'Back function_tab',
+      },
+    },
     manage: {
       menu: {
         home: 'Home',
@@ -377,6 +414,8 @@ const local: App.I18n.Schema = {
     closeLeft: 'Close Left',
     closeRight: 'Close Right',
     closeAll: 'Close All',
+    pin: 'Pin',
+    unpin: 'Unpin',
   },
   icon: {
     themeConfig: 'Theme Configuration',
@@ -387,6 +426,8 @@ const local: App.I18n.Schema = {
     expand: 'Expand Menu',
     pin: 'Pin',
     unpin: 'Unpin',
+    fullscreen: 'Fullscreen',
+    fullscreenExit: 'Exit Fullscreen',
   },
   datatable: {
     itemCount: 'Total {total} items',

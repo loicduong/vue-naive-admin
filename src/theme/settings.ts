@@ -27,6 +27,12 @@ export const themeSettings: App.Theme.ThemeSetting = {
       visible: true,
     },
   },
+  tab: {
+    visible: true,
+    cache: true,
+    height: 44,
+    closeTabByMiddleClick: false,
+  },
   fixedHeader: true,
   sider: {
     width: 220,
@@ -49,6 +55,7 @@ export const themeSettings: App.Theme.ThemeSetting = {
       },
       boxShadow: {
         header: '0 1px 2px rgb(0, 21, 41, 0.08)',
+        tab: '0 1px 2px rgb(0, 21, 41, 0.08)',
         sider: '2px 0 8px 0 rgb(29, 35, 41, 0.05)',
       },
     },

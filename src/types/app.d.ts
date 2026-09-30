@@ -45,6 +45,21 @@ declare namespace App {
           visible: boolean
         }
       }
+      /** Tab */
+      tab: {
+        /** Whether to show the tab */
+        visible: boolean
+        /**
+         * Whether to cache the tab
+         *
+         * If cache, the tabs will get from the local storage when the page is refreshed
+         */
+        cache: boolean
+        /** Tab height */
+        height: number
+        /** Whether to close tab by middle click */
+        closeTabByMiddleClick: boolean
+      }
       /** Fixed header */
       fixedHeader: boolean
       /** Sider */
@@ -105,6 +120,7 @@ declare namespace App {
 
     interface ThemeSettingTokenBoxShadow {
       header: string
+      tab: string
       sider: string
     }
 
@@ -178,8 +194,54 @@ declare namespace App {
     /** Form rule */
     type FormRule = import('naive-ui').FormItemRule
 
+    /** Tab route */
+    type TabRoute = Pick<import('vue-router').RouteLocationNormalizedLoaded, 'name' | 'path' | 'meta'> &
+      Partial<Pick<import('vue-router').RouteLocationNormalizedLoaded, 'fullPath' | 'query' | 'matched'>>
+
+    /** The global tab */
+    interface Tab {
+      /** The tab id */
+      id: string
+      /** The tab label */
+      label: string
+      /**
+       * The new tab label
+       *
+       * If set, the tab label will be replaced by this value
+       */
+      newLabel?: string
+      /**
+       * The old tab label
+       *
+       * when reset the tab label, the tab label will be replaced by this value
+       */
+      oldLabel?: string
+      /** The tab route key */
+      routeKey: RouteKey
+      /** The tab route path */
+      routePath: RoutePath
+      /** The tab route full path */
+      fullPath: string
+      /** The tab fixed index */
+      fixedIndex?: number | null
+      /**
+       * Tab icon
+       *
+       * Iconify icon
+       */
+      icon?: string
+      /**
+       * Tab local icon
+       *
+       * Local icon
+       */
+      localIcon?: string
+      /** I18n key */
+      i18nKey?: I18n.I18nKey | null
+    }
+
     /** The global dropdown key */
-    type DropdownKey = 'closeCurrent' | 'closeOther' | 'closeLeft' | 'closeRight' | 'closeAll'
+    type DropdownKey = 'closeCurrent' | 'closeOther' | 'closeLeft' | 'closeRight' | 'closeAll' | 'pin' | 'unpin'
   }
 
   /**
@@ -299,6 +361,15 @@ declare namespace App {
             height: string
             right: string
           }
+          tab: {
+            title: string
+            visible: string
+            cache: string
+            cacheTip: string
+            height: string
+            closeByMiddleClick: string
+            closeByMiddleClickTip: string
+          }
           content: {
             title: string
             scrollMode: { title: string; tip: string } & Record<UnionKey.ThemeScrollMode, string>
@@ -409,6 +480,32 @@ declare namespace App {
           prdDep: string
           devDep: string
         }
+        function: {
+          tab: {
+            tabOperate: {
+              title: string
+              addTab: string
+              addTabDesc: string
+              closeTab: string
+              closeCurrentTab: string
+              closeAboutTab: string
+              addMultiTab: string
+              addMultiTabDesc1: string
+              addMultiTabDesc2: string
+            }
+            tabTitle: {
+              title: string
+              changeTitle: string
+              change: string
+              resetTitle: string
+              reset: string
+            }
+          }
+          multiTab: {
+            routeParam: string
+            backTab: string
+          }
+        }
         manage: {
           menu: {
             home: string
@@ -482,6 +579,8 @@ declare namespace App {
         expand: string
         pin: string
         unpin: string
+        fullscreen: string
+        fullscreenExit: string
       }
       datatable: {
         itemCount: string

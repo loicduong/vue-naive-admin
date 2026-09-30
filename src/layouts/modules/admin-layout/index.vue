@@ -17,6 +17,8 @@ const props = withDefaults(defineProps<AdminLayoutProps>(), {
   maxZIndex: LAYOUT_MAX_Z_INDEX,
   headerVisible: true,
   headerHeight: 56,
+  tabVisible: true,
+  tabHeight: 48,
   siderCollapse: false,
   siderWidth: 220,
   siderCollapsedWidth: 64,
@@ -40,6 +42,8 @@ interface Slots {
   default?: SlotFn
   /** Header */
   header?: SlotFn
+  /** Tab */
+  tab?: SlotFn
   /** Sider */
   sider?: SlotFn
   /** Footer */
@@ -50,6 +54,7 @@ const cssVars = computed(() => createLayoutCssVars(props))
 
 // config visible
 const showHeader = computed(() => Boolean(slots.header) && props.headerVisible)
+const showTab = computed(() => Boolean(slots.tab) && props.tabVisible)
 const showSider = computed(() => !props.isMobile && Boolean(slots.sider))
 const showMobileSider = computed(() => props.isMobile && Boolean(slots.sider))
 const showFooter = computed(() => Boolean(slots.footer) && props.footerVisible)
@@ -126,6 +131,24 @@ function handleClickMask() {
           class="flex-shrink-0 overflow-hidden"
           :class="[style['layout-header-placement']]"
         />
+      </template>
+
+      <!-- Tab -->
+      <template v-if="showTab">
+        <div
+          class="flex-shrink-0"
+          :class="[
+            style['layout-tab'],
+            commonClass,
+            tabClass,
+            { 'top-0!': fullContent || !showHeader },
+            leftGapClass,
+            { 'absolute left-0 w-full': fixedHeader },
+          ]"
+        >
+          <slot name="tab" />
+        </div>
+        <div v-show="fixedHeader" class="flex-shrink-0 overflow-hidden" :class="[style['layout-tab-placement']]" />
       </template>
 
       <!-- Sider -->

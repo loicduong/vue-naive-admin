@@ -6,6 +6,8 @@ import { router } from '@/router'
 import { createStaticRoutes } from '@/router/routes'
 import { getRouteName } from '@/router/routes/builtin'
 import { useAuthStore } from '../auth'
+import { useTabStore } from '../tab'
+import { collectRouteNames } from '../tab/shared'
 import {
   filterAuthRoutesByRoles,
   getBreadcrumbsByRoute,
@@ -20,6 +22,7 @@ import {
 
 export const useRouteStore = defineStore(SetupStoreId.Route, () => {
   const authStore = useAuthStore()
+  const tabStore = useTabStore()
   const { bool: isInitConstantRoute, setBool: setIsInitConstantRoute } = useBoolean()
   const { bool: isInitAuthRoute, setBool: setIsInitAuthRoute } = useBoolean()
 
@@ -51,6 +54,9 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
 
     authRoutes.value = Array.from(authRoutesMap.values())
   }
+
+  /** Names of the routes the current user can access */
+  const allowedRouteNames = computed(() => collectRouteNames([...constantRoutes.value, ...authRoutes.value]))
 
   /** Global menus */
   const menus = ref<App.Global.Menu[]>([])
@@ -125,6 +131,8 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
     handleConstantAndAuthRoutes()
 
     setIsInitConstantRoute(true)
+
+    tabStore.initHomeTab()
   }
 
   /** Init auth route */
@@ -135,6 +143,8 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
     }
 
     initStaticAuthRoute()
+
+    tabStore.initHomeTab()
   }
 
   /** Init static auth route */
@@ -198,6 +208,7 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
   }
 
   return {
+    allowedRouteNames,
     breadcrumbs,
     cacheRoutes,
     excludeCacheRoutes,
