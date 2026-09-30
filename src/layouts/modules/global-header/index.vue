@@ -4,6 +4,7 @@ import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
 import GlobalBreadcrumb from '../global-breadcrumb/index.vue'
 import GlobalLogo from '../global-logo/index.vue'
+import GlobalSearch from '../global-search/index.vue'
 import ThemeButton from './components/theme-button.vue'
 import UserAvatar from './components/user-avatar.vue'
 import { computed } from 'vue'
@@ -41,6 +42,7 @@ const isAuthRouteVisible = computed(() => import.meta.env.VITE_AUTH_ROUTE_VISIBL
       <GlobalBreadcrumb v-if="!appStore.isMobile" class="ml-3" />
     </div>
     <div class="h-full flex items-center justify-end">
+      <GlobalSearch id="global-search" />
       <LangSwitch
         v-if="themeStore.header.multilingual.visible"
         :lang="appStore.locale"
