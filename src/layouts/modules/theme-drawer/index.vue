@@ -51,15 +51,3 @@ const drawerWidth = computed(() => {
     </NDrawerContent>
   </NDrawer>
 </template>
-
-<style scoped>
-:deep(.n-tab) {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-:deep(.n-tab-pane) {
-  padding: 0;
-}
-</style>

@@ -1,5 +1,5 @@
 import type { GlobalThemeOverrides } from 'naive-ui'
-import { addColorAlpha, getColorPalette, getPaletteColorByNumber, getRgb } from '@/utils/color'
+import { getColorPalette, getPaletteColorByNumber, getRgb } from '@/utils/color'
 import { defu } from 'defu'
 import { DARK_CLASS } from '@/constants/app'
 import { overrideThemeSettings, themeSettings } from '@/theme/settings'
@@ -175,7 +175,7 @@ export function toggleCssDarkMode(darkMode = false) {
   }
 }
 
-type NaiveColorScene = '' | 'Suppl' | 'Hover' | 'Pressed' | 'Active'
+type NaiveColorScene = '' | 'Suppl' | 'Hover' | 'Pressed'
 type NaiveColorKey = `${App.Theme.ThemeColorKey}Color${NaiveColorScene}`
 type NaiveThemeColor = Partial<Record<NaiveColorKey, string>>
 interface NaiveColorAction {
@@ -192,9 +192,8 @@ function getNaiveThemeColors(colors: App.Theme.ThemeColor) {
   const colorActions: NaiveColorAction[] = [
     { scene: '', handler: color => color },
     { scene: 'Suppl', handler: color => color },
-    { scene: 'Hover', handler: color => getPaletteColorByNumber(color, 500) },
-    { scene: 'Pressed', handler: color => getPaletteColorByNumber(color, 700) },
-    { scene: 'Active', handler: color => addColorAlpha(color, 0.1) },
+    { scene: 'Hover', handler: color => getPaletteColorByNumber(color, 400) },
+    { scene: 'Pressed', handler: color => getPaletteColorByNumber(color, 600) },
   ]
 
   const themeColors: NaiveThemeColor = {}

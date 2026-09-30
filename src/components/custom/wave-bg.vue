@@ -11,8 +11,8 @@ interface Props {
   themeColor: string
 }
 
-const lightColor = computed(() => getPaletteColorByNumber(props.themeColor, 300))
-const darkColor = computed(() => getPaletteColorByNumber(props.themeColor, 600))
+const lightColor = computed(() => getPaletteColorByNumber(props.themeColor, 200))
+const darkColor = computed(() => getPaletteColorByNumber(props.themeColor, 500))
 </script>
 
 <template>

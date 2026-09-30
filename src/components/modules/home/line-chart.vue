@@ -13,7 +13,7 @@ const themeStore = useThemeStore()
 
 const appStore = useAppStore()
 
-const lightColor = computed(() => getPaletteColorByNumber(themeStore.themeColor, 300))
+const lightColor = computed(() => getPaletteColorByNumber(themeStore.themeColor, 200))
 
 const { domRef, updateOptions } = useEcharts(() => ({
   tooltip: {

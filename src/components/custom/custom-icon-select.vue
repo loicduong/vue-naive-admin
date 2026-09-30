@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { NEmpty, NInput, NPopover } from 'naive-ui'
+import { NEmpty, NInput, NPopover, useThemeVars } from 'naive-ui'
 import SvgIcon from '@/components/custom/svg-icon.vue'
 
 defineOptions({ name: 'CustomIconSelect' })
@@ -33,6 +33,8 @@ const modelValue = computed({
   },
 })
 
+const themeVars = useThemeVars()
+
 const selectedIcon = computed(() => modelValue.value || props.emptyIcon)
 
 const searchValue = ref('')
@@ -47,9 +49,18 @@ function handleChange(iconItem: string) {
 <template>
   <NPopover placement="bottom-end" trigger="click">
     <template #trigger>
-      <NInput v-model:value="modelValue" readonly placeholder="Click to select the icon">
+      <NInput
+        v-model:value="modelValue"
+        readonly
+        placeholder="Click to select the icon"
+        :theme-overrides="{ paddingMedium: '0 0 0 12px' }"
+      >
         <template #suffix>
-          <SvgIcon :icon="selectedIcon" class="p-[5px] text-[30px]" />
+          <SvgIcon
+            :icon="selectedIcon"
+            class="border p-[5px] text-[30px]"
+            :style="{ borderColor: themeVars.borderColor }"
+          />
         </template>
       </NInput>
     </template>
@@ -60,21 +71,11 @@ function handleChange(iconItem: string) {
       <span v-for="iconItem in iconsList" :key="iconItem" @click="handleChange(iconItem)">
         <SvgIcon
           :icon="iconItem"
-          class="m-0.5 cursor-pointer border border-[#d9d9d9] p-[5px] text-[30px]"
-          :class="{ 'border-primary': modelValue === iconItem }"
+          class="m-0.5 cursor-pointer border p-[5px] text-[30px]"
+          :style="{ borderColor: modelValue === iconItem ? themeVars.primaryColor : themeVars.borderColor }"
         />
       </span>
     </div>
     <NEmpty v-else class="w-[306px]" description="You can't find anything" />
   </NPopover>
 </template>
-
-<style scoped>
-:deep(.n-input-wrapper) {
-  padding-right: 0;
-}
-
-:deep(.n-input__suffix) {
-  border: 1px solid #d9d9d9;
-}
-</style>

@@ -3,7 +3,7 @@ import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
 import { useAuthStore } from '@/store/modules/auth'
 import { computed } from 'vue'
-import { NCard, NGi, NGrid, NSpace, NStatistic } from 'naive-ui'
+import { NCard, NGi, NGrid, NSpace, NStatistic, NText } from 'naive-ui'
 
 defineOptions({
   name: 'HeaderBanner',
@@ -51,9 +51,9 @@ const statisticData = computed<StatisticData[]>(() => [
             <h3 class="text-[18px] font-semibold">
               {{ $t('page.home.greeting', { userName: authStore.userInfo.userName }) }}
             </h3>
-            <p class="text-[#999] leading-[30px]">
+            <NText tag="p" depth="3" class="leading-[30px]">
               {{ $t('page.home.weatherDesc') }}
-            </p>
+            </NText>
           </div>
         </div>
       </NGi>

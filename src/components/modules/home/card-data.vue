@@ -28,8 +28,8 @@ const cardData = computed<CardData[]>(() => [
     value: 9725,
     unit: '',
     color: {
-      start: 'rgb(var(--primary-color))',
-      end: 'rgb(var(--primary-600-color))',
+      start: 'rgb(var(--primary-400-color))',
+      end: 'rgb(var(--primary-color))',
     },
     icon: 'ant-design:bar-chart-outlined',
   },
@@ -39,8 +39,8 @@ const cardData = computed<CardData[]>(() => [
     value: 1026,
     unit: '$',
     color: {
-      start: 'rgb(var(--primary-color))',
-      end: 'rgb(var(--primary-600-color))',
+      start: 'rgb(var(--primary-400-color))',
+      end: 'rgb(var(--primary-color))',
     },
     icon: 'ant-design:money-collect-outlined',
   },
@@ -50,8 +50,8 @@ const cardData = computed<CardData[]>(() => [
     value: 970925,
     unit: '',
     color: {
-      start: 'rgb(var(--primary-color))',
-      end: 'rgb(var(--primary-600-color))',
+      start: 'rgb(var(--primary-400-color))',
+      end: 'rgb(var(--primary-color))',
     },
     icon: 'carbon:document-download',
   },
@@ -61,8 +61,8 @@ const cardData = computed<CardData[]>(() => [
     value: 9527,
     unit: '',
     color: {
-      start: 'rgb(var(--primary-color))',
-      end: 'rgb(var(--primary-600-color))',
+      start: 'rgb(var(--primary-400-color))',
+      end: 'rgb(var(--primary-color))',
     },
     icon: 'ant-design:trademark-circle-outlined',
   },
