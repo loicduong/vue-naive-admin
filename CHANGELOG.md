@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/loicduong/naive-agentic-admin/compare/v1.1.0...v1.1.1) (2026-09-30)
+
+
+### Bug Fixes
+
+* align theme palette and styles with Naive UI ([#65](https://github.com/loicduong/naive-agentic-admin/issues/65)) ([03487ab](https://github.com/loicduong/naive-agentic-admin/commit/03487ab3f98b8a0233f57d56f3f55de71a9c6991))
+
 # [1.1.0](https://github.com/loicduong/vue-naive-admin/compare/v1.0.2...v1.1.0) (2026-09-30)
 
 

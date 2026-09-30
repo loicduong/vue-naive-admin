@@ -1,6 +1,6 @@
 {
   "name": "naive-agentic-admin",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A fresh and elegant admin template, based on Vue 3, Vite+, TypeScript, Naive UI and Tailwind CSS, built to work well with AI coding agents.",
   "keywords": [
     "admin-template",
