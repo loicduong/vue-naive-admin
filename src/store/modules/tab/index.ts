@@ -17,7 +17,6 @@ import {
   getTabByRoute,
   getTabIdByRoute,
   insertTab,
-  isTabInTabs,
   reorderFixedTabs,
   updateTabByI18nKey,
   updateTabsByI18nKey,
@@ -95,8 +94,12 @@ export const useTabStore = defineStore(SetupStoreId.Tab, () => {
     const tab = getTabByRoute(route)
 
     const isHomeTab = tab.id === homeTab.value?.id
+    const existingTab = isHomeTab ? homeTab.value : tabs.value.find(item => item.id === tab.id)
 
-    if (!isHomeTab && !isTabInTabs(tab.id, tabs.value)) {
+    if (existingTab) {
+      // the same tab revisited with another query or hash: switching back should restore the latest url
+      existingTab.fullPath = tab.fullPath
+    } else {
       insertTab(tabs.value, tab)
     }
 

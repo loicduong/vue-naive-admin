@@ -148,11 +148,7 @@ function handleClickMask() {
         >
           <slot name="tab" />
         </div>
-        <div
-          v-show="fullContent || fixedHeader"
-          class="flex-shrink-0 overflow-hidden"
-          :class="[style['layout-tab-placement']]"
-        />
+        <div v-show="fixedHeader" class="flex-shrink-0 overflow-hidden" :class="[style['layout-tab-placement']]" />
       </template>
 
       <!-- Sider -->

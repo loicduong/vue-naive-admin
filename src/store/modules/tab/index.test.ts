@@ -68,6 +68,16 @@ describe('tab store', () => {
     expect(tabStore.tabs.map(t => t.id)).toEqual(['/home', '/a', '/b', '/c'])
   })
 
+  it('updates the destination of an existing tab when its route is revisited with another query', () => {
+    const tabStore = useTabStore()
+    tabStore.initHomeTab()
+    tabStore.initTabStore(route('/a'))
+
+    tabStore.addTab({ ...route('/a'), fullPath: '/a?page=2' } as App.Global.TabRoute)
+
+    expect(tabStore.tabs.find(t => t.id === '/a')?.fullPath).toBe('/a?page=2')
+  })
+
   it('resetTabs drops every tab, including pinned ones, and the stored snapshot', () => {
     storage.set('globalTabs', [storedTab('/a')])
 

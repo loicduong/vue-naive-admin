@@ -45,7 +45,16 @@ export function getTabIdByRoute(route: App.Global.TabRoute) {
 
   if (meta.multiTab) {
     const queryKeys = Object.keys(query).sort()
-    const qs = queryKeys.map(key => `${key}=${String(query[key])}`).join('&')
+    // encode keys and values so `&`/`=` inside a value, arrays and null values cannot collide
+    const qs = queryKeys
+      .flatMap(key => {
+        const value = query[key]
+        const values = Array.isArray(value) ? value : [value]
+        const encodedKey = encodeURIComponent(key)
+
+        return values.map(item => (item === null ? encodedKey : `${encodedKey}=${encodeURIComponent(item)}`))
+      })
+      .join('&')
 
     id = `${path}?${qs}`
   }

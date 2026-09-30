@@ -52,6 +52,22 @@ describe('getTabIdByRoute', () => {
     expect(b).toBe(a)
   })
 
+  it('does not collide when a query value contains & or =', () => {
+    const packed = getTabIdByRoute(route('/function/multi-tab', { multiTab: true }, { a: '1&b=2' }))
+    const split = getTabIdByRoute(route('/function/multi-tab', { multiTab: true }, { a: '1', b: '2' }))
+
+    expect(packed).not.toBe(split)
+  })
+
+  it('distinguishes null, empty, array and comma-joined query values', () => {
+    const id = (query: Record<string, unknown>) =>
+      getTabIdByRoute(route('/function/multi-tab', { multiTab: true }, query as Record<string, string>))
+
+    const ids = [id({ a: null }), id({ a: '' }), id({ a: ['1', '2'] }), id({ a: '1,2' })]
+
+    expect(new Set(ids).size).toBe(4)
+  })
+
   it('keeps a trailing ? for a multiTab route without query', () => {
     expect(getTabIdByRoute(route('/function/multi-tab', { multiTab: true }))).toBe('/function/multi-tab?')
   })
