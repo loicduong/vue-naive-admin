@@ -4,15 +4,16 @@
 
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE) [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-A fresh and elegant admin template, based on Vue 3, Vite+, TypeScript, Naive UI and UnoCSS.
+A fresh and elegant admin template, based on Vue 3, Vite+, TypeScript, Naive UI and UnoCSS, built to work well with AI coding agents.
 
-`NaiveAgenticAdmin` is a clean, elegant, beautiful and powerful admin template, based on the latest front-end technology stack, including Vue 3, Vite+, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on ApiFox. `NaiveAgenticAdmin` provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly.
+`NaiveAgenticAdmin` is a clean, elegant, beautiful and powerful admin template, based on the latest front-end technology stack, including Vue 3, Vite+, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on ApiFox. `NaiveAgenticAdmin` provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly, and it ships with agent instructions and skills so AI coding agents can work on it productively from day one.
 
 ## Table of Contents
 
 - [Install](#install)
 - [Usage](#usage)
 - [Features](#features)
+- [AI Agent Support](#ai-agent-support)
 - [Browser Support](#browser-support)
 - [Maintainer](#maintainer)
 - [Contributing](#contributing)
@@ -106,6 +107,24 @@ pnpm update-pkg
 - Deploy on Vercel, zero-config.
 - Apply [standard-readme](https://github.com/RichardLitt/standard-readme) to ensure the quality of the README file.
 - PWA
+
+## AI Agent Support
+
+`NaiveAgenticAdmin` is designed to be easy for AI coding agents (Claude Code, Codex, Cursor, GitHub Copilot, etc.) to understand and change safely.
+
+- **`AGENTS.md`**: project instructions that agents read automatically — the toolchain in use, the difference between built-in `vp` commands and project scripts, and a review checklist to run before finishing a change.
+- **One toolchain, one command**: [Vite+](https://viteplus.dev/) wraps formatting, linting, type checking and testing, so an agent verifies its work with a single `vp check` / `vp test` instead of guessing between tools.
+- **Agent skills**: `skills-lock.json` pins a curated set of skills that teach agents the conventions of this stack:
+  - [vuejs-ai/skills](https://github.com/vuejs-ai/skills): Vue best practices, Pinia, Vue Router, testing, debugging guides, composables, JSX and Options API.
+  - [Sepush/naive-ui-skills](https://github.com/Sepush/naive-ui-skills): Naive UI component usage.
+- **Guard rails**: strict TypeScript, Oxlint + Oxfmt and staged-file git hooks catch agent mistakes before they are committed.
+
+Install the skills into `.agents/skills` (git-ignored) with the [skills CLI](https://github.com/vercel-labs/skills):
+
+```bash
+npx skills add vuejs-ai/skills
+npx skills add Sepush/naive-ui-skills
+```
 
 ## Browser Support
 
