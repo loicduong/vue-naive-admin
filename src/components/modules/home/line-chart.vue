@@ -149,7 +149,7 @@ init()
 
 <template>
   <NCard :bordered="false" class="card-wrapper">
-    <div ref="domRef" class="h-360px overflow-hidden" />
+    <div ref="domRef" class="h-90 overflow-hidden" />
   </NCard>
 </template>
 

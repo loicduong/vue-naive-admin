@@ -90,15 +90,15 @@ watch(
         <GlobalLogo :show-title="false" :style="{ height: `${themeStore.header.height}px` }" />
       </FirstLevelMenu>
       <div
-        class="relative h-full transition-width-300"
+        class="relative h-full transition-[width] duration-300"
         :style="{ width: appStore.mixSiderFixed && hasChildMenus ? `${themeStore.sider.mixChildMenuWidth}px` : '0px' }"
       >
         <DarkModeContainer
-          class="absolute-lt h-full flex-col-stretch nowrap-hidden shadow-sm transition-all-300"
+          class="absolute-lt h-full flex-col-stretch nowrap-hidden shadow-xs transition-all duration-300"
           :style="{ width: showDrawer ? `${themeStore.sider.mixChildMenuWidth}px` : '0px' }"
         >
-          <header class="flex-y-center justify-between px-12px" :style="{ height: `${themeStore.header.height}px` }">
-            <h2 class="text-16px text-primary font-bold">
+          <header class="flex-y-center justify-between px-3" :style="{ height: `${themeStore.header.height}px` }">
+            <h2 class="text-[16px] text-primary font-bold">
               {{ $t('system.title') }}
             </h2>
             <PinToggler :pin="appStore.mixSiderFixed" @click="appStore.toggleMixSiderFixed" />

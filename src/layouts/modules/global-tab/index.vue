@@ -134,7 +134,7 @@ init()
 </script>
 
 <template>
-  <DarkModeContainer class="size-full flex-y-center gap-8px px-16px shadow-tab">
+  <DarkModeContainer class="size-full flex-y-center gap-2 px-4 shadow-tab">
     <NTabs
       type="card"
       center-active-tab
@@ -150,9 +150,9 @@ init()
         :closable="!tabStore.isTabRetain(tab.id)"
         :tab-props="getTabProps(tab)"
       >
-        <div class="flex-y-center gap-6px">
-          <SvgIcon :icon="tab.icon" :local-icon="tab.localIcon" class="text-16px" />
-          <span class="max-w-240px ellipsis-text">{{ tab.label }}</span>
+        <div class="flex-y-center gap-1.5">
+          <SvgIcon :icon="tab.icon" :local-icon="tab.localIcon" class="text-[16px]" />
+          <span class="max-w-60 ellipsis-text">{{ tab.label }}</span>
         </div>
       </NTab>
     </NTabs>

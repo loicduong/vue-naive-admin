@@ -43,7 +43,7 @@ onMounted(() => {
         <WebSiteLink label="Document address: " link="https://www.typeitjs.com/docs/vanilla/usage/" />
       </NSpace>
       <NDivider title-placement="left"> Basic Example </NDivider>
-      <span ref="textRef" class="text-18px" />
+      <span ref="textRef" class="text-[18px]" />
     </NCard>
   </div>
 </template>

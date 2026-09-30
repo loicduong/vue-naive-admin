@@ -183,7 +183,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="overflow-hidden lt-sm:overflow-auto">
+  <div class="overflow-hidden max-sm:overflow-auto">
     <NCard
       title="Gantt chart demo"
       :bordered="false"
@@ -192,21 +192,14 @@ onMounted(() => {
       class="h-full card-wrapper"
     >
       <template #header-extra>
-        <NTabs
-          :value="timeType"
-          type="segment"
-          animated
-          size="small"
-          class="relative w-320px"
-          @update:value="changeTime"
-        >
+        <NTabs :value="timeType" type="segment" animated size="small" class="relative w-80" @update:value="changeTime">
           <NTab v-for="item in data" :key="item.code" :name="item.code">
             {{ item.name }}
           </NTab>
         </NTabs>
       </template>
 
-      <div ref="ganttRef" class="size-full min-w-800px" />
+      <div ref="ganttRef" class="size-full min-w-200" />
     </NCard>
   </div>
 </template>

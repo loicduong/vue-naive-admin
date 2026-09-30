@@ -4,9 +4,9 @@
 
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE) [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-A fresh and elegant admin template, based on Vue 3, Vite+, TypeScript, Naive UI and UnoCSS, built to work well with AI coding agents.
+A fresh and elegant admin template, based on Vue 3, Vite+, TypeScript, Naive UI and Tailwind CSS, built to work well with AI coding agents.
 
-`NaiveAgenticAdmin` is a clean, elegant, beautiful and powerful admin template, based on the latest front-end technology stack, including Vue 3, Vite+, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on Apidog. `NaiveAgenticAdmin` provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly, and it ships with agent instructions and skills so AI coding agents can work on it productively from day one.
+`NaiveAgenticAdmin` is a clean, elegant, beautiful and powerful admin template, based on the latest front-end technology stack, including Vue 3, Vite+, TypeScript, Pinia and Tailwind CSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on Apidog. `NaiveAgenticAdmin` provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly, and it ships with agent instructions and skills so AI coding agents can work on it productively from day one.
 
 ## Table of Contents
 
@@ -95,11 +95,11 @@ pnpm update-pkg
 
 ## Features
 
-- Cutting-edge technology application: using the latest popular technology stack such as Vue 3, Vite+, TypeScript, Pinia and UnoCSS.
+- Cutting-edge technology application: using the latest popular technology stack such as Vue 3, Vite+, TypeScript, Pinia and Tailwind CSS.
 - Clear project architecture: single-package structure, clear, elegant and easy to understand.
 - Strict code specifications: powered by [Vite+](https://viteplus.dev/) (Oxlint + Oxfmt) with staged-file checks on git hooks to ensure the code is standardized.
 - TypeScript: support strict type checking to improve code maintainability.
-- Rich theme configuration: built-in a variety of theme configurations, perfectly integrated with UnoCSS.
+- Rich theme configuration: built-in a variety of theme configurations, perfectly integrated with Tailwind CSS.
 - Built-in internationalization solution: easily realize multi-language support.
 - Automated file routing system: automatically generate route import, declaration and type. For more details, please refer to [Vue Router file-based routing](https://router.vuejs.org/) & [vite-plugin-vue-layouts-next](https://github.com/loicduong/vite-plugin-vue-layouts-next).
 - Flexible permission routing: support both front-end static routing and back-end dynamic routing.

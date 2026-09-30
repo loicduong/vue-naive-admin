@@ -60,18 +60,18 @@ const bgColor = computed(() => {
 <template>
   <div class="relative size-full flex-center overflow-hidden" :style="{ backgroundColor: bgColor }">
     <WaveBg :theme-color="bgThemeColor" />
-    <NCard :bordered="false" class="relative z-4 w-auto rd-12px">
-      <div class="w-400px lt-sm:w-300px">
+    <NCard :bordered="false" class="relative z-4 w-auto rounded-xl">
+      <div class="w-100 max-sm:w-75">
         <header class="flex-y-center justify-between">
-          <SystemLogo class="text-64px text-primary lt-sm:text-48px" />
-          <h3 class="text-28px text-primary font-500 lt-sm:text-22px">
+          <SystemLogo class="text-[64px] text-primary max-sm:text-[48px]" />
+          <h3 class="text-[28px] text-primary font-medium max-sm:text-[22px]">
             {{ $t('system.title') }}
           </h3>
           <div class="i-flex-col">
             <ThemeSchemaSwitch
               :theme-schema="themeStore.themeScheme"
               :show-tooltip="false"
-              class="text-20px lt-sm:text-18px"
+              class="text-[20px] max-sm:text-[18px]"
               @switch="themeStore.toggleThemeScheme"
             />
             <LangSwitch
@@ -83,11 +83,11 @@ const bgColor = computed(() => {
             />
           </div>
         </header>
-        <main class="pt-24px">
-          <h3 class="text-18px text-primary font-medium">
+        <main class="pt-6">
+          <h3 class="text-[18px] text-primary font-medium">
             {{ $t(activeModule.label) }}
           </h3>
-          <div class="pt-24px">
+          <div class="pt-6">
             <Transition :name="themeStore.page.animateMode" mode="out-in" appear>
               <component :is="activeModule.component" />
             </Transition>

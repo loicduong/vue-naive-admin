@@ -33,25 +33,25 @@ const { domRef: liquidChartSmartInvertRef } = useVChart(() => liquidChartSmartIn
       <WebSiteLink label="More Demos: " link="https://www.visactor.com/vchart/example" />
     </NCard>
     <NCard title="Stacked Dash Area Chart" :bordered="false" class="h-full card-wrapper">
-      <div ref="stackedDashAreaRef" class="h-400px" />
+      <div ref="stackedDashAreaRef" class="h-100" />
     </NCard>
     <NCard title="Bar Mark Point Chart" :bordered="false" class="h-full card-wrapper">
-      <div ref="barMarkPointRef" class="h-400px" />
+      <div ref="barMarkPointRef" class="h-100" />
     </NCard>
     <NCard title="Histogram Different Bin Chart" :bordered="false" class="h-full card-wrapper">
-      <div ref="histogramDifferentBinRef" class="h-400px" />
+      <div ref="histogramDifferentBinRef" class="h-100" />
     </NCard>
     <NCard title="Ranking Bar Chart" :bordered="false" class="h-full card-wrapper">
-      <div ref="rankingBarRef" class="h-400px" />
+      <div ref="rankingBarRef" class="h-100" />
     </NCard>
     <NCard title="Circular Progress Tick Chart" :bordered="false" class="h-full card-wrapper">
-      <div ref="circularProgressTickRef" class="h-400px" />
+      <div ref="circularProgressTickRef" class="h-100" />
     </NCard>
     <NCard title="Liquid Chart Smart Invert Chart" :bordered="false" class="h-full card-wrapper">
-      <div ref="liquidChartSmartInvertRef" class="h-400px" />
+      <div ref="liquidChartSmartInvertRef" class="h-100" />
     </NCard>
     <NCard title="Shape Word Cloud Chart" :bordered="false" class="h-full card-wrapper">
-      <div ref="shapeWordCloudRef" class="h-400px" />
+      <div ref="shapeWordCloudRef" class="h-100" />
     </NCard>
   </NSpace>
 </template>

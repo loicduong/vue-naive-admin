@@ -53,7 +53,7 @@ const handleClear = () => signature.value?.clear()
     <NCard title="Signature Pad" :bordered="false" class="h-full card-wrapper" content-class="overflow-hidden">
       <div class="h-full flex-col-stretch">
         <GithubLink link="https://github.com/szimek/signature_pad" />
-        <div class="flex-y-center justify-end gap-12px">
+        <div class="flex-y-center justify-end gap-3">
           <ButtonIcon tooltip-content="Download" @click="handleSave">
             <icon-charm-download />
           </ButtonIcon>

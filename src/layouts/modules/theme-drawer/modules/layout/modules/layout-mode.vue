@@ -17,15 +17,15 @@ const themeStore = useThemeStore()
   <NDivider>{{ $t('theme.layout.layoutMode.title') }}</NDivider>
   <LayoutModeCard v-model:mode="themeStore.layout.mode" :disabled="appStore.isMobile">
     <template #vertical>
-      <div class="layout-sider h-full w-18px !bg-primary" />
+      <div class="layout-sider h-full w-4.5 bg-primary!" />
       <div class="vertical-wrapper">
         <div class="layout-header bg-primary-200" />
         <div class="layout-main" />
       </div>
     </template>
     <template #vertical-mix>
-      <div class="layout-sider h-full w-8px !bg-primary" />
-      <div class="layout-sider h-full w-16px !bg-primary-300" />
+      <div class="layout-sider h-full w-2 bg-primary!" />
+      <div class="layout-sider h-full w-4 bg-primary-300!" />
       <div class="vertical-wrapper">
         <div class="layout-header bg-primary-200" />
         <div class="layout-main" />
@@ -35,19 +35,21 @@ const themeStore = useThemeStore()
 </template>
 
 <style scoped>
+@reference "@/assets/css/tailwind.css";
+
 .layout-header {
-  --uno: h-16px rd-4px;
+  @apply h-4 rounded-sm;
 }
 
 .layout-sider {
-  --uno: bg-primary-300 rd-4px;
+  @apply bg-primary-300 rounded-sm;
 }
 
 .layout-main {
-  --uno: flex-1 bg-primary-200 rd-4px;
+  @apply flex-1 bg-primary-200 rounded-sm;
 }
 
 .vertical-wrapper {
-  --uno: flex-1 flex-col gap-6px;
+  @apply flex-1 flex flex-col gap-1.5;
 }
 </style>

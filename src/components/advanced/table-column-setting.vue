@@ -76,7 +76,7 @@ function toggleSelectAll(checked: boolean) {
       </NButton>
     </template>
     <div>
-      <div class="h-36px flex-y-center rd-4px pl-26px hover:(bg-primary bg-opacity-20)">
+      <div class="h-9 flex-y-center rounded-sm pl-6.5 hover:bg-primary/20">
         <NCheckbox
           :checked="selectAllChecked"
           :indeterminate="selectAllIndeterminate"
@@ -87,16 +87,16 @@ function toggleSelectAll(checked: boolean) {
           {{ $t('common.selectAll') }}
         </NCheckbox>
       </div>
-      <NDivider class="!my-4px" />
+      <NDivider class="my-1!" />
       <VueDraggable v-model="columns" :animation="150" filter=".none_draggable" class="max-h-[200px] overflow-y-auto">
         <div
           v-for="item in columns"
           :key="item.key"
-          class="h-36px flex-y-center justify-between gap-6px"
+          class="h-9 flex-y-center justify-between gap-1.5"
           :class="{ hidden: !item.visible }"
         >
-          <div class="h-full flex-y-center flex-1 rd-4px hover:(bg-primary bg-opacity-20)">
-            <icon-mdi-drag class="mr-8px h-full cursor-move text-icon" />
+          <div class="h-full flex-y-center flex-1 rounded-sm hover:bg-primary/20">
+            <icon-mdi-drag class="mr-2 h-full cursor-move text-icon" />
             <NCheckbox v-model:checked="item.checked" class="none_draggable flex-1">
               <template v-if="typeof item.title === 'function'">
                 <component :is="item.title" />

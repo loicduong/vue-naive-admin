@@ -4,11 +4,11 @@ import IframePage from '@/components/common/iframe-page.vue'
 definePage({
   meta: {
     order: 5,
-    icon: 'logos:unocss',
+    icon: 'logos:tailwindcss-icon',
   },
 })
 </script>
 
 <template>
-  <IframePage url="https://unocss.dev/" />
+  <IframePage url="https://tailwindcss.com/" />
 </template>

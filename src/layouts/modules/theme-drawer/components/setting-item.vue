@@ -14,7 +14,7 @@ interface Props {
 <template>
   <div class="w-full flex-y-center justify-between">
     <div class="flex-y-center">
-      <span class="pr-8px text-base-text">{{ label }}</span>
+      <span class="pr-2 text-base-text">{{ label }}</span>
       <slot name="suffix" />
     </div>
     <slot />

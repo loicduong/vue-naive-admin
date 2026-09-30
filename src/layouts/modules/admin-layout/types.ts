@@ -191,7 +191,7 @@ export interface AdminLayoutProps
    *
    * Is can be used to configure the transition animation
    *
-   * @default 'transition-all-300'
+   * @default 'transition-all duration-300'
    */
   commonClass?: string
   /**

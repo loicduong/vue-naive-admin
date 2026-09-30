@@ -54,7 +54,7 @@ function handleChangeMode(mode: UnionKey.ThemeLayoutMode) {
 </script>
 
 <template>
-  <div class="grid grid-cols-2 gap-x-16px gap-y-12px md:grid-cols-3">
+  <div class="grid grid-cols-2 gap-x-4 gap-y-3 md:grid-cols-3">
     <div
       v-for="(item, key) in layoutConfig"
       :key="key"
@@ -65,7 +65,7 @@ function handleChangeMode(mode: UnionKey.ThemeLayoutMode) {
       <IconTooltip :placement="item.placement">
         <template #trigger>
           <div
-            class="h-64px w-96px gap-6px rd-4px p-6px shadow ring-2 ring-transparent transition-all hover:ring-primary"
+            class="h-16 w-24 gap-1.5 rounded-sm p-1.5 shadow-sm ring-2 ring-transparent transition-all hover:ring-primary"
             :class="{ '!ring-primary': mode === key }"
           >
             <div class="h-full w-full flex gap-1">
@@ -75,7 +75,7 @@ function handleChangeMode(mode: UnionKey.ThemeLayoutMode) {
         </template>
         {{ $t(`theme.layout.layoutMode.${key}_detail`) }}
       </IconTooltip>
-      <p class="mt-8px text-12px">
+      <p class="mt-2 text-[12px]">
         {{ $t(themeLayoutModeRecord[key]) }}
       </p>
     </div>

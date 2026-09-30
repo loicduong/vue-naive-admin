@@ -44,14 +44,14 @@ const statisticData = computed<StatisticData[]>(() => [
     <NGrid :x-gap="gap" :y-gap="16" responsive="screen" item-responsive>
       <NGi span="24 s:24 m:18">
         <div class="flex-y-center">
-          <div class="size-72px shrink-0 overflow-hidden rd-1/2">
+          <div class="size-18 shrink-0 overflow-hidden rounded-full">
             <img src="@/assets/imgs/user.jpg" class="size-full" />
           </div>
-          <div class="pl-12px">
-            <h3 class="text-18px font-semibold">
+          <div class="pl-3">
+            <h3 class="text-[18px] font-semibold">
               {{ $t('page.home.greeting', { userName: authStore.userInfo.userName }) }}
             </h3>
-            <p class="text-#999 leading-30px">
+            <p class="text-[#999] leading-[30px]">
               {{ $t('page.home.weatherDesc') }}
             </p>
           </div>

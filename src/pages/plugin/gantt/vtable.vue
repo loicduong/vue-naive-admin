@@ -792,13 +792,13 @@ onUnmounted(() => {
       <WebSiteLink label="More Demos: " link="https://www.visactor.com/vtable/example" />
     </NCard>
     <NCard :bordered="false" class="h-full card-wrapper">
-      <div ref="basicGanttDomRef" class="relative h-400px" />
+      <div ref="basicGanttDomRef" class="relative h-100" />
     </NCard>
     <NCard :bordered="false" class="h-full card-wrapper">
-      <div ref="linkGanttDomRef" class="relative h-400px" />
+      <div ref="linkGanttDomRef" class="relative h-100" />
     </NCard>
     <NCard :bordered="false" class="h-full card-wrapper">
-      <div ref="customGanttDomRef" class="relative h-400px" />
+      <div ref="customGanttDomRef" class="relative h-100" />
     </NCard>
   </NSpace>
 </template>

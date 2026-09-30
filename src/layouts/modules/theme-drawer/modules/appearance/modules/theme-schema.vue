@@ -24,18 +24,18 @@ function handleSegmentChange(value: string | number) {
 
 <template>
   <NDivider>{{ $t('theme.appearance.themeSchema.title') }}</NDivider>
-  <div class="flex-col-stretch gap-16px">
+  <div class="flex-col-stretch gap-4">
     <div class="i-flex-center">
       <NTabs
         :key="themeStore.themeScheme"
         type="segment"
         size="small"
-        class="relative w-214px"
+        class="relative w-[214px]"
         :value="themeStore.themeScheme"
         @update:value="handleSegmentChange"
       >
         <NTab v-for="(_, key) in themeSchemaRecord" :key="key" :name="key">
-          <SvgIcon :icon="icons[key]" class="h-23px text-icon-small" />
+          <SvgIcon :icon="icons[key]" class="h-[23px] text-icon-small" />
         </NTab>
       </NTabs>
     </div>

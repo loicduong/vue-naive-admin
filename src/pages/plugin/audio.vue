@@ -87,7 +87,7 @@ onBeforeUnmount(() => {
         <GithubLink link="https://github.com/katspaugh/wavesurfer.js" />
         <NScrollbar class="flex-1-hidden">
           <NSpin :show="loading">
-            <div class="w-8/12 !m-auto !mt-[20px]">
+            <div class="w-8/12 m-auto! mt-[20px]!">
               <div ref="wavesurferRef" />
               <div v-show="totalTime" class="flex justify-between">
                 <span class="text-[#81888f]">00:00</span>

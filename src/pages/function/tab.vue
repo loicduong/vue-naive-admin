@@ -74,7 +74,7 @@ function resetTabLabel() {
       <NDivider title-placement="left">
         {{ $t('page.function.tab.tabTitle.changeTitle') }}
       </NDivider>
-      <NInputGroup class="max-w-240px">
+      <NInputGroup class="max-w-60">
         <NInput v-model:value="tabLabel" />
         <NButton type="primary" @click="changeTabLabel">
           {{ $t('page.function.tab.tabTitle.change') }}
@@ -83,7 +83,7 @@ function resetTabLabel() {
       <NDivider title-placement="left">
         {{ $t('page.function.tab.tabTitle.resetTitle') }}
       </NDivider>
-      <NButton type="error" ghost class="w-80px" @click="resetTabLabel">
+      <NButton type="error" ghost class="w-20" @click="resetTabLabel">
         {{ $t('page.function.tab.tabTitle.reset') }}
       </NButton>
     </NCard>

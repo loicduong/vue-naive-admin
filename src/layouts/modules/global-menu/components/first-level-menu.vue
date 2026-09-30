@@ -60,15 +60,15 @@ function toggleSiderCollapse() {
   <!-- define component: MixMenuItem -->
   <DefineMixMenuItem v-slot="{ label, icon, active, isMini }">
     <div
-      class="mx-4px mb-6px flex-col-center cursor-pointer rounded-8px bg-transparent px-4px py-8px transition-300 hover:bg-[rgb(0,0,0,0.08)]"
+      class="mx-1 mb-1.5 flex-col-center cursor-pointer rounded-lg bg-transparent px-1 py-2 transition duration-300 hover:bg-[rgb(0,0,0,0.08)]"
       :class="{
         'text-primary selected-mix-menu': active,
       }"
     >
       <component :is="icon" :class="[isMini ? 'text-icon-small' : 'text-icon-large']" />
       <p
-        class="w-full ellipsis-text text-center text-12px transition-height-300"
-        :class="[isMini ? 'h-0 pt-0' : 'h-20px pt-4px']"
+        class="w-full ellipsis-text text-center text-[12px] transition-[height] duration-300"
+        :class="[isMini ? 'h-0 pt-0' : 'h-5 pt-1']"
       >
         {{ label }}
       </p>

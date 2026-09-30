@@ -49,7 +49,7 @@ function handleChange(iconItem: string) {
     <template #trigger>
       <NInput v-model:value="modelValue" readonly placeholder="Click to select the icon">
         <template #suffix>
-          <SvgIcon :icon="selectedIcon" class="p-5px text-30px" />
+          <SvgIcon :icon="selectedIcon" class="p-[5px] text-[30px]" />
         </template>
       </NInput>
     </template>
@@ -60,12 +60,12 @@ function handleChange(iconItem: string) {
       <span v-for="iconItem in iconsList" :key="iconItem" @click="handleChange(iconItem)">
         <SvgIcon
           :icon="iconItem"
-          class="m-2px cursor-pointer border-1px border-#d9d9d9 p-5px text-30px"
+          class="m-0.5 cursor-pointer border border-[#d9d9d9] p-[5px] text-[30px]"
           :class="{ 'border-primary': modelValue === iconItem }"
         />
       </span>
     </div>
-    <NEmpty v-else class="w-306px" description="You can't find anything" />
+    <NEmpty v-else class="w-[306px]" description="You can't find anything" />
   </NPopover>
 </template>
 

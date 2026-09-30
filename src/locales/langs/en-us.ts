@@ -162,7 +162,7 @@ const local: App.I18n.Schema = {
     '/home': 'Home',
     '/document': 'Document',
     '/document/naive': 'Naive UI Document',
-    '/document/unocss': 'UnoCSS Document',
+    '/document/tailwindcss': 'Tailwind CSS Document',
     '/document/vite': 'Vite Document',
     '/document/vue': 'Vue Document',
     '/about': 'About',
@@ -288,7 +288,7 @@ const local: App.I18n.Schema = {
     },
     about: {
       title: 'About',
-      introduction: `NaiveAgenticAdmin is an elegant and powerful admin template, based on the latest front-end technology stack, including Vue 3, Vite 6, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on Apidog. NaiveAgenticAdmin provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly.`,
+      introduction: `NaiveAgenticAdmin is an elegant and powerful admin template, based on the latest front-end technology stack, including Vue 3, Vite 6, TypeScript, Pinia and Tailwind CSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on Apidog. NaiveAgenticAdmin provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly.`,
       projectInfo: {
         title: 'Project Info',
         version: 'Version',

@@ -59,7 +59,7 @@ async function handleDownload() {
       <div class="h-full flex-col-stretch">
         <GithubLink link="https://github.com/hrynko/vue-pdf-embed" />
         <WebSiteLink label="Document address: " link="https://www.npmjs.com/package/vue-pdf-embed" />
-        <div class="flex-y-center justify-end gap-12px">
+        <div class="flex-y-center justify-end gap-3">
           <NCheckbox v-model:checked="showAllPages" @update:checked="showAllPagesChange"> Show all pages </NCheckbox>
           <ButtonIcon tooltip-content="Rotate 90 degrees" @click="handleRotate">
             <icon-material-symbols-light-rotate-90-degrees-ccw-outline-rounded />
@@ -72,7 +72,7 @@ async function handleDownload() {
           </ButtonIcon>
         </div>
         <NScrollbar class="flex-1-hidden">
-          <NSkeleton v-if="loading" size="small" class="mt-12px" text :repeat="12" />
+          <NSkeleton v-if="loading" size="small" class="mt-3" text :repeat="12" />
           <VuePdfEmbed
             ref="pdfRef"
             class="container overflow-auto"
@@ -84,7 +84,7 @@ async function handleDownload() {
           />
         </NScrollbar>
         <div class="flex-y-center justify-between">
-          <div v-if="showAllPages" class="text-18px font-medium">Total {{ pageCount }} pages</div>
+          <div v-if="showAllPages" class="text-[18px] font-medium">Total {{ pageCount }} pages</div>
           <NPagination v-else v-model:page="currentPage" :page-count="pageCount" :page-size="1" />
         </div>
       </div>

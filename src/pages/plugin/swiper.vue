@@ -104,12 +104,12 @@ const swiperExample: SwiperExample[] = [
       </NSpace>
       <NSpace :vertical="true">
         <div v-for="item in swiperExample" :key="item.id">
-          <h3 class="py-24px text-24px font-bold">
+          <h3 class="py-6 text-[24px] font-bold">
             {{ item.label }}
           </h3>
           <Swiper v-bind="item.options">
             <SwiperSlide v-for="i in 5" :key="i">
-              <div class="h-240px w-full flex-center border-1px border-#999 text-18px font-bold">Slide{{ i }}</div>
+              <div class="h-60 w-full flex-center border border-[#999] text-[18px] font-bold">Slide{{ i }}</div>
             </SwiperSlide>
           </Swiper>
         </div>

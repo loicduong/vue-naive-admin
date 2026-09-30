@@ -44,7 +44,7 @@ function refresh() {
 </script>
 
 <template>
-  <NSpace :align="itemAlign" wrap justify="end" class="lt-sm:w-200px">
+  <NSpace :align="itemAlign" wrap justify="end" class="max-sm:w-50">
     <slot name="prefix" />
     <slot name="default">
       <NButton size="small" ghost type="primary" @click="add">

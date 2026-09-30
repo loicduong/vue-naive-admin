@@ -5,7 +5,7 @@ defineOptions({
 </script>
 
 <template>
-  <div class="size-72px overflow-hidden rd-1/2">
+  <div class="size-18 overflow-hidden rounded-full">
     <img src="@/assets/imgs/user.jpg" class="size-full" />
   </div>
 </template>
