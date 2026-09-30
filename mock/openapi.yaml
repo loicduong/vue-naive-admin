@@ -7,6 +7,15 @@ info:
     Import this file into Apidog (Settings → Import Data → OpenAPI/Swagger).
 
     Every response is wrapped as `{ code, msg, data }` (see `App.Service.Response`).
+
+    Role-based login: `/auth/login` and `/auth/getUserInfo` have one example per
+    account (Super, Admin, User). Apidog does not pick an example from the request
+    by itself, so add a Mock Expectation for each account after importing:
+
+    | Endpoint              | Condition                                       | Returns example |
+    | --------------------- | ----------------------------------------------- | --------------- |
+    | POST /auth/login      | body `userName` = `Super` / `Admin` / `User`    | super / admin / user |
+    | GET /auth/getUserInfo | header `Authorization` = `Bearer mock-token-<x>` | super / admin / user |
 tags:
   - name: auth
   - name: systemManage
@@ -45,12 +54,31 @@ paths:
                     properties:
                       data:
                         $ref: '#/components/schemas/LoginToken'
-              example:
-                code: '0000'
-                msg: 'success'
-                data:
-                  token: mock-token-super
-                  refreshToken: mock-refresh-token-super
+              examples:
+                admin:
+                  summary: 'userName = Admin'
+                  value:
+                    code: '0000'
+                    msg: 'success'
+                    data:
+                      token: mock-token-admin
+                      refreshToken: mock-refresh-token-admin
+                super:
+                  summary: 'userName = Super'
+                  value:
+                    code: '0000'
+                    msg: 'success'
+                    data:
+                      token: mock-token-super
+                      refreshToken: mock-refresh-token-super
+                user:
+                  summary: 'userName = User'
+                  value:
+                    code: '0000'
+                    msg: 'success'
+                    data:
+                      token: mock-token-user
+                      refreshToken: mock-refresh-token-user
 
   /auth/getUserInfo:
     get:
@@ -69,14 +97,37 @@ paths:
                     properties:
                       data:
                         $ref: '#/components/schemas/UserInfo'
-              example:
-                code: '0000'
-                msg: 'success'
-                data:
-                  userId: '0'
-                  userName: Super
-                  roles: [R_SUPER]
-                  buttons: [B_CODE1, B_CODE2, B_CODE3]
+              examples:
+                admin:
+                  summary: 'Authorization = Bearer mock-token-admin'
+                  value:
+                    code: '0000'
+                    msg: 'success'
+                    data:
+                      userId: '1'
+                      userName: Admin
+                      roles: [R_ADMIN]
+                      buttons: [B_CODE1, B_CODE2]
+                super:
+                  summary: 'Authorization = Bearer mock-token-super'
+                  value:
+                    code: '0000'
+                    msg: 'success'
+                    data:
+                      userId: '0'
+                      userName: Super
+                      roles: [R_SUPER]
+                      buttons: [B_CODE1, B_CODE2, B_CODE3]
+                user:
+                  summary: 'Authorization = Bearer mock-token-user'
+                  value:
+                    code: '0000'
+                    msg: 'success'
+                    data:
+                      userId: '2'
+                      userName: User
+                      roles: [R_USER]
+                      buttons: [B_CODE1]
 
   /systemManage/getRoleList:
     get:
