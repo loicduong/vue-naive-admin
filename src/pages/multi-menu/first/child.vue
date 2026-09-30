@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LookForward from '@/components/custom/look-forward.vue'
+</script>
 
 <template>
   <LookForward />

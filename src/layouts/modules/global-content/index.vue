@@ -4,6 +4,7 @@ import { useAppStore } from '@/store/modules/app'
 import { useRouteStore } from '@/store/modules/route'
 import { useTabStore } from '@/store/modules/tab'
 import { useThemeStore } from '@/store/modules/theme'
+import { computed } from 'vue'
 
 defineOptions({
   name: 'GlobalContent',

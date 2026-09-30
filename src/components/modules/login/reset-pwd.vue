@@ -2,6 +2,8 @@
 import { useFormRules, useNaiveForm } from '@/hooks/common/form'
 import { useRouterPush } from '@/hooks/common/router'
 import { $t } from '@/locales'
+import { computed, reactive } from 'vue'
+import { NButton, NForm, NFormItem, NInput, NSpace } from 'naive-ui'
 
 defineOptions({
   name: 'ResetPwd',

@@ -3,6 +3,11 @@ import { useSvgIcon } from '@/hooks/common/icon'
 import { useRouterPush } from '@/hooks/common/router'
 import { $t } from '@/locales'
 import { useAuthStore } from '@/store/modules/auth'
+import { computed } from 'vue'
+import type { VNode } from 'vue'
+import { NButton, NDropdown } from 'naive-ui'
+import ButtonIcon from '@/components/custom/button-icon.vue'
+import SvgIcon from '@/components/custom/svg-icon.vue'
 
 defineOptions({
   name: 'UserAvatar',

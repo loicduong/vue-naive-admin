@@ -2,6 +2,7 @@
 import type { PopoverPlacement } from 'naive-ui'
 import { themeLayoutModeRecord } from '@/constants/app'
 import { $t } from '@/locales'
+import IconTooltip from '@/components/common/icon-tooltip.vue'
 
 defineOptions({
   name: 'LayoutModeCard',

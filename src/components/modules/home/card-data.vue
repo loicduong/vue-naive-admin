@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { $t } from '@/locales'
 import { useThemeStore } from '@/store/modules/theme'
+import { computed } from 'vue'
+import { createReusableTemplate } from '@vueuse/core'
+import { NCard, NGi, NGrid } from 'naive-ui'
+import SvgIcon from '@/components/custom/svg-icon.vue'
+import CountTo from '@/components/custom/count-to.vue'
 
 defineOptions({ name: 'CardData' })
 

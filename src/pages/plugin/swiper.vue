@@ -3,6 +3,9 @@ import type { SwiperOptions } from 'swiper/types'
 import SwiperCore from 'swiper'
 import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
+import { NCard, NSpace } from 'naive-ui'
+import GithubLink from '@/components/custom/github-link.vue'
+import WebSiteLink from '@/components/custom/web-site-link.vue'
 
 definePage({
   meta: {

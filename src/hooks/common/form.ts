@@ -1,6 +1,8 @@
 import type { FormInst } from 'naive-ui'
 import { REG_CODE_SIX, REG_EMAIL, REG_PHONE, REG_PWD, REG_USER_NAME } from '@/constants/reg'
 import { $t } from '@/locales'
+import { ref, toValue } from 'vue'
+import type { ComputedRef, Ref } from 'vue'
 
 export function useFormRules() {
   const patternRules = {

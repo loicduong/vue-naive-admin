@@ -5,6 +5,8 @@ import AppearanceSettings from './modules/appearance/index.vue'
 import ConfigOperation from './modules/config-operation.vue'
 import GeneralSettings from './modules/general/index.vue'
 import LayoutSettings from './modules/layout/index.vue'
+import { computed, ref } from 'vue'
+import { NDrawer, NDrawerContent, NTab, NTabs } from 'naive-ui'
 
 defineOptions({
   name: 'ThemeDrawer',

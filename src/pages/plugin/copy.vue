@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useClipboard } from '@vueuse/core'
+import { ref } from 'vue'
+import { NButton, NCard, NInput, NInputGroup } from 'naive-ui'
+
 definePage({
   meta: {
     icon: 'mdi:clipboard-outline',

@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import useLoading from '@/hooks/common/use-loading'
 import VuePdfEmbed from 'vue-pdf-embed'
+import { ref, shallowRef } from 'vue'
+import { NCard, NCheckbox, NPagination, NScrollbar, NSkeleton } from 'naive-ui'
+import GithubLink from '@/components/custom/github-link.vue'
+import WebSiteLink from '@/components/custom/web-site-link.vue'
+import ButtonIcon from '@/components/custom/button-icon.vue'
+import IconMaterialSymbolsLightRotate90DegreesCcwOutlineRounded from '~icons/material-symbols-light/rotate90-degrees-ccw-outline-rounded'
+import IconMdiPrinter from '~icons/mdi/printer'
+import IconCharmDownload from '~icons/charm/download'
 
 definePage({
   meta: {
@@ -54,13 +62,13 @@ async function handleDownload() {
         <div class="flex-y-center justify-end gap-12px">
           <NCheckbox v-model:checked="showAllPages" @update:checked="showAllPagesChange"> Show all pages </NCheckbox>
           <ButtonIcon tooltip-content="Rotate 90 degrees" @click="handleRotate">
-            <icon-material-symbols-light:rotate-90-degrees-ccw-outline-rounded />
+            <icon-material-symbols-light-rotate-90-degrees-ccw-outline-rounded />
           </ButtonIcon>
           <ButtonIcon tooltip-content="Print" @click="handlePrint">
-            <icon-mdi:printer />
+            <icon-mdi-printer />
           </ButtonIcon>
           <ButtonIcon tooltip-content="Download" @click="handleDownload">
-            <icon-charm:download />
+            <icon-charm-download />
           </ButtonIcon>
         </div>
         <NScrollbar class="flex-1-hidden">

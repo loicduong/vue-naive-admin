@@ -6,6 +6,9 @@ import { useAppStore } from '@/store/modules/app'
 import { useRouteStore } from '@/store/modules/route'
 import { useThemeStore } from '@/store/modules/theme'
 import { useMenu } from '../context'
+import { useRoute } from 'vue-router'
+import { ref, watch } from 'vue'
+import { NMenu } from 'naive-ui'
 
 defineOptions({
   name: 'VerticalMenu',

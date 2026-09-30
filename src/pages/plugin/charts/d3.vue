@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import * as d3 from 'd3'
+import { computed, onMounted, ref, useTemplateRef } from 'vue'
+import { useEventListener } from '@vueuse/core'
+import { NCard } from 'naive-ui'
+import GithubLink from '@/components/custom/github-link.vue'
 
 definePage({ meta: { icon: 'file-icons:d3' } })
 

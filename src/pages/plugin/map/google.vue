@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { GoogleMap, Marker } from 'vue3-google-map'
+import { NCard } from 'naive-ui'
+import GithubLink from '@/components/custom/github-link.vue'
 
 definePage({ meta: { icon: 'simple-icons:googlemaps' } })
 

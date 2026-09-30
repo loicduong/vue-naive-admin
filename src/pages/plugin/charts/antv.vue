@@ -3,6 +3,9 @@ import type { CustomBehaviorOption, IPointerEvent } from '@antv/g6'
 import type { CustomGraphData } from '@/components/modules/plugin/charts/antv/types'
 import AntvFlow from '@/components/modules/plugin/charts/antv/antv-flow.vue'
 import { getFlowData } from '@/components/modules/plugin/charts/antv/data'
+import { computed, onMounted, ref, useTemplateRef } from 'vue'
+import type { Ref } from 'vue'
+import { NButton, NCard, NDivider, NFlex } from 'naive-ui'
 
 definePage({
   meta: {

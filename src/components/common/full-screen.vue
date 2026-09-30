@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { $t } from '@/locales'
+import ButtonIcon from '@/components/custom/button-icon.vue'
+import IconGridiconsFullscreenExit from '~icons/gridicons/fullscreen-exit'
+import IconGridiconsFullscreen from '~icons/gridicons/fullscreen'
 
 defineOptions({
   name: 'FullScreen',

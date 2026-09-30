@@ -4,6 +4,8 @@ import { useFormRules, useNaiveForm } from '@/hooks/common/form'
 import { useRouterPush } from '@/hooks/common/router'
 import { $t } from '@/locales'
 import { useAuthStore } from '@/store/modules/auth'
+import { computed, reactive } from 'vue'
+import { NButton, NCheckbox, NDivider, NForm, NFormItem, NInput, NSpace } from 'naive-ui'
 
 defineOptions({
   name: 'PwdLogin',

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import IconLocalLogo from '~icons/local/logo'
+
 defineOptions({ name: 'SystemLogo' })
 </script>
 

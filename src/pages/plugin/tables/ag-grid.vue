@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community'
 import { AgGridVue } from 'ag-grid-vue3'
+import { ref } from 'vue'
+import { NCard } from 'naive-ui'
+import GithubLink from '@/components/custom/github-link.vue'
 
 definePage({ meta: { icon: 'icon-park-outline:table' } })
 

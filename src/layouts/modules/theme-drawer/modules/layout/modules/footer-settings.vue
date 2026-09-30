@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { $t } from '@/locales'
 import { useThemeStore } from '@/store/modules/theme'
 import SettingItem from '../../../components/setting-item.vue'
+import { NDivider, NInputNumber, NSwitch } from 'naive-ui'
 
 defineOptions({
   name: 'FooterSettings',

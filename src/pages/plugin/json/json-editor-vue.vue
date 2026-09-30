@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import type { Mode } from 'vanilla-jsoneditor'
 import JsonEditorVue from 'json-editor-vue'
+import { reactive } from 'vue'
+import { NButton, NCard, NDescriptions, NDescriptionsItem } from 'naive-ui'
+import GithubLink from '@/components/custom/github-link.vue'
 
 definePage({ meta: { icon: 'mdi:code-json' } })
 

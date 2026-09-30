@@ -2,6 +2,8 @@
 import { useAppStore } from '@/store/modules/app'
 import nodeVersion from '~/.node-version?raw'
 import pkg from '~/package.json'
+import { computed } from 'vue'
+import { NCard, NDescriptions, NDescriptionsItem, NSpace, NTag } from 'naive-ui'
 
 definePage({
   meta: {

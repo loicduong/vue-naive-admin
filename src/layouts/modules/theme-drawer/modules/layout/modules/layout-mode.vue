@@ -3,6 +3,7 @@ import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
 import { useThemeStore } from '@/store/modules/theme'
 import LayoutModeCard from '../../../components/layout-mode-card.vue'
+import { NDivider } from 'naive-ui'
 
 defineOptions({
   name: 'LayoutMode',

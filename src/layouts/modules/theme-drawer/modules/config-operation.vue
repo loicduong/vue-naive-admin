@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { $t } from '@/locales'
 import { useThemeStore } from '@/store/modules/theme'
+import { useClipboard } from '@vueuse/core'
+import { computed } from 'vue'
+import { NButton } from 'naive-ui'
 
 defineOptions({ name: 'ConfigOperation' })
 

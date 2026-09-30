@@ -19,6 +19,7 @@ import {
   transformMenuToSearchMenus,
   updateLocaleOfGlobalMenus,
 } from './shared'
+import { computed, nextTick, ref, shallowRef } from 'vue'
 
 export const useRouteStore = defineStore(SetupStoreId.Route, () => {
   const authStore = useAuthStore()

@@ -2,6 +2,7 @@
 import { $t } from '@/locales'
 import { useThemeStore } from '@/store/modules/theme'
 import SettingItem from '../../../components/setting-item.vue'
+import { NColorPicker, NDivider } from 'naive-ui'
 
 defineOptions({
   name: 'ThemeColor',

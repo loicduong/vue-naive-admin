@@ -5,6 +5,8 @@ import { $t } from '@/locales'
 import { useThemeStore } from '@/store/modules/theme'
 import { translateOptions } from '@/utils/common'
 import SettingItem from '../../../components/setting-item.vue'
+import { NDivider, NSelect, NSwitch } from 'naive-ui'
+import IconTooltip from '@/components/common/icon-tooltip.vue'
 
 defineOptions({
   name: 'ContentSettings',

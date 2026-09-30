@@ -1,5 +1,5 @@
 import useBoolean from '@/hooks/common/use-boolean'
-import { breakpointsTailwind } from '@vueuse/core'
+import { breakpointsTailwind, useBreakpoints, useTitle, useEventListener } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { SetupStoreId } from '@/constants/enum'
 import { $t, setLocale } from '@/locales'
@@ -9,6 +9,7 @@ import { localStg } from '@/utils/storage'
 import { useRouteStore } from '../route'
 import { useTabStore } from '../tab'
 import { useThemeStore } from '../theme'
+import { effectScope, nextTick, onScopeDispose, ref, watch } from 'vue'
 
 export const useAppStore = defineStore(SetupStoreId.App, () => {
   const themeStore = useThemeStore()

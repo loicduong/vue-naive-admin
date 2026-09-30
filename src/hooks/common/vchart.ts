@@ -3,6 +3,8 @@ import VChart, { registerLiquidChart } from '@visactor/vchart'
 import dark from '@visactor/vchart-theme/public/dark.json'
 import light from '@visactor/vchart-theme/public/light.json'
 import { useThemeStore } from '@/store/modules/theme'
+import { computed, effectScope, onScopeDispose, ref, watch } from 'vue'
+import { useElementSize } from '@vueuse/core'
 
 registerLiquidChart()
 

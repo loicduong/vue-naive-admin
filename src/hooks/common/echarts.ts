@@ -29,6 +29,8 @@ import * as echarts from 'echarts/core'
 import { LabelLayout, UniversalTransition } from 'echarts/features'
 import { CanvasRenderer } from 'echarts/renderers'
 import { useThemeStore } from '@/store/modules/theme'
+import { computed, effectScope, nextTick, onScopeDispose, shallowRef, watch } from 'vue'
+import { useElementSize } from '@vueuse/core'
 
 export type ECOption = echarts.ComposeOption<
   | BarSeriesOption

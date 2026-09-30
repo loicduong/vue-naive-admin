@@ -9,6 +9,8 @@ import {
   stackedDashAreaSpec,
 } from '@/components/modules/plugin/charts/vchart/data'
 import { useVChart } from '@/hooks/common/vchart'
+import { NCard, NSpace } from 'naive-ui'
+import WebSiteLink from '@/components/custom/web-site-link.vue'
 
 definePage({
   meta: {

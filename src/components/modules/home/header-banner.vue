@@ -2,6 +2,8 @@
 import { $t } from '@/locales'
 import { useAppStore } from '@/store/modules/app'
 import { useAuthStore } from '@/store/modules/auth'
+import { computed } from 'vue'
+import { NCard, NGi, NGrid, NSpace, NStatistic } from 'naive-ui'
 
 defineOptions({
   name: 'HeaderBanner',

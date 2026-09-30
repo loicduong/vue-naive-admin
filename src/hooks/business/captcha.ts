@@ -2,6 +2,7 @@ import useCountDown from '@/hooks/common/use-count-down'
 import useLoading from '@/hooks/common/use-loading'
 import { REG_PHONE } from '@/constants/reg'
 import { $t } from '@/locales'
+import { computed } from 'vue'
 
 export function useCaptcha() {
   const { loading, startLoading, endLoading } = useLoading()

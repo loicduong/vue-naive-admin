@@ -3,6 +3,8 @@ import type { VNode } from 'vue'
 import { useTabStore } from '@/store/modules/tab'
 import { useSvgIcon } from '@/hooks/common/icon'
 import { $t } from '@/locales'
+import { computed } from 'vue'
+import { NDropdown } from 'naive-ui'
 
 defineOptions({
   name: 'ContextMenu',

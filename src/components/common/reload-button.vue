@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { $t } from '@/locales'
+import ButtonIcon from '@/components/custom/button-icon.vue'
+import IconAntDesignReloadOutlined from '~icons/ant-design/reload-outlined'
 
 defineOptions({
   name: 'ReloadButton',

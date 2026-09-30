@@ -7,6 +7,7 @@ import { useFormRules, useNaiveForm } from '@/hooks/common/form'
 import { $t } from '@/locales'
 import ButtonAuthModal from './button-auth-modal.vue'
 import MenuAuthModal from './menu-auth-modal.vue'
+import { NButton, NDrawer, NDrawerContent, NForm, NFormItem, NInput, NRadio, NRadioGroup, NSpace } from 'naive-ui'
 
 defineOptions({
   name: 'RoleOperateDrawer',

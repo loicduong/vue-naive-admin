@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import WaveSurfer from 'wavesurfer.js'
 import { longpress } from '@/directives/longpress'
+import { computed, onBeforeUnmount, onMounted, ref, useTemplateRef } from 'vue'
+import { NCard, NScrollbar, NSpin, NTooltip } from 'naive-ui'
+import GithubLink from '@/components/custom/github-link.vue'
+import IconMaterialSymbolsFastRewind from '~icons/material-symbols/fast-rewind'
+import IconMaterialSymbolsPauseRounded from '~icons/material-symbols/pause-rounded'
+import IconMaterialSymbolsPlayArrow from '~icons/material-symbols/play-arrow'
+import IconMaterialSymbolsFastForward from '~icons/material-symbols/fast-forward'
 
 defineOptions({ directives: { longpress } })
 
@@ -93,7 +100,7 @@ onBeforeUnmount(() => {
               <div v-show="totalTime" class="m-auto mt-2 w-[180px] flex justify-around">
                 <NTooltip placement="bottom">
                   <template #trigger>
-                    <icon-material-symbols:fast-rewind
+                    <icon-material-symbols-fast-rewind
                       v-longpress:0:100="() => wavesurfer?.skip(-1)"
                       class="h-8 w-8 cursor-pointer"
                     />
@@ -103,15 +110,15 @@ onBeforeUnmount(() => {
                 <NTooltip placement="bottom">
                   <template #trigger>
                     <div class="cursor-pointer" @click="wavesurfer?.playPause()">
-                      <icon-material-symbols:pause-rounded v-if="isPlay" class="h-10 w-10" />
-                      <icon-material-symbols:play-arrow v-else class="h-10 w-10" />
+                      <icon-material-symbols-pause-rounded v-if="isPlay" class="h-10 w-10" />
+                      <icon-material-symbols-play-arrow v-else class="h-10 w-10" />
                     </div>
                   </template>
                   {{ isPlay ? 'Pause' : 'Play' }}
                 </NTooltip>
                 <NTooltip placement="bottom">
                   <template #trigger>
-                    <icon-material-symbols:fast-forward
+                    <icon-material-symbols-fast-forward
                       v-longpress:0:100="() => wavesurfer?.skip(1)"
                       class="h-8 w-8 cursor-pointer"
                     />

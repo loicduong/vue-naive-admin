@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import { $t } from '@/locales'
+import { NButton, NPopconfirm, NSpace } from 'naive-ui'
+import IconIcRoundPlus from '~icons/ic/round-plus'
+import IconIcRoundDelete from '~icons/ic/round-delete'
+import IconMdiRefresh from '~icons/mdi/refresh'
+import TableColumnSetting from '@/components/advanced/table-column-setting.vue'
 
 defineOptions({
   name: 'TableHeaderOperation',

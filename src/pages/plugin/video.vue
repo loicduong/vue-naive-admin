@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import Player from 'xgplayer'
 import 'xgplayer/dist/index.min.css'
+import { onMounted, onUnmounted, ref } from 'vue'
+import { NCard } from 'naive-ui'
 
 definePage({
   meta: {

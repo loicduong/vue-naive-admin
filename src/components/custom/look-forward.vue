@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { $t } from '@/locales'
+import SvgIcon from '@/components/custom/svg-icon.vue'
 
 defineOptions({
   name: 'LookForward',

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { $t } from '@/locales'
+import SystemLogo from '@/components/common/system-logo.vue'
 
 defineOptions({
   name: 'GlobalLogo',

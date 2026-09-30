@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import intro from 'intro.js'
 import 'intro.js/minified/introjs.min.css'
+import { computed } from 'vue'
+import { NButton, NCard } from 'naive-ui'
+import GithubLink from '@/components/custom/github-link.vue'
 
 interface IntroStep {
   element?: HTMLElement | string

@@ -102,8 +102,7 @@ pnpm update-pkg
 - Rich page components: built-in a variety of pages and components, including 403, 404, 500 pages, as well as layout components, tag components, theme configuration components, etc.
 - Command line tool: built-in efficient command line tool, git commit, delete file, release, etc.
 - Mobile adaptation: perfectly support mobile terminal to realize adaptive layout.
-- Components auto importing: [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) & [unplugin-icons](https://github.com/unplugin/unplugin-icons).
-- APIs auto importing: use [unplugin-auto-import](https://github.com/unplugin/unplugin-auto-import) to import APIs directly.
+- Icons as components: [unplugin-icons](https://github.com/unplugin/unplugin-icons).
 - Deploy on Vercel, zero-config.
 - Apply [standard-readme](https://github.com/RichardLitt/standard-readme) to ensure the quality of the README file.
 - PWA

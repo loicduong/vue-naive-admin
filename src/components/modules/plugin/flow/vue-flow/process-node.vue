@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { Handle, useHandleConnections } from '@vue-flow/core'
+import { toRef } from 'vue'
 
 interface Props {
   data: Record<string, unknown>

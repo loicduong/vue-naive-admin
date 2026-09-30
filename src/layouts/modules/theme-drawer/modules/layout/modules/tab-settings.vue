@@ -2,6 +2,8 @@
 import { $t } from '@/locales'
 import { useThemeStore } from '@/store/modules/theme'
 import SettingItem from '../../../components/setting-item.vue'
+import { NDivider, NInputNumber, NSwitch } from 'naive-ui'
+import IconTooltip from '@/components/common/icon-tooltip.vue'
 
 defineOptions({
   name: 'TabSettings',

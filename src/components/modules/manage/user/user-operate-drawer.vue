@@ -3,6 +3,19 @@ import { enableStatusOptions, userGenderOptions } from '@/constants/business'
 import { useFormRules, useNaiveForm } from '@/hooks/common/form'
 import { $t } from '@/locales'
 import { fetchGetAllRoles } from '@/service/api'
+import { computed, ref, watch } from 'vue'
+import {
+  NButton,
+  NDrawer,
+  NDrawerContent,
+  NForm,
+  NFormItem,
+  NInput,
+  NRadio,
+  NRadioGroup,
+  NSelect,
+  NSpace,
+} from 'naive-ui'
 
 defineOptions({
   name: 'UserOperateDrawer',
