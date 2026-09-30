@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/loicduong/vue-naive-admin/compare/v1.0.2...v1.1.0) (2026-09-30)
+
+
+### Features
+
+* add multi-page tab bar ([#57](https://github.com/loicduong/vue-naive-admin/issues/57)) ([796a256](https://github.com/loicduong/vue-naive-admin/commit/796a256b545548780798246b1869ee1e0892d77f))
+
 ## [1.0.2](https://github.com/loicduong/vue-naive-admin/compare/v1.0.1...v1.0.2) (2026-09-27)
 
 
