@@ -32,6 +32,9 @@ git clone https://github.com/loicduong/naive-agentic-admin.git
 
 # Install dependencies
 pnpm i
+
+# Create your local env file
+cp .env.example .env
 ```
 
 ## Usage
