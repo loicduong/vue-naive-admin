@@ -14,9 +14,9 @@ const themeStore = useThemeStore()
 const appStore = useAppStore()
 
 const colors = computed(() => {
-  const lightColor = getPaletteColorByNumber(themeStore.themeColor, 300)
-  const darkColor = getPaletteColorByNumber(themeStore.themeColor, 700)
-  const darkestColor = getPaletteColorByNumber(themeStore.themeColor, 900)
+  const lightColor = getPaletteColorByNumber(themeStore.themeColor, 200)
+  const darkColor = getPaletteColorByNumber(themeStore.themeColor, 600)
+  const darkestColor = getPaletteColorByNumber(themeStore.themeColor, 800)
 
   return [lightColor, themeStore.themeColor, darkColor, darkestColor]
 })

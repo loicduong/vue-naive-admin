@@ -5,7 +5,7 @@ import { useRouterPush } from '@/hooks/common/router'
 import { $t } from '@/locales'
 import { useAuthStore } from '@/store/modules/auth'
 import { computed, reactive } from 'vue'
-import { NButton, NCheckbox, NDivider, NForm, NFormItem, NInput, NSpace } from 'naive-ui'
+import { NButton, NCheckbox, NDivider, NForm, NFormItem, NInput, NSpace, NText } from 'naive-ui'
 
 defineOptions({
   name: 'PwdLogin',
@@ -106,8 +106,8 @@ async function handleAccountLogin(account: Account) {
           {{ $t(loginModuleRecord.register) }}
         </NButton>
       </div>
-      <NDivider class="text-[14px] text-[#666] m-0!">
-        {{ $t('page.login.pwdLogin.otherAccountLogin') }}
+      <NDivider class="text-[14px] m-0!">
+        <NText depth="3">{{ $t('page.login.pwdLogin.otherAccountLogin') }}</NText>
       </NDivider>
       <div class="flex items-center justify-center gap-3">
         <NButton v-for="item in accounts" :key="item.key" type="primary" @click="handleAccountLogin(item)">

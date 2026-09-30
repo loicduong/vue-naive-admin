@@ -187,8 +187,9 @@ export function getColorPalette(color: AnyColor) {
 
   const colorNumbers: ColorPaletteNumber[] = [100, 200, 300, 400, 500, 600, 700, 800, 900]
 
+  // map 100~900 to AntD index 2~10, so that 500 is the main color (AntD index 6)
   colorNumbers.forEach((number, index) => {
-    colorMap.set(number, colors[index])
+    colorMap.set(number, colors[index + 1])
   })
 
   return colorMap
