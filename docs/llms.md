@@ -5,7 +5,6 @@
 | `vue`                          | https://vuejs.org/llms-full.txt                                        |
 | `vue-router`                   | https://router.vuejs.org/llms-full.txt                                 |
 | `vue-i18n`                     | https://vue-i18n.intlify.dev/llms-full.txt                             |
-| `tailwindcss`                  | https://tailwindcss.com/docs                                           |
 | `vue-flow`                     | https://vueflow.dev/llms-full.txt                                      |
 | `@antv/g2`                     | https://g2.antv.antgroup.com/llms-full.txt                             |
 | `ag-grid-vue3`                 | https://www.ag-grid.com/llms.txt                                       |
